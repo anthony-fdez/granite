@@ -2,8 +2,11 @@ import resolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
 import dts from "rollup-plugin-dts";
 import typescript from "@rollup/plugin-typescript";
+import postcss from "rollup-plugin-postcss";
+import autoprefixer from "autoprefixer";
 
 import packageJson from "./package.json" assert { type: "json" };
+import { terser } from "rollup-plugin-terser";
 
 export default [
   {
@@ -24,6 +27,13 @@ export default [
       resolve(),
       commonjs(),
       typescript({ tsconfig: "./tsconfig.json" }),
+      postcss({
+        plugins: [autoprefixer()],
+        sourceMap: true,
+        extract: true,
+        minimize: true,
+      }),
+      terser(),
     ],
   },
   {
