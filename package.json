@@ -3,7 +3,9 @@
   "version": "0.0.1",
   "description": "",
   "scripts": {
-    "rollup": "rollup -c && tsc"
+    "rollup": "rollup -c && tsc",
+    "sb": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "author": "anthony-fdez",
   "license": "MIT",
@@ -12,6 +14,14 @@
     "@rollup/plugin-commonjs": "^23.0.2",
     "@rollup/plugin-node-resolve": "^15.0.1",
     "@rollup/plugin-typescript": "^9.0.2",
+    "@storybook/addon-actions": "^6.5.13",
+    "@storybook/addon-essentials": "^6.5.13",
+    "@storybook/addon-interactions": "^6.5.13",
+    "@storybook/addon-links": "^6.5.13",
+    "@storybook/builder-webpack4": "^6.5.13",
+    "@storybook/manager-webpack4": "^6.5.13",
+    "@storybook/react": "^6.5.13",
+    "@storybook/testing-library": "^0.0.13",
     "@types/node": "^18.11.9",
     "@types/react": "^18.0.25",
     "@typescript-eslint/eslint-plugin": "^5.43.0",
@@ -20,6 +30,7 @@
     "babel-loader": "^8.3.0",
     "eslint": "^8.27.0",
     "eslint-plugin-react": "^7.31.11",
+    "eslint-plugin-storybook": "^0.6.7",
     "postcss": "^8.4.19",
     "react": "^17.0.0",
     "react-dom": "^17.0.0",
