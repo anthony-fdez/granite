@@ -4,6 +4,8 @@ import dts from "rollup-plugin-dts";
 import typescript from "@rollup/plugin-typescript";
 import postcss from "rollup-plugin-postcss";
 import autoprefixer from "autoprefixer";
+import babel from "rollup-plugin-babel";
+import external from "rollup-plugin-peer-deps-external";
 
 import packageJson from "./package.json" assert { type: "json" };
 import { terser } from "rollup-plugin-terser";
@@ -24,6 +26,8 @@ export default [
       },
     ],
     plugins: [
+      babel({ exclude: "node_modules/**", presets: ["@babel/preset-react"] }),
+      external(),
       resolve(),
       commonjs(),
       typescript({ tsconfig: "./tsconfig.json" }),
