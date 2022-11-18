@@ -1,5 +1,5 @@
 {
-  "name": "component-library",
+  "name": "@anthony-fdez/component-library",
   "version": "0.0.1",
   "description": "",
   "scripts": {
@@ -7,6 +7,7 @@
     "sb": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
+  "private": true,
   "author": "anthony-fdez",
   "license": "MIT",
   "devDependencies": {
@@ -49,5 +50,13 @@
     "dist"
   ],
   "types": "dist/index.d.ts",
-  "type": "module"
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anthony-fdez/component-library.git"
+  },
+  "bugs": {
+    "url": "https://github.com/anthony-fdez/component-library/issues"
+  },
+  "homepage": "https://github.com/anthony-fdez/component-library#readme"
 }
