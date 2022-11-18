@@ -1,5 +1,6 @@
 import React from "react";
-import { ComponentStory, ComponentMeta } from "@storybook/react";
+import { ComponentStory } from "@storybook/react";
+import "@storybook/addon-console";
 
 import Button from "./Button";
 
