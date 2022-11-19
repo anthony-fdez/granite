@@ -2,7 +2,7 @@ import React from "react";
 import { ComponentStory } from "@storybook/react";
 import "@storybook/addon-console";
 
-import Button from "./Button";
+import Button from "./components/Button";
 
 export default {
   title: "Components/Button",
@@ -14,5 +14,6 @@ const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
 export const Primary = Template.bind({});
 
 Primary.args = {
-  label: "Button",
+  children: "Button",
+  width: 100,
 };

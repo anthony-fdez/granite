@@ -1,8 +1,7 @@
 import React from "react";
 import { ComponentStory } from "@storybook/react";
 import "@storybook/addon-console";
-
-import ThemeProvider from "./ThemeProvider";
+import ThemeProvider from "./components/ThemeProvider";
 import Button from "../Button";
 
 export default {
@@ -10,11 +9,13 @@ export default {
   component: ThemeProvider,
 };
 
-const Template: ComponentStory<typeof ThemeProvider> = (args) => (
-  <ThemeProvider {...args}>
-    <Button label="Test" />
-  </ThemeProvider>
-);
+const Template: ComponentStory<typeof ThemeProvider> = (args) => {
+  return (
+    <ThemeProvider {...args}>
+      <Button label="Button" />
+    </ThemeProvider>
+  );
+};
 
 export const Dark = Template.bind({});
 

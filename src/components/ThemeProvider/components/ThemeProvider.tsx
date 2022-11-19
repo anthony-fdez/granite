@@ -1,9 +1,8 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
 import React, { createContext, useEffect, useState } from "react";
-import { IState, IContext } from "./IState";
-import { IProviderProps } from "./IProviderProps";
-
-const defaultState: IState = { theme: "dark" };
+import { IState, IContext } from "../Interfaces/IState";
+import { IProviderProps } from "../Interfaces/IProviderProps";
+import { defaultState } from "../constants/defaultState";
 
 export const StateContext = createContext<IContext>({
   state: defaultState,
@@ -23,10 +22,6 @@ const ThemeProvider = ({
   useEffect(() => {
     handleUpdateState({ theme });
   }, []);
-
-  useEffect(() => {
-    console.log(state);
-  }, [state]);
 
   return (
     <>
