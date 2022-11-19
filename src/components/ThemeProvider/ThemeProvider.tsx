@@ -1,24 +1,38 @@
-import React, { createContext, useContext } from "react";
-import { IState } from "./IState";
+/* eslint-disable @typescript-eslint/no-empty-function */
+import React, { createContext, useEffect, useState } from "react";
+import { IState, IContext } from "./IState";
+import { IProviderProps } from "./IProviderProps";
 
-export const State = createContext<IState>({
-  theme: "dark",
+const defaultState: IState = { theme: "dark" };
+
+export const StateContext = createContext<IContext>({
+  state: defaultState,
+  setState: () => {},
 });
 
-interface Props {
-  children: JSX.Element;
-}
+const ThemeProvider = ({
+  children,
+  theme = defaultState.theme,
+}: IProviderProps): JSX.Element => {
+  const [state, setState] = useState<IState>(defaultState);
 
-const ThemeProvider = ({ children }: Props): JSX.Element => {
-  const state = useContext(State);
+  const handleUpdateState = (newState: IState) => {
+    setState({ ...state, ...newState });
+  };
 
-  if (!state) {
-    throw new Error("<ThemeProvider> Is missing");
-  }
+  useEffect(() => {
+    handleUpdateState({ theme });
+  }, []);
+
+  useEffect(() => {
+    console.log(state);
+  }, [state]);
 
   return (
     <>
-      <State.Provider value={state}>{children}</State.Provider>
+      <StateContext.Provider value={{ state, setState: handleUpdateState }}>
+        {children}
+      </StateContext.Provider>
     </>
   );
 };

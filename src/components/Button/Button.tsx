@@ -1,12 +1,10 @@
 import React, { useContext } from "react";
-import { State } from "../ThemeProvider/ThemeProvider";
+import { StateContext } from "../ThemeProvider/ThemeProvider";
 import styles from "./button.module.css";
 import { IButtonProps } from "./IButtonProps";
 
 const Button = ({ label }: IButtonProps) => {
-  const state = useContext(State);
-
-  if (!state) throw new Error("Missing ThemeProvider");
+  const { state } = useContext(StateContext);
 
   return <button className={styles.button}>{label}</button>;
 };

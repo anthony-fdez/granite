@@ -1,7 +1,7 @@
 {
-  "name": "@anthony-fdez/component-library",
-  "version": "0.0.1",
-  "description": "",
+  "name": "anthony-fdez-component-library",
+  "version": "0.0.2",
+  "description": "A react component library",
   "scripts": {
     "rollup": "rollup -c && tsc",
     "sb": "start-storybook -p 6006",
@@ -60,10 +60,13 @@
   "type": "module",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/anthony-fdez/component-library.git"
+    "url": "https://npm.pkg.github.com/anthony-fdez"
   },
   "bugs": {
     "url": "https://github.com/anthony-fdez/component-library/issues"
   },
-  "homepage": "https://github.com/anthony-fdez/component-library#readme"
+  "homepage": "https://github.com/anthony-fdez/component-library#readme",
+  "publishConfig": {
+    "access": "public"
+  }
 }
