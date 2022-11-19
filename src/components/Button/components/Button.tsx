@@ -1,11 +1,7 @@
-/** @jsx jsx */
-import { jsx, css } from "@emotion/react";
-
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { StateContext } from "../../ThemeProvider/components/ThemeProvider";
 import { IButtonProps } from "../Interfaces/IButtonProps";
 import { colors } from "../../ThemeProvider/constants/colors";
-import { getButtonStyles } from "./getButtonStyles";
 
 const Button = ({
   children,
@@ -21,23 +17,35 @@ const Button = ({
 }: IButtonProps) => {
   const { state } = useContext(StateContext);
 
-  // const styles2 = css([
-  //   {
-  //     backgroundColor: colors[color][colorShade],
-  //     padding,
-  //     margin,
-  //     borderRadius,
-  //     outline: loading ? 0 : 10,
-  //     border: 0,
-  //     cursor: "pointer",
-  //     color: fontColor,
-  //     width: width ? width : undefined,
-  //     textAlign: align,
-  //   },
-  //   {},
-  // ]);
+  const [hover, setHover] = useState(false);
 
-  return <button css={{ backgroundColor: "red" }}>{children}</button>;
+  const normalStyles: React.CSSProperties = {
+    backgroundColor: colors[color][colorShade],
+    padding,
+    margin,
+    borderRadius,
+    outline: loading ? 0 : 10,
+    border: 0,
+    cursor: "pointer",
+    color: fontColor,
+    width: width ? width : undefined,
+    textAlign: align,
+    transition: "200ms",
+  };
+
+  const hoverStyles: React.CSSProperties = {
+    backgroundColor: "red",
+  };
+
+  return (
+    <button
+      onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => setHover(false)}
+      style={{ ...normalStyles, ...(hover && hoverStyles) }}
+    >
+      {children}
+    </button>
+  );
 };
 
 export default Button;
