@@ -16,4 +16,5 @@ export const Primary = Template.bind({});
 Primary.args = {
   children: "Button",
   width: 100,
+  color: "red",
 };

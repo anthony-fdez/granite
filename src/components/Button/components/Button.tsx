@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { StateContext } from "../../ThemeProvider/components/ThemeProvider";
 import { IButtonProps } from "../Interfaces/IButtonProps";
 import { colors } from "../../ThemeProvider/constants/colors";
@@ -17,7 +17,8 @@ const Button = ({
 }: IButtonProps) => {
   const { state } = useContext(StateContext);
 
-  const [hover, setHover] = useState(false);
+  const [onHover, setOnHover] = useState(false);
+  const [onClick, setOnClick] = useState(false);
 
   const normalStyles: React.CSSProperties = {
     backgroundColor: colors[color][colorShade],
@@ -37,11 +38,29 @@ const Button = ({
     backgroundColor: "red",
   };
 
+  const clickStyles: React.CSSProperties = {
+    transform: "translateY(2px)",
+    transition: "100ms",
+  };
+
+  useEffect(() => {
+    if (!onClick) return;
+
+    setTimeout(() => {
+      setOnClick(false);
+    }, 100);
+  }, [onClick]);
+
   return (
     <button
-      onMouseEnter={() => setHover(true)}
-      onMouseLeave={() => setHover(false)}
-      style={{ ...normalStyles, ...(hover && hoverStyles) }}
+      onMouseEnter={() => setOnHover(true)}
+      onMouseLeave={() => setOnHover(false)}
+      onMouseDown={() => setOnClick(true)}
+      style={{
+        ...normalStyles,
+        ...(onHover && hoverStyles),
+        ...(onClick && clickStyles),
+      }}
     >
       {children}
     </button>
