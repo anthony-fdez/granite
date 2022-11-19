@@ -12,7 +12,7 @@ export default {
 const Template: ComponentStory<typeof ThemeProvider> = (args) => {
   return (
     <ThemeProvider {...args}>
-      <Button label="Button" />
+      <Button>Button</Button>
     </ThemeProvider>
   );
 };

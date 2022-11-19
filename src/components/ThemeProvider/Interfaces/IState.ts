@@ -4,8 +4,8 @@ export type numberRange = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9;
 
 export interface IState {
   theme?: "dark" | "light";
-  primaryColor: IColors["colors"];
-  primaryShade: numberRange;
+  primaryColor?: IColors["colors"];
+  primaryShade?: numberRange;
 }
 
 export interface IContext {
