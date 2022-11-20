@@ -1,13 +1,17 @@
 import { IStyles } from "../Interfaces/IStyles";
 
-export const defaultStylesLight: IStyles = {
-  theme: "light",
-  primaryColor: "blue",
+const shared: IStyles = {
   primaryShade: 6,
+  primaryColor: "blue",
 };
 
-export const defaultStylesDark: IStyles = {
+const dark: IStyles = {
   theme: "dark",
-  primaryColor: "red",
-  primaryShade: 6,
 };
+
+const light: IStyles = {
+  theme: "light",
+};
+
+export const defaultStylesLight: IStyles = { ...shared, ...light };
+export const defaultStylesDark: IStyles = { ...shared, ...dark };

@@ -1,15 +1,18 @@
+import { sizes } from "../../ThemeProvider/types/sizes";
 import { numberRange } from "../../ThemeProvider/Interfaces/IStyles";
-import { IColors, IColorShades } from "./../../ThemeProvider/constants/colors";
+import { IColors } from "./../../ThemeProvider/constants/colors";
+import { variants } from "../../ThemeProvider/types/variants";
 
 export interface IButtonProps {
   children: string;
+  variant: variants;
   color?: IColors["colors"];
   colorShade?: numberRange;
-  padding?: number;
-  margin?: number;
-  borderRadius?: number;
+  padding?: sizes | number;
+  margin?: sizes | number;
+  borderRadius?: sizes;
   loading?: boolean;
   fontColor?: "white" | "black" | string;
-  width?: number | undefined;
+  width?: number;
   align?: "start" | "center" | "end";
 }
