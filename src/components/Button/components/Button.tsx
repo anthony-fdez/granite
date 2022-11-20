@@ -1,3 +1,6 @@
+/** @jsxImportSource @emotion/react */
+import { css } from "@emotion/react";
+
 import React, { useContext, useEffect, useState } from "react";
 import { StateContext } from "../../ThemeProvider/components/ThemeProvider";
 import { IButtonProps } from "../Interfaces/IButtonProps";
@@ -17,54 +20,11 @@ const Button = ({
 }: IButtonProps) => {
   const { state } = useContext(StateContext);
 
-  const [onHover, setOnHover] = useState(false);
-  const [onClick, setOnClick] = useState(false);
+  const hotpink = css({
+    color: "hotpink",
+  });
 
-  const normalStyles: React.CSSProperties = {
-    backgroundColor: colors[color][colorShade],
-    padding,
-    margin,
-    borderRadius,
-    outline: loading ? 0 : 10,
-    border: 0,
-    cursor: "pointer",
-    color: fontColor,
-    width: width ? width : undefined,
-    textAlign: align,
-    transition: "200ms",
-  };
-
-  const hoverStyles: React.CSSProperties = {
-    backgroundColor: "red",
-  };
-
-  const clickStyles: React.CSSProperties = {
-    transform: "translateY(2px)",
-    transition: "100ms",
-  };
-
-  useEffect(() => {
-    if (!onClick) return;
-
-    setTimeout(() => {
-      setOnClick(false);
-    }, 100);
-  }, [onClick]);
-
-  return (
-    <button
-      onMouseEnter={() => setOnHover(true)}
-      onMouseLeave={() => setOnHover(false)}
-      onMouseDown={() => setOnClick(true)}
-      style={{
-        ...normalStyles,
-        ...(onHover && hoverStyles),
-        ...(onClick && clickStyles),
-      }}
-    >
-      {children}
-    </button>
-  );
+  return <button css={hotpink}>{children}</button>;
 };
 
 export default Button;
