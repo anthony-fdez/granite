@@ -1,5 +1,5 @@
 import { SerializedStyles } from "@emotion/react";
-import { variants } from "../types/variants";
+import { variants } from "../../../types/variants";
 
 interface Props {
   light: SerializedStyles;

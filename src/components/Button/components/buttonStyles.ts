@@ -1,12 +1,13 @@
+import { getBorderRadius } from "./../../ThemeProvider/getValues/getBorderRadius";
 import { getVariantStyles } from "./../../ThemeProvider/getValues/getVariantStyles";
 import { IButtonProps } from "./../../../../dist/cjs/components/Button/IButtonProps.d";
 import { IStyles } from "./../../ThemeProvider/Interfaces/IStyles";
 import { css } from "@emotion/react";
-import { variants } from "../../ThemeProvider/types/variants";
+import { VariantsType } from "../../../types/variants";
 
 interface Props {
   styles: IStyles;
-  variant: variants;
+  variant: VariantsType;
 }
 
 export const getButtonStyles = ({ styles, variant }: Props) => {
@@ -36,6 +37,10 @@ export const getButtonStyles = ({ styles, variant }: Props) => {
       border: 0,
       padding: 10,
       outline: 0,
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      borderRadius: getBorderRadius({}),
     },
     {
       ...getVariantStyles({ light, filled, subtle, outlined, variant }),

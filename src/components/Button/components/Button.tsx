@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
 
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext } from "react";
 import { StateContext } from "../../ThemeProvider/components/ThemeProvider";
 import { IButtonProps } from "../Interfaces/IButtonProps";
 import { colors } from "../../ThemeProvider/constants/colors";
@@ -27,16 +27,22 @@ const Button = ({
     <button
       css={[
         getButtonStyles({ styles, variant }),
-        color && { color: colors[color][colorShade] },
+        fontColor && { color: fontColor },
+        color && { backgroundColor: colors[color][colorShade] },
         padding && { padding },
         margin && { margin },
         width && { width },
         borderRadius && {
           borderRadius: getBorderRadius({ size: borderRadius }),
         },
+        align && {
+          display: "flex",
+          justifyContent: align,
+          alignItems: "center",
+        },
       ]}
     >
-      {children}
+      {loading ? <span>Loading</span> : children}
     </button>
   );
 };

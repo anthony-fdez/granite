@@ -1,7 +1,7 @@
-import { sizes } from "../../ThemeProvider/types/sizes";
+import { sizes } from "../../../types/sizes";
 import { numberRange } from "../../ThemeProvider/Interfaces/IStyles";
 import { IColors } from "./../../ThemeProvider/constants/colors";
-import { variants } from "../../ThemeProvider/types/variants";
+import { variants } from "../../../types/variants";
 
 export interface IButtonProps {
   children: string;
