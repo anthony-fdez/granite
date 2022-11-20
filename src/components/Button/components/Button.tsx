@@ -7,6 +7,7 @@ import { IButtonProps } from "../Interfaces/IButtonProps";
 import { colors } from "../../ThemeProvider/constants/colors";
 import { getButtonStyles } from "./buttonStyles";
 import { getBorderRadius } from "../../ThemeProvider/getValues/getBorderRadius";
+import Spinner from "../../Spinner";
 
 const Button = ({
   children,
@@ -19,6 +20,7 @@ const Button = ({
   loading = false,
   fontColor = "white",
   width,
+  spinnerVariant,
   align = "center",
 }: IButtonProps) => {
   const { styles } = useContext(StateContext);
@@ -42,7 +44,8 @@ const Button = ({
         },
       ]}
     >
-      {loading ? <span>Loading</span> : children}
+      {loading && <Spinner />}
+      {children}
     </button>
   );
 };

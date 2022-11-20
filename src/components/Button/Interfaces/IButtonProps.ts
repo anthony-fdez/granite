@@ -1,18 +1,20 @@
-import { sizes } from "../../../types/sizes";
+import { SizesType } from "../../../types/sizes";
 import { numberRange } from "../../ThemeProvider/Interfaces/IStyles";
-import { IColors } from "./../../ThemeProvider/constants/colors";
-import { variants } from "../../../types/variants";
+import { ColorsType } from "./../../ThemeProvider/constants/colors";
+import { VariantsType } from "../../../types/variants";
+import { SpinnersType } from "../../../types/spinners";
 
 export interface IButtonProps {
   children: string;
-  variant: variants;
-  color?: IColors["colors"];
+  variant: VariantsType;
+  color?: ColorsType;
   colorShade?: numberRange;
-  padding?: sizes | number;
-  margin?: sizes | number;
-  borderRadius?: sizes;
+  padding?: SizesType | number;
+  margin?: SizesType | number;
+  borderRadius?: SizesType;
   loading?: boolean;
   fontColor?: "white" | "black" | string;
   width?: number;
   align?: "start" | "center" | "end";
+  spinnerVariant?: SpinnersType;
 }

@@ -1,6 +1,4 @@
-export interface IColors {
-  colors: "red" | "orange" | "blue";
-}
+export type ColorsType = "red" | "orange" | "blue";
 
 type fixedArraySize = [
   string,
