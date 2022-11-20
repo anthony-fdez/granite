@@ -10,13 +10,6 @@ interface Props {
 }
 
 export const getButtonStyles = ({ styles, variant }: Props) => {
-  const common = css({
-    color: "white",
-    backgroundColor: styles.primaryColor,
-    border: 0,
-    outline: 0,
-  });
-
   const light = css({
     backgroundColor: "white",
   });
@@ -29,14 +22,25 @@ export const getButtonStyles = ({ styles, variant }: Props) => {
     border: 1,
     borderColor: "blue",
     borderStyle: "solid",
+    backgroundColor: "white",
   });
 
   const subtle = css({
     backgroundColor: "pink",
   });
 
-  return {
-    ...common,
-    ...getVariantStyles({ light, filled, subtle, outlined, variant }),
-  };
+  const common = css([
+    {
+      color: "white",
+      backgroundColor: styles.primaryColor,
+      border: 0,
+      padding: 10,
+      outline: 0,
+    },
+    {
+      ...getVariantStyles({ light, filled, subtle, outlined, variant }),
+    },
+  ]);
+
+  return common;
 };
