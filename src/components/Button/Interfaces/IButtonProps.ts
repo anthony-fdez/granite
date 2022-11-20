@@ -1,4 +1,4 @@
-import { numberRange } from "./../../ThemeProvider/Interfaces/IState";
+import { numberRange } from "../../ThemeProvider/Interfaces/IStyles";
 import { IColors, IColorShades } from "./../../ThemeProvider/constants/colors";
 
 export interface IButtonProps {

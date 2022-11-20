@@ -18,10 +18,10 @@ const Button = ({
   width,
   align = "center",
 }: IButtonProps) => {
-  const { state } = useContext(StateContext);
+  const { styles } = useContext(StateContext);
 
   const hotpink = css({
-    color: "hotpink",
+    color: styles.primaryColor,
   });
 
   return <button css={hotpink}>{children}</button>;

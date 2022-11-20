@@ -1,31 +1,38 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
 import React, { createContext, useEffect, useState } from "react";
-import { IState, IContext } from "../Interfaces/IState";
+import { IStyles, IContext } from "../Interfaces/IStyles";
 import { IProviderProps } from "../Interfaces/IProviderProps";
-import { defaultState } from "../constants/defaultState";
+import {
+  defaultStylesDark,
+  defaultStylesLight,
+} from "../constants/defaultStyles";
 
 export const StateContext = createContext<IContext>({
-  state: defaultState,
+  styles: defaultStylesLight,
   setState: () => {},
 });
 
 const ThemeProvider = ({
   children,
-  theme = defaultState.theme,
+  theme = "light",
 }: IProviderProps): JSX.Element => {
-  const [state, setState] = useState<IState>(defaultState);
+  const [styles, setStyles] = useState<IStyles>(defaultStylesLight);
 
-  const handleUpdateState = (newState: IState) => {
-    setState({ ...state, ...newState });
+  const handleUpdateState = (newState: IStyles) => {
+    setStyles({ ...styles, ...newState });
   };
 
   useEffect(() => {
-    handleUpdateState({ theme });
+    if (theme === "light") {
+      return handleUpdateState({ theme, ...defaultStylesLight });
+    }
+
+    handleUpdateState({ theme, ...defaultStylesDark });
   }, []);
 
   return (
     <>
-      <StateContext.Provider value={{ state, setState: handleUpdateState }}>
+      <StateContext.Provider value={{ styles, setState: handleUpdateState }}>
         {children}
       </StateContext.Provider>
     </>
