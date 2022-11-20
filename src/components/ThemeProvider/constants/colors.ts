@@ -1,4 +1,4 @@
-export type ColorsType = "red" | "orange" | "blue";
+export type ColorsType = "red" | "orange" | "blue" | "oceanBlue";
 
 type fixedArraySize = [
   string,
@@ -17,6 +17,7 @@ export interface IColorShades {
   red: fixedArraySize;
   orange: fixedArraySize;
   blue: fixedArraySize;
+  oceanBlue: fixedArraySize;
 }
 export const colors: IColorShades = {
   red: [
@@ -59,6 +60,18 @@ export const colors: IColorShades = {
     "rgb(0, 122, 255)",
     "rgb(0, 122, 255)",
     "rgb(0, 122, 255)",
+  ],
+  oceanBlue: [
+    "#7AD1DD",
+    "#5FCCDB",
+    "#44CADC",
+    "#2AC9DE",
+    "#1AC2D9",
+    "#11B7CD",
+    "#09ADC3",
+    "#0E99AC",
+    "#128797",
+    "#147885",
   ],
   // indigo: [],
   // purple: [],

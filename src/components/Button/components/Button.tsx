@@ -8,6 +8,7 @@ import { colors } from "../../ThemeProvider/constants/colors";
 import { getButtonStyles } from "./buttonStyles";
 import { getBorderRadius } from "../../ThemeProvider/getValues/getBorderRadius";
 import Spinner from "../../Spinner";
+import variants from "../../ThemeProvider/getValues/variants";
 
 const Button = ({
   children,
@@ -30,7 +31,10 @@ const Button = ({
       css={[
         getButtonStyles({ styles, variant }),
         fontColor && { color: fontColor },
-        color && { backgroundColor: colors[color][colorShade] },
+        color && {
+          backgroundColor: variants.getColors({ color, variant })
+            .backgroundColor,
+        },
         padding && { padding },
         margin && { margin },
         width && { width },
