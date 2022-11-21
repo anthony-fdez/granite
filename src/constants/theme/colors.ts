@@ -29,8 +29,8 @@ export const colors: IColorShades = {
         fontColor: "rgb(255, 255, 255)",
       },
       subtle: {
-        backgroundColor: "rgb(255, 59, 48)",
-        fontColor: "rgb(255, 255, 255)",
+        backgroundColor: "rgb(255, 230, 230)",
+        fontColor: "rgb(255, 59, 48)",
       },
       outlined: {
         backgroundColor: "rgb(255, 59, 48)",

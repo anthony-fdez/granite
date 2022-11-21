@@ -28,6 +28,7 @@ export const getButtonStyles = ({ styles, variant }: Props) => {
 
   const subtle = css({
     backgroundColor: "pink",
+    fontWeight: "600",
   });
 
   const common = css([

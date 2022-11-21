@@ -12,12 +12,12 @@ import Spinner from "../Spinner";
 const Button = ({
   children,
   variant = "filled",
-  color,
+  color = "blue",
   padding = 10,
   margin = 10,
   borderRadius,
   loading = false,
-  fontColor = "white",
+  fontColor,
   width,
   spinnerVariant,
   align = "center",
@@ -28,14 +28,17 @@ const Button = ({
     <button
       css={[
         getButtonStyles({ styles, variant }),
-        fontColor && { color: fontColor },
+        fontColor
+          ? { color: fontColor }
+          : {
+              color: colors[color][styles.theme || "light"][variant].fontColor,
+            },
         color && {
           backgroundColor:
             colors[color][styles.theme || "light"][variant].backgroundColor,
         },
         padding && { padding },
         margin && { margin },
-        width && width < 100 ? { width: 100 } : { width },
         borderRadius && {
           borderRadius: getBorderRadius({ size: borderRadius }),
         },
