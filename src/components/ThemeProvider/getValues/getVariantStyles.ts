@@ -2,7 +2,6 @@ import { SerializedStyles } from "@emotion/react";
 import { VariantsType } from "../../../types/variants";
 
 export interface Props {
-  light: SerializedStyles;
   filled: SerializedStyles;
   outlined: SerializedStyles;
   subtle: SerializedStyles;
@@ -10,7 +9,6 @@ export interface Props {
 }
 
 export const getVariantStyles = ({
-  light,
   filled,
   outlined,
   subtle,
@@ -19,7 +17,6 @@ export const getVariantStyles = ({
   const DEFAULT = filled;
 
   if (variant === "filled") return DEFAULT;
-  if (variant === "light") return light;
   if (variant === "outlined") return outlined;
   if (variant === "subtle") return subtle;
 

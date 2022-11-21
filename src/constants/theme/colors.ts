@@ -2,6 +2,7 @@ export type AvailableColorsType = "red" | "blue";
 
 type ColorOptions = {
   backgroundColor: string;
+  backgroundColorHover: string;
   fontColor: string;
 };
 
@@ -9,7 +10,6 @@ type Variants = {
   filled: ColorOptions;
   subtle: ColorOptions;
   outlined: ColorOptions;
-  light: ColorOptions;
 };
 
 type ColorType = {
@@ -26,36 +26,38 @@ export const colors: IColorShades = {
     light: {
       filled: {
         backgroundColor: "rgb(255, 59, 48)",
+        backgroundColorHover: "rgb(225, 30, 30)",
         fontColor: "rgb(255, 255, 255)",
       },
       subtle: {
         backgroundColor: "rgb(255, 230, 230)",
+        backgroundColorHover: "rgb(255, 220, 220)",
+
         fontColor: "rgb(255, 59, 48)",
       },
       outlined: {
         backgroundColor: "rgb(255, 59, 48)",
-        fontColor: "rgb(255, 255, 255)",
-      },
-      light: {
-        backgroundColor: "rgb(255, 59, 48)",
+        backgroundColorHover: "rgb(255, 69, 58)",
         fontColor: "rgb(255, 255, 255)",
       },
     },
     dark: {
       filled: {
         backgroundColor: "rgb(255, 59, 48)",
+        backgroundColorHover: "rgb(255, 69, 58)",
+
         fontColor: "rgb(255, 255, 255)",
       },
       subtle: {
         backgroundColor: "rgb(255, 59, 48)",
+        backgroundColorHover: "rgb(255, 69, 58)",
+
         fontColor: "rgb(255, 255, 255)",
       },
       outlined: {
         backgroundColor: "rgb(255, 59, 48)",
-        fontColor: "rgb(255, 255, 255)",
-      },
-      light: {
-        backgroundColor: "rgb(255, 59, 48)",
+        backgroundColorHover: "rgb(255, 69, 58)",
+
         fontColor: "rgb(255, 255, 255)",
       },
     },
@@ -64,36 +66,38 @@ export const colors: IColorShades = {
     light: {
       filled: {
         backgroundColor: "rgb(0, 122, 255)",
+        backgroundColorHover: "rgb(255, 69, 58)",
+
         fontColor: "rgb(255, 255, 255)",
       },
       subtle: {
         backgroundColor: "rgb(0, 122, 255)",
+        backgroundColorHover: "rgb(255, 69, 58)",
+
         fontColor: "rgb(255, 255, 255)",
       },
       outlined: {
         backgroundColor: "rgb(0, 122, 255)",
-        fontColor: "rgb(255, 255, 255)",
-      },
-      light: {
-        backgroundColor: "rgb(0, 122, 255)",
+        backgroundColorHover: "rgb(255, 69, 58)",
+
         fontColor: "rgb(255, 255, 255)",
       },
     },
     dark: {
       filled: {
         backgroundColor: "rgb(0, 122, 255)",
+        backgroundColorHover: "rgb(255, 69, 58)",
         fontColor: "rgb(255, 255, 255)",
       },
       subtle: {
         backgroundColor: "rgb(0, 122, 255)",
+        backgroundColorHover: "rgb(255, 69, 58)",
+
         fontColor: "rgb(255, 255, 255)",
       },
       outlined: {
         backgroundColor: "rgb(0, 122, 255)",
-        fontColor: "rgb(255, 255, 255)",
-      },
-      light: {
-        backgroundColor: "rgb(0, 122, 255)",
+        backgroundColorHover: "rgb(255, 69, 58)",
         fontColor: "rgb(255, 255, 255)",
       },
     },

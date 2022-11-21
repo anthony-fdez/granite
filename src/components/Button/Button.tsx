@@ -21,22 +21,17 @@ const Button = ({
   width,
   spinnerVariant,
   align = "center",
+  ...args
 }: IButtonProps) => {
   const { styles } = useContext(StateContext);
 
   return (
     <button
+      {...args}
       css={[
-        getButtonStyles({ styles, variant }),
-        fontColor
-          ? { color: fontColor }
-          : {
-              color: colors[color][styles.theme || "light"][variant].fontColor,
-            },
-        color && {
-          backgroundColor:
-            colors[color][styles.theme || "light"][variant].backgroundColor,
-        },
+        getButtonStyles({ styles, variant, color }),
+        fontColor && { color: fontColor },
+
         padding && { padding },
         margin && { margin },
         borderRadius && {
