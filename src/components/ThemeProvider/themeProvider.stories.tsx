@@ -1,7 +1,7 @@
 import React from "react";
 import { ComponentStory } from "@storybook/react";
 import "@storybook/addon-console";
-import ThemeProvider from "./components/ThemeProvider";
+import ThemeProvider from "./ThemeProvider";
 import Button from "../Button";
 
 export default {

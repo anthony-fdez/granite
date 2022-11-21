@@ -1,4 +1,3 @@
-/// <reference types="react" />
-import { IButtonProps } from "./IButtonProps";
-declare const Button: ({ label }: IButtonProps) => JSX.Element;
+import { IButtonProps } from "./Interfaces/IButtonProps";
+declare const Button: ({ children, variant, color, padding, margin, borderRadius, loading, fontColor, width, spinnerVariant, align, }: IButtonProps) => import("@emotion/react/jsx-runtime").JSX.Element;
 export default Button;

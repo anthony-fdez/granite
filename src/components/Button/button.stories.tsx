@@ -2,7 +2,7 @@ import React from "react";
 import { ComponentStory } from "@storybook/react";
 import "@storybook/addon-console";
 
-import Button from "./components/Button";
+import Button from "./Button";
 
 export default {
   title: "Components/Button",
@@ -16,5 +16,5 @@ export const Primary = Template.bind({});
 Primary.args = {
   children: "Button",
   width: 200,
-  color: "orange",
+  color: "red",
 };

@@ -1,5 +1,5 @@
 import { SerializedStyles } from "@emotion/react";
-import { VariantsType } from "../../../../types/variants";
+import { VariantsType } from "../../../types/variants";
 
 export interface Props {
   light: SerializedStyles;
@@ -9,7 +9,7 @@ export interface Props {
   variant: VariantsType;
 }
 
-const getVariantStyles = ({
+export const getVariantStyles = ({
   light,
   filled,
   outlined,
@@ -25,5 +25,3 @@ const getVariantStyles = ({
 
   return DEFAULT;
 };
-
-export default getVariantStyles;

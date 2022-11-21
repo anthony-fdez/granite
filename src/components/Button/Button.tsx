@@ -2,19 +2,17 @@
 import { css } from "@emotion/react";
 
 import React, { useContext } from "react";
-import { StateContext } from "../../ThemeProvider/components/ThemeProvider";
-import { IButtonProps } from "../Interfaces/IButtonProps";
-import { colors } from "../../ThemeProvider/constants/colors";
+import { StateContext } from "../ThemeProvider/ThemeProvider";
+import { IButtonProps } from "./Interfaces/IButtonProps";
+import { colors } from "../../constants/theme/colors";
 import { getButtonStyles } from "./buttonStyles";
-import { getBorderRadius } from "../../ThemeProvider/getValues/getBorderRadius";
-import Spinner from "../../Spinner";
-import variants from "../../ThemeProvider/getValues/variants";
+import { getBorderRadius } from "../ThemeProvider/getValues/getBorderRadius";
+import Spinner from "../Spinner";
 
 const Button = ({
   children,
-  variant,
+  variant = "filled",
   color,
-  colorShade = 6,
   padding = 10,
   margin = 10,
   borderRadius,
@@ -32,12 +30,12 @@ const Button = ({
         getButtonStyles({ styles, variant }),
         fontColor && { color: fontColor },
         color && {
-          backgroundColor: variants.getColors({ color, variant })
-            .backgroundColor,
+          backgroundColor:
+            colors[color][styles.theme || "light"][variant].backgroundColor,
         },
         padding && { padding },
         margin && { margin },
-        width && { width },
+        width && width < 100 ? { width: 100 } : { width },
         borderRadius && {
           borderRadius: getBorderRadius({ size: borderRadius }),
         },

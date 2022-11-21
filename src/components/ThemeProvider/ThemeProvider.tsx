@@ -1,11 +1,11 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
 import React, { createContext, useEffect, useState } from "react";
-import { IStyles, IContext } from "../Interfaces/IStyles";
-import { IProviderProps } from "../Interfaces/IProviderProps";
+import { IStyles, IContext } from "./Interfaces/IStyles";
+import { IProviderProps } from "./Interfaces/IProviderProps";
 import {
   defaultStylesDark,
   defaultStylesLight,
-} from "../constants/defaultStyles";
+} from "../../constants/theme/defaultStyles";
 
 export const StateContext = createContext<IContext>({
   styles: defaultStylesLight,

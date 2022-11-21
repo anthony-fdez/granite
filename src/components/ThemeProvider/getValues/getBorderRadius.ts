@@ -1,7 +1,7 @@
-import { sizes } from "../../../types/sizes";
+import { SizesType } from "../../../types/sizes";
 
 interface Props {
-  size?: sizes;
+  size?: SizesType;
 }
 export const getBorderRadius = ({ size }: Props): number => {
   const DEFAULT = 5;

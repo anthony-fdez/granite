@@ -1,4 +1,4 @@
-import { IStyles } from "../Interfaces/IStyles";
+import { IStyles } from "../../components/ThemeProvider/Interfaces/IStyles";
 
 const shared: IStyles = {
   primaryShade: 6,

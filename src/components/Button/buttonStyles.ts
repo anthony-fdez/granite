@@ -1,9 +1,9 @@
-import { getBorderRadius } from "./../../ThemeProvider/getValues/getBorderRadius";
-import { IButtonProps } from "./../../../../dist/cjs/components/Button/IButtonProps.d";
-import { IStyles } from "./../../ThemeProvider/Interfaces/IStyles";
+import { getVariantStyles } from "./../ThemeProvider/getValues/getVariantStyles";
+import { getBorderRadius } from "../ThemeProvider/getValues/getBorderRadius";
+import { IButtonProps } from "../../../dist/cjs/components/Button/IButtonProps";
+import { IStyles } from "../ThemeProvider/Interfaces/IStyles";
 import { css } from "@emotion/react";
-import { VariantsType } from "../../../types/variants";
-import variants from "../../ThemeProvider/getValues/variants";
+import { VariantsType } from "../../types/variants";
 
 interface Props {
   styles: IStyles;
@@ -43,7 +43,7 @@ export const getButtonStyles = ({ styles, variant }: Props) => {
       borderRadius: getBorderRadius({}),
     },
     {
-      ...variants.getStyles({ light, filled, subtle, outlined, variant }),
+      ...getVariantStyles({ light, filled, subtle, outlined, variant }),
     },
   ]);
 
