@@ -55,7 +55,8 @@ export const getButtonStyles = ({ styles, variant, color }: Props) => {
           colors[color][styles.theme || "light"][variant].backgroundColorHover,
       },
       "&:active": {
-        transform: "translateY(1px)",
+        transform: "translateY(2px)",
+        transition: "0ms",
       },
     },
     {
