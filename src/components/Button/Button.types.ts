@@ -1,8 +1,7 @@
-import { SizesType } from "../../../types/sizes";
-import { numberRange } from "../../ThemeProvider/Interfaces/IStyles";
-import { AvailableColorsType } from "../../../constants/theme/colors";
-import { VariantsType } from "../../../types/variants";
-import { SpinnersType } from "../../../types/spinners";
+import { SpinnersType } from "./../Spinner/Spinner.types";
+import { SizesType } from "./../../types/sizes";
+import { AvailableColorsType } from "./../../constants/theme/colors";
+import { VariantsType } from "./../../types/variants";
 
 export interface IButtonProps {
   children: string;

@@ -1,1 +1,1 @@
-export declare type VariantsType = "filled" | "light" | "outlined" | "subtle";
+export declare type VariantsType = "filled" | "outlined" | "subtle";

@@ -3,16 +3,16 @@ import { css } from "@emotion/react";
 
 import React, { useContext } from "react";
 import { StateContext } from "../ThemeProvider/ThemeProvider";
-import { IButtonProps } from "./Interfaces/IButtonProps";
 import { colors } from "../../constants/theme/colors";
-import { getButtonStyles } from "./buttonStyles";
+import { getButtonStyles } from "./Button.styles";
 import { getBorderRadius } from "../ThemeProvider/getValues/getBorderRadius";
 import Spinner from "../Spinner";
+import { IButtonProps } from "./Button.types";
 
 const Button = ({
   children,
   variant = "filled",
-  color = "blue",
+  color,
   padding = 10,
   margin = 10,
   borderRadius,

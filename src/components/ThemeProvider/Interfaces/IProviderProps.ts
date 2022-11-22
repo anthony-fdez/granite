@@ -1,7 +1,5 @@
 import { IStyles } from "./IStyles";
 
-export interface IProviderProps {
+export interface IProviderProps extends IStyles {
   children: JSX.Element;
-  theme?: "light" | "dark";
-  styles: IStyles;
 }

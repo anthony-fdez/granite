@@ -14,7 +14,8 @@ export const StateContext = createContext<IContext>({
 
 const ThemeProvider = ({
   children,
-  theme = "light",
+  theme,
+  primaryColor,
 }: IProviderProps): JSX.Element => {
   const [styles, setStyles] = useState<IStyles>(defaultStylesLight);
 
@@ -23,12 +24,14 @@ const ThemeProvider = ({
   };
 
   useEffect(() => {
-    if (theme === "light") {
-      return handleUpdateState({ theme, ...defaultStylesLight });
-    }
+    const getDefaultStyles = (): IStyles => {
+      if (theme === "dark") return defaultStylesDark;
 
-    handleUpdateState({ theme, ...defaultStylesDark });
-  }, []);
+      return defaultStylesLight;
+    };
+
+    handleUpdateState({ ...getDefaultStyles(), theme, primaryColor });
+  }, [theme, primaryColor]);
 
   return (
     <>

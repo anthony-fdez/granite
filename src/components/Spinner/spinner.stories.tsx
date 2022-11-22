@@ -1,8 +1,8 @@
 import React from "react";
 import { ComponentStory } from "@storybook/react";
 
-import Spinner from "./Components/Spinner";
 import { Primary } from "../Button/button.stories";
+import Spinner from "./Spinner";
 
 export default {
   title: "Components/Spinner",

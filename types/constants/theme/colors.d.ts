@@ -1,13 +1,13 @@
 export declare type AvailableColorsType = "red" | "blue";
 declare type ColorOptions = {
     backgroundColor: string;
+    backgroundColorHover: string;
     fontColor: string;
 };
 declare type Variants = {
     filled: ColorOptions;
     subtle: ColorOptions;
     outlined: ColorOptions;
-    light: ColorOptions;
 };
 declare type ColorType = {
     light: Variants;

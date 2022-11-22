@@ -1,43 +1,47 @@
-import { AvailableColorsType } from "./../../constants/theme/colors";
+import { AvailableColorsType } from "../../constants/theme/colors";
 import { colors } from "../../constants/theme/colors";
-import { getVariantStyles } from "./../ThemeProvider/getValues/getVariantStyles";
+import { getVariantStyles } from "../ThemeProvider/getValues/getVariantStyles";
 import { getBorderRadius } from "../ThemeProvider/getValues/getBorderRadius";
 import { IStyles } from "../ThemeProvider/Interfaces/IStyles";
-import { css } from "@emotion/react";
+import { css, SerializedStyles } from "@emotion/react";
 import { VariantsType } from "../../types/variants";
 
 interface Props {
   styles: IStyles;
   variant: VariantsType;
-  color: AvailableColorsType;
+  color?: AvailableColorsType;
 }
 
 export const getButtonStyles = ({ styles, variant, color }: Props) => {
-  const filled = css({
+  if (!styles.primaryColor) return null;
+
+  const COLOR = color ? color : styles.primaryColor;
+
+  const filled: SerializedStyles = css({
     backgroundColor:
-      colors[color][styles.theme || "light"][variant].backgroundColor,
+      colors[COLOR][styles.theme || "light"][variant].backgroundColor,
   });
 
-  const outlined = css({
+  const outlined: SerializedStyles = css({
     border: 1,
     borderColor:
-      colors[color][styles.theme || "light"][variant].backgroundColor,
+      colors[COLOR][styles.theme || "light"][variant].backgroundColor,
     borderStyle: "solid",
     backgroundColor: "transparent",
-    color: colors[color][styles.theme || "light"][variant].backgroundColor,
+    color: colors[COLOR][styles.theme || "light"][variant].backgroundColor,
     "&:hover": {
-      color: colors[color][styles.theme || "light"][variant].fontColor,
+      color: colors[COLOR][styles.theme || "light"][variant].fontColor,
     },
   });
 
-  const subtle = css({
+  const subtle: SerializedStyles = css({
     backgroundColor:
-      colors[color][styles.theme || "light"][variant].backgroundColor,
-    color: colors[color][styles.theme || "light"][variant].fontColor,
+      colors[COLOR][styles.theme || "light"][variant].backgroundColor,
+    color: colors[COLOR][styles.theme || "light"][variant].fontColor,
     fontWeight: "600",
   });
 
-  const common = css([
+  const common: SerializedStyles = css([
     {
       color: "white",
       transition: "100ms",
@@ -52,7 +56,7 @@ export const getButtonStyles = ({ styles, variant, color }: Props) => {
       cursor: "pointer",
       "&:hover": {
         backgroundColor:
-          colors[color][styles.theme || "light"][variant].backgroundColorHover,
+          colors[COLOR][styles.theme || "light"][variant].backgroundColorHover,
       },
       "&:active": {
         transform: "translateY(2px)",
