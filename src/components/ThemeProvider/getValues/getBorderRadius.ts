@@ -12,7 +12,7 @@ export const getBorderRadius = ({ size }: Props): number => {
   if (size === "sm") return DEFAULT;
   if (size === "md") return 7;
   if (size === "lg") return 10;
-  if (size === "xl") return 14;
+  if (size === "xl") return 100;
 
   return size;
 };

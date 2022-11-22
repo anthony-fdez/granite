@@ -15,11 +15,10 @@ const Button = ({
   color,
   padding = 10,
   margin = 10,
-  borderRadius,
+  borderRadius = "sm",
   loading = false,
   fontColor,
-  width,
-  spinnerVariant,
+  spinnerVariant = "circular",
   align = "center",
   ...args
 }: IButtonProps) => {
