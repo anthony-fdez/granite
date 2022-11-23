@@ -28,6 +28,7 @@ const Button = ({
   return (
     <button
       {...args}
+      disabled={disabled}
       css={[
         getButtonStyles({ styles, variant, color, disabled }),
         fontColor && { color: fontColor },

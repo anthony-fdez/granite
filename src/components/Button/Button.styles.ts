@@ -72,6 +72,10 @@ export const getButtonStyles = ({
     {
       ...getVariantStyles({ filled, subtle, outlined, variant }),
     },
+    disabled && {
+      filter: "grayscale(1)",
+      pointerEvents: "none",
+    },
   ]);
 
   return common;
