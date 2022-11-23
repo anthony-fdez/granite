@@ -21,6 +21,7 @@ const Button = ({
   spinnerVariant = "circular",
   align = "center",
   disabled = false,
+  fullWidth = false,
   ...args
 }: IButtonProps) => {
   const { styles } = useContext(StateContext);
@@ -42,6 +43,7 @@ const Button = ({
           justifyContent: align,
           alignItems: "center",
         },
+        fullWidth && { width: `calc(100% - ${margin * 2}px);` },
       ]}
     >
       {loading && <Spinner />}

@@ -15,4 +15,5 @@ export interface IButtonProps {
   align?: "start" | "center" | "end";
   spinnerVariant?: SpinnersType;
   disabled?: boolean;
+  fullWidth?: boolean;
 }

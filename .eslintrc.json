@@ -15,5 +15,8 @@
     "sourceType": "module"
   },
   "plugins": ["react", "@typescript-eslint", "@emotion"],
-  "rules": {}
+  "rules": {
+    "no-unused-vars": "warn",
+    "@typescript-eslint/no-unused-vars": ["error"]
+  }
 }
