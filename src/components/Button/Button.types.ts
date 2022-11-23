@@ -12,6 +12,7 @@ export interface IButtonProps {
   borderRadius?: SizesType;
   loading?: boolean;
   fontColor?: "white" | "black" | string;
+  backgroundColor?: string;
   align?: "start" | "center" | "end";
   spinnerVariant?: SpinnersType;
   disabled?: boolean;

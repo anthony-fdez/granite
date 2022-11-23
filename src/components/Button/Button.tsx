@@ -22,6 +22,7 @@ const Button = ({
   align = "center",
   disabled = false,
   fullWidth = false,
+  backgroundColor,
   ...args
 }: IButtonProps) => {
   const { styles } = useContext(StateContext);
@@ -44,6 +45,7 @@ const Button = ({
           alignItems: "center",
         },
         fullWidth && { width: `calc(100% - ${margin * 2}px);` },
+        backgroundColor && { backgroundColor },
       ]}
     >
       {loading && <Spinner />}
