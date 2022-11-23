@@ -20,6 +20,7 @@ const Button = ({
   fontColor,
   spinnerVariant = "circular",
   align = "center",
+  disabled = false,
   ...args
 }: IButtonProps) => {
   const { styles } = useContext(StateContext);
@@ -28,9 +29,8 @@ const Button = ({
     <button
       {...args}
       css={[
-        getButtonStyles({ styles, variant, color }),
+        getButtonStyles({ styles, variant, color, disabled }),
         fontColor && { color: fontColor },
-
         padding && { padding },
         margin && { margin },
         borderRadius && {

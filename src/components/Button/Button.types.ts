@@ -14,4 +14,5 @@ export interface IButtonProps {
   fontColor?: "white" | "black" | string;
   align?: "start" | "center" | "end";
   spinnerVariant?: SpinnersType;
+  disabled?: boolean;
 }

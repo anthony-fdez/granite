@@ -20,5 +20,5 @@ export const getVariantStyles = ({
   if (variant === "outlined") return outlined;
   if (variant === "subtle") return subtle;
 
-  return DEFAULT;
+  return console.log("Button is missing prop 'variant'");
 };
