@@ -22,6 +22,9 @@ export interface IColorShades {
   blue: ColorType;
 }
 export const colors: IColorShades = {
+  common: {
+    // Add all the common styling here for both light and dark mode
+  },
   red: {
     light: {
       filled: {
