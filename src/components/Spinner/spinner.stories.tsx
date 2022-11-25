@@ -1,7 +1,6 @@
 import React from "react";
 import { ComponentStory } from "@storybook/react";
 
-import { Primary } from "../Button/button.stories";
 import Spinner from "./Spinner";
 
 export default {
@@ -19,6 +18,7 @@ export const Dots = Template.bind({});
 
 Circular.args = {
   variant: "circular",
+  size: 20,
 };
 
 Dots.args = {

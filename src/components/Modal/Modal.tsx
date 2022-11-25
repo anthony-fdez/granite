@@ -52,6 +52,7 @@ const Modal = ({
       <div
         css={[
           isOpen ? stylesOpen : stylesClosed,
+          centered && { top: 0, bottom: 0 },
           width && { width },
           height && { height },
           padding && { padding },
