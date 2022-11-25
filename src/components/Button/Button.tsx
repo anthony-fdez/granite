@@ -8,6 +8,7 @@ import { getButtonStyles } from "./Button.styles";
 import { getBorderRadius } from "../ThemeProvider/getValues/getBorderRadius";
 import Spinner from "../Spinner";
 import { IButtonProps } from "./Button.types";
+import { useGetColors } from "../../hooks/useGetColors";
 
 const Button = ({
   children,
@@ -26,6 +27,12 @@ const Button = ({
   ...args
 }: IButtonProps) => {
   const { styles } = useContext(StateContext);
+
+  const { FONT_COLOR } = useGetColors({
+    color,
+    styles,
+    variant,
+  });
 
   return (
     <button
@@ -48,7 +55,11 @@ const Button = ({
         backgroundColor && { backgroundColor },
       ]}
     >
-      {loading ? <Spinner size={11} color={color} /> : children}
+      {loading ? (
+        <Spinner backgroundAccentColor={FONT_COLOR} size={11} color={color} />
+      ) : (
+        children
+      )}
     </button>
   );
 };

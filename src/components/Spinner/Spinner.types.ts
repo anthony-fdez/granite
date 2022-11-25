@@ -5,4 +5,5 @@ export interface ISpinnerProps {
   variant?: SpinnersType;
   color?: AvailableColorsType;
   size?: number;
+  backgroundAccentColor?: string;
 }

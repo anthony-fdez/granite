@@ -4,6 +4,7 @@ import "@storybook/addon-console";
 import ThemeProvider from "./ThemeProvider";
 import Button from "../Button";
 import Spinner from "../Spinner";
+import Box from "../Box";
 
 export default {
   title: "Components/ThemeProvider",
@@ -13,9 +14,26 @@ export default {
 const Template: ComponentStory<typeof ThemeProvider> = (args) => {
   return (
     <ThemeProvider {...args}>
-      <Button>Button</Button>
-      <h1>Example text</h1>
-      <Spinner />
+      <h2>Buttons</h2>
+      <Box>
+        <Button>Button</Button>
+        <Button variant="outlined">Outlined</Button>
+        <Button variant="subtle">Subtle</Button>
+        <Button loading={true}>Loading</Button>
+        <Button disabled>Disabled</Button>
+        <Button disabled variant="outlined">
+          Disabled Outlined
+        </Button>
+        <Button disabled variant="subtle">
+          Disabled Subtle
+        </Button>
+      </Box>
+      <Button fullWidth>Full Width</Button>
+      <h2>Spinners</h2>
+      <Box>
+        <Spinner />
+      </Box>
+      <h2>Text</h2>
       <p>
         Excepteur sunt voluptate labore mollit in ea eiusmod et aliquip do.
         Culpa ex veniam velit laborum eu consequat velit id. Proident do in

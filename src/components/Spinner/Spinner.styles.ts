@@ -8,11 +8,20 @@ interface Props {
   variant?: SpinnersType;
   color?: AvailableColorsType;
   size?: number;
+  backgroundAccentColor?: string;
 }
 
-export const getSpinnerStyles = ({ styles, variant, color, size }: Props) => {
-  const COLOR = colors[color || "blue"].color;
-  const BG_ACCENT = colors.common[styles.theme || "light"].backgroundAccent;
+export const getSpinnerStyles = ({
+  styles,
+  variant,
+  color,
+  size,
+  backgroundAccentColor,
+}: Props) => {
+  const COLOR = colors[styles.primaryColor || color || "blue"].color;
+  const BG_ACCENT =
+    backgroundAccentColor ??
+    colors.common[styles.theme || "light"].backgroundAccent;
 
   const circularKeyframes = keyframes({
     to: {
