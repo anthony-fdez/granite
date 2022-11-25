@@ -36,6 +36,7 @@ const Button = ({
 
   return (
     <button
+      type="button"
       {...args}
       disabled={disabled}
       css={[
