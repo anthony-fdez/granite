@@ -1,3 +1,6 @@
+/** @jsxImportSource @emotion/react */
+import { css, Global } from "@emotion/react";
+
 /* eslint-disable @typescript-eslint/no-empty-function */
 import React, { createContext, useEffect, useState } from "react";
 import { IStyles, IContext } from "./Interfaces/IStyles";
@@ -6,6 +9,7 @@ import {
   defaultStylesDark,
   defaultStylesLight,
 } from "../../constants/theme/defaultStyles";
+import { getGlobalStyles } from "./ThemeProvider.styles";
 
 export const StateContext = createContext<IContext>({
   styles: defaultStylesLight,
@@ -36,6 +40,7 @@ const ThemeProvider = ({
   return (
     <>
       <StateContext.Provider value={{ styles, setState: handleUpdateState }}>
+        <Global styles={getGlobalStyles({ styles })} />
         {children}
       </StateContext.Provider>
     </>

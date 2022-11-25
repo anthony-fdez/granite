@@ -17,13 +17,29 @@ type ColorType = {
   dark: Variants;
 };
 
+type Common = {
+  backgroundColor: string;
+  fontColor: string;
+};
+
 export interface IColorShades {
+  common: {
+    light: Common;
+    dark: Common;
+  };
   red: ColorType;
   blue: ColorType;
 }
 export const colors: IColorShades = {
   common: {
-    // Add all the common styling here for both light and dark mode
+    light: {
+      backgroundColor: "rgb(255, 255, 255)",
+      fontColor: "rgb(10, 10, 10)",
+    },
+    dark: {
+      backgroundColor: "rgb(20, 20, 20)",
+      fontColor: "rgb(255, 255, 255)",
+    },
   },
   red: {
     light: {
