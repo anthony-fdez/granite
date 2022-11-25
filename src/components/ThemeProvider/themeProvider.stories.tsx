@@ -3,6 +3,7 @@ import { ComponentStory } from "@storybook/react";
 import "@storybook/addon-console";
 import ThemeProvider from "./ThemeProvider";
 import Button from "../Button";
+import Spinner from "../Spinner";
 
 export default {
   title: "Components/ThemeProvider",
@@ -14,6 +15,7 @@ const Template: ComponentStory<typeof ThemeProvider> = (args) => {
     <ThemeProvider {...args}>
       <Button>Button</Button>
       <h1>Example text</h1>
+      <Spinner />
       <p>
         Excepteur sunt voluptate labore mollit in ea eiusmod et aliquip do.
         Culpa ex veniam velit laborum eu consequat velit id. Proident do in
@@ -46,3 +48,11 @@ Dark.args = { theme: "dark" };
 export const Light = Template.bind({});
 
 Light.args = { theme: "light" };
+
+export const Default = Template.bind({});
+
+Default.args = {};
+
+export const PrimaryRed = Template.bind({});
+
+PrimaryRed.args = { primaryColor: "red" };

@@ -1,4 +1,6 @@
+import { AvailableColorsType } from "./../../constants/theme/colors";
 export declare type SpinnersType = "circular" | "dots";
 export interface ISpinnerProps {
-    variant: SpinnersType;
+    variant?: SpinnersType;
+    color?: AvailableColorsType;
 }

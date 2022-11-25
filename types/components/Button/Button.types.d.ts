@@ -6,12 +6,14 @@ export interface IButtonProps {
     children: string;
     variant?: VariantsType;
     color?: AvailableColorsType;
-    padding?: SizesType | number;
-    margin?: SizesType | number;
+    padding?: number;
+    margin?: number;
     borderRadius?: SizesType;
     loading?: boolean;
     fontColor?: "white" | "black" | string;
-    width?: number;
+    backgroundColor?: string;
     align?: "start" | "center" | "end";
     spinnerVariant?: SpinnersType;
+    disabled?: boolean;
+    fullWidth?: boolean;
 }

@@ -13,8 +13,8 @@ export const getGlobalStyles = ({ styles }: Props) => {
 
   return css({
     html: {
-      backgroundColor: COLORS.backgroundColor,
-      color: COLORS.fontColor,
+      backgroundColor: COLORS.background,
+      color: COLORS.font,
       fontFamily: "Trebuchet MS",
     },
   });

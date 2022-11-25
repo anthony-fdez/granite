@@ -48,8 +48,7 @@ const Button = ({
         backgroundColor && { backgroundColor },
       ]}
     >
-      {loading && <Spinner />}
-      {children}
+      {loading ? <Spinner size={11} color={color} /> : children}
     </button>
   );
 };
