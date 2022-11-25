@@ -15,4 +15,5 @@ export interface IModalProps {
   padding?: number;
   borderRadius?: SizesType;
   backdropBlur?: number;
+  zIndex?: number;
 }

@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { ComponentStory } from "@storybook/react";
 import "@storybook/addon-console";
 import ThemeProvider from "./ThemeProvider";
 import Button from "../Button";
 import Spinner from "../Spinner";
 import Box from "../Box";
+import Modal from "../Modal";
 
 export default {
   title: "Components/ThemeProvider",
@@ -12,6 +13,8 @@ export default {
 };
 
 const Template: ComponentStory<typeof ThemeProvider> = (args) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <ThemeProvider {...args}>
       <h2>Buttons</h2>
@@ -28,11 +31,23 @@ const Template: ComponentStory<typeof ThemeProvider> = (args) => {
           Disabled Subtle
         </Button>
       </Box>
-      <Button fullWidth>Full Width</Button>
+      <Button onClick={() => setIsModalOpen(true)} fullWidth>
+        Full Width (open modal)
+      </Button>
+      <Modal
+        zIndex={1000}
+        title="My Modal"
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        closeButton={<span>Close</span>}
+      >
+        <h2>This is the modal</h2>
+      </Modal>
       <h2>Spinners</h2>
       <Box>
         <Spinner />
       </Box>
+
       <h2>Text</h2>
       <p>
         Excepteur sunt voluptate labore mollit in ea eiusmod et aliquip do.

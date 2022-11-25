@@ -22,7 +22,8 @@ const Modal = ({
   centered = false,
   padding = 10,
   borderRadius = "sm",
-  backdropBlur,
+  backdropBlur = 5,
+  zIndex,
 }: IModalProps) => {
   const { styles } = useContext(StateContext);
   const { stylesClosed, stylesOpen } = getModalStyles({ styles });
@@ -30,7 +31,9 @@ const Modal = ({
   return (
     <>
       <div
-        onClick={() => closeOnClickOutside && onClose}
+        onClick={() => {
+          if (closeOnClickOutside) return onClose();
+        }}
         css={[
           {
             left: 0,
@@ -40,8 +43,9 @@ const Modal = ({
             width: "100vw",
             backgroundColor: `rgb(0, 0, 0, ${backdropOpacity})`,
           },
+          zIndex ? { zIndex: zIndex } : { zIndex: "inherit" },
           animated && { transition: `${animationDuration}ms` },
-          backdropBlur && { backdropFilter: `filter(${backdropBlur})` },
+          backdropBlur && { backdropFilter: `blur(${backdropBlur}px)` },
           isOpen ? { opacity: 1 } : { opacity: 0, pointerEvents: "none" },
         ]}
       />
@@ -51,7 +55,7 @@ const Modal = ({
           width && { width },
           height && { height },
           padding && { padding },
-
+          zIndex ? { zIndex: zIndex + 1 } : { zIndex: "inherit" },
           animationDuration && {
             transition: `${animated && animationDuration}ms`,
           },

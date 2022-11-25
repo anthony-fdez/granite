@@ -35,7 +35,7 @@ export const getModalStyles = ({ styles }: Props) => {
 
   const stylesClosed: SerializedStyles = css([
     stylesOpen,
-    { opacity: 0, transform: "translateY(20px)" },
+    { opacity: 0, transform: "translateY(20px)", pointerEvents: "none" },
   ]);
 
   return { stylesOpen, stylesClosed };
