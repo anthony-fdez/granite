@@ -19,7 +19,8 @@ export const getModalStyles = ({ styles }: Props) => {
     top: 100,
 
     ".modal-header": {
-      padding: 10,
+      paddingTop: 10,
+      paddingBottom: 10,
       display: "flex",
       justifyContent: "space-between",
       alignItems: "center",
@@ -35,7 +36,7 @@ export const getModalStyles = ({ styles }: Props) => {
 
   const stylesClosed: SerializedStyles = css([
     stylesOpen,
-    { opacity: 0, transform: "translateY(20px)", pointerEvents: "none" },
+    { opacity: 0, transform: "scale(0.95)", pointerEvents: "none" },
   ]);
 
   return { stylesOpen, stylesClosed };

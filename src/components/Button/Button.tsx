@@ -16,7 +16,7 @@ const Button = ({
   color,
   padding = 10,
   margin = 10,
-  borderRadius = "sm",
+  borderRadius = "xs",
   loading = false,
   fontColor,
   spinnerVariant = "circular",
