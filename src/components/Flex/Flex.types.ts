@@ -1,4 +1,4 @@
-export interface IFlexProps {
+export interface IFlexProps extends React.HTMLAttributes<HTMLDivElement> {
   children: JSX.Element | JSX.Element[];
   flexDirection?: "row" | "row-reverse" | "column" | "column-reverse";
   justifyContent?:

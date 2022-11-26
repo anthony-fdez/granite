@@ -10,9 +10,11 @@ const Flex = ({
   justifyContent = "flex-start",
   alignItems = "center",
   wrap = "nowrap",
+  ...args
 }: IFlexProps) => {
   return (
     <div
+      {...args}
       css={[
         {
           width: "100%",

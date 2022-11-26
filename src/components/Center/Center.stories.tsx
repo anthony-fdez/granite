@@ -2,7 +2,6 @@ import React from "react";
 import { ComponentStory } from "@storybook/react";
 import "@storybook/addon-console";
 
-import { ThemeProvider } from "@emotion/react";
 import Center from "./Center";
 import Button from "../Button";
 
