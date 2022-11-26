@@ -1,108 +1,81 @@
 export type AvailableColorsType = "red" | "blue";
 
 type ColorOptions = {
-  backgroundColor: string;
-  backgroundColorHover: string;
-  fontColor: string;
+  background: string;
+  backgroundHover: string;
+  font: string;
 };
 
 type Variants = {
+  color: string;
   filled: ColorOptions;
   subtle: ColorOptions;
   outlined: ColorOptions;
 };
 
-type ColorType = {
-  light: Variants;
-  dark: Variants;
+type Common = {
+  background: string;
+  backgroundAccent: string;
+  font: string;
 };
 
 export interface IColorShades {
-  red: ColorType;
-  blue: ColorType;
+  common: {
+    light: Common;
+    dark: Common;
+  };
+  red: Variants;
+  blue: Variants;
 }
 export const colors: IColorShades = {
   common: {
-    // Add all the common styling here for both light and dark mode
-  },
-  red: {
     light: {
-      filled: {
-        backgroundColor: "rgb(255, 59, 48)",
-        backgroundColorHover: "rgb(225, 30, 30)",
-        fontColor: "rgb(255, 255, 255)",
-      },
-      subtle: {
-        backgroundColor: "rgb(255, 230, 230)",
-        backgroundColorHover: "rgb(255, 220, 220)",
-
-        fontColor: "rgb(255, 59, 48)",
-      },
-      outlined: {
-        backgroundColor: "rgb(255, 59, 48)",
-        backgroundColorHover: "rgb(255, 69, 58)",
-        fontColor: "rgb(255, 255, 255)",
-      },
+      background: "rgb(255, 255, 255)",
+      backgroundAccent: "rgb(233, 233, 233)",
+      font: "rgb(10, 10, 10)",
     },
     dark: {
-      filled: {
-        backgroundColor: "rgb(255, 59, 48)",
-        backgroundColorHover: "rgb(255, 69, 58)",
+      background: "rgb(20, 20, 20)",
+      backgroundAccent: "rgb(50, 50, 50)",
+      font: "rgb(255, 255, 255)",
+    },
+  },
+  red: {
+    color: "rgb(255, 59, 48)",
+    filled: {
+      background: "rgb(255, 59, 48)",
+      backgroundHover: "rgb(225, 30, 30)",
+      font: "rgb(255, 255, 255)",
+    },
+    subtle: {
+      background: "rgb(255, 230, 230)",
+      backgroundHover: "rgb(255, 220, 220)",
 
-        fontColor: "rgb(255, 255, 255)",
-      },
-      subtle: {
-        backgroundColor: "rgb(255, 59, 48)",
-        backgroundColorHover: "rgb(255, 69, 58)",
-
-        fontColor: "rgb(255, 255, 255)",
-      },
-      outlined: {
-        backgroundColor: "rgb(255, 59, 48)",
-        backgroundColorHover: "rgb(255, 69, 58)",
-
-        fontColor: "rgb(255, 255, 255)",
-      },
+      font: "rgb(255, 59, 48)",
+    },
+    outlined: {
+      background: "rgb(255, 59, 48)",
+      backgroundHover: "rgb(255, 69, 58)",
+      font: "rgb(255, 255, 255)",
     },
   },
   blue: {
-    light: {
-      filled: {
-        backgroundColor: "rgb(0, 122, 255)",
-        backgroundColorHover: "rgb(255, 69, 58)",
-
-        fontColor: "rgb(255, 255, 255)",
-      },
-      subtle: {
-        backgroundColor: "rgb(0, 122, 255)",
-        backgroundColorHover: "rgb(255, 69, 58)",
-
-        fontColor: "rgb(255, 255, 255)",
-      },
-      outlined: {
-        backgroundColor: "rgb(0, 122, 255)",
-        backgroundColorHover: "rgb(255, 69, 58)",
-
-        fontColor: "rgb(255, 255, 255)",
-      },
+    color: "rgb(0, 122, 255)",
+    filled: {
+      background: "rgb(0, 122, 255)",
+      backgroundHover: "rgb(255, 69, 58)",
+      font: "rgb(255, 255, 255)",
     },
-    dark: {
-      filled: {
-        backgroundColor: "rgb(0, 122, 255)",
-        backgroundColorHover: "rgb(255, 69, 58)",
-        fontColor: "rgb(255, 255, 255)",
-      },
-      subtle: {
-        backgroundColor: "rgb(0, 122, 255)",
-        backgroundColorHover: "rgb(255, 69, 58)",
+    subtle: {
+      background: "rgb(0, 122, 255)",
+      backgroundHover: "rgb(255, 69, 58)",
 
-        fontColor: "rgb(255, 255, 255)",
-      },
-      outlined: {
-        backgroundColor: "rgb(0, 122, 255)",
-        backgroundColorHover: "rgb(255, 69, 58)",
-        fontColor: "rgb(255, 255, 255)",
-      },
+      font: "rgb(255, 255, 255)",
+    },
+    outlined: {
+      background: "rgb(0, 122, 255)",
+      backgroundHover: "rgb(255, 69, 58)",
+      font: "rgb(255, 255, 255)",
     },
   },
   // red: [

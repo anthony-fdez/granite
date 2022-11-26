@@ -6,4 +6,4 @@ export interface Props {
     subtle: SerializedStyles;
     variant: VariantsType;
 }
-export declare const getVariantStyles: ({ filled, outlined, subtle, variant, }: Props) => SerializedStyles;
+export declare const getVariantStyles: ({ filled, outlined, subtle, variant, }: Props) => void | SerializedStyles;

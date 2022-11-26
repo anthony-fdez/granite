@@ -1,5 +1,5 @@
 import { IStyles } from "./IStyles";
 
 export interface IProviderProps extends IStyles {
-  children: JSX.Element;
+  children: JSX.Element | JSX.Element[];
 }

@@ -8,6 +8,7 @@ import { getButtonStyles } from "./Button.styles";
 import { getBorderRadius } from "../ThemeProvider/getValues/getBorderRadius";
 import Spinner from "../Spinner";
 import { IButtonProps } from "./Button.types";
+import { useGetColors } from "../../hooks/useGetColors";
 
 const Button = ({
   children,
@@ -15,7 +16,7 @@ const Button = ({
   color,
   padding = 10,
   margin = 10,
-  borderRadius = "sm",
+  borderRadius = "xs",
   loading = false,
   fontColor,
   spinnerVariant = "circular",
@@ -27,8 +28,15 @@ const Button = ({
 }: IButtonProps) => {
   const { styles } = useContext(StateContext);
 
+  const { FONT_COLOR } = useGetColors({
+    color,
+    styles,
+    variant,
+  });
+
   return (
     <button
+      type="button"
       {...args}
       disabled={disabled}
       css={[
@@ -48,8 +56,11 @@ const Button = ({
         backgroundColor && { backgroundColor },
       ]}
     >
-      {loading && <Spinner />}
-      {children}
+      {loading ? (
+        <Spinner backgroundAccentColor={FONT_COLOR} size={11} color={color} />
+      ) : (
+        children
+      )}
     </button>
   );
 };

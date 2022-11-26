@@ -8,7 +8,7 @@ export const getBorderRadius = ({ size }: Props): number => {
 
   if (!size) return DEFAULT;
 
-  if (size === "xs") return 3;
+  if (size === "xs") return 0;
   if (size === "sm") return DEFAULT;
   if (size === "md") return 7;
   if (size === "lg") return 10;

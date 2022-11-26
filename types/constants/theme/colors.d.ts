@@ -1,21 +1,27 @@
 export declare type AvailableColorsType = "red" | "blue";
 declare type ColorOptions = {
-    backgroundColor: string;
-    backgroundColorHover: string;
-    fontColor: string;
+    background: string;
+    backgroundHover: string;
+    font: string;
 };
 declare type Variants = {
+    color: string;
     filled: ColorOptions;
     subtle: ColorOptions;
     outlined: ColorOptions;
 };
-declare type ColorType = {
-    light: Variants;
-    dark: Variants;
+declare type Common = {
+    background: string;
+    backgroundAccent: string;
+    font: string;
 };
 export interface IColorShades {
-    red: ColorType;
-    blue: ColorType;
+    common: {
+        light: Common;
+        dark: Common;
+    };
+    red: Variants;
+    blue: Variants;
 }
 export declare const colors: IColorShades;
 export {};

@@ -23,11 +23,9 @@ export const useGetColors = ({
     ? styles.primaryColor
     : "blue";
 
-  const BG_COLOR =
-    colors[COLOR][styles.theme || "light"][variant].backgroundColor;
-  const BG_COLOR_HOVER =
-    colors[COLOR][styles.theme || "light"][variant].backgroundColorHover;
-  const FONT_COLOR = colors[COLOR][styles.theme || "light"][variant].fontColor;
+  const BG_COLOR = colors[COLOR][variant].background;
+  const BG_COLOR_HOVER = colors[COLOR][variant].backgroundHover;
+  const FONT_COLOR = colors[COLOR][variant].font;
 
   return { BG_COLOR, BG_COLOR_HOVER, FONT_COLOR };
 };

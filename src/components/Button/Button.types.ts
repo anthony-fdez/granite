@@ -3,7 +3,8 @@ import { SizesType } from "./../../types/sizes";
 import { AvailableColorsType } from "./../../constants/theme/colors";
 import { VariantsType } from "./../../types/variants";
 
-export interface IButtonProps {
+export interface IButtonProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children: string;
   variant?: VariantsType;
   color?: AvailableColorsType;

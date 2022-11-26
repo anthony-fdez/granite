@@ -6,10 +6,27 @@ import { getSpinnerStyles } from "./Spinner.styles";
 
 import { ISpinnerProps } from "./Spinner.types";
 
-const Spinner = ({ variant, color }: ISpinnerProps) => {
+const Spinner = ({
+  variant,
+  color,
+  size,
+  backgroundAccentColor,
+  ...args
+}: ISpinnerProps) => {
   const { styles } = useContext(StateContext);
 
-  return <div css={getSpinnerStyles({ variant, styles, color })}></div>;
+  return (
+    <div
+      {...args}
+      css={getSpinnerStyles({
+        size,
+        variant,
+        styles,
+        color,
+        backgroundAccentColor,
+      })}
+    ></div>
+  );
 };
 
 export default Spinner;
