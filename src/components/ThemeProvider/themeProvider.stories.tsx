@@ -4,7 +4,7 @@ import "@storybook/addon-console";
 import ThemeProvider from "./ThemeProvider";
 import Button from "../Button";
 import Spinner from "../Spinner";
-import Box from "../Box";
+import Box from "../Center";
 import Modal from "../Modal";
 
 export default {
