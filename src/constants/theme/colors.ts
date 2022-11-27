@@ -17,6 +17,7 @@ type Common = {
   background: string;
   backgroundAccent: string;
   font: string;
+  border: string;
 };
 
 export interface IColorShades {
@@ -33,11 +34,13 @@ export const colors: IColorShades = {
       background: "rgb(255, 255, 255)",
       backgroundAccent: "rgb(233, 233, 233)",
       font: "rgb(10, 10, 10)",
+      border: "rgb(200, 200, 200)",
     },
     dark: {
       background: "rgb(20, 20, 20)",
       backgroundAccent: "rgb(50, 50, 50)",
       font: "rgb(255, 255, 255)",
+      border: "rgb(70, 70, 70)",
     },
   },
   red: {
