@@ -15,6 +15,7 @@ const Divider = ({
   variant = "solid",
   marginTop = 20,
   marginBottom = 20,
+  color,
   ...args
 }: IDividerProps) => {
   const { styles } = useContext(StateContext);
@@ -23,7 +24,7 @@ const Divider = ({
   const FONT_COLOR = colors.common[styles.theme || "light"].font;
 
   const lineStyles = css([
-    { height: width, width: "100%", backgroundColor: BORDER_COLOR },
+    { height: width, width: "100%", backgroundColor: color ?? BORDER_COLOR },
   ]);
 
   return (
@@ -36,7 +37,7 @@ const Divider = ({
             marginRight: labelPadding,
             whiteSpace: "nowrap",
             fontSize: 14,
-            color: FONT_COLOR,
+            color: color ?? FONT_COLOR,
           }}
         >
           {label}
