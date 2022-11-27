@@ -35,11 +35,7 @@ const Accordion = ({
     return child;
   });
 
-  return (
-    <div css={{ backgroundColor: "rgb(230,230,230)", width: "100%" }}>
-      {childrenWithProps}
-    </div>
-  );
+  return <div>{childrenWithProps}</div>;
 };
 
 export default Accordion;

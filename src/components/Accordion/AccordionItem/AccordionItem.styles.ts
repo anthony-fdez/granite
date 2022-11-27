@@ -7,7 +7,19 @@ interface Props {
 }
 
 export const getAccordionItemStyles = ({ styles }: Props): SerializedStyles => {
-  const simple = css({});
+  const simple = css({
+    overflow: "hidden",
+    borderBottomWidth: 1,
+    borderBottomStyle: "solid",
+    borderBottomColor: "gray",
+    ".accordion-item-header": {
+      padding: 20,
+    },
+    ".accordion-item-content": {
+      paddingLeft: 20,
+      paddingRight: 20,
+    },
+  });
 
   return simple;
 };

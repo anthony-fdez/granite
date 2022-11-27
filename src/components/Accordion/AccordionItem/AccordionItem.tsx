@@ -6,8 +6,12 @@ import Flex from "../../Flex";
 import { StateContext } from "../../ThemeProvider/ThemeProvider";
 import { getAccordionItemStyles } from "./AccordionItem.styles";
 import { IAccordionItemProps } from "./AccordionItem.types";
-// @ts-ignore
-import { AnimatePresence, motion } from "framer-motion/dist/framer-motion";
+import {
+  AnimatePresence,
+  motion,
+  Variant,
+  // @ts-ignore
+} from "framer-motion/dist/framer-motion";
 
 const AccordionItem = ({
   label,
@@ -31,6 +35,18 @@ const AccordionItem = ({
     setActiveElement(label);
   };
 
+  const variants: Variant = {
+    open: {
+      opacity: 1,
+      marginTop: 20,
+      marginBottom: 20,
+    },
+    closed: {
+      opacity: 0,
+      height: 0,
+    },
+  };
+
   return (
     <div key={label} css={getAccordionItemStyles({ styles })}>
       <div onClick={handleOpenAccordionItem} className="accordion-item-header">
@@ -39,7 +55,13 @@ const AccordionItem = ({
           <span>Icon</span>
         </Flex>
       </div>
-      <div>{children}</div>
+      <motion.div
+        className="accordion-item-content"
+        animate={label === activeElement ? "open" : "closed"}
+        variants={variants}
+      >
+        {children}
+      </motion.div>
     </div>
   );
 };
