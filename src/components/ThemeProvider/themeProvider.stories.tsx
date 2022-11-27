@@ -54,7 +54,12 @@ const Template: ComponentStory<typeof ThemeProvider> = (args) => {
           consequat exercitation est incididunt commodo est. Occaecat deserunt
           nostrud id mollit commodo laborum. Ut id mollit irure quis.
         </p>
-        <Divider marginTop={50} marginBottom={10} />
+        <Divider
+          label="This is the footer"
+          labelPosition="left"
+          marginTop={50}
+          marginBottom={10}
+        />
         <Flex justifyContent="flex-end">
           <Button onClick={() => setIsModalOpen(false)} variant="outlined">
             Close
