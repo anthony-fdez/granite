@@ -53,7 +53,6 @@ export const colors: IColorShades = {
     subtle: {
       background: "rgb(255, 230, 230)",
       backgroundHover: "rgb(255, 220, 220)",
-
       font: "rgb(255, 59, 48)",
     },
     outlined: {
