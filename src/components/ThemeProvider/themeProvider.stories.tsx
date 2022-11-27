@@ -41,9 +41,28 @@ const Template: ComponentStory<typeof ThemeProvider> = (args) => {
         title="My Modal"
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
-        closeButton={<span>Close</span>}
       >
         <h2>This is the modal</h2>
+        <p>
+          Deserunt excepteur aliquip velit consectetur. Ea voluptate enim
+          laboris nulla incididunt reprehenderit sit nisi culpa non tempor
+          commodo dolor. In id enim irure ea dolore anim qui. Aute laborum nulla
+          anim nisi amet ea dolor duis adipisicing exercitation excepteur fugiat
+          commodo et. Minim amet culpa est ex officia. Irure cupidatat laborum
+          dolore non anim. Sunt est dolor pariatur do incididunt sunt labore est
+          nostrud exercitation eiusmod aute duis non. Veniam commodo anim
+          consequat exercitation est incididunt commodo est. Occaecat deserunt
+          nostrud id mollit commodo laborum. Ut id mollit irure quis.
+        </p>
+        <Divider marginTop={50} marginBottom={10} />
+        <Flex justifyContent="flex-end">
+          <Button onClick={() => setIsModalOpen(false)} variant="outlined">
+            Close
+          </Button>
+          <Button onClick={() => setIsModalOpen(false)}>
+            This is a nice modal
+          </Button>
+        </Flex>
       </Modal>
       <h2>Spinners</h2>
       <Center>
