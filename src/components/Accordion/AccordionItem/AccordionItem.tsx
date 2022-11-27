@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
 
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Flex from "../../Flex";
 import { StateContext } from "../../ThemeProvider/ThemeProvider";
 import { getAccordionItemStyles } from "./AccordionItem.styles";
@@ -9,7 +9,7 @@ import { IAccordionItemProps } from "./AccordionItem.types";
 import {
   AnimatePresence,
   motion,
-  Variant,
+  Variants,
   // @ts-ignore
 } from "framer-motion/dist/framer-motion";
 
@@ -22,7 +22,13 @@ const AccordionItem = ({
 }: IAccordionItemProps) => {
   const { styles } = useContext(StateContext);
 
-  console.log(activeElement);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsVisible(true);
+    }, 300);
+  }, []);
 
   const handleOpenAccordionItem = () => {
     if (activeElement === undefined) return;
@@ -35,7 +41,7 @@ const AccordionItem = ({
     setActiveElement(label);
   };
 
-  const variants: Variant = {
+  const accordionAnimation: Variants = {
     open: {
       opacity: 1,
       marginTop: 20,
@@ -47,18 +53,38 @@ const AccordionItem = ({
     },
   };
 
+  const chevronAnimation: Variants = {
+    open: {
+      transform: "rotate(180deg)",
+    },
+  };
+
   return (
-    <div key={label} css={getAccordionItemStyles({ styles })}>
+    <div
+      key={label}
+      css={[
+        getAccordionItemStyles({ styles }),
+        isVisible
+          ? { opacity: 1, transitionDuration: "100ms" }
+          : { opacity: 0 },
+      ]}
+    >
       <div onClick={handleOpenAccordionItem} className="accordion-item-header">
         <Flex justifyContent="space-between">
           <span>{label}</span>
-          <span>Icon</span>
+          <motion.img
+            variants={chevronAnimation}
+            animate={label === activeElement ? "open" : "closed"}
+            className="icon"
+            src={require(`./assets/chevron-${styles.theme}.svg`)}
+          />
         </Flex>
       </div>
+
       <motion.div
         className="accordion-item-content"
         animate={label === activeElement ? "open" : "closed"}
-        variants={variants}
+        variants={accordionAnimation}
       >
         {children}
       </motion.div>

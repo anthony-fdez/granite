@@ -12,6 +12,10 @@ export const getAccordionItemStyles = ({ styles }: Props): SerializedStyles => {
     borderBottomWidth: 1,
     borderBottomStyle: "solid",
     borderBottomColor: "gray",
+    ".icon": {
+      height: 15,
+      width: 15,
+    },
     ".accordion-item-header": {
       padding: 20,
     },
