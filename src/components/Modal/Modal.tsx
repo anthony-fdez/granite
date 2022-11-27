@@ -3,6 +3,7 @@ import { css } from "@emotion/react";
 
 import React, { useContext, useEffect, useState } from "react";
 import { colors } from "../../constants/theme/colors";
+import CloseButton from "../CloseButton";
 import { getBorderRadius } from "../ThemeProvider/getValues/getBorderRadius";
 import { StateContext } from "../ThemeProvider/ThemeProvider";
 import { getModalStyles } from "./Modal.styles";
@@ -13,7 +14,7 @@ const Modal = ({
   title,
   isOpen,
   onClose,
-  closeButton,
+  closeButton = true,
   closeOnClickOutside = true,
   backdropOpacity = 0.5,
   animated = true,
@@ -83,11 +84,7 @@ const Modal = ({
       >
         <div className="modal-header">
           <span>{title}</span>
-          {closeButton && (
-            <div onClick={onClose} className="modal-header-close-button">
-              {closeButton}
-            </div>
-          )}
+          {closeButton && <CloseButton onClick={onClose} />}
         </div>
         {children}
       </div>
