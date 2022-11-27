@@ -1,3 +1,4 @@
+import { AccordionVariants } from "./../Accordion.types";
 import { colors } from "./../../../constants/theme/colors";
 import { IStyles } from "./../../ThemeProvider/Interfaces/IStyles";
 /** @jsxImportSource @emotion/react */
@@ -6,6 +7,8 @@ import { Variants } from "framer-motion";
 
 interface Props {
   styles: IStyles;
+  variant: AccordionVariants;
+  isActive: boolean;
 }
 
 export const accordionAnimation: Variants = {
@@ -27,32 +30,54 @@ export const chevronAnimation: Variants = {
   },
 };
 
-export const getAccordionItemStyles = ({ styles }: Props): SerializedStyles => {
+export const getAccordionItemStyles = ({
+  styles,
+  variant,
+  isActive,
+}: Props): SerializedStyles => {
   const BORDER = colors.common[styles.theme || "light"].border;
   const BG = colors.common[styles.theme || "light"].background;
   const BG_ACCENT = colors.common[styles.theme || "light"].backgroundAccent;
 
-  const simple = css({
-    overflow: "hidden",
-    borderBottomWidth: 1,
-    borderBottomStyle: "solid",
-    borderBottomColor: BORDER,
-    ".icon": {
-      height: 15,
-      width: 15,
-    },
-    ".accordion-item-header": {
-      padding: 20,
-      cursor: "pointer",
-      ":hover": {
-        backgroundColor: BG_ACCENT,
+  const common = css(
+    [
+      {
+        overflow: "hidden",
+        ".icon": {
+          height: 15,
+          width: 15,
+        },
+        ".accordion-item-header": {
+          padding: 20,
+          cursor: "pointer",
+        },
+        ".accordion-item-content": {
+          paddingLeft: 20,
+          paddingRight: 20,
+        },
+      },
+    ],
+    variant === "subtle" && {
+      borderBottomWidth: 1,
+      borderBottomColor: BORDER,
+      borderBottomStyle: "solid",
+      ".accordion-item-header": {
+        ":hover": {
+          backgroundColor: BG_ACCENT,
+        },
       },
     },
-    ".accordion-item-content": {
-      paddingLeft: 20,
-      paddingRight: 20,
+    variant === "filled" && {
+      backgroundColor: `${isActive && BG_ACCENT}`,
+      transition: "background 200ms",
     },
-  });
+    variant === "outlined" && {
+      borderColor: `${isActive ? BORDER : "transparent"}`,
+      borderWidth: 3,
+      borderStyle: "solid",
+      transition: "background 200ms",
+    }
+  );
 
-  return simple;
+  return common;
 };

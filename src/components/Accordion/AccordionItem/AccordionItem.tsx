@@ -38,7 +38,16 @@ const AccordionItem = ({
   };
 
   return (
-    <div key={label} css={[getAccordionItemStyles({ styles })]}>
+    <div
+      key={label}
+      css={[
+        getAccordionItemStyles({
+          styles,
+          variant,
+          isActive: label === activeElement,
+        }),
+      ]}
+    >
       <div onClick={handleOpenAccordionItem} className="accordion-item-header">
         <Flex justifyContent="space-between">
           <span>{label}</span>
