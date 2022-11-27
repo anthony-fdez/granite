@@ -4,8 +4,10 @@ import "@storybook/addon-console";
 import ThemeProvider from "./ThemeProvider";
 import Button from "../Button";
 import Spinner from "../Spinner";
-import Box from "../Center";
+import Center from "../Center";
 import Modal from "../Modal";
+import Flex from "../Flex";
+import Divider from "../Divider";
 
 export default {
   title: "Components/ThemeProvider",
@@ -18,7 +20,7 @@ const Template: ComponentStory<typeof ThemeProvider> = (args) => {
   return (
     <ThemeProvider {...args}>
       <h2>Buttons</h2>
-      <Box>
+      <Flex>
         <Button>Button</Button>
         <Button variant="outlined">Outlined</Button>
         <Button variant="subtle">Subtle</Button>
@@ -30,7 +32,7 @@ const Template: ComponentStory<typeof ThemeProvider> = (args) => {
         <Button disabled variant="subtle">
           Disabled Subtle
         </Button>
-      </Box>
+      </Flex>
       <Button onClick={() => setIsModalOpen(true)} fullWidth>
         Full Width (open modal)
       </Button>
@@ -44,9 +46,13 @@ const Template: ComponentStory<typeof ThemeProvider> = (args) => {
         <h2>This is the modal</h2>
       </Modal>
       <h2>Spinners</h2>
-      <Box>
+      <Center>
         <Spinner />
-      </Box>
+      </Center>
+      <Divider />
+      <Divider label="Divider with a label" />
+      <Divider labelPosition="left" label="Label to the left" />
+      <Divider labelPosition="right" label="Label to the right" />
 
       <h2>Text</h2>
       <p>

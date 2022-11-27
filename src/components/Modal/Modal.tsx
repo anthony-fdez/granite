@@ -2,6 +2,7 @@
 import { css } from "@emotion/react";
 
 import React, { useContext, useEffect, useState } from "react";
+import { colors } from "../../constants/theme/colors";
 import { getBorderRadius } from "../ThemeProvider/getValues/getBorderRadius";
 import { StateContext } from "../ThemeProvider/ThemeProvider";
 import { getModalStyles } from "./Modal.styles";
@@ -20,13 +21,18 @@ const Modal = ({
   width = 500,
   height,
   centered = false,
-  padding = 10,
+  padding = 20,
   borderRadius = "xs",
   backdropBlur = 5,
   zIndex,
+  border = true,
+  borderColor,
+  borderWidth = 3,
 }: IModalProps) => {
   const { styles } = useContext(StateContext);
   const { stylesClosed, stylesOpen } = getModalStyles({ styles });
+
+  const BORDER_COLOR = colors.common[styles.theme || "light"].border;
 
   return (
     <>
@@ -57,13 +63,21 @@ const Modal = ({
           height && { height },
           padding && { padding },
           zIndex ? { zIndex: zIndex + 1 } : { zIndex: "inherit" },
+          border && {
+            borderWidth,
+            borderColor: `${borderColor ? borderColor : BORDER_COLOR}`,
+            borderStyle: "solid",
+          },
+          borderColor ? { borderColor } : { borderColor: BORDER_COLOR },
           animationDuration && {
             transition: `${animated && animationDuration}ms`,
           },
           borderRadius && {
             borderRadius: getBorderRadius({ size: borderRadius }),
           },
-          { maxWidth: `calc(100% - ${padding * 2}px - 20px)` },
+          {
+            maxWidth: `calc(100% - ${padding * 2}px - 20px)`,
+          },
           { maxHeight: `calc(100vh - ${padding * 2}px - 200px)` },
         ]}
       >

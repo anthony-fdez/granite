@@ -13,8 +13,8 @@ const Divider = ({
   labelPosition = "center",
   width = 1,
   variant = "solid",
-  marginTop = 5,
-  marginBottom = 5,
+  marginTop = 20,
+  marginBottom = 20,
   ...args
 }: IDividerProps) => {
   const { styles } = useContext(StateContext);
@@ -27,8 +27,8 @@ const Divider = ({
   ]);
 
   return (
-    <Flex css={{ marginTop, marginBottom }}>
-      <div css={lineStyles}></div>
+    <Flex {...args} css={{ marginTop, marginBottom }}>
+      {labelPosition !== "left" ? <div css={lineStyles}></div> : <></>}
       {label ? (
         <span
           css={{
@@ -44,7 +44,7 @@ const Divider = ({
       ) : (
         <></>
       )}
-      <div css={lineStyles}></div>
+      {labelPosition !== "right" ? <div css={lineStyles}></div> : <></>}
     </Flex>
   );
 };

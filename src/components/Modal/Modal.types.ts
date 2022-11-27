@@ -16,4 +16,7 @@ export interface IModalProps {
   borderRadius?: SizesType;
   backdropBlur?: number;
   zIndex?: number;
+  border?: boolean;
+  borderColor?: string;
+  borderWidth?: number;
 }
