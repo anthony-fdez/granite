@@ -75,7 +75,6 @@ export const getAccordionItemStyles = ({
       borderColor: `${isActive ? BORDER : "transparent"}`,
       borderWidth: 3,
       borderStyle: "solid",
-      transition: "background 200ms",
     }
   );
 

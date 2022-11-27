@@ -10,12 +10,9 @@ import {
   getAccordionItemStyles,
 } from "./AccordionItem.styles";
 import { IAccordionItemProps } from "./AccordionItem.types";
-import {
-  AnimatePresence,
-  motion,
-  Variants,
-  // @ts-ignore
-} from "framer-motion/dist/framer-motion";
+
+// @ts-ignore
+import { motion } from "framer-motion/dist/framer-motion";
 
 const AccordionItem = ({
   label,
