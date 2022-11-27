@@ -7,9 +7,7 @@ interface Props {
 }
 
 export const getAccordionItemStyles = ({ styles }: Props): SerializedStyles => {
-  const simple = css({
-    padding: 10,
-  });
+  const simple = css({});
 
   return simple;
 };

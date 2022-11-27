@@ -6,12 +6,15 @@ import Flex from "../../Flex";
 import { StateContext } from "../../ThemeProvider/ThemeProvider";
 import { getAccordionItemStyles } from "./AccordionItem.styles";
 import { IAccordionItemProps } from "./AccordionItem.types";
+// @ts-ignore
+import { AnimatePresence, motion } from "framer-motion/dist/framer-motion";
 
 const AccordionItem = ({
   label,
   children,
   activeElement,
   setActiveElement,
+  variant,
 }: IAccordionItemProps) => {
   const { styles } = useContext(StateContext);
 
@@ -29,17 +32,14 @@ const AccordionItem = ({
   };
 
   return (
-    <div
-      onClick={handleOpenAccordionItem}
-      css={getAccordionItemStyles({ styles })}
-    >
-      <div className="accordion-header">
+    <div key={label} css={getAccordionItemStyles({ styles })}>
+      <div onClick={handleOpenAccordionItem} className="accordion-item-header">
         <Flex justifyContent="space-between">
           <span>{label}</span>
           <span>Icon</span>
         </Flex>
       </div>
-      {activeElement === label && children}
+      <div>{children}</div>
     </div>
   );
 };
