@@ -59,7 +59,7 @@ There is a lot of things to do in regards to the colors. There is currently only
 
 - [ ] Toast - this toast will be inisialized alongside the themeProvider and will be global.
 
-```
+```jsx
   // Usage
   <Button onClick={() => Toast.message("Hey")}>Say hey</Button>
 ```
