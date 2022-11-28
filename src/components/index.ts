@@ -8,3 +8,4 @@ export { default as Divider } from "./Extra/Divider";
 export { default as CloseButton } from "./Buttons/CloseButton";
 export { default as Accordion } from "./DataDisplay/Accordion/Accordion";
 export { default as AccordionItem } from "./DataDisplay/Accordion/AccordionItem/AccordionItem";
+export { default as Dialog } from "./Overlays/Dialog";
