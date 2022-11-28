@@ -65,18 +65,17 @@ export const colors: IColorShades = {
     color: "rgb(0, 122, 255)",
     filled: {
       background: "rgb(0, 122, 255)",
-      backgroundHover: "rgb(255, 69, 58)",
+      backgroundHover: "rgb(0, 90, 255)",
       font: "rgb(255, 255, 255)",
     },
     subtle: {
-      background: "rgb(0, 122, 255)",
-      backgroundHover: "rgb(255, 69, 58)",
-
-      font: "rgb(255, 255, 255)",
+      background: "rgb(230, 230, 255)",
+      backgroundHover: "rgb(220, 220, 255)",
+      font: "rgb(0, 122, 255)",
     },
     outlined: {
       background: "rgb(0, 122, 255)",
-      backgroundHover: "rgb(255, 69, 58)",
+      backgroundHover: "rgb(0, 122, 255)",
       font: "rgb(255, 255, 255)",
     },
   },

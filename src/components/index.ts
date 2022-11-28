@@ -6,3 +6,5 @@ export { default as Modal } from "./Modal";
 export { default as Flex } from "./Flex";
 export { default as Divider } from "./Divider";
 export { default as CloseButton } from "./CloseButton";
+export { default as Accordion } from "./Accordion/Accordion";
+export { default as AccordionItem } from "./Accordion/AccordionItem/AccordionItem";

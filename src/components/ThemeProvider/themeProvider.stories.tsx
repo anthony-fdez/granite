@@ -1,3 +1,6 @@
+/** @jsxImportSource @emotion/react */
+import { css } from "@emotion/react";
+
 import React, { useState } from "react";
 import { ComponentStory } from "@storybook/react";
 import "@storybook/addon-console";
@@ -8,6 +11,8 @@ import Center from "../Center";
 import Modal from "../Modal";
 import Flex from "../Flex";
 import Divider from "../Divider";
+import Accordion from "../Accordion";
+import AccordionItem from "../Accordion/AccordionItem";
 
 export default {
   title: "Components/ThemeProvider",
@@ -18,9 +23,9 @@ const Template: ComponentStory<typeof ThemeProvider> = (args) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
-    <ThemeProvider {...args}>
+    <ThemeProvider css={{ maxWidth: 1000, margin: "auto" }} {...args}>
       <h2>Buttons</h2>
-      <Flex>
+      <Flex wrap="wrap">
         <Button>Button</Button>
         <Button variant="outlined">Outlined</Button>
         <Button variant="subtle">Subtle</Button>
@@ -41,9 +46,33 @@ const Template: ComponentStory<typeof ThemeProvider> = (args) => {
         title="My Modal"
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
-        closeButton={<span>Close</span>}
       >
         <h2>This is the modal</h2>
+        <p>
+          Deserunt excepteur aliquip velit consectetur. Ea voluptate enim
+          laboris nulla incididunt reprehenderit sit nisi culpa non tempor
+          commodo dolor. In id enim irure ea dolore anim qui. Aute laborum nulla
+          anim nisi amet ea dolor duis adipisicing exercitation excepteur fugiat
+          commodo et. Minim amet culpa est ex officia. Irure cupidatat laborum
+          dolore non anim. Sunt est dolor pariatur do incididunt sunt labore est
+          nostrud exercitation eiusmod aute duis non. Veniam commodo anim
+          consequat exercitation est incididunt commodo est. Occaecat deserunt
+          nostrud id mollit commodo laborum. Ut id mollit irure quis.
+        </p>
+        <Divider
+          label="This is the footer"
+          labelPosition="left"
+          marginTop={50}
+          marginBottom={10}
+        />
+        <Flex justifyContent="flex-end">
+          <Button onClick={() => setIsModalOpen(false)} variant="outlined">
+            Close
+          </Button>
+          <Button onClick={() => setIsModalOpen(false)}>
+            This is a nice modal
+          </Button>
+        </Flex>
       </Modal>
       <h2>Spinners</h2>
       <Center>
@@ -53,7 +82,65 @@ const Template: ComponentStory<typeof ThemeProvider> = (args) => {
       <Divider label="Divider with a label" />
       <Divider labelPosition="left" label="Label to the left" />
       <Divider labelPosition="right" label="Label to the right" />
-
+      <h2>Accordion</h2>
+      <Accordion>
+        <AccordionItem label="Accordion 1">
+          <div>Hello</div>
+        </AccordionItem>
+        <AccordionItem label="Accordion 2">
+          <div>Hello</div>
+          <h1>some more</h1>
+          <p>
+            Tempor voluptate mollit sunt adipisicing elit irure ea sunt. Ea non
+            adipisicing sit ex. Ex in non ex excepteur amet occaecat tempor ex
+            consectetur ex nisi. Proident ad enim id non elit minim irure sit
+            pariatur incididunt. Officia proident ea tempor enim aliqua culpa
+            ullamco. Enim occaecat ea enim Lorem Lorem cillum aliquip ex
+            deserunt ullamco proident ex labore. Aute sit sit esse deserunt
+            velit magna consequat ad ipsum excepteur fugiat sunt voluptate.
+            Minim nostrud aute nisi nostrud velit deserunt duis ipsum. Deserunt
+            esse aliquip aliqua et amet culpa labore non dolor eu consectetur
+            aliquip. Tempor veniam ut eu culpa aliquip sit officia ad pariatur
+            labore proident. Est enim sint magna ullamco id excepteur voluptate
+            quis irure sint aliqua
+          </p>
+        </AccordionItem>
+        <AccordionItem label="Accordion 3">
+          <div>Hello</div>
+          <p>
+            Tempor voluptate mollit sunt adipisicing elit irure ea sunt. Ea non
+            adipisicing sit ex. Ex in non ex excepteur amet occaecat tempor ex
+            consectetur ex nisi. Proident ad enim id non elit minim irure sit
+            pariatur incididunt. Officia proident ea tempor enim aliqua culpa
+            ullamco. Enim occaecat ea enim Lorem Lorem cillum aliquip ex
+            deserunt ullamco proident ex labore. Aute sit sit esse deserunt
+            velit magna consequat ad ipsum excepteur fugiat sunt voluptate.
+            Minim nostrud aute nisi nostrud velit deserunt duis ipsum. Deserunt
+            esse aliquip aliqua et amet culpa labore non dolor eu consectetur
+            aliquip. Tempor veniam ut eu culpa aliquip sit officia ad pariatur
+            labore proident. Est enim sint magna ullamco id excepteur voluptate
+            quis irure sint aliqua
+          </p>
+        </AccordionItem>
+        <AccordionItem label="Accordion 4">
+          <div>Hello</div>
+          <p>
+            Tempor voluptate mollit sunt adipisicing elit irure ea sunt. Ea non
+            adipisicing sit ex. Ex in non ex excepteur amet occaecat tempor ex
+            consectetur ex nisi. Proident ad enim id non elit minim irure sit
+            pariatur incididunt. Officia proident ea tempor enim aliqua culpa
+            ullamco. Enim occaecat ea enim Lorem Lorem cillum aliquip ex
+            deserunt ullamco proident ex labore. Aute sit sit esse deserunt
+            velit magna consequat ad ipsum excepteur fugiat sunt voluptate.
+            Minim nostrud aute nisi nostrud velit deserunt duis ipsum. Deserunt
+            esse aliquip aliqua et amet culpa labore non dolor eu consectetur
+            aliquip. Tempor veniam ut eu culpa aliquip sit officia ad pariatur
+            labore proident. Est enim sint magna ullamco id excepteur voluptate
+            quis irure sint aliqua
+            <h1>helo</h1>
+          </p>
+        </AccordionItem>
+      </Accordion>
       <h2>Text</h2>
       <p>
         Excepteur sunt voluptate labore mollit in ea eiusmod et aliquip do.

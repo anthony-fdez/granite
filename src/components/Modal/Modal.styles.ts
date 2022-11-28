@@ -1,3 +1,4 @@
+import { Variants } from "framer-motion";
 import { SerializedStyles } from "@emotion/react";
 import { IStyles } from "../ThemeProvider/Interfaces/IStyles";
 import { css } from "@emotion/react";
@@ -6,6 +7,17 @@ import { colors } from "../../constants/theme/colors";
 interface Props {
   styles: IStyles;
 }
+
+export const modalVariants: Variants = {
+  open: {
+    opacity: 1,
+    scale: 1,
+  },
+  closed: {
+    opacity: 0,
+    scale: 0.9,
+  },
+};
 
 export const getModalStyles = ({ styles }: Props) => {
   const BACKGROUND = colors.common[styles.theme || "light"].background;
@@ -17,6 +29,7 @@ export const getModalStyles = ({ styles }: Props) => {
     left: 0,
     right: 0,
     top: 100,
+    overflow: "auto",
 
     ".modal-header": {
       paddingTop: 10,
@@ -36,7 +49,7 @@ export const getModalStyles = ({ styles }: Props) => {
 
   const stylesClosed: SerializedStyles = css([
     stylesOpen,
-    { opacity: 0, transform: "scale(0.95)", pointerEvents: "none" },
+    { pointerEvents: "none" },
   ]);
 
   return { stylesOpen, stylesClosed };

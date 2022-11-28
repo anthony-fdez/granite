@@ -18,7 +18,7 @@ export const getSpinnerStyles = ({
   size,
   backgroundAccentColor,
 }: Props) => {
-  const COLOR = colors[styles.primaryColor || color || "blue"].color;
+  const COLOR = colors[color || styles.primaryColor || "blue"].color;
   const BG_ACCENT =
     backgroundAccentColor ??
     colors.common[styles.theme || "light"].backgroundAccent;

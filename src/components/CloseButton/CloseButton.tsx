@@ -7,7 +7,7 @@ import Button from "../Button";
 import { StateContext } from "../ThemeProvider/ThemeProvider";
 import { ICloseButtonProps } from "./CloseButton.types";
 
-const CloseButton = ({ size = 35 }: ICloseButtonProps) => {
+const CloseButton = ({ size = 35, ...args }: ICloseButtonProps) => {
   const { styles } = useContext(StateContext);
 
   const FONT_COLOR = colors.common[styles.theme || "light"].font;
@@ -42,8 +42,15 @@ const CloseButton = ({ size = 35 }: ICloseButtonProps) => {
   ]);
 
   return (
-    <button css={[common, size && { height: size, width: size }]}>
-      <img className="close-button-icon" src={require("./assets/close.svg")} />
+    <button {...args} css={[common, size && { height: size, width: size }]}>
+      <img
+        className="close-button-icon"
+        src={
+          styles.theme === "light"
+            ? require("./assets/close-light.svg")
+            : require("./assets/close-dark.svg")
+        }
+      />
     </button>
   );
 };

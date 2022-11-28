@@ -28,7 +28,7 @@ const Button = ({
 }: IButtonProps) => {
   const { styles } = useContext(StateContext);
 
-  const { FONT_COLOR } = useGetColors({
+  const { FONT_COLOR, BG_COLOR } = useGetColors({
     color,
     styles,
     variant,
