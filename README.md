@@ -57,6 +57,15 @@ There is a lot of things to do in regards to the colors. There is currently only
 
 ### Feedback
 
+### Notifications
+
+- [ ] Toast - this toast will be inisialized alongside the themeProvider and will be global.
+
+`
+  // Usage
+  <Button onClick={() => Toast.message("Hey")}>Say hey</Button>
+`
+
 - [ ] Alert
 - [x] Spinner
 - [ ] Skeleton
