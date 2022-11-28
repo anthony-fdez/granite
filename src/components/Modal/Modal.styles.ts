@@ -11,11 +11,11 @@ interface Props {
 export const modalVariants: Variants = {
   open: {
     opacity: 1,
-    y: 0,
+    scale: 1,
   },
   closed: {
     opacity: 0,
-    y: 20,
+    scale: 0.9,
   },
 };
 
@@ -29,6 +29,7 @@ export const getModalStyles = ({ styles }: Props) => {
     left: 0,
     right: 0,
     top: 100,
+    overflow: "auto",
 
     ".modal-header": {
       paddingTop: 10,

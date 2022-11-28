@@ -9,7 +9,7 @@ import { LayoutGroup } from "framer-motion/dist/framer-motion";
 const Accordion = ({
   children,
   defaultValue,
-  variant = "filled",
+  variant = "subtle",
   value,
 }: IAccordionProps) => {
   const [activeElement, setActiveElement] = useState<string | null>(

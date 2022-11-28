@@ -22,7 +22,7 @@ Default.args = {
       <h1>modal baby</h1>
     </div>
   ),
-  closeButton: <span>Close</span>,
+  closeButton: true,
   title: "This is the modal title",
   isOpen,
 };

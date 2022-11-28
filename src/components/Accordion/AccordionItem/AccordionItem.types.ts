@@ -4,5 +4,5 @@ export interface IAccordionItemProps {
   label: string;
   activeElement?: string | null;
   setActiveElement?: React.Dispatch<React.SetStateAction<string | null>>;
-  variant: AccordionVariants;
+  variant?: AccordionVariants;
 }

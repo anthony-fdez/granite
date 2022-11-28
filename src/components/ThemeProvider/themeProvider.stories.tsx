@@ -1,3 +1,6 @@
+/** @jsxImportSource @emotion/react */
+import { css } from "@emotion/react";
+
 import React, { useState } from "react";
 import { ComponentStory } from "@storybook/react";
 import "@storybook/addon-console";
@@ -20,9 +23,9 @@ const Template: ComponentStory<typeof ThemeProvider> = (args) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
-    <ThemeProvider {...args}>
+    <ThemeProvider css={{ maxWidth: 1000, margin: "auto" }} {...args}>
       <h2>Buttons</h2>
-      <Flex>
+      <Flex wrap="wrap">
         <Button>Button</Button>
         <Button variant="outlined">Outlined</Button>
         <Button variant="subtle">Subtle</Button>

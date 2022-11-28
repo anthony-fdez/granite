@@ -20,6 +20,7 @@ const ThemeProvider = ({
   children,
   theme = "light",
   primaryColor = "blue",
+  ...args
 }: IProviderProps): JSX.Element => {
   const [styles, setStyles] = useState<IStyles>(defaultStylesLight);
 
@@ -41,7 +42,7 @@ const ThemeProvider = ({
     <>
       <StateContext.Provider value={{ styles, setState: handleUpdateState }}>
         <Global styles={getGlobalStyles({ styles })} />
-        {children}
+        <div {...args}>{children}</div>
       </StateContext.Provider>
     </>
   );

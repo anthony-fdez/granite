@@ -19,7 +19,7 @@ const AccordionItem = ({
   children,
   activeElement,
   setActiveElement,
-  variant,
+  variant = "filled",
 }: IAccordionItemProps) => {
   const { styles } = useContext(StateContext);
 
