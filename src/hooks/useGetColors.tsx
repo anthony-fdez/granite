@@ -1,4 +1,4 @@
-import { IStyles } from "../components/ThemeProvider/Interfaces/IStyles";
+import { IStyles } from "../components/Theming/ThemeProvider/Interfaces/IStyles";
 import { AvailableColorsType, colors } from "../constants/theme/colors";
 import { VariantsType } from "../types/variants";
 
