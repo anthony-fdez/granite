@@ -38,6 +38,7 @@ There is a lot of things to do in regards to the colors. There is currently only
 - [ ] Text input
 - [ ] Password input
 - [ ] Number input
+- [ ] Phone input - include the flag icon as they type the phone number
 - [ ] Checkbox
 - [ ] Radio
 - [ ] Select (with autocomplete)
