@@ -55,16 +55,16 @@ There is a lot of things to do in regards to the colors. There is currently only
 - [ ] Badge
 - [ ] Paper - This would be just a div with some box shadow
 
-### Feedback
-
 ### Notifications
 
 - [ ] Toast - this toast will be inisialized alongside the themeProvider and will be global.
 
-`
+```
   // Usage
   <Button onClick={() => Toast.message("Hey")}>Say hey</Button>
-`
+```
+
+### Feedback
 
 - [ ] Alert
 - [x] Spinner
