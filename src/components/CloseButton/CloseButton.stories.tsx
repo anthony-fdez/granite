@@ -6,7 +6,7 @@ import Button from "../Button";
 import CloseButton from "./CloseButton";
 
 export default {
-  title: "Components/CloseButton",
+  title: "Components/Buttons/CloseButton",
   component: CloseButton,
 };
 

@@ -5,7 +5,7 @@ import Accordion from "./Accordion";
 import AccordionItem from "./AccordionItem";
 
 export default {
-  title: "Components/Accordion",
+  title: "Components/DataDisplay/Accordion",
   component: Accordion,
 };
 

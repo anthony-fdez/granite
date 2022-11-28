@@ -6,7 +6,7 @@ import Divider from "./Divider";
 import Button from "../Button";
 
 export default {
-  title: "Components/Divider",
+  title: "Components/Extra/Divider",
   component: Divider,
 };
 

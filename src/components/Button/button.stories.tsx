@@ -5,7 +5,7 @@ import "@storybook/addon-console";
 import Button from "./Button";
 
 export default {
-  title: "Components/Button",
+  title: "Components/Buttons/Button",
   component: Button,
 };
 

@@ -6,7 +6,7 @@ import Flex from "./Flex";
 import Button from "../Button";
 
 export default {
-  title: "Components/Flex",
+  title: "Components/Layout/Flex",
   component: Flex,
 };
 

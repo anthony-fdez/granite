@@ -15,7 +15,7 @@ import Accordion from "../Accordion";
 import AccordionItem from "../Accordion/AccordionItem";
 
 export default {
-  title: "Components/ThemeProvider",
+  title: "Components/Theming/ThemeProvider",
   component: ThemeProvider,
 };
 

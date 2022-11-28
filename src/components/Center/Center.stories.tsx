@@ -6,7 +6,7 @@ import Center from "./Center";
 import Button from "../Button";
 
 export default {
-  title: "Components/Center",
+  title: "Components/Layout/Center",
   component: Center,
 };
 

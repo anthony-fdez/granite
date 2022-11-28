@@ -6,7 +6,7 @@ import Modal from "./Modal";
 import Button from "../Button";
 
 export default {
-  title: "Components/Modal",
+  title: "Components/Overlays/Modal",
   component: Modal,
 };
 
