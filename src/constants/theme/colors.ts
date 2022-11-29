@@ -28,6 +28,7 @@ export interface IColorShades {
   red: Variants;
   blue: Variants;
 }
+
 export const colors: IColorShades = {
   common: {
     light: {
