@@ -14,6 +14,7 @@ import Divider from "../../Extra/Divider";
 import Accordion from "../../DataDisplay/Accordion";
 import AccordionItem from "../../DataDisplay/Accordion/AccordionItem";
 import useTheme from "../../hooks/useTheme";
+import Dialog from "../../Overlays/Dialog";
 
 export default {
   title: "Components/Theming/ThemeProvider",
@@ -22,6 +23,7 @@ export default {
 
 const Template: ComponentStory<typeof ThemeProvider> = (args) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
   const theme = useTheme();
 
   console.log(theme);
@@ -78,6 +80,37 @@ const Template: ComponentStory<typeof ThemeProvider> = (args) => {
           </Button>
         </Flex>
       </Modal>
+      <h2>Layout</h2>
+
+      <>
+        <h3>Center</h3>
+
+        <Center>
+          <p>CENTER</p>
+        </Center>
+        <h3>Flex</h3>
+        <Flex justifyContent="space-between">
+          <Button>1</Button>
+          <Button onClick={() => setIsDialogOpen(true)}>2 (open dialog)</Button>
+          <Button>3</Button>
+        </Flex>
+      </>
+      <Dialog
+        closeOnClickOutside={false}
+        isOpen={isDialogOpen}
+        onClose={() => setIsDialogOpen(false)}
+        title="Newsletter"
+      >
+        <p>
+          Would you like to get your inbox filled with spam? If yes click no
+        </p>
+        <Flex justifyContent="flex-end">
+          <Button onClick={() => setIsDialogOpen(false)} variant="outlined">
+            No
+          </Button>
+          <Button onClick={() => setIsDialogOpen(false)}>Yes</Button>
+        </Flex>
+      </Dialog>
       <h2>Spinners</h2>
       <Center>
         <Spinner />

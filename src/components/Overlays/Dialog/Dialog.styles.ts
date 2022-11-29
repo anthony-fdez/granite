@@ -33,12 +33,58 @@ export const getDialogVariants = ({ animation }: VariantsProps) => {
     },
     closed: {
       opacity: 0,
-      x: 100,
+      x: "100%",
+    },
+  };
+
+  const slideRight: Variants = {
+    open: {
+      opacity: 1,
+      x: 0,
+    },
+    closed: {
+      opacity: 0,
+      x: "-100%",
+    },
+  };
+
+  const fade: Variants = {
+    open: {
+      opacity: 1,
+    },
+    closed: {
+      opacity: 0,
+    },
+  };
+
+  const slideTop: Variants = {
+    open: {
+      opacity: 1,
+      y: 0,
+    },
+    closed: {
+      opacity: 0,
+      y: "100%",
+    },
+  };
+
+  const slideBottom: Variants = {
+    open: {
+      opacity: 1,
+      y: 0,
+    },
+    closed: {
+      opacity: 0,
+      y: "-100%",
     },
   };
 
   if (animation === "scale") return scale;
   if (animation === "slide-left") return slideLeft;
+  if (animation === "slide-right") return slideRight;
+  if (animation === "fade") return fade;
+  if (animation === "slide-top") return slideTop;
+  if (animation === "slide-bottom") return slideBottom;
 };
 
 export const getDialogStyles = ({ styles, position }: Props) => {

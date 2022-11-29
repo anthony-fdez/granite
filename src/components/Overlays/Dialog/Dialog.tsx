@@ -33,7 +33,8 @@ const Dialog = ({
   borderColor,
   borderWidth = 3,
   position = "bottom-right",
-  animation = "slide-left",
+  animation = "slide-top",
+  ...args
 }: IDialogProps) => {
   const { styles } = useContext(StateContext);
 
@@ -68,6 +69,7 @@ const Dialog = ({
         onClickOutside={() => closeOnClickOutside && onClose()}
       >
         <motion.div
+          {...args}
           variants={getDialogVariants({ animation })}
           initial="closed"
           animate={isOpen ? "open" : "closed"}
