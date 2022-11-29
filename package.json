@@ -16,6 +16,7 @@
     "@emotion/react": "^11.10.5",
     "@rollup/plugin-commonjs": "^23.0.2",
     "@rollup/plugin-node-resolve": "^15.0.1",
+    "@rollup/plugin-sucrase": "^5.0.1",
     "@rollup/plugin-typescript": "^9.0.2",
     "@storybook/addon-actions": "^6.5.13",
     "@storybook/addon-console": "^1.2.3",
@@ -52,9 +53,9 @@
   },
   "peerDependencies": {
     "@emotion/react": ">=11.9.0",
+    "framer-motion": "^7.6.12",
     "react": ">=16.8.0",
-    "react-dom": ">=16.8.0",
-    "framer-motion": "^7.6.12"
+    "react-dom": ">=16.8.0"
   },
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",

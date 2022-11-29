@@ -6,6 +6,7 @@ import postcss from "rollup-plugin-postcss";
 import autoprefixer from "autoprefixer";
 import babel from "rollup-plugin-babel";
 import external from "rollup-plugin-peer-deps-external";
+import sucrase from "@rollup/plugin-sucrase";
 
 import packageJson from "./package.json" assert { type: "json" };
 import { terser } from "rollup-plugin-terser";
@@ -38,6 +39,10 @@ export default [
         minimize: true,
       }),
       terser(),
+      sucrase({
+        exclude: ["node_modules/**"],
+        transforms: ["typescript", "jsx"],
+      }),
     ],
   },
   {

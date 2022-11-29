@@ -3,8 +3,6 @@ import { css } from "@emotion/react";
 
 import React, { useEffect, useState } from "react";
 import { IAccordionProps } from "./Accordion.types";
-// @ts-ignore
-import { LayoutGroup } from "framer-motion/dist/framer-motion";
 
 const Accordion = ({
   children,
