@@ -36,6 +36,6 @@ export interface IDialogProps extends React.HTMLAttributes<HTMLDivElement> {
   border?: boolean;
   borderColor?: string;
   borderWidth?: number;
-  position: DialogPositionTypes;
-  animation: DialogAnimationTypes;
+  position?: DialogPositionTypes;
+  animation?: DialogAnimationTypes;
 }
