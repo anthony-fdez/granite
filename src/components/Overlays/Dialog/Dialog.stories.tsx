@@ -10,8 +10,6 @@ export default {
   component: Dialog,
 };
 
-let isOpen = false;
-
 const Template: ComponentStory<typeof Dialog> = (args) => <Dialog {...args} />;
 
 export const Default = Template.bind({});

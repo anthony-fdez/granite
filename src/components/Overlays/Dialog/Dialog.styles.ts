@@ -26,7 +26,19 @@ export const getDialogVariants = ({ animation }: VariantsProps) => {
     },
   };
 
-  return scale;
+  const slideLeft: Variants = {
+    open: {
+      opacity: 1,
+      x: 0,
+    },
+    closed: {
+      opacity: 0,
+      x: 100,
+    },
+  };
+
+  if (animation === "scale") return scale;
+  if (animation === "slide-left") return slideLeft;
 };
 
 export const getDialogStyles = ({ styles, position }: Props) => {
