@@ -16,7 +16,7 @@ export type DialogAnimationTypes =
   | "slide-left"
   | "slide-right"
   | "slide-top";
-export interface IDialogProps {
+export interface IDialogProps extends React.HTMLAttributes<HTMLDivElement> {
   children: JSX.Element | JSX.Element[];
   title: string;
   isOpen: boolean;
