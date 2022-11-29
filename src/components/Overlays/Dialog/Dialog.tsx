@@ -33,7 +33,7 @@ const Dialog = ({
   borderColor,
   borderWidth = 3,
   position = "bottom-right",
-  animation = "slide-left",
+  animation = "slide-top",
 }: IDialogProps) => {
   const { styles } = useContext(StateContext);
 
