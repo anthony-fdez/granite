@@ -13,6 +13,7 @@ import Flex from "../../Layout/Flex";
 import Divider from "../../Extra/Divider";
 import Accordion from "../../DataDisplay/Accordion";
 import AccordionItem from "../../DataDisplay/Accordion/AccordionItem";
+import useTheme from "../../hooks/useTheme";
 
 export default {
   title: "Components/Theming/ThemeProvider",
@@ -21,6 +22,9 @@ export default {
 
 const Template: ComponentStory<typeof ThemeProvider> = (args) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const theme = useTheme();
+
+  console.log(theme);
 
   return (
     <ThemeProvider css={{ maxWidth: 1000, margin: "auto" }} {...args}>

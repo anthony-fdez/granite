@@ -76,4 +76,5 @@ There is a lot of things to do in regards to the colors. There is currently only
 
 ### Extra (I don't know how to categorize these)
 
+- [ ] Header - do something like stripes header
 - [x] Divider

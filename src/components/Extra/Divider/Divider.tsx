@@ -24,7 +24,12 @@ const Divider = ({
   const FONT_COLOR = colors.common[styles.theme || "light"].font;
 
   const lineStyles = css([
-    { height: width, width: "100%", backgroundColor: color ?? BORDER_COLOR },
+    {
+      border: `${width}px`,
+      borderStyle: variant,
+      borderColor: color ?? BORDER_COLOR,
+      width: "100%",
+    },
   ]);
 
   return (

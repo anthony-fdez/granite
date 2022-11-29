@@ -8,3 +8,9 @@ export { default as Divider } from "./Extra/Divider";
 export { default as CloseButton } from "./Buttons/CloseButton";
 export { default as Accordion } from "./DataDisplay/Accordion/Accordion";
 export { default as AccordionItem } from "./DataDisplay/Accordion/AccordionItem/AccordionItem";
+export { default as Dialog } from "./Overlays/Dialog";
+export { default as ClickAwayListener } from "./Utils/ClickAwayListener";
+export { default as TextInput } from "./Inputs/TextInput";
+
+// Hooks
+export { default as useTheme } from "./hooks/useTheme";

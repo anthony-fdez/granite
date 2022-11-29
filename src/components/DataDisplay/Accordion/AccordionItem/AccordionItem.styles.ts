@@ -54,6 +54,7 @@ export const getAccordionItemStyles = ({
         ".accordion-item-content": {
           paddingLeft: 20,
           paddingRight: 20,
+          overflow: "hidden",
         },
       },
     ],
