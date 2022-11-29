@@ -16,4 +16,11 @@ const Template: ComponentStory<typeof Dialog> = (args) => <Dialog {...args} />;
 
 export const Default = Template.bind({});
 
-Default.args = {};
+Default.args = {
+  title: "Subscribe to the newsletter",
+  children: (
+    <div>
+      <p>This is the dialog</p>
+    </div>
+  ),
+};

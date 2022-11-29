@@ -1,7 +1,24 @@
 import { SizesType } from "./../../../types/sizes";
+
+export type DialogPositionTypes =
+  | "top-left"
+  | "top-center"
+  | "top-right"
+  | "bottom-left"
+  | "bottom-right"
+  | "bottom-center"
+  | "center";
+
+export type DialogAnimationTypes =
+  | "fade"
+  | "scale"
+  | "slide-bottom"
+  | "slide-left"
+  | "slide-right"
+  | "slide-top";
 export interface IDialogProps {
   children: JSX.Element | JSX.Element[];
-  title?: string;
+  title: string;
   isOpen: boolean;
   onClose: () => void;
   closeButton?: boolean;
@@ -19,12 +36,6 @@ export interface IDialogProps {
   border?: boolean;
   borderColor?: string;
   borderWidth?: number;
-  position:
-    | "top-left"
-    | "top-center"
-    | "top-right"
-    | "bottom-left"
-    | "bottom-right"
-    | "bottom-center"
-    | "center";
+  position: DialogPositionTypes;
+  animation: DialogAnimationTypes;
 }
