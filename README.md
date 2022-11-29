@@ -10,11 +10,11 @@ There is a lot of things to do in regards to the colors. There is currently only
 
 ### Overlays
 
-- [ ] Dialog
+- [x] Dialog
 - [ ] Drawer
 - [x] Modal
 - [ ] Tooltip
-- [ ] Loading overlay (backdrop) - This is the full screen spinner
+- [x] Loading overlay (backdrop) - This is the full screen spinner
 - [ ] Popover
 
 ### Layout
@@ -62,7 +62,7 @@ There is a lot of things to do in regards to the colors. There is currently only
 
 ### Utils
 
-- [ ] Click away listener
+- [x] Click away listener
 
 ### Extra (I don't know how to categorize these)
 
