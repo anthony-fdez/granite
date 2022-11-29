@@ -11,6 +11,7 @@ export { default as AccordionItem } from "./DataDisplay/Accordion/AccordionItem/
 export { default as Dialog } from "./Overlays/Dialog";
 export { default as ClickAwayListener } from "./Utils/ClickAwayListener";
 export { default as TextInput } from "./Inputs/TextInput";
+export { default as LoadingOverlay } from "./Overlays/LoadingOverlay";
 
 // Hooks
 export { default as useTheme } from "./hooks/useTheme";
