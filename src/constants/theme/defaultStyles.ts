@@ -2,6 +2,8 @@ import { IStyles } from "../../components/Theming/ThemeProvider/Interfaces/IStyl
 
 const shared: IStyles = {
   primaryColor: "blue",
+  borderRadius: "xs",
+  animated: true,
 };
 
 const dark: IStyles = {

@@ -16,7 +16,7 @@ const Button = ({
   color,
   padding = 10,
   margin = 10,
-  borderRadius = "xs",
+  borderRadius,
   loading = false,
   fontColor,
   spinnerVariant = "circular",
@@ -44,9 +44,11 @@ const Button = ({
         fontColor && { color: fontColor },
         padding && { padding },
         margin && { margin },
-        borderRadius && {
-          borderRadius: getBorderRadius({ size: borderRadius }),
-        },
+        borderRadius
+          ? {
+              borderRadius: getBorderRadius({ size: borderRadius }),
+            }
+          : { borderRadius: getBorderRadius({ size: styles.borderRadius }) },
         align && {
           display: "flex",
           justifyContent: align,

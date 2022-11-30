@@ -28,7 +28,7 @@ const Dialog = ({
   width = 350,
   height,
   padding = 10,
-  borderRadius = "xs",
+  borderRadius,
   zIndex = 1000,
   border = true,
   borderColor,
@@ -90,9 +90,13 @@ const Dialog = ({
               borderStyle: "solid",
             },
             borderColor ? { borderColor } : { borderColor: BORDER_COLOR },
-            borderRadius && {
-              borderRadius: getBorderRadius({ size: borderRadius }),
-            },
+            borderRadius
+              ? {
+                  borderRadius: getBorderRadius({ size: borderRadius }),
+                }
+              : {
+                  borderRadius: getBorderRadius({ size: styles.borderRadius }),
+                },
             {
               maxWidth: `calc(100% - ${padding * 2}px - 40px)`,
             },

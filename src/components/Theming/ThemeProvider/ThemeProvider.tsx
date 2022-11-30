@@ -18,11 +18,12 @@ export const StateContext = createContext<IContext>({
 
 const ThemeProvider = ({
   children,
-  theme = "light",
-  primaryColor = "blue",
+  defaultStyles = { ...defaultStylesLight },
   ...args
 }: IProviderProps): JSX.Element => {
-  const [styles, setStyles] = useState<IStyles>(defaultStylesLight);
+  defaultStyles = { ...defaultStylesLight, ...defaultStyles };
+
+  const [styles, setStyles] = useState<IStyles>(defaultStyles);
 
   const handleUpdateState = (newState: IStyles) => {
     setStyles({ ...styles, ...newState });
@@ -30,13 +31,19 @@ const ThemeProvider = ({
 
   useEffect(() => {
     const getDefaultStyles = (): IStyles => {
-      if (theme === "dark") return defaultStylesDark;
+      if (defaultStyles.theme === "dark") return defaultStylesDark;
 
       return defaultStylesLight;
     };
 
-    handleUpdateState({ ...getDefaultStyles(), theme, primaryColor });
-  }, [theme, primaryColor]);
+    handleUpdateState({
+      ...getDefaultStyles(),
+      theme: defaultStyles.theme,
+      primaryColor: defaultStyles.primaryColor,
+      borderRadius: defaultStyles.borderRadius,
+      animated: defaultStyles.animated,
+    });
+  }, []);
 
   return (
     <>

@@ -26,7 +26,7 @@ const Modal = ({
   height,
   centered = false,
   padding = 20,
-  borderRadius = "xs",
+  borderRadius,
   backdropBlur = 5,
   zIndex,
   border = true,
@@ -82,9 +82,13 @@ const Modal = ({
             borderStyle: "solid",
           },
           borderColor ? { borderColor } : { borderColor: BORDER_COLOR },
-          borderRadius && {
-            borderRadius: getBorderRadius({ size: borderRadius }),
-          },
+          borderRadius
+            ? {
+                borderRadius: getBorderRadius({ size: borderRadius }),
+              }
+            : {
+                borderRadius: getBorderRadius({ size: styles.borderRadius }),
+              },
           {
             maxWidth: `calc(100% - ${padding * 2}px - 20px)`,
           },
