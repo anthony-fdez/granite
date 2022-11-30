@@ -1,1 +1,1 @@
-export type SizesType = "xs" | "sm" | "md" | "lg" | "xl";
+export type SizesType = number | "xs" | "sm" | "md" | "lg" | "xl";
