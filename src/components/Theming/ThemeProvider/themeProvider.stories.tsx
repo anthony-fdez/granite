@@ -24,9 +24,6 @@ export default {
 const Template: ComponentStory<typeof ThemeProvider> = (args) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
-  const theme = useTheme();
-
-  console.log(theme);
 
   return (
     <ThemeProvider css={{ maxWidth: 1000, margin: "auto" }} {...args}>
