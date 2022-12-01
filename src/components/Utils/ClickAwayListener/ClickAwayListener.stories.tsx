@@ -42,7 +42,7 @@ export const Example: ComponentStory<typeof ClickAwayListener> = () => {
       </p>
       <ClickAwayListener
         style={{ width: "100%" }}
-        onClickOutside={() => console.log("Check that out")}
+        onClickOutside={() => alert("Check that out")}
       >
         <Center>
           <div
