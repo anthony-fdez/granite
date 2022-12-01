@@ -5,4 +5,5 @@ export interface IAccordionItemProps {
   activeElement?: string | null;
   setActiveElement?: React.Dispatch<React.SetStateAction<string | null>>;
   variant?: AccordionVariants;
+  arrowPosition?: "left" | "right";
 }

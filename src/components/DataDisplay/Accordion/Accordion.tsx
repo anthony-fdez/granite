@@ -8,6 +8,7 @@ const Accordion = ({
   children,
   defaultValue,
   variant = "subtle",
+  arrowPosition = "left",
   value,
 }: IAccordionProps) => {
   const [activeElement, setActiveElement] = useState<string | null>(
@@ -27,6 +28,7 @@ const Accordion = ({
         activeElement,
         setActiveElement,
         variant,
+        arrowPosition,
       });
     }
 

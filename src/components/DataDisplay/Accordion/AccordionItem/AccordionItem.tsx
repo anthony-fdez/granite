@@ -20,6 +20,7 @@ const AccordionItem = ({
   activeElement,
   setActiveElement,
   variant = "filled",
+  arrowPosition = "left",
 }: IAccordionItemProps) => {
   const { styles } = useContext(StateContext);
 
@@ -46,8 +47,15 @@ const AccordionItem = ({
       ]}
     >
       <div onClick={handleOpenAccordionItem} className="accordion-item-header">
-        <Flex justifyContent="space-between">
-          <span>{label}</span>
+        <Flex
+          flexDirection={arrowPosition === "left" ? "row-reverse" : "row"}
+          justifyContent={
+            arrowPosition === "left" ? "flex-end" : "space-between"
+          }
+        >
+          <span css={arrowPosition === "left" && { marginLeft: 15 }}>
+            {label}
+          </span>
           <motion.img
             variants={chevronAnimation}
             animate={label === activeElement ? "open" : "closed"}

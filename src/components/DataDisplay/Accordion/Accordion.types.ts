@@ -9,4 +9,5 @@ export interface IAccordionProps {
   value?: string | null;
   defaultValue?: string;
   variant?: AccordionVariants;
+  arrowPosition?: "left" | "right";
 }
