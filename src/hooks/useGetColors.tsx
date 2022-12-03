@@ -8,6 +8,8 @@ interface Props {
   variant: VariantsType;
 }
 
+// edited from the phone
+
 export const useGetColors = ({
   color,
   styles,
