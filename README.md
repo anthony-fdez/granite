@@ -54,7 +54,7 @@ There is a lot of things to do in regards to the colors. There is currently only
 - [ ] Avatar
 - [ ] Badge
 - [ ] Paper - This would be just a div with some box shadow
-- [ ] Performance indifator - from red to green, poor to excelent. Also allow for numbers or percent 
+- [ ] Performance indicator - from red to green, poor to excelent. Also allow for numbers or percent 
 
 ### Notifications
 
