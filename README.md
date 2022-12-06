@@ -1,5 +1,9 @@
 # Component library
 
+## Next up to work on:
+- Fix theming. Allow the user to have their own colors, as well as setting default stylings for everything that is shared on the app. All this would happen in `<ThemeProvider />` and some external files that handle constants.
+
+
 ## Components to add:
 
 There is a lot of things to do in regards to the colors. There is currently only two colors.
