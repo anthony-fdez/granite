@@ -75,6 +75,7 @@ There is a lot of things to do in regards to the colors. There is currently only
 
 - [ ] Alert
 - [x] Spinner
+ - Currently only having cicrular spinner, dots is still to be added.
 - [ ] Skeleton
 
 ### Utils
