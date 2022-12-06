@@ -13,6 +13,7 @@ There is a lot of things to do in regards to the colors. There is currently only
 - [x] Dialog
 - [ ] Drawer
 - [x] Modal
+- [ ] ResponsiveMenu - This will be a `<Drawer />` for mobile, and a `<Popover />` for desktop. Both will have a `<Menu />` as children.
 - [ ] Tooltip
 - [x] Loading overlay (backdrop) - This is the full screen spinner
 - [ ] Popover
@@ -32,6 +33,7 @@ There is a lot of things to do in regards to the colors. There is currently only
 
 - [ ] Tabs
 - [ ] Breadcrumbs
+- [ ] Menu & MenuItem - Allow nested menu items, kind of like folders
 
 ### Inputs
 
