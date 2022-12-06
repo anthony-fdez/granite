@@ -22,6 +22,7 @@ There is a lot of things to do in regards to the colors. There is currently only
 - [ ] Tooltip
 - [x] Loading overlay (backdrop) - This is the full screen spinner
 - [ ] Popover
+- [ ] Menu & MenuItem - Allow nested menu items, kind of like folders
 
 ### Layout
 
@@ -38,7 +39,6 @@ There is a lot of things to do in regards to the colors. There is currently only
 
 - [ ] Tabs
 - [ ] Breadcrumbs
-- [ ] Menu & MenuItem - Allow nested menu items, kind of like folders
 
 ### Inputs
 
@@ -59,9 +59,10 @@ There is a lot of things to do in regards to the colors. There is currently only
 - [ ] Badge
 - [x] Accordion
 - [ ] Avatar
-- [ ] Badge
 - [ ] Paper - This would be just a div with some box shadow
 - [ ] Performance indicator - from red to green, poor to excelent. Also allow for numbers or percent 
+- [ ] Expand - Pretty much an isolated `<Accordion />` item. Will also have `<ExpandTarget />` (if not controlled) and `<ExpandContent />`. The state of the component should be synched with the controlled state of the user.
+
 
 ### Notifications
 
