@@ -3,6 +3,7 @@
 ## Next up to work on:
 - Figure out a nice way to have all the popup components not be rendered all the time on the DOM, but still have the animate nicely
 - Fix theming. Allow the user to have their own colors, as well as setting default stylings for everything that is shared on the app. All this would happen in `<ThemeProvider />` and some external files that handle constants.
+- Add an animation for all popover components when they have clickOutside disabled. To let the user know that they can't click outside. Something subtle.
 
 
 ## Components to add:
