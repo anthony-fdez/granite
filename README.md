@@ -25,7 +25,7 @@ There is a lot of things to do in regards to the colors. There is currently only
 - [ ] Tooltip
 - [x] Loading overlay (backdrop) - This is the full screen spinner
 - [ ] Popover
-- [ ] Menu & MenuItem - Allow nested menu items, kind of like folders
+- [ ] Menu & MenuItem - Allow nested menu items, kind of like folders. The menu will be a list under the hood.
 
 ### Layout
 
@@ -60,6 +60,7 @@ There is a lot of things to do in regards to the colors. There is currently only
 
 - [ ] Card (Make it clickable and animate when it opens with framer motion layoutId)
 - [ ] Badge
+- [ ] List - Take inspiration from MUi on the API side and BluepringJS on some looks
 - [x] Accordion
 - [ ] Avatar
 - [ ] Paper - This would be just a div with some box shadow
