@@ -27,6 +27,7 @@ There is a lot of things to do in regards to the colors. There is currently only
 - [x] Loading overlay (backdrop) - This is the full screen spinner
 - [ ] Popover
 - [ ] Menu & MenuItem - Allow nested menu items, kind of like folders. The menu will be a list under the hood.
+- [ ] Image - Just a normal image, but wiith a prop that would make it into a modal, like `expandable`
 
 ### Layout
 
