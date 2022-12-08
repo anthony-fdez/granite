@@ -1,5 +1,7 @@
 # Component library
 
+Blueprintjs is a pretty good inspiration
+
 ## Next up to work on:
 - Figure out a nice way to have all the popup components not be rendered all the time on the DOM, but still have the animate nicely
 - Fix theming. Allow the user to have their own colors, as well as setting default stylings for everything that is shared on the app. All this would happen in `<ThemeProvider />` and some external files that handle constants.
@@ -62,7 +64,7 @@ There is a lot of things to do in regards to the colors. There is currently only
 - [ ] Avatar
 - [ ] Paper - This would be just a div with some box shadow
 - [ ] Performance indicator - from red to green, poor to excelent. Also allow for numbers or percent 
-- [ ] Expand - Pretty much an isolated `<Accordion />` item. Will also have `<ExpandTarget />` (if not controlled) and `<ExpandContent />`. The state of the component should be synched with the controlled state of the user.
+- [ ] Collapse - Pretty much an isolated `<Accordion />` item. Will also have `<Collapse.Target />` (if not controlled) and `<Collapse.Content />`. The state of the component should be synched with the controlled state of the user.
 
 
 ### Notifications
