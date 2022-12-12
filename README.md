@@ -95,3 +95,4 @@ There is a lot of things to do in regards to the colors. There is currently only
 
 - [ ] Header - do something like stripes header
 - [x] Divider
+- [ ] AnimatedText - Put the custom component on my dev site into a component, should have the staggered animation.
