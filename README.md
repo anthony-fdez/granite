@@ -1,14 +1,14 @@
 # Component library
 
-Redisign the whole thing to use neo brutalism 
+Redesign the whole thing to use neo brutalism
 
 Blueprintjs is a pretty good inspiration
 
 ## Next up to work on:
-- Figure out a nice way to have all the popup components not be rendered all the time on the DOM, but still have the animate nicely
-- Fix theming. Allow the user to have their own colors, as well as setting default stylings for everything that is shared on the app. All this would happen in `<ThemeProvider />` and some external files that handle constants.
-- Add an animation for all popover components when they have clickOutside disabled. To let the user know that they can't click outside. Something subtle.
 
+- Figure out a nice way to have all the popup components not be rendered all the time on the DOM, but still have the animate nicely
+- Fix Theming. Allow the user to have their own colors, as well as setting default stylings for everything that is shared on the app. All this would happen in `<ThemeProvider />` and some external files that handle constants.
+- Add an animation for all popover components when they have clickOutside disabled. To let the user know that they can't click outside. Something subtle.
 
 ## Components to add:
 
@@ -29,7 +29,7 @@ There is a lot of things to do in regards to the colors. There is currently only
 - [x] Loading overlay (backdrop) - This is the full screen spinner
 - [ ] Popover
 - [ ] Menu & MenuItem - Allow nested menu items, kind of like folders. The menu will be a list under the hood.
-- [ ] Image - Just a normal image, but wiith a prop that would make it into a modal, like `expandable`
+- [ ] Image - Just a normal image, but with a prop that would make it into a modal, like `expandable`
 
 ### Layout
 
@@ -68,24 +68,23 @@ There is a lot of things to do in regards to the colors. There is currently only
 - [x] Accordion
 - [ ] Avatar
 - [ ] Paper - This would be just a div with some box shadow
-- [ ] Performance indicator - from red to green, poor to excelent. Also allow for numbers or percent 
+- [ ] Performance indicator - from red to green, poor to excelent. Also allow for numbers or percent
 - [ ] Collapse - Pretty much an isolated `<Accordion />` item. Will also have `<Collapse.Target />` (if not controlled) and `<Collapse.Content />`. The state of the component should be synched with the controlled state of the user.
-
 
 ### Notifications
 
 - [ ] Toast - this toast will be inisialized alongside the themeProvider and will be global.
 
 ```jsx
-  // Usage
-  <Button onClick={() => Toast.message("Hey")}>Say hey</Button>
+// Usage
+<Button onClick={() => Toast.message("Hey")}>Say hey</Button>
 ```
 
 ### Feedback
 
 - [ ] Alert
 - [x] Spinner
- - Currently only having cicrular spinner, dots is still to be added.
+- Currently only having cicrular spinner, dots is still to be added.
 - [ ] Skeleton
 
 ### Utils
