@@ -1,5 +1,7 @@
 import { IStyles } from "../components/Theming/ThemeProvider/Interfaces/IStyles";
 import { DEFAULT_COLORS, IColors } from "../constants/theme/colors";
+import { getButtonFontColor } from "./helpers/getButtonFontColor";
+import { getColor } from "./helpers/getColor";
 
 interface Props {
   styles: IStyles;
@@ -7,27 +9,21 @@ interface Props {
 }
 
 export const useStyles = ({ styles, color }: Props) => {
-  const getColor = (shade: number) => {
-    if (color) {
-      return DEFAULT_COLORS[color][shade];
-    }
-
-    return DEFAULT_COLORS[styles.primaryColor ?? "blue"][shade];
-  };
-
   return {
     FONT:
       styles.theme === "dark" ? DEFAULT_COLORS.gray[0] : DEFAULT_COLORS.dark[9],
+    BUTTON_FONT: getButtonFontColor({ styles, color }),
+
     BG:
       styles.theme === "dark" ? DEFAULT_COLORS.dark[9] : DEFAULT_COLORS.gray[0],
     BG_ACCENT:
       styles.theme === "dark" ? DEFAULT_COLORS.dark[8] : DEFAULT_COLORS.gray[1],
     BG_HOVER:
-      styles.theme === "dark" ? DEFAULT_COLORS.dark[7] : DEFAULT_COLORS.gray[2],
+      styles.theme === "dark" ? DEFAULT_COLORS.dark[4] : DEFAULT_COLORS.gray[3],
     BORDER:
-      styles.theme === "dark" ? DEFAULT_COLORS.dark[6] : DEFAULT_COLORS.gray[3],
+      styles.theme === "dark" ? DEFAULT_COLORS.dark[4] : DEFAULT_COLORS.gray[3],
 
-    COLOR: getColor(6),
-    COLOR_HOVER: getColor(7),
+    COLOR: getColor({ styles, color, shade: 5 }),
+    COLOR_HOVER: getColor({ styles, color, shade: 6 }),
   };
 };

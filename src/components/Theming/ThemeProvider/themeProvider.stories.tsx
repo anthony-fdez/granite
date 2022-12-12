@@ -13,7 +13,6 @@ import Flex from "../../Layout/Flex";
 import Divider from "../../Extra/Divider";
 import Accordion from "../../DataDisplay/Accordion";
 import AccordionItem from "../../DataDisplay/Accordion/AccordionItem";
-import useTheme from "../../hooks/useTheme";
 import Dialog from "../../Overlays/Dialog";
 
 export default {
@@ -214,7 +213,7 @@ export const Light = Template.bind({});
 Light.args = {
   defaultStyles: {
     theme: "light",
-    borderRadius: "lg",
+    borderRadius: "sm",
   },
 };
 

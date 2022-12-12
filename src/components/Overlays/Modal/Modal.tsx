@@ -10,7 +10,7 @@ import { IModalProps } from "./Modal.types";
 // @ts-ignore
 import { motion } from "framer-motion/dist/framer-motion";
 import { useDisableScroll } from "../../../hooks/useDisableScroll";
-import { useStyles } from "../../../hooks/useStyles";
+import { useStyles } from "../../../styles/useStyles";
 
 const Modal = ({
   children,

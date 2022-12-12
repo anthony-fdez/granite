@@ -1,4 +1,4 @@
-import { useStyles } from "./../../../hooks/useStyles";
+import { useStyles } from "../../../styles/useStyles";
 import { IColors } from "./../../../constants/theme/colors";
 import { SpinnersType } from "./Spinner.types";
 import { IStyles } from "../../Theming/ThemeProvider/Interfaces/IStyles";

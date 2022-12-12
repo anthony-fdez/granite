@@ -2,7 +2,7 @@
 import { css } from "@emotion/react";
 
 import React, { useContext } from "react";
-import { useStyles } from "../../../hooks/useStyles";
+import { useStyles } from "../../../styles/useStyles";
 import Flex from "../../Layout/Flex";
 import { StateContext } from "../../Theming/ThemeProvider/ThemeProvider";
 import { IDividerProps } from "./Divider.types";

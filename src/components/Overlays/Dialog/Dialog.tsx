@@ -5,7 +5,7 @@ import { css } from "@emotion/react";
 import { motion } from "framer-motion/dist/framer-motion";
 
 import React, { useContext } from "react";
-import { useStyles } from "../../../hooks/useStyles";
+import { useStyles } from "../../../styles/useStyles";
 import CloseButton from "../../Buttons/CloseButton";
 import { getBorderRadius } from "../../Theming/ThemeProvider/getValues/getBorderRadius";
 import { StateContext } from "../../Theming/ThemeProvider/ThemeProvider";

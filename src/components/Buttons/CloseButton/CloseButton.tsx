@@ -2,20 +2,20 @@
 import { css, SerializedStyles } from "@emotion/react";
 
 import React, { useContext } from "react";
-import { useStyles } from "../../../hooks/useStyles";
+import { useStyles } from "../../../styles/useStyles";
 import { StateContext } from "../../Theming/ThemeProvider/ThemeProvider";
 import { ICloseButtonProps } from "./CloseButton.types";
 
 const CloseButton = ({ size = 35, ...args }: ICloseButtonProps) => {
   const { styles } = useContext(StateContext);
 
-  const { FONT_COLOR, BG_COLOR, BG_COLOR_HOVER } = useStyles({ styles });
+  const { FONT, BG, BG_HOVER } = useStyles({ styles });
 
   const common: SerializedStyles = css([
     {
-      color: FONT_COLOR,
+      color: FONT,
       transition: "100ms",
-      backgroundColor: BG_COLOR,
+      backgroundColor: BG,
       border: 0,
       padding: 5,
       outline: 0,
@@ -24,7 +24,7 @@ const CloseButton = ({ size = 35, ...args }: ICloseButtonProps) => {
       alignItems: "center",
       cursor: "pointer",
       "&:hover": {
-        backgroundColor: BG_COLOR_HOVER,
+        backgroundColor: BG_HOVER,
       },
       "&:active": {
         transform: "translateY(2px)",

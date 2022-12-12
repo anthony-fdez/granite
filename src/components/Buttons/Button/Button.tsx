@@ -7,7 +7,7 @@ import { getButtonStyles } from "./Button.styles";
 import { getBorderRadius } from "../../Theming/ThemeProvider/getValues/getBorderRadius";
 import Spinner from "../../Feedback/Spinner";
 import { IButtonProps } from "./Button.types";
-import { useStyles } from "../../../hooks/useStyles";
+import { useStyles } from "../../../styles/useStyles";
 
 const Button = ({
   children,

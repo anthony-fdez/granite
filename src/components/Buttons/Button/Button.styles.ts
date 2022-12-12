@@ -1,5 +1,5 @@
 import { IColors } from "./../../../constants/theme/colors";
-import { useStyles } from "./../../../hooks/useStyles";
+import { useStyles } from "../../../styles/useStyles";
 import { IVariants } from "./../../../types/variants";
 import { getVariantStyles } from "../../Theming/ThemeProvider/getValues/getVariantStyles";
 import { IStyles } from "../../Theming/ThemeProvider/Interfaces/IStyles";

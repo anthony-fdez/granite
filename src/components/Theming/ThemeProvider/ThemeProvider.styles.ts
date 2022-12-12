@@ -1,4 +1,4 @@
-import { useStyles } from "./../../../hooks/useStyles";
+import { useStyles } from "../../../styles/useStyles";
 import { IStyles } from "./Interfaces/IStyles";
 import { css } from "@emotion/react";
 

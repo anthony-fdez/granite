@@ -1,4 +1,4 @@
-import { useStyles } from "./../../../hooks/useStyles";
+import { useStyles } from "../../../styles/useStyles";
 import { Variants } from "framer-motion";
 import { SerializedStyles } from "@emotion/react";
 import { IStyles } from "../../Theming/ThemeProvider/Interfaces/IStyles";

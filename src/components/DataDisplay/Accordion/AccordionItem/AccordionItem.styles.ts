@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { css, SerializedStyles } from "@emotion/react";
 
-import { useStyles } from "./../../../../hooks/useStyles";
+import { useStyles } from "../../../../styles/useStyles";
 import { AccordionVariants } from "../Accordion.types";
 import { IStyles } from "../../../Theming/ThemeProvider/Interfaces/IStyles";
 import { Variants } from "framer-motion";
