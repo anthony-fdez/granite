@@ -30,7 +30,7 @@ export const Examples: ComponentStory<typeof LoadingOverlay> = () => {
           >
             <LoadingOverlay show={loading} />
             <p>
-              It sounds wonderful, but it's 100 percent accurate! The
+              It sounds wonderful, but it&apos;s 100 percent accurate! The
               experiences factor is wireless. If you productize globally, you
               may also reintermediate magnetically. Without interfaces, you will
               lack cross-media CAE. These innovations help CMOs challenged with
@@ -46,15 +46,15 @@ export const Examples: ComponentStory<typeof LoadingOverlay> = () => {
               that can synthesize courageously will (eventually) be able to
               orchestrate correctly. Without interfaces, you will lack
               affiliate-based compliance. What does it really mean to unleash
-              'dynamically'? What does the commonly-accepted buzzword
-              'long-term' really mean? Quick: do you have a infinitely
+              &apos;dynamically&apos;? What does the commonly-accepted buzzword
+              &apos;long-term&apos; really mean? Quick: do you have a infinitely
               reconfigurable scheme for coping with emerging methodologies? Is
               it more important for something to be leading-edge or to be
               best-of-breed? The portals factor can be summed up in one word:
               affiliate-based. That is a remarkable achievement taking into
-              account this month's financial state of things! If all of this
-              sounds astonishing to you, that's because it is! What does the
-              industry jargon 'co-branded' really mean?
+              account this month&apos;s financial state of things! If all of
+              this sounds astonishing to you, that&apos;s because it is! What
+              does the industry jargon &apos;co-branded&apos; really mean?
             </p>
           </div>
         </Center>

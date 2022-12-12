@@ -1,8 +1,8 @@
+import { useStyles } from "./../../../hooks/useStyles";
 import { Variants } from "framer-motion";
 import { SerializedStyles } from "@emotion/react";
 import { IStyles } from "../../Theming/ThemeProvider/Interfaces/IStyles";
 import { css } from "@emotion/react";
-import { colors } from "../../../constants/theme/colors";
 
 interface Props {
   styles: IStyles;
@@ -20,11 +20,11 @@ export const modalVariants: Variants = {
 };
 
 export const getModalStyles = ({ styles }: Props) => {
-  const BACKGROUND = colors.common[styles.theme || "light"].background;
+  const { BG } = useStyles({ styles });
 
   const stylesOpen: SerializedStyles = css({
     position: "fixed",
-    backgroundColor: BACKGROUND,
+    backgroundColor: BG,
     margin: "auto",
     left: 0,
     right: 0,

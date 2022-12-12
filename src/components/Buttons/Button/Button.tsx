@@ -3,12 +3,11 @@ import { css } from "@emotion/react";
 
 import React, { useContext } from "react";
 import { StateContext } from "../../Theming/ThemeProvider/ThemeProvider";
-import { colors } from "../../../constants/theme/colors";
 import { getButtonStyles } from "./Button.styles";
 import { getBorderRadius } from "../../Theming/ThemeProvider/getValues/getBorderRadius";
 import Spinner from "../../Feedback/Spinner";
 import { IButtonProps } from "./Button.types";
-import { useGetColors } from "../../../hooks/useGetColors";
+import { useStyles } from "../../../hooks/useStyles";
 
 const Button = ({
   children,
@@ -27,39 +26,36 @@ const Button = ({
   ...args
 }: IButtonProps) => {
   const { styles } = useContext(StateContext);
+  const { FONT } = useStyles({ styles });
 
-  const { FONT_COLOR, BG_COLOR } = useGetColors({
-    color,
-    styles,
-    variant,
-  });
+  const buttonStyles = css([
+    getButtonStyles({ styles, variant, color, disabled }),
+    fontColor && { color: fontColor },
+    padding && { padding },
+    margin && { margin },
+    borderRadius
+      ? {
+          borderRadius: getBorderRadius({ size: borderRadius }),
+        }
+      : { borderRadius: getBorderRadius({ size: styles.borderRadius }) },
+    align && {
+      display: "flex",
+      justifyContent: align,
+      alignItems: "center",
+    },
+    fullWidth && { width: `calc(100% - ${margin * 2}px);` },
+    backgroundColor && { backgroundColor },
+  ]);
 
   return (
-    <button
-      type="button"
-      {...args}
-      disabled={disabled}
-      css={[
-        getButtonStyles({ styles, variant, color, disabled }),
-        fontColor && { color: fontColor },
-        padding && { padding },
-        margin && { margin },
-        borderRadius
-          ? {
-              borderRadius: getBorderRadius({ size: borderRadius }),
-            }
-          : { borderRadius: getBorderRadius({ size: styles.borderRadius }) },
-        align && {
-          display: "flex",
-          justifyContent: align,
-          alignItems: "center",
-        },
-        fullWidth && { width: `calc(100% - ${margin * 2}px);` },
-        backgroundColor && { backgroundColor },
-      ]}
-    >
+    <button type="button" {...args} disabled={disabled} css={buttonStyles}>
       {loading ? (
-        <Spinner backgroundAccentColor={FONT_COLOR} size={11} color={color} />
+        <Spinner
+          variant={spinnerVariant}
+          backgroundAccentColor={FONT}
+          size={11}
+          color={color}
+        />
       ) : (
         children
       )}

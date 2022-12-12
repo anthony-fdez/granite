@@ -1,1 +1,1 @@
-export type VariantsType = "filled" | "outlined" | "subtle";
+export type IVariants = "filled" | "outlined" | "subtle";

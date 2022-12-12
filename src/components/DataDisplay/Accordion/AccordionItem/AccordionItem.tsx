@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
 
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext } from "react";
 import Flex from "../../../Layout/Flex";
 import { StateContext } from "../../../Theming/ThemeProvider/ThemeProvider";
 import {
@@ -11,6 +11,7 @@ import {
 } from "./AccordionItem.styles";
 import { IAccordionItemProps } from "./AccordionItem.types";
 
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 import { motion } from "framer-motion/dist/framer-motion";
 

@@ -2,18 +2,14 @@
 import { css, SerializedStyles } from "@emotion/react";
 
 import React, { useContext } from "react";
-import { colors } from "../../../constants/theme/colors";
-import Button from "../Button";
+import { useStyles } from "../../../hooks/useStyles";
 import { StateContext } from "../../Theming/ThemeProvider/ThemeProvider";
 import { ICloseButtonProps } from "./CloseButton.types";
 
 const CloseButton = ({ size = 35, ...args }: ICloseButtonProps) => {
   const { styles } = useContext(StateContext);
 
-  const FONT_COLOR = colors.common[styles.theme || "light"].font;
-  const BG_COLOR = colors.common[styles.theme || "light"].background;
-  const BG_COLOR_HOVER =
-    colors.common[styles.theme || "light"].backgroundAccent;
+  const { FONT_COLOR, BG_COLOR, BG_COLOR_HOVER } = useStyles({ styles });
 
   const common: SerializedStyles = css([
     {

@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from "react";
+import React, { useEffect } from "react";
 
 // https://stackoverflow.com/questions/33796267/how-to-use-refs-in-react-with-typescript
 
@@ -9,8 +9,6 @@ export function useOutsideAlerter(
   ref: React.RefObject<HTMLElement>,
   callback: () => void
 ) {
-  const [clickedOutside, setClickedOutside] = useState(false);
-
   useEffect(() => {
     function handleClickOutside(event: any) {
       if (ref.current && !ref.current.contains(event.target)) {
@@ -22,6 +20,4 @@ export function useOutsideAlerter(
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, [ref]);
-
-  return clickedOutside;
 }

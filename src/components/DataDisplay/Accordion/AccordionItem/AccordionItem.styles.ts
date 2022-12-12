@@ -1,8 +1,9 @@
-import { AccordionVariants } from "../Accordion.types";
-import { colors } from "../../../../constants/theme/colors";
-import { IStyles } from "../../../Theming/ThemeProvider/Interfaces/IStyles";
 /** @jsxImportSource @emotion/react */
 import { css, SerializedStyles } from "@emotion/react";
+
+import { useStyles } from "./../../../../hooks/useStyles";
+import { AccordionVariants } from "../Accordion.types";
+import { IStyles } from "../../../Theming/ThemeProvider/Interfaces/IStyles";
 import { Variants } from "framer-motion";
 
 interface Props {
@@ -35,9 +36,7 @@ export const getAccordionItemStyles = ({
   variant,
   isActive,
 }: Props): SerializedStyles => {
-  const BORDER = colors.common[styles.theme || "light"].border;
-  const BG = colors.common[styles.theme || "light"].background;
-  const BG_ACCENT = colors.common[styles.theme || "light"].backgroundAccent;
+  const { BORDER, BG_ACCENT } = useStyles({ styles });
 
   const common = css(
     [

@@ -3,7 +3,6 @@ import { ComponentStory } from "@storybook/react";
 import "@storybook/addon-console";
 
 import Divider from "./Divider";
-import Button from "../../Buttons/Button";
 
 export default {
   title: "Components/Extra/Divider",

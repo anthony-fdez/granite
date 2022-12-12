@@ -1,20 +1,18 @@
+import { useStyles } from "./../../../hooks/useStyles";
 import { IStyles } from "./Interfaces/IStyles";
-import { css, SerializedStyles } from "@emotion/react";
-import { colors } from "../../../constants/theme/colors";
+import { css } from "@emotion/react";
 
 interface Props {
   styles: IStyles;
 }
 
 export const getGlobalStyles = ({ styles }: Props) => {
-  const { theme } = styles;
-
-  const COLORS = colors.common[theme || "light"];
+  const { FONT, BG } = useStyles({ styles });
 
   return css({
     html: {
-      backgroundColor: COLORS.background,
-      color: COLORS.font,
+      backgroundColor: BG,
+      color: FONT,
       fontFamily: "Trebuchet MS",
     },
   });

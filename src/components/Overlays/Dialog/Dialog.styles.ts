@@ -1,8 +1,8 @@
+import { useStyles } from "./../../../hooks/useStyles";
 import { Variants } from "framer-motion";
 import { SerializedStyles } from "@emotion/react";
 import { IStyles } from "../../Theming/ThemeProvider/Interfaces/IStyles";
 import { css } from "@emotion/react";
-import { colors } from "../../../constants/theme/colors";
 import { DialogAnimationTypes, DialogPositionTypes } from "./Dialog.types";
 
 interface Props {
@@ -88,13 +88,13 @@ export const getDialogVariants = ({ animation }: VariantsProps) => {
 };
 
 export const getDialogStyles = ({ styles, position }: Props) => {
-  const BACKGROUND = colors.common[styles.theme || "light"].background;
+  const { BG } = useStyles({ styles });
 
   const margin = 20;
 
   const stylesOpen: SerializedStyles = css([
     {
-      backgroundColor: BACKGROUND,
+      backgroundColor: BG,
       position: "fixed",
       margin,
       overflowY: "auto",

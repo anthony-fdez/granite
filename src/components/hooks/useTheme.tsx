@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { StateContext } from "../Theming/ThemeProvider/ThemeProvider";
-import { colors, IColorShades } from "../../constants/theme/colors";
 import { IStyles } from "../Theming/ThemeProvider/Interfaces/IStyles";
+import { DEFAULT_COLORS, IColorShades } from "../../constants/theme/colors";
 
 interface IReturnInterface {
   styles?: IStyles;
@@ -20,7 +20,7 @@ const useTheme = (): IReturnInterface => {
 
   return {
     styles,
-    colors,
+    colors: DEFAULT_COLORS,
   };
 };
 

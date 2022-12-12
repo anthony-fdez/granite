@@ -1,16 +1,14 @@
-import { useGetColors } from "../../../hooks/useGetColors";
-import { AvailableColorsType } from "../../../constants/theme/colors";
-import { colors } from "../../../constants/theme/colors";
+import { IColors } from "./../../../constants/theme/colors";
+import { useStyles } from "./../../../hooks/useStyles";
+import { IVariants } from "./../../../types/variants";
 import { getVariantStyles } from "../../Theming/ThemeProvider/getValues/getVariantStyles";
-import { getBorderRadius } from "../../Theming/ThemeProvider/getValues/getBorderRadius";
 import { IStyles } from "../../Theming/ThemeProvider/Interfaces/IStyles";
 import { css, SerializedStyles } from "@emotion/react";
-import { VariantsType } from "../../../types/variants";
 
 interface Props {
   styles: IStyles;
-  variant: VariantsType;
-  color?: AvailableColorsType;
+  variant: IVariants;
+  color?: IColors;
   disabled?: boolean;
 }
 
@@ -22,38 +20,40 @@ export const getButtonStyles = ({
 }: Props) => {
   if (!styles.primaryColor) return null;
 
-  const { BG_COLOR, BG_COLOR_HOVER, FONT_COLOR } = useGetColors({
-    color,
+  const { COLOR, COLOR_HOVER, FONT } = useStyles({
     styles,
-    variant,
+    color,
   });
 
   const filled: SerializedStyles = css({
-    backgroundColor: BG_COLOR,
+    backgroundColor: COLOR,
   });
 
   const outlined: SerializedStyles = css({
     border: 1,
-    borderColor: BG_COLOR,
+    borderColor: COLOR,
     borderStyle: "solid",
     backgroundColor: "transparent",
-    color: BG_COLOR,
+    color: COLOR,
     "&:hover": {
-      color: FONT_COLOR,
+      color: FONT,
+    },
+    "&:focus": {
+      color: FONT,
     },
   });
 
   const subtle: SerializedStyles = css({
-    backgroundColor: BG_COLOR,
-    color: FONT_COLOR,
+    backgroundColor: COLOR,
+    color: FONT,
     fontWeight: "600",
   });
 
   const common: SerializedStyles = css([
     {
-      color: FONT_COLOR,
+      color: FONT,
       transition: "100ms",
-      backgroundColor: BG_COLOR,
+      backgroundColor: COLOR,
       border: 0,
       padding: 10,
       outline: 0,
@@ -62,11 +62,14 @@ export const getButtonStyles = ({
       alignItems: "center",
       cursor: "pointer",
       "&:hover": {
-        backgroundColor: BG_COLOR_HOVER,
+        backgroundColor: COLOR_HOVER,
       },
       "&:active": {
         transform: "translateY(2px)",
         transition: "0ms",
+      },
+      "&:focus": {
+        backgroundColor: COLOR_HOVER,
       },
     },
     {

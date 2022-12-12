@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import { useOutsideAlerter } from "../../../hooks/useOutsideAlerter";
 import Center from "../../Layout/Center";
 import { IClickAwayListenerProps } from "./ClickAwayListener.types";

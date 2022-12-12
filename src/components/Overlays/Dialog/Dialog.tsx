@@ -5,7 +5,7 @@ import { css } from "@emotion/react";
 import { motion } from "framer-motion/dist/framer-motion";
 
 import React, { useContext } from "react";
-import { colors } from "../../../constants/theme/colors";
+import { useStyles } from "../../../hooks/useStyles";
 import CloseButton from "../../Buttons/CloseButton";
 import { getBorderRadius } from "../../Theming/ThemeProvider/getValues/getBorderRadius";
 import { StateContext } from "../../Theming/ThemeProvider/ThemeProvider";
@@ -41,7 +41,7 @@ const Dialog = ({
 
   const { stylesClosed, stylesOpen } = getDialogStyles({ styles, position });
 
-  const BORDER_COLOR = colors.common[styles.theme || "light"].border;
+  const { BORDER } = useStyles({ styles });
 
   return (
     <>
@@ -86,10 +86,10 @@ const Dialog = ({
             zIndex ? { zIndex: zIndex + 1 } : { zIndex: "inherit" },
             border && {
               borderWidth,
-              borderColor: `${borderColor ? borderColor : BORDER_COLOR}`,
+              borderColor: `${borderColor ? borderColor : BORDER}`,
               borderStyle: "solid",
             },
-            borderColor ? { borderColor } : { borderColor: BORDER_COLOR },
+            borderColor ? { borderColor } : { borderColor: BORDER },
             borderRadius
               ? {
                   borderRadius: getBorderRadius({ size: borderRadius }),

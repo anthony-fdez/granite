@@ -5,23 +5,20 @@ import { css, Global } from "@emotion/react";
 import React, { createContext, useEffect, useState } from "react";
 import { IStyles, IContext } from "./Interfaces/IStyles";
 import { IProviderProps } from "./Interfaces/IProviderProps";
-import {
-  defaultStylesDark,
-  defaultStylesLight,
-} from "../../../constants/theme/defaultStyles";
+import { DEFAULT_STYLES } from "../../../constants/theme/defaultStyles";
 import { getGlobalStyles } from "./ThemeProvider.styles";
 
 export const StateContext = createContext<IContext>({
-  styles: defaultStylesLight,
+  styles: DEFAULT_STYLES,
   setState: () => {},
 });
 
 const ThemeProvider = ({
   children,
-  defaultStyles = { ...defaultStylesLight },
+  defaultStyles,
   ...args
 }: IProviderProps): JSX.Element => {
-  defaultStyles = { ...defaultStylesLight, ...defaultStyles };
+  defaultStyles = { ...DEFAULT_STYLES, ...defaultStyles };
 
   const [styles, setStyles] = useState<IStyles>(defaultStyles);
 
@@ -30,14 +27,9 @@ const ThemeProvider = ({
   };
 
   useEffect(() => {
-    const getDefaultStyles = (): IStyles => {
-      if (defaultStyles.theme === "dark") return defaultStylesDark;
-
-      return defaultStylesLight;
-    };
+    if (!defaultStyles) return;
 
     handleUpdateState({
-      ...getDefaultStyles(),
       theme: defaultStyles.theme,
       primaryColor: defaultStyles.primaryColor,
       borderRadius: defaultStyles.borderRadius,

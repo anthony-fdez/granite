@@ -1,8 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
 
-import React, { useContext, useEffect, useState } from "react";
-import { colors } from "../../../constants/theme/colors";
+import React, { useContext } from "react";
 import CloseButton from "../../Buttons/CloseButton";
 import { getBorderRadius } from "../../Theming/ThemeProvider/getValues/getBorderRadius";
 import { StateContext } from "../../Theming/ThemeProvider/ThemeProvider";
@@ -11,6 +10,7 @@ import { IModalProps } from "./Modal.types";
 // @ts-ignore
 import { motion } from "framer-motion/dist/framer-motion";
 import { useDisableScroll } from "../../../hooks/useDisableScroll";
+import { useStyles } from "../../../hooks/useStyles";
 
 const Modal = ({
   children,
@@ -38,7 +38,7 @@ const Modal = ({
   const { styles } = useContext(StateContext);
   const { stylesClosed, stylesOpen } = getModalStyles({ styles });
 
-  const BORDER_COLOR = colors.common[styles.theme || "light"].border;
+  const { BORDER } = useStyles({ styles });
 
   return (
     <>
@@ -78,10 +78,10 @@ const Modal = ({
           zIndex ? { zIndex: zIndex + 1 } : { zIndex: "inherit" },
           border && {
             borderWidth,
-            borderColor: `${borderColor ? borderColor : BORDER_COLOR}`,
+            borderColor: `${borderColor ? borderColor : BORDER}`,
             borderStyle: "solid",
           },
-          borderColor ? { borderColor } : { borderColor: BORDER_COLOR },
+          borderColor ? { borderColor } : { borderColor: BORDER },
           borderRadius
             ? {
                 borderRadius: getBorderRadius({ size: borderRadius }),

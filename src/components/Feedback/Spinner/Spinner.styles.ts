@@ -1,4 +1,5 @@
-import { AvailableColorsType, colors } from "../../../constants/theme/colors";
+import { useStyles } from "./../../../hooks/useStyles";
+import { IColors } from "./../../../constants/theme/colors";
 import { SpinnersType } from "./Spinner.types";
 import { IStyles } from "../../Theming/ThemeProvider/Interfaces/IStyles";
 import { css, keyframes, SerializedStyles } from "@emotion/react";
@@ -6,7 +7,7 @@ import { css, keyframes, SerializedStyles } from "@emotion/react";
 interface Props {
   styles: IStyles;
   variant?: SpinnersType;
-  color?: AvailableColorsType;
+  color?: IColors;
   size?: number;
   backgroundAccentColor?: string;
 }
@@ -18,10 +19,7 @@ export const getSpinnerStyles = ({
   size,
   backgroundAccentColor,
 }: Props) => {
-  const COLOR = colors[color || styles.primaryColor || "blue"].color;
-  const BG_ACCENT =
-    backgroundAccentColor ??
-    colors.common[styles.theme || "light"].backgroundAccent;
+  const { COLOR, BG_ACCENT } = useStyles({ styles, color });
 
   const circularKeyframes = keyframes({
     to: {

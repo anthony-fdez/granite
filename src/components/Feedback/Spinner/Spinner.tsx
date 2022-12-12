@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
-import { useContext } from "react";
+import React, { useContext } from "react";
 import { StateContext } from "../../Theming/ThemeProvider/ThemeProvider";
 import { getSpinnerStyles } from "./Spinner.styles";
 

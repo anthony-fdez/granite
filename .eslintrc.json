@@ -1,8 +1,7 @@
 {
   "env": {
     "browser": true,
-    "es2021": true,
-    "node": true
+    "es2021": true
   },
   "extends": [
     "eslint:recommended",
@@ -15,9 +14,9 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "plugins": ["react", "@typescript-eslint", "@emotion"],
+  "plugins": ["react", "@typescript-eslint"],
   "rules": {
-    "no-unused-vars": "error",
-    "@typescript-eslint/no-unused-vars": ["error"]
+    "react/no-unknown-property": 0,
+    "@typescript-eslint/ban-ts-comment": "off"
   }
 }

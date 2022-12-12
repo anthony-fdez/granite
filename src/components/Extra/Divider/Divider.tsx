@@ -2,7 +2,7 @@
 import { css } from "@emotion/react";
 
 import React, { useContext } from "react";
-import { colors } from "../../../constants/theme/colors";
+import { useStyles } from "../../../hooks/useStyles";
 import Flex from "../../Layout/Flex";
 import { StateContext } from "../../Theming/ThemeProvider/ThemeProvider";
 import { IDividerProps } from "./Divider.types";
@@ -20,14 +20,13 @@ const Divider = ({
 }: IDividerProps) => {
   const { styles } = useContext(StateContext);
 
-  const BORDER_COLOR = colors.common[styles.theme || "light"].border;
-  const FONT_COLOR = colors.common[styles.theme || "light"].font;
+  const { BORDER, FONT } = useStyles({ styles });
 
   const lineStyles = css([
     {
       border: `${width}px`,
       borderStyle: variant,
-      borderColor: color ?? BORDER_COLOR,
+      borderColor: color ?? BORDER,
       width: "100%",
     },
   ]);
@@ -42,7 +41,7 @@ const Divider = ({
             marginRight: labelPadding,
             whiteSpace: "nowrap",
             fontSize: 14,
-            color: color ?? FONT_COLOR,
+            color: color ?? FONT,
           }}
         >
           {label}

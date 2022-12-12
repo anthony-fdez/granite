@@ -10,7 +10,7 @@ export default {
   component: Modal,
 };
 
-let isOpen = false;
+const isOpen = false;
 
 const Template: ComponentStory<typeof Modal> = (args) => <Modal {...args} />;
 
