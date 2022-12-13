@@ -6,4 +6,5 @@ export interface IAccordionItemProps {
   setActiveElement?: React.Dispatch<React.SetStateAction<string | null>>;
   variant?: AccordionVariants;
   arrowPosition?: "left" | "right";
+  arrowSize?: number;
 }

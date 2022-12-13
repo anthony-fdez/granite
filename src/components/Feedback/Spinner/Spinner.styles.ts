@@ -34,7 +34,7 @@ export const getSpinnerStyles = ({
 
     border: 3,
     borderStyle: "solid",
-    borderColor: BG_ACCENT,
+    borderColor: backgroundAccentColor || BG_ACCENT,
     borderTopColor: COLOR,
     borderRadius: "50%",
     animation: circularKeyframes,

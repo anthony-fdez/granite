@@ -17,9 +17,9 @@ export const useStyles = ({ styles, color }: Props) => {
     BG:
       styles.theme === "dark" ? DEFAULT_COLORS.dark[9] : DEFAULT_COLORS.gray[0],
     BG_ACCENT:
-      styles.theme === "dark" ? DEFAULT_COLORS.dark[8] : DEFAULT_COLORS.gray[1],
+      styles.theme === "dark" ? DEFAULT_COLORS.dark[6] : DEFAULT_COLORS.gray[2],
     BG_HOVER:
-      styles.theme === "dark" ? DEFAULT_COLORS.dark[4] : DEFAULT_COLORS.gray[3],
+      styles.theme === "dark" ? DEFAULT_COLORS.dark[4] : DEFAULT_COLORS.gray[4],
     BORDER:
       styles.theme === "dark" ? DEFAULT_COLORS.dark[4] : DEFAULT_COLORS.gray[3],
 
