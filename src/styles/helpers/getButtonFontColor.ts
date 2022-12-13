@@ -4,9 +4,6 @@ interface Props {
   color?: IColors;
 }
 
-// ! TODO
-// ? https://stackoverflow.com/questions/11867545/change-text-color-based-on-brightness-of-the-covered-background-area
-
 function getContrastYIQ(hexcolor: string) {
   // If a leading # is provided, remove it
   if (hexcolor.slice(0, 1) === "#") {
