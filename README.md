@@ -1,7 +1,5 @@
 # Component library
 
-Redesign the whole thing to use neo brutalism
-
 Blueprintjs is a pretty good inspiration
 
 ## Next up to work on:
