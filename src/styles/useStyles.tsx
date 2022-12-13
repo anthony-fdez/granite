@@ -12,7 +12,7 @@ export const useStyles = ({ styles, color }: Props) => {
   return {
     FONT:
       styles.theme === "dark" ? DEFAULT_COLORS.gray[0] : DEFAULT_COLORS.dark[9],
-    BUTTON_FONT: getButtonFontColor({ styles, color }),
+    BUTTON_FONT: getButtonFontColor({ color }),
 
     BG:
       styles.theme === "dark" ? DEFAULT_COLORS.dark[9] : DEFAULT_COLORS.gray[0],

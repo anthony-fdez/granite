@@ -20,7 +20,7 @@ export const getButtonStyles = ({
 }: Props) => {
   if (!styles.primaryColor) return null;
 
-  const { COLOR, COLOR_HOVER, FONT } = useStyles({
+  const { COLOR, COLOR_HOVER, BUTTON_FONT } = useStyles({
     styles,
     color,
   });
@@ -36,22 +36,22 @@ export const getButtonStyles = ({
     backgroundColor: "transparent",
     color: COLOR,
     "&:hover": {
-      color: FONT,
+      color: BUTTON_FONT,
     },
     "&:focus": {
-      color: FONT,
+      color: BUTTON_FONT,
     },
   });
 
   const subtle: SerializedStyles = css({
     backgroundColor: COLOR,
-    color: FONT,
+    color: BUTTON_FONT,
     fontWeight: "600",
   });
 
   const common: SerializedStyles = css([
     {
-      color: FONT,
+      color: BUTTON_FONT,
       transition: "100ms",
       backgroundColor: COLOR,
       border: 0,

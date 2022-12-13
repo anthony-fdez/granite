@@ -26,7 +26,7 @@ const Button = ({
   ...args
 }: IButtonProps) => {
   const { styles } = useContext(StateContext);
-  const { FONT } = useStyles({ styles });
+  const { BUTTON_FONT } = useStyles({ styles });
 
   const buttonStyles = css([
     getButtonStyles({ styles, variant, color, disabled }),
@@ -52,7 +52,7 @@ const Button = ({
       {loading ? (
         <Spinner
           variant={spinnerVariant}
-          backgroundAccentColor={FONT}
+          backgroundAccentColor={BUTTON_FONT}
           size={11}
           color={color}
         />
