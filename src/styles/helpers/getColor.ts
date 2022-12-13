@@ -9,9 +9,11 @@ interface Props {
 }
 
 export const getColor = ({ color, styles, shade }: Props) => {
+  const newShade = styles.theme === "dark" && shade < 9 ? shade + 1 : shade;
+
   if (color) {
-    return DEFAULT_COLORS[color][shade];
+    return DEFAULT_COLORS[color][newShade];
   }
 
-  return DEFAULT_COLORS[styles.primaryColor ?? "blue"][shade];
+  return DEFAULT_COLORS[styles.primaryColor ?? "blue"][newShade];
 };

@@ -1,5 +1,5 @@
 /** @jsxImportSource @emotion/react */
-import { css, Global } from "@emotion/react";
+import { Global } from "@emotion/react";
 
 /* eslint-disable @typescript-eslint/no-empty-function */
 import React, { createContext, useEffect, useState } from "react";
@@ -16,6 +16,7 @@ export const StateContext = createContext<IContext>({
 const ThemeProvider = ({
   children,
   defaultStyles,
+  theme = DEFAULT_STYLES.theme ?? "light",
   ...args
 }: IProviderProps): JSX.Element => {
   defaultStyles = { ...DEFAULT_STYLES, ...defaultStyles };
@@ -30,12 +31,12 @@ const ThemeProvider = ({
     if (!defaultStyles) return;
 
     handleUpdateState({
-      theme: defaultStyles.theme,
+      theme: theme,
       primaryColor: defaultStyles.primaryColor,
       borderRadius: defaultStyles.borderRadius,
       animated: defaultStyles.animated,
     });
-  }, []);
+  }, [theme]);
 
   return (
     <>

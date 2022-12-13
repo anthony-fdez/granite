@@ -22,6 +22,7 @@ const AccordionItem = ({
   setActiveElement,
   variant = "filled",
   arrowPosition = "left",
+  arrowSize = 10,
 }: IAccordionItemProps) => {
   const { styles } = useContext(StateContext);
 
@@ -44,6 +45,7 @@ const AccordionItem = ({
           styles,
           variant,
           isActive: label === activeElement,
+          arrowSize,
         }),
       ]}
     >

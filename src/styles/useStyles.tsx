@@ -12,14 +12,14 @@ export const useStyles = ({ styles, color }: Props) => {
   return {
     FONT:
       styles.theme === "dark" ? DEFAULT_COLORS.gray[0] : DEFAULT_COLORS.dark[9],
-    BUTTON_FONT: getButtonFontColor({ styles, color }),
+    BUTTON_FONT: getButtonFontColor({ color }),
 
     BG:
       styles.theme === "dark" ? DEFAULT_COLORS.dark[9] : DEFAULT_COLORS.gray[0],
     BG_ACCENT:
-      styles.theme === "dark" ? DEFAULT_COLORS.dark[8] : DEFAULT_COLORS.gray[1],
+      styles.theme === "dark" ? DEFAULT_COLORS.dark[6] : DEFAULT_COLORS.gray[2],
     BG_HOVER:
-      styles.theme === "dark" ? DEFAULT_COLORS.dark[4] : DEFAULT_COLORS.gray[3],
+      styles.theme === "dark" ? DEFAULT_COLORS.dark[4] : DEFAULT_COLORS.gray[4],
     BORDER:
       styles.theme === "dark" ? DEFAULT_COLORS.dark[4] : DEFAULT_COLORS.gray[3],
 

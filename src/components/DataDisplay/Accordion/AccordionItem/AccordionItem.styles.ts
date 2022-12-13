@@ -10,6 +10,7 @@ interface Props {
   styles: IStyles;
   variant: AccordionVariants;
   isActive: boolean;
+  arrowSize: number;
 }
 
 export const accordionAnimation: Variants = {
@@ -35,6 +36,7 @@ export const getAccordionItemStyles = ({
   styles,
   variant,
   isActive,
+  arrowSize,
 }: Props): SerializedStyles => {
   const { BORDER, BG_ACCENT } = useStyles({ styles });
 
@@ -43,8 +45,8 @@ export const getAccordionItemStyles = ({
       {
         overflow: "hidden",
         ".icon": {
-          height: 15,
-          width: 15,
+          height: arrowSize,
+          width: arrowSize,
         },
         ".accordion-item-header": {
           padding: 20,
