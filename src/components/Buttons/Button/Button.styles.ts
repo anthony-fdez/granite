@@ -35,6 +35,7 @@ export const getButtonStyles = ({
     borderStyle: "solid",
     backgroundColor: "transparent",
     color: COLOR,
+
     "&:hover": {
       color: BUTTON_FONT,
     },
@@ -61,6 +62,12 @@ export const getButtonStyles = ({
       justifyContent: "center",
       alignItems: "center",
       cursor: "pointer",
+      ".button-icon-container-left": {
+        marginRight: 10,
+      },
+      ".button-icon-container-right": {
+        marginLeft: 10,
+      },
       "&:hover": {
         backgroundColor: COLOR_HOVER,
       },

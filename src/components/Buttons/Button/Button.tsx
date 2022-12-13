@@ -23,6 +23,10 @@ const Button = ({
   disabled = false,
   fullWidth = false,
   backgroundColor,
+  iconLeft,
+  iconRight,
+  iconLeftProps,
+  iconRightProps,
   ...args
 }: IButtonProps) => {
   const { styles } = useContext(StateContext);
@@ -57,7 +61,19 @@ const Button = ({
           color={color}
         />
       ) : (
-        children
+        <>
+          {iconLeft && (
+            <div {...iconLeftProps} className="button-icon-container-left">
+              L
+            </div>
+          )}
+          {children}
+          {iconRight && (
+            <div {...iconRightProps} className="button-icon-container-right">
+              R
+            </div>
+          )}
+        </>
       )}
     </button>
   );
