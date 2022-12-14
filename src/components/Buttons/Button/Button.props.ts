@@ -1,11 +1,10 @@
 import { IStyles } from "../../Theming/ThemeProvider/Interfaces/IStyles";
-import { IButtonProps } from "./Button.types";
+import { IButtonProps, IButtonPropsOptional } from "./Button.types";
 
-export const BUTTON_DEFAULT_PROPS: IButtonProps = {
-  children: "",
-  variant: "filled",
+export const BUTTON_DEFAULT_PROPS: IButtonPropsOptional = {
+  variant: "outlined",
   color: "blue",
-  padding: 50,
+  padding: 10,
   margin: 10,
   loading: false,
   spinnerVariant: "circular",
@@ -16,10 +15,17 @@ interface Props {
   styles: IStyles;
 }
 
-export const useButtonDefaultProps = ({ props, styles }: Props) => {
+export const useButtonDefaultProps = ({
+  props,
+  styles,
+}: Props): IButtonProps => {
   const s = styles.components?.Button;
 
+  if (!s) return { ...props };
+
   return {
-    variant: props.variant || s?.variant,
+    ...props,
+    // variant: props.variant || s.variant,
+    variant: "filled",
   };
 };

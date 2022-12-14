@@ -10,38 +10,37 @@ import { IButtonProps } from "./Button.types";
 import { useStyles } from "../../../styles/useStyles";
 import { useButtonDefaultProps } from "./Button.props";
 
+// const Button = (props: IButtonProps) => {
+//   const { styles } = useContext(StateContext);
+//   const { BUTTON_FONT } = useStyles({ styles });
+
+//   const { variant, children } = useButtonDefaultProps({ styles, props: props });
+
+//   return <button>test</button>;
+// };
+
 const Button = (props: IButtonProps) => {
   const { styles } = useContext(StateContext);
-  const { BUTTON_FONT } = useStyles({ styles });
+  const {
+    children,
+    variant,
+    color,
+    padding,
+    margin,
+    borderRadius,
+    loading,
+    fontColor,
+    spinnerVariant,
+    align,
+    disabled,
+    fullWidth,
+    backgroundColor,
+    iconLeft,
+    iconRight,
+    iconLeftProps,
+    iconRightProps,
+  } = useButtonDefaultProps({ styles, props });
 
-  const { variant } = useButtonDefaultProps({ styles, props: props });
-
-  console.log(variant);
-
-  return <button>test</button>;
-};
-
-const OldButton = ({
-  children,
-  variant = "filled",
-  color,
-  padding = 10,
-  margin = 10,
-  borderRadius,
-  loading = false,
-  fontColor,
-  spinnerVariant = "circular",
-  align = "center",
-  disabled = false,
-  fullWidth = false,
-  backgroundColor,
-  iconLeft,
-  iconRight,
-  iconLeftProps,
-  iconRightProps,
-  ...args
-}: IButtonProps) => {
-  const { styles } = useContext(StateContext);
   const { BUTTON_FONT } = useStyles({ styles });
 
   const buttonStyles = css([
@@ -64,7 +63,7 @@ const OldButton = ({
   ]);
 
   return (
-    <button type="button" {...args} disabled={disabled} css={buttonStyles}>
+    <button type="button" {...props} disabled={disabled} css={buttonStyles}>
       {loading ? (
         <Spinner
           variant={spinnerVariant}
