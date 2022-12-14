@@ -93,3 +93,4 @@ Blueprintjs is a pretty good inspiration
 - [ ] Header - do something like stripes header
 - [x] Divider
 - [ ] AnimatedText - Put the custom component on my dev site into a component, should have the staggered animation.
+- [ ] Reveal - Animate components when they are first visible on the screen
