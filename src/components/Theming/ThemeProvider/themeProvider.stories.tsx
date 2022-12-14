@@ -240,5 +240,10 @@ CustomStyles.args = {
       color: "cyan",
       borderRadius: "xl",
     },
+    components: {
+      Button: {
+        borderRadius: 10,
+      },
+    },
   },
 };

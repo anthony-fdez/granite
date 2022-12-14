@@ -32,12 +32,7 @@ const ThemeProvider = ({
 
     handleUpdateState({
       theme: theme,
-      global: {
-        color: defaultStyles.global.color,
-        borderRadius: defaultStyles.global.borderRadius,
-        animated: defaultStyles.global.animated,
-      },
-
+      global: defaultStyles.global,
       components: defaultStyles.components,
     });
   }, [theme]);
