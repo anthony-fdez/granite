@@ -66,6 +66,7 @@ Blueprintjs is a pretty good inspiration
 - [ ] Paper - This would be just a div with some box shadow
 - [ ] Performance indicator - from red to green, poor to excelent. Also allow for numbers or percent
 - [ ] Collapse - Pretty much an isolated `<Accordion />` item. Will also have `<Collapse.Target />` (if not controlled) and `<Collapse.Content />`. The state of the component should be synched with the controlled state of the user.
+- [ ] Code - A very simple codeblock with code hightlight (probably going to require Prism)
 
 ### Notifications
 
