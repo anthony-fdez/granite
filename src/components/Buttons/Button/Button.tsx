@@ -10,15 +10,6 @@ import { IButtonProps } from "./Button.types";
 import { useStyles } from "../../../styles/useStyles";
 import { useButtonDefaultProps } from "./Button.props";
 
-// const Button = (props: IButtonProps) => {
-//   const { styles } = useContext(StateContext);
-//   const { BUTTON_FONT } = useStyles({ styles });
-
-//   const { variant, children } = useButtonDefaultProps({ styles, props: props });
-
-//   return <button>test</button>;
-// };
-
 const Button = (props: IButtonProps) => {
   const { styles } = useContext(StateContext);
   const {
@@ -58,7 +49,7 @@ const Button = (props: IButtonProps) => {
       justifyContent: align,
       alignItems: "center",
     },
-    fullWidth && { width: `calc(100% - ${margin * 2}px);` },
+    fullWidth && { width: `calc(100% - ${(margin || 0) * 2}px);` },
     backgroundColor && { backgroundColor },
   ]);
 

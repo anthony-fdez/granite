@@ -7,7 +7,7 @@ import { css, SerializedStyles } from "@emotion/react";
 
 interface Props {
   styles: IStyles;
-  variant: IVariants;
+  variant?: IVariants;
   color?: IColors;
   disabled?: boolean;
 }

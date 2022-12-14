@@ -2,12 +2,16 @@ import { IStyles } from "../../Theming/ThemeProvider/Interfaces/IStyles";
 import { IButtonProps, IButtonPropsOptional } from "./Button.types";
 
 export const BUTTON_DEFAULT_PROPS: IButtonPropsOptional = {
-  variant: "outlined",
+  variant: "filled",
   color: "blue",
   padding: 10,
   margin: 10,
+  borderRadius: "xs",
   loading: false,
   spinnerVariant: "circular",
+  align: "center",
+  disabled: false,
+  fullWidth: false,
 };
 
 interface Props {
@@ -19,13 +23,12 @@ export const useButtonDefaultProps = ({
   props,
   styles,
 }: Props): IButtonProps => {
-  const s = styles.components?.Button;
+  const defaultProps = styles.components?.Button;
 
-  if (!s) return { ...props };
+  if (!defaultProps) return { ...props };
 
   return {
+    ...defaultProps,
     ...props,
-    // variant: props.variant || s.variant,
-    variant: "filled",
   };
 };
