@@ -1,7 +1,9 @@
+import { numberRange } from "../../components/Theming/ThemeProvider/Interfaces/IStyles";
 import { DEFAULT_COLORS, IColors } from "../../constants/theme/colors";
 
 interface Props {
   color?: IColors;
+  shade?: numberRange;
 }
 
 function getContrastYIQ(hexcolor: string) {
@@ -32,6 +34,6 @@ function getContrastYIQ(hexcolor: string) {
   return yiq >= 128 ? DEFAULT_COLORS.gray[9] : DEFAULT_COLORS.gray[1];
 }
 
-export const getButtonFontColor = ({ color }: Props) => {
-  return getContrastYIQ(DEFAULT_COLORS[color ?? "blue"][6]);
+export const getButtonFontColor = ({ color, shade }: Props) => {
+  return getContrastYIQ(DEFAULT_COLORS[color ?? "blue"][shade || 6]);
 };

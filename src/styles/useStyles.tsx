@@ -1,29 +1,59 @@
-import { IStyles } from "../components/Theming/ThemeProvider/Interfaces/IStyles";
+import {
+  IStyles,
+  numberRange,
+} from "../components/Theming/ThemeProvider/Interfaces/IStyles";
 import { DEFAULT_COLORS, IColors } from "../constants/theme/colors";
+import { IVariants } from "../types/variants";
 import { getButtonFontColor } from "./helpers/getButtonFontColor";
-import { getColor } from "./helpers/getColor";
+import { _getColor } from "./helpers/getColor";
 
 interface Props {
   styles: IStyles;
   color?: IColors;
 }
 
-export const useStyles = ({ styles, color }: Props) => {
+interface GetColorProps {
+  color?: IColors;
+  shade?: numberRange;
+  variant?: IVariants;
+}
+
+export const useStyles = ({ styles }: Props) => {
   return {
-    FONT:
-      styles.theme === "dark" ? DEFAULT_COLORS.gray[0] : DEFAULT_COLORS.dark[9],
-    BUTTON_FONT: getButtonFontColor({ color }),
+    getColor: ({ color, shade, variant }: GetColorProps) => {
+      const dark = styles.theme === "dark";
 
-    BG:
-      styles.theme === "dark" ? DEFAULT_COLORS.dark[9] : DEFAULT_COLORS.gray[0],
-    BG_ACCENT:
-      styles.theme === "dark" ? DEFAULT_COLORS.dark[6] : DEFAULT_COLORS.gray[2],
-    BG_HOVER:
-      styles.theme === "dark" ? DEFAULT_COLORS.dark[4] : DEFAULT_COLORS.gray[4],
-    BORDER:
-      styles.theme === "dark" ? DEFAULT_COLORS.dark[4] : DEFAULT_COLORS.gray[3],
+      return {
+        color: () => {
+          if (variant === "subtle") {
+            return _getColor({ styles, color, shade: dark ? 9 : 1 });
+          }
 
-    COLOR: getColor({ styles, color, shade: 5 }),
-    COLOR_HOVER: getColor({ styles, color, shade: 6 }),
+          return _getColor({ styles, color });
+        },
+        colorHover: () => {
+          if (variant === "subtle") {
+            return _getColor({ styles, color, shade: dark ? 8 : 2 });
+          }
+
+          return _getColor({ styles, color, shade: 7 });
+        },
+        font: () => {
+          if (variant === "subtle")
+            return getButtonFontColor({ color, shade: dark ? 9 : 1 });
+
+          return getButtonFontColor({ color, shade });
+        },
+        border: () => {
+          return dark ? DEFAULT_COLORS.dark[4] : DEFAULT_COLORS.gray[3];
+        },
+        background: () => {
+          return dark ? DEFAULT_COLORS.dark[9] : DEFAULT_COLORS.gray[0];
+        },
+        backgroundHover: () => {
+          return dark ? DEFAULT_COLORS.dark[4] : DEFAULT_COLORS.gray[4];
+        },
+      };
+    },
   };
 };
