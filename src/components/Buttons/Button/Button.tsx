@@ -8,28 +8,30 @@ import { getBorderRadius } from "../../Theming/ThemeProvider/getValues/getBorder
 import Spinner from "../../Feedback/Spinner";
 import { IButtonProps } from "./Button.types";
 import { useStyles } from "../../../styles/useStyles";
+import { useButtonDefaultProps } from "./Button.props";
 
-const Button = ({
-  children,
-  variant = "filled",
-  color,
-  padding = 10,
-  margin = 10,
-  borderRadius,
-  loading = false,
-  fontColor,
-  spinnerVariant = "circular",
-  align = "center",
-  disabled = false,
-  fullWidth = false,
-  backgroundColor,
-  iconLeft,
-  iconRight,
-  iconLeftProps,
-  iconRightProps,
-  ...args
-}: IButtonProps) => {
+const Button = (props: IButtonProps) => {
   const { styles } = useContext(StateContext);
+  const {
+    children,
+    variant,
+    color,
+    padding,
+    margin,
+    borderRadius,
+    loading,
+    fontColor,
+    spinnerVariant,
+    align,
+    disabled,
+    fullWidth,
+    backgroundColor,
+    iconLeft,
+    iconRight,
+    iconLeftProps,
+    iconRightProps,
+  } = useButtonDefaultProps({ styles, props });
+
   const { BUTTON_FONT } = useStyles({ styles });
 
   const buttonStyles = css([
@@ -37,22 +39,18 @@ const Button = ({
     fontColor && { color: fontColor },
     padding && { padding },
     margin && { margin },
-    borderRadius
-      ? {
-          borderRadius: getBorderRadius({ size: borderRadius }),
-        }
-      : { borderRadius: getBorderRadius({ size: styles.borderRadius }) },
+    borderRadius && { borderRadius: getBorderRadius({ size: borderRadius }) },
     align && {
       display: "flex",
       justifyContent: align,
       alignItems: "center",
     },
-    fullWidth && { width: `calc(100% - ${margin * 2}px);` },
+    fullWidth && { width: `calc(100% - ${(margin || 0) * 2}px);` },
     backgroundColor && { backgroundColor },
   ]);
 
   return (
-    <button type="button" {...args} disabled={disabled} css={buttonStyles}>
+    <button type="button" {...props} disabled={disabled} css={buttonStyles}>
       {loading ? (
         <Spinner
           variant={spinnerVariant}

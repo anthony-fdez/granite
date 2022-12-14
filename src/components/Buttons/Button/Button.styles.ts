@@ -7,7 +7,7 @@ import { css, SerializedStyles } from "@emotion/react";
 
 interface Props {
   styles: IStyles;
-  variant: IVariants;
+  variant?: IVariants;
   color?: IColors;
   disabled?: boolean;
 }
@@ -18,8 +18,6 @@ export const getButtonStyles = ({
   color,
   disabled,
 }: Props) => {
-  if (!styles.primaryColor) return null;
-
   const { COLOR, COLOR_HOVER, BUTTON_FONT } = useStyles({
     styles,
     color,

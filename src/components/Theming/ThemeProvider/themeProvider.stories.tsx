@@ -203,17 +203,17 @@ const Template: ComponentStory<typeof ThemeProvider> = (args) => {
 export const Dark = Template.bind({});
 
 Dark.args = {
-  defaultStyles: {
-    theme: "dark",
-  },
+  theme: "dark",
 };
 
 export const Light = Template.bind({});
 
 Light.args = {
+  theme: "light",
   defaultStyles: {
-    theme: "light",
-    borderRadius: "sm",
+    global: {
+      borderRadius: "sm",
+    },
   },
 };
 
@@ -225,6 +225,25 @@ export const PrimaryRed = Template.bind({});
 
 PrimaryRed.args = {
   defaultStyles: {
-    primaryColor: "red",
+    global: {
+      color: "red",
+    },
+  },
+};
+
+export const CustomStyles = Template.bind({});
+
+CustomStyles.args = {
+  theme: "dark",
+  defaultStyles: {
+    global: {
+      color: "cyan",
+      borderRadius: "xl",
+    },
+    components: {
+      Button: {
+        borderRadius: 10,
+      },
+    },
   },
 };

@@ -32,9 +32,8 @@ const ThemeProvider = ({
 
     handleUpdateState({
       theme: theme,
-      primaryColor: defaultStyles.primaryColor,
-      borderRadius: defaultStyles.borderRadius,
-      animated: defaultStyles.animated,
+      global: defaultStyles.global,
+      components: defaultStyles.components,
     });
   }, [theme]);
 

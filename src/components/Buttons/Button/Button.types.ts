@@ -1,13 +1,11 @@
-import { SerializedStyles } from "@emotion/react";
 import { IColors } from "./../../../constants/theme/colors";
 import { ISizes } from "./../../../types/sizes";
 import { IVariants } from "./../../../types/variants";
 import { SpinnersType } from "../../Feedback/Spinner/Spinner.types";
 import React from "react";
 
-export interface IButtonProps
+export interface IButtonPropsOptional
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  children: string;
   variant?: IVariants;
   color?: IColors;
   padding?: number;
@@ -24,4 +22,8 @@ export interface IButtonProps
   iconRight?: JSX.Element;
   iconLeftProps?: React.HTMLAttributes<HTMLDivElement>;
   iconRightProps?: React.HTMLAttributes<HTMLDivElement>;
+}
+
+export interface IButtonProps extends IButtonPropsOptional {
+  children: string;
 }
