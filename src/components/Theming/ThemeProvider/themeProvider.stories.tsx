@@ -203,16 +203,15 @@ const Template: ComponentStory<typeof ThemeProvider> = (args) => {
 export const Dark = Template.bind({});
 
 Dark.args = {
-  defaultStyles: {
-    theme: "dark",
-  },
+  theme: "dark",
+  defaultStyles: {},
 };
 
 export const Light = Template.bind({});
 
 Light.args = {
+  theme: "light",
   defaultStyles: {
-    theme: "light",
     borderRadius: "sm",
   },
 };

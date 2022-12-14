@@ -8,8 +8,20 @@ import { getBorderRadius } from "../../Theming/ThemeProvider/getValues/getBorder
 import Spinner from "../../Feedback/Spinner";
 import { IButtonProps } from "./Button.types";
 import { useStyles } from "../../../styles/useStyles";
+import { useButtonDefaultProps } from "./Button.props";
 
-const Button = ({
+const Button = (props: IButtonProps) => {
+  const { styles } = useContext(StateContext);
+  const { BUTTON_FONT } = useStyles({ styles });
+
+  const { variant } = useButtonDefaultProps({ styles, props: props });
+
+  console.log(variant);
+
+  return <button>test</button>;
+};
+
+const OldButton = ({
   children,
   variant = "filled",
   color,

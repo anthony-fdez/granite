@@ -1,0 +1,15 @@
+export type IComponents =
+  | "Button"
+  | "CloseButton"
+  | "Accordion"
+  | "Divider"
+  | "Alert"
+  | "Spinner"
+  | "Center"
+  | "Flex"
+  | "Dialog"
+  | "LoadingOverlay"
+  | "Modal"
+  | "Tooltip"
+  | "ClickAwayListener"
+  | "ThemeProvider";

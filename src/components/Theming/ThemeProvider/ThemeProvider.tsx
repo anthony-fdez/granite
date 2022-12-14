@@ -35,6 +35,7 @@ const ThemeProvider = ({
       primaryColor: defaultStyles.primaryColor,
       borderRadius: defaultStyles.borderRadius,
       animated: defaultStyles.animated,
+      components: defaultStyles.components,
     });
   }, [theme]);
 

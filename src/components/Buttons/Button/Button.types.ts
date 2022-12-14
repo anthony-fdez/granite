@@ -1,4 +1,3 @@
-import { SerializedStyles } from "@emotion/react";
 import { IColors } from "./../../../constants/theme/colors";
 import { ISizes } from "./../../../types/sizes";
 import { IVariants } from "./../../../types/variants";

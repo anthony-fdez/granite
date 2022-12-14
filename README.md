@@ -10,8 +10,6 @@ Blueprintjs is a pretty good inspiration
 
 ## Components to add:
 
-There is a lot of things to do in regards to the colors. There is currently only two colors.
-
 ### Theming
 
 - [x] Theme Provider
