@@ -7,9 +7,11 @@ export type numberRange = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9;
 
 export interface IStyles {
   theme?: ITheme;
-  primaryColor?: IColors;
-  borderRadius?: ISizes;
-  animated?: boolean;
+  global: {
+    color?: IColors;
+    borderRadius?: ISizes;
+    animated?: boolean;
+  };
   components?: {
     Button?: IButtonPropsOptional;
   };

@@ -18,8 +18,6 @@ export const getButtonStyles = ({
   color,
   disabled,
 }: Props) => {
-  if (!styles.primaryColor) return null;
-
   const { COLOR, COLOR_HOVER, BUTTON_FONT } = useStyles({
     styles,
     color,

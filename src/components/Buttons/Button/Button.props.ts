@@ -3,10 +3,8 @@ import { IButtonProps, IButtonPropsOptional } from "./Button.types";
 
 export const BUTTON_DEFAULT_PROPS: IButtonPropsOptional = {
   variant: "filled",
-  color: "blue",
   padding: 10,
   margin: 10,
-  borderRadius: "xs",
   loading: false,
   spinnerVariant: "circular",
   align: "center",
@@ -28,6 +26,7 @@ export const useButtonDefaultProps = ({
   if (!defaultProps) return { ...props };
 
   return {
+    ...styles.global,
     ...defaultProps,
     ...props,
   };

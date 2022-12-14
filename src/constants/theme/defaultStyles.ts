@@ -2,10 +2,12 @@ import { BUTTON_DEFAULT_PROPS } from "../../components/Buttons/Button/Button.pro
 import { IStyles } from "../../components/Theming/ThemeProvider/Interfaces/IStyles";
 
 export const DEFAULT_STYLES: IStyles = {
-  primaryColor: "blue",
-  borderRadius: "xs",
-  animated: true,
   theme: "light",
+  global: {
+    color: "blue",
+    borderRadius: "xs",
+    animated: true,
+  },
   components: {
     Button: BUTTON_DEFAULT_PROPS,
   },

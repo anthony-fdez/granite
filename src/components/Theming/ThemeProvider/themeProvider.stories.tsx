@@ -204,7 +204,6 @@ export const Dark = Template.bind({});
 
 Dark.args = {
   theme: "dark",
-  defaultStyles: {},
 };
 
 export const Light = Template.bind({});
@@ -212,7 +211,9 @@ export const Light = Template.bind({});
 Light.args = {
   theme: "light",
   defaultStyles: {
-    borderRadius: "sm",
+    global: {
+      borderRadius: "sm",
+    },
   },
 };
 
@@ -224,6 +225,20 @@ export const PrimaryRed = Template.bind({});
 
 PrimaryRed.args = {
   defaultStyles: {
-    primaryColor: "red",
+    global: {
+      color: "red",
+    },
+  },
+};
+
+export const CustomStyles = Template.bind({});
+
+CustomStyles.args = {
+  theme: "dark",
+  defaultStyles: {
+    global: {
+      color: "cyan",
+      borderRadius: "xl",
+    },
   },
 };

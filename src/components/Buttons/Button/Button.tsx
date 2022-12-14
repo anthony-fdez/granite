@@ -39,11 +39,7 @@ const Button = (props: IButtonProps) => {
     fontColor && { color: fontColor },
     padding && { padding },
     margin && { margin },
-    borderRadius
-      ? {
-          borderRadius: getBorderRadius({ size: borderRadius }),
-        }
-      : { borderRadius: getBorderRadius({ size: styles.borderRadius }) },
+    borderRadius && { borderRadius: getBorderRadius({ size: borderRadius }) },
     align && {
       display: "flex",
       justifyContent: align,
