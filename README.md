@@ -22,6 +22,7 @@ Blueprintjs is a pretty good inspiration
 - [ ] Tour - https://reactour.vercel.app/
 - [ ] ResponsiveMenu - This will be a `<Drawer />` for mobile, and a `<Popover />` for desktop. Both will have a `<Menu />` as children.
 - [ ] Tooltip
+- [ ] HoverCard - Same as the `Tooltip` but bigger, will have an optional `<HoverCard.Footer />`, `<HoverCard.Header />`, `<HoverCard.Body />
 - [x] Loading overlay (backdrop) - This is the full screen spinner
 - [ ] Popover
 - [ ] Menu & MenuItem - Allow nested menu items, kind of like folders. The menu will be a list under the hood.
@@ -86,7 +87,9 @@ Blueprintjs is a pretty good inspiration
 
 ### Utils
 
-- [x] Click away listener
+- [x] ClickAwayListener
+- [ ] HoverListener
+- [ ] MouseDownListener
 
 ### Extra (I don't know how to categorize these)
 
