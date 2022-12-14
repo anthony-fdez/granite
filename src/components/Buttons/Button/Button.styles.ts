@@ -18,40 +18,40 @@ export const getButtonStyles = ({
   color,
   disabled,
 }: Props) => {
-  const { COLOR, COLOR_HOVER, BUTTON_FONT } = useStyles({
+  const { getColor } = useStyles({
     styles,
     color,
   });
 
   const filled: SerializedStyles = css({
-    backgroundColor: COLOR,
+    backgroundColor: getColor({}).color(),
   });
 
   const outlined: SerializedStyles = css({
     border: 1,
-    borderColor: COLOR,
+    borderColor: getColor({}).border(),
     borderStyle: "solid",
     backgroundColor: "transparent",
-    color: COLOR,
+    color: getColor({}).color(),
 
     "&:hover": {
-      color: BUTTON_FONT,
+      color: getColor({}).font(),
     },
     "&:focus": {
-      color: BUTTON_FONT,
+      color: getColor({}).font(),
     },
   });
 
   const subtle: SerializedStyles = css({
-    backgroundColor: COLOR,
-    color: BUTTON_FONT,
+    backgroundColor: getColor({ variant: "subtle" }).color(),
+    color: getColor({ variant: "subtle" }).font(),
     fontWeight: "600",
   });
 
   const common: SerializedStyles = css([
     {
-      color: BUTTON_FONT,
-      backgroundColor: COLOR,
+      color: getColor({ variant }).font(),
+      backgroundColor: getColor({}).color(),
       border: 0,
       padding: 10,
       outline: 0,
@@ -66,7 +66,7 @@ export const getButtonStyles = ({
         marginLeft: 10,
       },
       "&:hover": {
-        backgroundColor: COLOR_HOVER,
+        backgroundColor: getColor({ variant }).colorHover(),
         transition: "100ms",
       },
       "&:active": {
@@ -74,7 +74,7 @@ export const getButtonStyles = ({
         transition: "0ms",
       },
       "&:focus": {
-        backgroundColor: COLOR_HOVER,
+        backgroundColor: getColor({ variant }).colorHover(),
       },
     },
     {
