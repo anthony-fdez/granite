@@ -51,7 +51,6 @@ export const getButtonStyles = ({
   const common: SerializedStyles = css([
     {
       color: BUTTON_FONT,
-      transition: "100ms",
       backgroundColor: COLOR,
       border: 0,
       padding: 10,
@@ -68,6 +67,7 @@ export const getButtonStyles = ({
       },
       "&:hover": {
         backgroundColor: COLOR_HOVER,
+        transition: "100ms",
       },
       "&:active": {
         transform: "translateY(2px)",

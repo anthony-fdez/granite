@@ -242,7 +242,7 @@ CustomStyles.args = {
     },
     components: {
       Button: {
-        borderRadius: 10,
+        // borderRadius: "md",
       },
     },
   },

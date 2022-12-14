@@ -7,6 +7,7 @@ import { IStyles, IContext } from "./Interfaces/IStyles";
 import { IProviderProps } from "./Interfaces/IProviderProps";
 import { DEFAULT_STYLES } from "../../../constants/theme/defaultStyles";
 import { getGlobalStyles } from "./ThemeProvider.styles";
+import { BUTTON_DEFAULT_PROPS } from "../../Buttons/Button/Button.props";
 
 export const StateContext = createContext<IContext>({
   styles: DEFAULT_STYLES,
@@ -33,7 +34,12 @@ const ThemeProvider = ({
     handleUpdateState({
       theme: theme,
       global: defaultStyles.global,
-      components: defaultStyles.components,
+      components: {
+        Button: {
+          ...BUTTON_DEFAULT_PROPS,
+          ...defaultStyles.components?.Button,
+        },
+      },
     });
   }, [theme]);
 
