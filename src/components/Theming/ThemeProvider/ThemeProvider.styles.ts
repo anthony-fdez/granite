@@ -7,12 +7,12 @@ interface Props {
 }
 
 export const getGlobalStyles = ({ styles }: Props) => {
-  const { FONT, BG } = useStyles({ styles });
+  const { getColor } = useStyles({ styles });
 
   return css({
     html: {
-      backgroundColor: BG,
-      color: FONT,
+      backgroundColor: getColor({}).background,
+      color: getColor({}).font,
       fontFamily: "Trebuchet MS",
     },
   });

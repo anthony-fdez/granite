@@ -10,6 +10,7 @@ import { _getBackgroundHover } from "./methods/_getBackgroundHover";
 import { _getBorder } from "./methods/_getBorder";
 import { _getColor } from "./methods/_getColor";
 import { _getColorHover } from "./methods/_getColorHover";
+import { _getContrastFont } from "./methods/_getContrastFont";
 import { _getFont } from "./methods/_getFont";
 
 interface Props {
@@ -49,6 +50,7 @@ export const useStyles = ({ styles, color, shade }: Props) => {
         color: _getColor({ ...props }),
         colorHover: _getColorHover({ ...props }),
         font: _getFont({ ...props }),
+        fontContrast: _getContrastFont({ ...props }),
         border: _getBorder({ ...props }),
         background: _getBackground({ ...props }),
         backgroundHover: _getBackgroundHover({ ...props }),

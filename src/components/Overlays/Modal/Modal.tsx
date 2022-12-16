@@ -38,7 +38,7 @@ const Modal = ({
   const { styles } = useContext(StateContext);
   const { stylesClosed, stylesOpen } = getModalStyles({ styles });
 
-  const { BORDER } = useStyles({ styles });
+  const { getColor } = useStyles({ styles });
 
   return (
     <>
@@ -78,16 +78,18 @@ const Modal = ({
           zIndex ? { zIndex: zIndex + 1 } : { zIndex: "inherit" },
           border && {
             borderWidth,
-            borderColor: `${borderColor ? borderColor : BORDER}`,
+            borderColor: `${borderColor ? borderColor : getColor({}).border}`,
             borderStyle: "solid",
           },
-          borderColor ? { borderColor } : { borderColor: BORDER },
+          borderColor ? { borderColor } : { borderColor: getColor({}).border },
           borderRadius
             ? {
                 borderRadius: getBorderRadius({ size: borderRadius }),
               }
             : {
-                borderRadius: getBorderRadius({ size: styles.borderRadius }),
+                borderRadius: getBorderRadius({
+                  size: styles.global.borderRadius,
+                }),
               },
           {
             maxWidth: `calc(100% - ${padding * 2}px - 20px)`,

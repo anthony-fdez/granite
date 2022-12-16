@@ -39,10 +39,10 @@ export const getButtonStyles = ({
     color: getColor({}).color,
 
     "&:hover": {
-      color: getColor({}).font,
+      color: getColor({}).fontContrast,
     },
     "&:focus": {
-      color: getColor({}).font,
+      color: getColor({}).fontContrast,
     },
   });
 
@@ -54,7 +54,7 @@ export const getButtonStyles = ({
 
   const common: SerializedStyles = css([
     {
-      color: getColor({ variant }).font,
+      color: getColor({ variant }).fontContrast,
       backgroundColor: getColor({}).color,
       border: 0,
       padding: 10,

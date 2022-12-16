@@ -20,13 +20,13 @@ const Divider = ({
 }: IDividerProps) => {
   const { styles } = useContext(StateContext);
 
-  const { BORDER, FONT } = useStyles({ styles });
+  const { getColor } = useStyles({ styles });
 
   const lineStyles = css([
     {
       border: `${width}px`,
       borderStyle: variant,
-      borderColor: color ?? BORDER,
+      borderColor: color ?? getColor({}).border,
       width: "100%",
     },
   ]);
@@ -41,7 +41,7 @@ const Divider = ({
             marginRight: labelPadding,
             whiteSpace: "nowrap",
             fontSize: 14,
-            color: color ?? FONT,
+            color: color ?? getColor({}).font,
           }}
         >
           {label}

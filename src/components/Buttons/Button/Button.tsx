@@ -55,7 +55,7 @@ const Button = (props: IButtonProps) => {
       {loading ? (
         <Spinner
           variant={spinnerVariant}
-          backgroundAccentColor={getColor({}).font}
+          backgroundAccentColor={getColor({}).fontContrast}
           size={11}
           color={color}
         />

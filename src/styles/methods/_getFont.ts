@@ -1,16 +1,6 @@
-import { getButtonFontColor } from "./../helpers/getButtonFontColor";
+import { DEFAULT_COLORS } from "./../../constants/theme/colors";
 import { IMethodProps } from "./../useStyles";
 
-export const _getFont = ({
-  styles,
-  color,
-  shade,
-  variant,
-  dark,
-}: IMethodProps) => {
-  if (variant === "subtle") {
-    return getButtonFontColor({ color, shade: dark ? 9 : 1 });
-  }
-
-  return getButtonFontColor({ color, shade });
+export const _getFont = ({ dark }: IMethodProps) => {
+  return dark ? DEFAULT_COLORS.gray[0] : DEFAULT_COLORS.dark[9];
 };
