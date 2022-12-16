@@ -15,6 +15,7 @@ export const BUTTON_DEFAULT_PROPS: IButtonPropsOptional = {
   align: "center",
   disabled: false,
   fullWidth: false,
+  shade: 6,
 };
 
 interface Props {

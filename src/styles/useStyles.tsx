@@ -2,14 +2,20 @@ import {
   IStyles,
   numberRange,
 } from "../components/Theming/ThemeProvider/Interfaces/IStyles";
-import { DEFAULT_COLORS, IColors } from "../constants/theme/colors";
+import { IColors } from "../constants/theme/colors";
 import { IVariants } from "../types/variants";
-import { getButtonFontColor } from "./helpers/getButtonFontColor";
-import { _getColor } from "./helpers/getColor";
+import { _getBackground } from "./methods/_getBackground";
+import { _getBackgroundAccent } from "./methods/_getBackgroundAccent";
+import { _getBackgroundHover } from "./methods/_getBackgroundHover";
+import { _getBorder } from "./methods/_getBorder";
+import { _getColor } from "./methods/_getColor";
+import { _getColorHover } from "./methods/_getColorHover";
+import { _getFont } from "./methods/_getFont";
 
 interface Props {
   styles: IStyles;
   color?: IColors;
+  shade?: numberRange;
 }
 
 interface GetColorProps {
@@ -18,41 +24,35 @@ interface GetColorProps {
   variant?: IVariants;
 }
 
-export const useStyles = ({ styles }: Props) => {
+export interface IMethodProps {
+  styles: IStyles;
+  color: IColors;
+  shade: numberRange;
+  variant: IVariants;
+  dark: boolean;
+}
+
+export const useStyles = ({ styles, color, shade }: Props) => {
+  const _color: IColors = color || styles.global.color || "blue";
+  const _dark: boolean = styles.theme === "dark";
+  const _shade: numberRange = shade || styles.global.shade || 6;
+
   return {
-    getColor: ({ color, shade, variant }: GetColorProps) => {
-      const dark = styles.theme === "dark";
+    getColor: ({
+      color = _color,
+      shade = _shade,
+      variant = styles.global.variant || "filled",
+    }: GetColorProps) => {
+      const props = { styles, color, shade, variant, dark: _dark };
 
       return {
-        color: () => {
-          if (variant === "subtle") {
-            return _getColor({ styles, color, shade: dark ? 9 : 1 });
-          }
-
-          return _getColor({ styles, color });
-        },
-        colorHover: () => {
-          if (variant === "subtle") {
-            return _getColor({ styles, color, shade: dark ? 8 : 2 });
-          }
-
-          return _getColor({ styles, color, shade: 7 });
-        },
-        font: () => {
-          if (variant === "subtle")
-            return getButtonFontColor({ color, shade: dark ? 9 : 1 });
-
-          return getButtonFontColor({ color, shade });
-        },
-        border: () => {
-          return dark ? DEFAULT_COLORS.dark[4] : DEFAULT_COLORS.gray[3];
-        },
-        background: () => {
-          return dark ? DEFAULT_COLORS.dark[9] : DEFAULT_COLORS.gray[0];
-        },
-        backgroundHover: () => {
-          return dark ? DEFAULT_COLORS.dark[4] : DEFAULT_COLORS.gray[4];
-        },
+        color: _getColor({ ...props }),
+        colorHover: _getColorHover({ ...props }),
+        font: _getFont({ ...props }),
+        border: _getBorder({ ...props }),
+        background: _getBackground({ ...props }),
+        backgroundHover: _getBackgroundHover({ ...props }),
+        backgroundAccent: _getBackgroundAccent({ ...props }),
       };
     },
   };

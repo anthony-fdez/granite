@@ -1,3 +1,4 @@
+import { IVariants } from "./../../../../types/variants";
 import { ITheme } from "./../../../../types/theme";
 import { IColors } from "./../../../../constants/theme/colors";
 import { ISizes } from "./../../../../types/sizes";
@@ -11,6 +12,8 @@ export interface IStyles {
     color?: IColors;
     borderRadius?: ISizes;
     animated?: boolean;
+    shade?: numberRange;
+    variant?: IVariants;
   };
   components?: {
     Button?: IButtonPropsOptional;

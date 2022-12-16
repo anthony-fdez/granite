@@ -7,6 +7,8 @@ export const DEFAULT_STYLES: IStyles = {
     color: "blue",
     borderRadius: "xs",
     animated: true,
+    shade: 6,
+    variant: "filled",
   },
   components: {
     Button: BUTTON_DEFAULT_PROPS,

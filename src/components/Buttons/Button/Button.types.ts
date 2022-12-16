@@ -1,3 +1,4 @@
+import { numberRange } from "./../../Theming/ThemeProvider/Interfaces/IStyles";
 import { IColors } from "./../../../constants/theme/colors";
 import { ISizes } from "./../../../types/sizes";
 import { IVariants } from "./../../../types/variants";
@@ -22,6 +23,7 @@ export interface IButtonPropsOptional
   iconRight?: JSX.Element;
   iconLeftProps?: React.HTMLAttributes<HTMLDivElement>;
   iconRightProps?: React.HTMLAttributes<HTMLDivElement>;
+  shade?: numberRange;
 }
 
 export interface IButtonProps extends IButtonPropsOptional {
