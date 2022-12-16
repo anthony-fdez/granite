@@ -20,11 +20,11 @@ export const modalVariants: Variants = {
 };
 
 export const getModalStyles = ({ styles }: Props) => {
-  const { BG } = useStyles({ styles });
+  const { getColor } = useStyles({ styles });
 
   const stylesOpen: SerializedStyles = css({
     position: "fixed",
-    backgroundColor: BG,
+    backgroundColor: getColor({}).background,
     margin: "auto",
     left: 0,
     right: 0,

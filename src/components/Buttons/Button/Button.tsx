@@ -16,6 +16,7 @@ const Button = (props: IButtonProps) => {
     children,
     variant,
     color,
+    shade,
     padding,
     margin,
     borderRadius,
@@ -32,10 +33,10 @@ const Button = (props: IButtonProps) => {
     iconRightProps,
   } = useButtonDefaultProps({ styles, props });
 
-  const { BUTTON_FONT } = useStyles({ styles });
+  const { getColor } = useStyles({ styles, shade });
 
   const buttonStyles = css([
-    getButtonStyles({ styles, variant, color, disabled }),
+    getButtonStyles({ styles, variant, color, disabled, shade }),
     fontColor && { color: fontColor },
     padding && { padding },
     margin && { margin },
@@ -54,7 +55,7 @@ const Button = (props: IButtonProps) => {
       {loading ? (
         <Spinner
           variant={spinnerVariant}
-          backgroundAccentColor={BUTTON_FONT}
+          backgroundAccentColor={getColor({}).fontContrast}
           size={11}
           color={color}
         />
@@ -62,13 +63,13 @@ const Button = (props: IButtonProps) => {
         <>
           {iconLeft && (
             <div {...iconLeftProps} className="button-icon-container-left">
-              L
+              {iconLeft}
             </div>
           )}
           {children}
           {iconRight && (
             <div {...iconRightProps} className="button-icon-container-right">
-              R
+              {iconRight}
             </div>
           )}
         </>

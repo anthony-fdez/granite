@@ -5,12 +5,12 @@ import {
 import { DEFAULT_COLORS, IColors } from "./../../constants/theme/colors";
 
 interface Props {
-  color?: IColors;
-  styles?: IStyles;
-  shade?: numberRange;
+  color: IColors;
+  styles: IStyles;
+  shade: numberRange | number;
 }
 
-export const _getColor = ({ color, styles, shade = 6 }: Props) => {
+export const getColor = ({ color, styles, shade }: Props) => {
   if (!styles) {
     console.log("Styles context not found");
     return;

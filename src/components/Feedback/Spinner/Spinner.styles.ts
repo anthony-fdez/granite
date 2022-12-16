@@ -19,7 +19,7 @@ export const getSpinnerStyles = ({
   size,
   backgroundAccentColor,
 }: Props) => {
-  const { COLOR, BG_ACCENT } = useStyles({ styles, color });
+  const { getColor } = useStyles({ styles, color });
 
   const circularKeyframes = keyframes({
     to: {
@@ -34,8 +34,9 @@ export const getSpinnerStyles = ({
 
     border: 3,
     borderStyle: "solid",
-    borderColor: backgroundAccentColor || BG_ACCENT,
-    borderTopColor: COLOR,
+
+    borderColor: backgroundAccentColor || getColor({}).background,
+    borderTopColor: getColor({}).color,
     borderRadius: "50%",
     animation: circularKeyframes,
     animationDuration: "1s",

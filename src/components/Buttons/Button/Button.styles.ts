@@ -1,3 +1,4 @@
+import { numberRange } from "./../../Theming/ThemeProvider/Interfaces/IStyles";
 import { IColors } from "./../../../constants/theme/colors";
 import { useStyles } from "../../../styles/useStyles";
 import { IVariants } from "./../../../types/variants";
@@ -10,6 +11,7 @@ interface Props {
   variant?: IVariants;
   color?: IColors;
   disabled?: boolean;
+  shade?: numberRange;
 }
 
 export const getButtonStyles = ({
@@ -17,41 +19,43 @@ export const getButtonStyles = ({
   variant,
   color,
   disabled,
+  shade,
 }: Props) => {
   const { getColor } = useStyles({
     styles,
     color,
+    shade,
   });
 
   const filled: SerializedStyles = css({
-    backgroundColor: getColor({}).color(),
+    backgroundColor: getColor({}).color,
   });
 
   const outlined: SerializedStyles = css({
     border: 1,
-    borderColor: getColor({}).border(),
+    borderColor: getColor({}).border,
     borderStyle: "solid",
     backgroundColor: "transparent",
-    color: getColor({}).color(),
+    color: getColor({}).color,
 
     "&:hover": {
-      color: getColor({}).font(),
+      color: getColor({}).fontContrast,
     },
     "&:focus": {
-      color: getColor({}).font(),
+      color: getColor({}).fontContrast,
     },
   });
 
   const subtle: SerializedStyles = css({
-    backgroundColor: getColor({ variant: "subtle" }).color(),
-    color: getColor({ variant: "subtle" }).font(),
+    backgroundColor: getColor({ variant: "subtle" }).color,
+    color: getColor({}).color,
     fontWeight: "600",
   });
 
   const common: SerializedStyles = css([
     {
-      color: getColor({ variant }).font(),
-      backgroundColor: getColor({}).color(),
+      color: getColor({ variant }).fontContrast,
+      backgroundColor: getColor({}).color,
       border: 0,
       padding: 10,
       outline: 0,
@@ -66,7 +70,7 @@ export const getButtonStyles = ({
         marginLeft: 10,
       },
       "&:hover": {
-        backgroundColor: getColor({ variant }).colorHover(),
+        backgroundColor: getColor({ variant }).colorHover,
         transition: "100ms",
       },
       "&:active": {
@@ -74,7 +78,7 @@ export const getButtonStyles = ({
         transition: "0ms",
       },
       "&:focus": {
-        backgroundColor: getColor({ variant }).colorHover(),
+        backgroundColor: getColor({ variant }).colorHover,
       },
     },
     {
