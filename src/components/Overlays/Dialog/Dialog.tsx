@@ -38,10 +38,8 @@ const Dialog = ({
   ...args
 }: IDialogProps) => {
   const { styles } = useContext(StateContext);
-
   const { stylesClosed, stylesOpen } = getDialogStyles({ styles, position });
-
-  const { BORDER } = useStyles({ styles });
+  const { getColor } = useStyles({ styles });
 
   return (
     <>
@@ -86,16 +84,20 @@ const Dialog = ({
             zIndex ? { zIndex: zIndex + 1 } : { zIndex: "inherit" },
             border && {
               borderWidth,
-              borderColor: `${borderColor ? borderColor : BORDER}`,
+              borderColor: `${borderColor ? borderColor : getColor({}).border}`,
               borderStyle: "solid",
             },
-            borderColor ? { borderColor } : { borderColor: BORDER },
+            borderColor
+              ? { borderColor }
+              : { borderColor: getColor({}).border },
             borderRadius
               ? {
                   borderRadius: getBorderRadius({ size: borderRadius }),
                 }
               : {
-                  borderRadius: getBorderRadius({ size: styles.borderRadius }),
+                  borderRadius: getBorderRadius({
+                    size: styles.global.borderRadius,
+                  }),
                 },
             {
               maxWidth: `calc(100% - ${padding * 2}px - 40px)`,

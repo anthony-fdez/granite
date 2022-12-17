@@ -21,7 +21,8 @@ export const accordionAnimation: Variants = {
     height: "auto",
     transition: {
       type: "spring",
-      damping: 20,
+      damping: 30,
+      stiffness: 500,
     },
   },
   closed: {
@@ -29,7 +30,8 @@ export const accordionAnimation: Variants = {
     height: 0,
     transition: {
       type: "spring",
-      damping: 20,
+      damping: 30,
+      stiffness: 500,
     },
   },
 };
