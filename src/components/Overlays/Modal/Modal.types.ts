@@ -1,4 +1,5 @@
-import { SizesType } from "../../../types/sizes";
+import { ISizes } from "../../../types/sizes";
+
 export interface IModalProps {
   children: JSX.Element | JSX.Element[];
   title: string;
@@ -13,10 +14,11 @@ export interface IModalProps {
   height?: number | string;
   centered?: boolean;
   padding?: number;
-  borderRadius?: SizesType;
+  borderRadius?: ISizes;
   backdropBlur?: number;
   zIndex?: number;
   border?: boolean;
   borderColor?: string;
   borderWidth?: number;
+  unmount?: boolean;
 }
