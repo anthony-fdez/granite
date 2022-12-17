@@ -1,3 +1,4 @@
+import { IDialogPropsOptional } from "./../../../Overlays/Dialog/Dialog.types";
 import { IModalPropsOptional } from "./../../../Overlays/Modal/Modal.types";
 import { ICloseButtonProps } from "./../../../Buttons/CloseButton/CloseButton.types";
 import { IVariants } from "./../../../../types/variants";
@@ -21,6 +22,7 @@ export interface IStyles {
     Button?: IButtonPropsOptional;
     CloseButton?: ICloseButtonProps;
     Modal?: IModalPropsOptional;
+    Dialog?: IDialogPropsOptional;
   };
 }
 

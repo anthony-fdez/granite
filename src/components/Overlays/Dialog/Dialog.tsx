@@ -12,34 +12,38 @@ import { StateContext } from "../../Theming/ThemeProvider/ThemeProvider";
 import ClickAwayListener from "../../Utils/ClickAwayListener";
 import { getDialogStyles, getDialogVariants } from "./Dialog.styles";
 import { IDialogProps } from "./Dialog.types";
+import { DIALOG_DEFAULT_PROPS, useDialogDefaultStyles } from "./Dialog.props";
 
-const Dialog = ({
-  children,
-  title,
-  isOpen,
-  onClose,
-  closeButton = true,
-  closeOnClickOutside = false,
-  backdrop = false,
-  backdropOpacity = 0.6,
-  backdropBlur = 5,
-  animated = true,
-  animationDuration = 500,
-  width = 350,
-  height,
-  padding = 10,
-  borderRadius,
-  zIndex = 1000,
-  border = true,
-  borderColor,
-  borderWidth = 3,
-  position = "bottom-right",
-  animation = "slide-top",
-  ...args
-}: IDialogProps) => {
+const Dialog = (props: IDialogProps) => {
   const { styles } = useContext(StateContext);
-  const { stylesClosed, stylesOpen } = getDialogStyles({ styles, position });
   const { getColor } = useStyles({ styles });
+
+  const {
+    children,
+    title,
+    isOpen,
+    onClose,
+    closeButton,
+    closeOnClickOutside,
+    backdrop,
+    backdropOpacity,
+    backdropBlur,
+    animated,
+    animationDuration = DIALOG_DEFAULT_PROPS.animationDuration || 500,
+    width,
+    height,
+    padding,
+    borderRadius,
+    zIndex,
+    border,
+    borderColor,
+    borderWidth,
+    position = DIALOG_DEFAULT_PROPS.position || "bottom-right",
+    animation = DIALOG_DEFAULT_PROPS.animation || "slide-bottom",
+    ...args
+  } = useDialogDefaultStyles({ styles, props });
+
+  const { stylesClosed, stylesOpen } = getDialogStyles({ styles, position });
 
   return (
     <>
@@ -100,9 +104,9 @@ const Dialog = ({
                   }),
                 },
             {
-              maxWidth: `calc(100% - ${padding * 2}px - 40px)`,
+              maxWidth: `calc(100% - ${(padding || 0) * 2}px - 40px)`,
             },
-            { maxHeight: `calc(100vh - ${padding * 2}px - 200px)` },
+            { maxHeight: `calc(100vh - ${(padding || 0) * 2}px - 200px)` },
           ]}
         >
           <div className="dialog-header">

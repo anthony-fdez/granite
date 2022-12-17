@@ -72,6 +72,7 @@ const Modal = (props: IModalProps) => {
           ]}
         />
         <motion.div
+          {...props}
           variants={modalVariants}
           initial="closed"
           transition={{
