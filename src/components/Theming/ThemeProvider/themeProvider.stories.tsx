@@ -238,7 +238,7 @@ CustomStyles.args = {
   defaultStyles: {
     global: {
       color: "cyan",
-      borderRadius: "xl",
+      borderRadius: "sm",
     },
     components: {
       Button: {
@@ -249,6 +249,9 @@ CustomStyles.args = {
       },
       Modal: {
         height: 2000,
+      },
+      Dialog: {
+        width: 500,
       },
     },
   },
