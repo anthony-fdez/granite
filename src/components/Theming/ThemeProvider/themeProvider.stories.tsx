@@ -247,6 +247,9 @@ CustomStyles.args = {
       CloseButton: {
         size: 10,
       },
+      Modal: {
+        height: 2000,
+      },
     },
   },
 };

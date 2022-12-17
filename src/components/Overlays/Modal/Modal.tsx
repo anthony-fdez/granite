@@ -8,39 +8,41 @@ import { StateContext } from "../../Theming/ThemeProvider/ThemeProvider";
 import { getModalStyles, modalVariants } from "./Modal.styles";
 import { IModalProps } from "./Modal.types";
 // @ts-ignore
-import { motion, AnimatePresence } from "framer-motion/dist/framer-motion";
+import { motion } from "framer-motion/dist/framer-motion";
 import { useDisableScroll } from "../../../hooks/useDisableScroll";
 import { useStyles } from "../../../styles/useStyles";
 import Unmount from "../../Utils/Unmount/Unmount";
+import { useModalDefaultProps } from "./Modal.props";
 
-const Modal = ({
-  children,
-  title,
-  isOpen,
-  onClose,
-  closeButton = true,
-  closeOnClickOutside = true,
-  backdropOpacity = 0.5,
-  animated = true,
-  animationDuration = 500,
-  width = 500,
-  height,
-  centered = false,
-  padding = 20,
-  borderRadius,
-  backdropBlur = 5,
-  zIndex,
-  border = true,
-  borderColor,
-  borderWidth = 3,
-  unmount = true,
-}: IModalProps) => {
-  useDisableScroll({ isOpen });
-
+const Modal = (props: IModalProps) => {
   const { styles } = useContext(StateContext);
   const { stylesClosed, stylesOpen } = getModalStyles({ styles });
 
+  const {
+    children,
+    title,
+    isOpen,
+    onClose,
+    closeButton,
+    closeOnClickOutside,
+    backdropOpacity,
+    animated,
+    animationDuration,
+    width,
+    height,
+    centered,
+    padding,
+    borderRadius,
+    backdropBlur,
+    zIndex,
+    border,
+    borderColor,
+    borderWidth,
+    unmount,
+  } = useModalDefaultProps({ styles, props });
+
   const { getColor } = useStyles({ styles });
+  useDisableScroll({ isOpen });
 
   return (
     <>
