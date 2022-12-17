@@ -1,3 +1,4 @@
+import { CLOSE_BUTTON_DEFAULT_PROPS } from "./../../components/Buttons/CloseButton/CloseButton.props";
 import { BUTTON_DEFAULT_PROPS } from "../../components/Buttons/Button/Button.props";
 import { IStyles } from "../../components/Theming/ThemeProvider/Interfaces/IStyles";
 
@@ -12,5 +13,6 @@ export const DEFAULT_STYLES: IStyles = {
   },
   components: {
     Button: BUTTON_DEFAULT_PROPS,
+    CloseButton: CLOSE_BUTTON_DEFAULT_PROPS,
   },
 };

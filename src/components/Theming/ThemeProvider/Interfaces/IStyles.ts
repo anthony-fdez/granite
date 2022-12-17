@@ -1,3 +1,4 @@
+import { ICloseButtonProps } from "./../../../Buttons/CloseButton/CloseButton.types";
 import { IVariants } from "./../../../../types/variants";
 import { ITheme } from "./../../../../types/theme";
 import { IColors } from "./../../../../constants/theme/colors";
@@ -17,6 +18,7 @@ export interface IStyles {
   };
   components?: {
     Button?: IButtonPropsOptional;
+    CloseButton?: ICloseButtonProps;
   };
 }
 

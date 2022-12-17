@@ -5,11 +5,13 @@ import React, { useContext } from "react";
 import { useStyles } from "../../../styles/useStyles";
 import { StateContext } from "../../Theming/ThemeProvider/ThemeProvider";
 import { ICloseButtonProps } from "./CloseButton.types";
+import { useCloseButtonDefaultProps } from "./CloseButton.props";
 
-const CloseButton = ({ size = 35, ...args }: ICloseButtonProps) => {
+const CloseButton = (props: ICloseButtonProps) => {
   const { styles } = useContext(StateContext);
-
   const { getColor } = useStyles({ styles });
+
+  const { size } = useCloseButtonDefaultProps({ styles, props });
 
   const common: SerializedStyles = css([
     {
@@ -38,7 +40,7 @@ const CloseButton = ({ size = 35, ...args }: ICloseButtonProps) => {
   ]);
 
   return (
-    <button {...args} css={[common, size && { height: size, width: size }]}>
+    <button {...props} css={[common, size && { height: size, width: size }]}>
       <img
         className="close-button-icon"
         src={
