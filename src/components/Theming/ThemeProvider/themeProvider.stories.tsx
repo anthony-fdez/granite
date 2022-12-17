@@ -12,7 +12,6 @@ import Modal from "../../Overlays/Modal";
 import Flex from "../../Layout/Flex";
 import Divider from "../../Extra/Divider";
 import Accordion from "../../DataDisplay/Accordion";
-import AccordionItem from "../../DataDisplay/Accordion/AccordionItem";
 import Dialog from "../../Overlays/Dialog";
 
 export default {
@@ -117,10 +116,10 @@ const Template: ComponentStory<typeof ThemeProvider> = (args) => {
       <Divider labelPosition="right" label="Label to the right" />
       <h2>Accordion</h2>
       <Accordion>
-        <AccordionItem label="Accordion 1">
+        <Accordion.Item label="Accordion 1">
           <div>Hello</div>
-        </AccordionItem>
-        <AccordionItem label="Accordion 2">
+        </Accordion.Item>
+        <Accordion.Item label="Accordion 2">
           <div>Hello</div>
           <h1>some more</h1>
           <p>
@@ -137,8 +136,8 @@ const Template: ComponentStory<typeof ThemeProvider> = (args) => {
             labore proident. Est enim sint magna ullamco id excepteur voluptate
             quis irure sint aliqua
           </p>
-        </AccordionItem>
-        <AccordionItem label="Accordion 3">
+        </Accordion.Item>
+        <Accordion.Item label="Accordion 3">
           <div>Hello</div>
           <p>
             Tempor voluptate mollit sunt adipisicing elit irure ea sunt. Ea non
@@ -154,8 +153,8 @@ const Template: ComponentStory<typeof ThemeProvider> = (args) => {
             labore proident. Est enim sint magna ullamco id excepteur voluptate
             quis irure sint aliqua
           </p>
-        </AccordionItem>
-        <AccordionItem label="Accordion 4">
+        </Accordion.Item>
+        <Accordion.Item label="Accordion 4">
           <div>Hello</div>
           <p>
             Tempor voluptate mollit sunt adipisicing elit irure ea sunt. Ea non
@@ -172,7 +171,7 @@ const Template: ComponentStory<typeof ThemeProvider> = (args) => {
             quis irure sint aliqua
             <h1>helo</h1>
           </p>
-        </AccordionItem>
+        </Accordion.Item>
       </Accordion>
       <h2>Text</h2>
       <p>
@@ -243,9 +242,6 @@ CustomStyles.args = {
     components: {
       Button: {
         // borderRadius: "md",
-      },
-      CloseButton: {
-        size: 10,
       },
       Modal: {
         height: 2000,

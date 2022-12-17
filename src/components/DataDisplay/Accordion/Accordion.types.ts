@@ -1,4 +1,4 @@
-import AccordionItem from "./AccordionItem";
+import AccordionItem from "./AccordionItem/AccordionItem";
 
 export type AccordionVariants = "filled" | "outlined" | "subtle";
 
@@ -6,8 +6,8 @@ export interface IAccordionProps {
   children:
     | React.ReactElement<typeof AccordionItem>
     | React.ReactElement<typeof AccordionItem>[];
-  value?: string | null;
-  defaultValue?: string;
+  value: string | null;
+  defaultValue: string;
   variant?: AccordionVariants;
   arrowPosition?: "left" | "right";
   arrowSize?: number;
