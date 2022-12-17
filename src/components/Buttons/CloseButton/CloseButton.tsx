@@ -9,13 +9,13 @@ import { ICloseButtonProps } from "./CloseButton.types";
 const CloseButton = ({ size = 35, ...args }: ICloseButtonProps) => {
   const { styles } = useContext(StateContext);
 
-  const { FONT, BG, BG_HOVER } = useStyles({ styles });
+  const { getColor } = useStyles({ styles });
 
   const common: SerializedStyles = css([
     {
-      color: FONT,
+      color: getColor({}).font,
       transition: "100ms",
-      backgroundColor: BG,
+      backgroundColor: getColor({}).background,
       border: 0,
       padding: 5,
       outline: 0,
@@ -24,7 +24,7 @@ const CloseButton = ({ size = 35, ...args }: ICloseButtonProps) => {
       alignItems: "center",
       cursor: "pointer",
       "&:hover": {
-        backgroundColor: BG_HOVER,
+        backgroundColor: getColor({}).backgroundHover,
       },
       "&:active": {
         transform: "translateY(2px)",
