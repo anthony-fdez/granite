@@ -88,13 +88,13 @@ export const getDialogVariants = ({ animation }: VariantsProps) => {
 };
 
 export const getDialogStyles = ({ styles, position }: Props) => {
-  const { BG } = useStyles({ styles });
+  const { getColor } = useStyles({ styles });
 
   const margin = 20;
 
   const stylesOpen: SerializedStyles = css([
     {
-      backgroundColor: BG,
+      backgroundColor: getColor({}).background,
       position: "fixed",
       margin,
       overflowY: "auto",

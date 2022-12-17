@@ -48,7 +48,7 @@ export const getButtonStyles = ({
 
   const subtle: SerializedStyles = css({
     backgroundColor: getColor({ variant: "subtle" }).color,
-    color: getColor({}).color,
+    color: styles.theme === "dark" ? getColor({}).font : getColor({}).color,
     fontWeight: "600",
   });
 

@@ -1,10 +1,9 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
 
-import React, { useContext } from "react";
+import React from "react";
 import Spinner from "../../Feedback/Spinner";
 import Center from "../../Layout/Center";
-import { StateContext } from "../../Theming/ThemeProvider/ThemeProvider";
 import { getLoadingOverlayStyles } from "./LoadingOverlay.styles";
 import { ILoadingOverlayProps } from "./LoadingOverlay.types";
 
@@ -21,8 +20,6 @@ const LoadingOverlay = ({
   fullScreen = false,
   ...args
 }: ILoadingOverlayProps) => {
-  const { styles } = useContext(StateContext);
-
   const { stylesClosed, stylesOpen } = getLoadingOverlayStyles({
     fullScreen,
   });

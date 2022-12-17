@@ -1,5 +1,4 @@
 import { SerializedStyles } from "@emotion/react";
-import { IStyles } from "../../Theming/ThemeProvider/Interfaces/IStyles";
 import { css } from "@emotion/react";
 
 interface Props {

@@ -244,6 +244,9 @@ CustomStyles.args = {
       Button: {
         // borderRadius: "md",
       },
+      CloseButton: {
+        size: 10,
+      },
     },
   },
 };

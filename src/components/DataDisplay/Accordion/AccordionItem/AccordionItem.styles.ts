@@ -19,10 +19,20 @@ export const accordionAnimation: Variants = {
     marginTop: 20,
     marginBottom: 20,
     height: "auto",
+    transition: {
+      type: "spring",
+      damping: 30,
+      stiffness: 500,
+    },
   },
   closed: {
     opacity: 0,
     height: 0,
+    transition: {
+      type: "spring",
+      damping: 30,
+      stiffness: 500,
+    },
   },
 };
 
@@ -38,7 +48,7 @@ export const getAccordionItemStyles = ({
   isActive,
   arrowSize,
 }: Props): SerializedStyles => {
-  const { BORDER, BG_ACCENT } = useStyles({ styles });
+  const { getColor } = useStyles({ styles });
 
   const common = css(
     [
@@ -61,20 +71,20 @@ export const getAccordionItemStyles = ({
     ],
     variant === "subtle" && {
       borderBottomWidth: 1,
-      borderBottomColor: BORDER,
+      borderBottomColor: getColor({}).border,
       borderBottomStyle: "solid",
       ".accordion-item-header": {
         ":hover": {
-          backgroundColor: BG_ACCENT,
+          backgroundColor: getColor({}).backgroundAccent,
         },
       },
     },
     variant === "filled" && {
-      backgroundColor: `${isActive && BG_ACCENT}`,
+      backgroundColor: `${isActive && getColor({}).backgroundAccent}`,
       transition: "background 200ms",
     },
     variant === "outlined" && {
-      borderColor: `${isActive ? BORDER : "transparent"}`,
+      borderColor: `${isActive ? getColor({}).border : "transparent"}`,
       borderWidth: 3,
       borderStyle: "solid",
     }
