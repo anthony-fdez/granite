@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { IAccordionProps } from "./Accordion.types";
+import AccordionItem from "./AccordionItem/AccordionItem";
 
 const Accordion = ({
   children,
   defaultValue,
+  value,
   variant = "subtle",
   arrowPosition = "left",
   arrowSize = 10,
-  value,
 }: IAccordionProps) => {
   const [activeElement, setActiveElement] = useState<string | null>(
     defaultValue ?? null
@@ -37,5 +38,7 @@ const Accordion = ({
 
   return <div>{childrenWithProps}</div>;
 };
+
+Accordion.Item = AccordionItem;
 
 export default Accordion;
