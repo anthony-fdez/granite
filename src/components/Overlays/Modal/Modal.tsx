@@ -1,46 +1,48 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
 
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext } from "react";
 import CloseButton from "../../Buttons/CloseButton";
 import { getBorderRadius } from "../../Theming/ThemeProvider/getValues/getBorderRadius";
 import { StateContext } from "../../Theming/ThemeProvider/ThemeProvider";
 import { getModalStyles, modalVariants } from "./Modal.styles";
 import { IModalProps } from "./Modal.types";
 // @ts-ignore
-import { motion, AnimatePresence } from "framer-motion/dist/framer-motion";
+import { motion } from "framer-motion/dist/framer-motion";
 import { useDisableScroll } from "../../../hooks/useDisableScroll";
 import { useStyles } from "../../../styles/useStyles";
 import Unmount from "../../Utils/Unmount/Unmount";
+import { MODAL_DEFAULT_PROPS, useModalDefaultProps } from "./Modal.props";
 
-const Modal = ({
-  children,
-  title,
-  isOpen,
-  onClose,
-  closeButton = true,
-  closeOnClickOutside = true,
-  backdropOpacity = 0.5,
-  animated = true,
-  animationDuration = 500,
-  width = 500,
-  height,
-  centered = false,
-  padding = 20,
-  borderRadius,
-  backdropBlur = 5,
-  zIndex,
-  border = true,
-  borderColor,
-  borderWidth = 3,
-  unmount = true,
-}: IModalProps) => {
-  useDisableScroll({ isOpen });
-
+const Modal = (props: IModalProps) => {
   const { styles } = useContext(StateContext);
   const { stylesClosed, stylesOpen } = getModalStyles({ styles });
 
+  const {
+    children,
+    title,
+    isOpen,
+    onClose,
+    closeButton,
+    closeOnClickOutside,
+    backdropOpacity,
+    width,
+    height,
+    centered,
+    padding,
+    borderRadius,
+    backdropBlur,
+    zIndex,
+    border,
+    borderColor,
+    borderWidth,
+    animated = MODAL_DEFAULT_PROPS.animated || true,
+    animationDuration = MODAL_DEFAULT_PROPS.animationDuration || 500,
+    unmount = MODAL_DEFAULT_PROPS.unmount || true,
+  } = useModalDefaultProps({ styles, props });
+
   const { getColor } = useStyles({ styles });
+  useDisableScroll({ isOpen });
 
   return (
     <>
@@ -70,6 +72,7 @@ const Modal = ({
           ]}
         />
         <motion.div
+          {...props}
           variants={modalVariants}
           initial="closed"
           transition={{
@@ -102,9 +105,9 @@ const Modal = ({
                   }),
                 },
             {
-              maxWidth: `calc(100% - ${padding * 2}px - 20px)`,
+              maxWidth: `calc(100% - ${(padding || 0) * 2}px - 20px)`,
             },
-            { maxHeight: `calc(100vh - ${padding * 2}px - 200px)` },
+            { maxHeight: `calc(100vh - ${(padding || 0) * 2}px - 200px)` },
           ]}
         >
           <div className="modal-header">

@@ -1,4 +1,4 @@
-import { SizesType } from "./../../../types/sizes";
+import { ISizes } from "./../../../types/sizes";
 
 export type DialogPositionTypes =
   | "top-left"
@@ -16,11 +16,9 @@ export type DialogAnimationTypes =
   | "slide-left"
   | "slide-right"
   | "slide-top";
-export interface IDialogProps extends React.HTMLAttributes<HTMLDivElement> {
-  children: JSX.Element | JSX.Element[];
-  title: string;
-  isOpen: boolean;
-  onClose: () => void;
+
+export interface IDialogPropsOptional
+  extends React.HTMLAttributes<HTMLDivElement> {
   closeButton?: boolean;
   closeOnClickOutside?: boolean;
   backdrop?: boolean;
@@ -31,11 +29,18 @@ export interface IDialogProps extends React.HTMLAttributes<HTMLDivElement> {
   width?: number | string;
   height?: number | string;
   padding?: number;
-  borderRadius?: SizesType;
+  borderRadius?: ISizes;
   zIndex?: number;
   border?: boolean;
   borderColor?: string;
   borderWidth?: number;
   position?: DialogPositionTypes;
   animation?: DialogAnimationTypes;
+}
+
+export interface IDialogProps extends IDialogPropsOptional {
+  children: JSX.Element | JSX.Element[];
+  title: string;
+  isOpen: boolean;
+  onClose: () => void;
 }
