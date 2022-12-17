@@ -8,7 +8,7 @@ export const MODAL_DEFAULT_PROPS: IModalPropsOptional = {
   animated: true,
   animationDuration: 500,
   width: 500,
-  height: 200,
+  height: undefined,
   centered: false,
   padding: 20,
   borderRadius: undefined,
@@ -25,7 +25,7 @@ interface Props {
   styles: IStyles;
 }
 
-export const useModalDefaultProps = ({ props, styles }: Props) => {
+export const useModalDefaultProps = ({ props, styles }: Props): IModalProps => {
   const defaultProps = styles.components?.Modal;
 
   if (!defaultProps) return { ...props };

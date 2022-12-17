@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
 
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext } from "react";
 import CloseButton from "../../Buttons/CloseButton";
 import { getBorderRadius } from "../../Theming/ThemeProvider/getValues/getBorderRadius";
 import { StateContext } from "../../Theming/ThemeProvider/ThemeProvider";
@@ -12,7 +12,7 @@ import { motion } from "framer-motion/dist/framer-motion";
 import { useDisableScroll } from "../../../hooks/useDisableScroll";
 import { useStyles } from "../../../styles/useStyles";
 import Unmount from "../../Utils/Unmount/Unmount";
-import { useModalDefaultProps } from "./Modal.props";
+import { MODAL_DEFAULT_PROPS, useModalDefaultProps } from "./Modal.props";
 
 const Modal = (props: IModalProps) => {
   const { styles } = useContext(StateContext);
@@ -26,8 +26,6 @@ const Modal = (props: IModalProps) => {
     closeButton,
     closeOnClickOutside,
     backdropOpacity,
-    animated,
-    animationDuration,
     width,
     height,
     centered,
@@ -38,7 +36,9 @@ const Modal = (props: IModalProps) => {
     border,
     borderColor,
     borderWidth,
-    unmount,
+    animated = MODAL_DEFAULT_PROPS.animated || true,
+    animationDuration = MODAL_DEFAULT_PROPS.animationDuration || 500,
+    unmount = MODAL_DEFAULT_PROPS.unmount || true,
   } = useModalDefaultProps({ styles, props });
 
   const { getColor } = useStyles({ styles });
@@ -104,9 +104,9 @@ const Modal = (props: IModalProps) => {
                   }),
                 },
             {
-              maxWidth: `calc(100% - ${padding * 2}px - 20px)`,
+              maxWidth: `calc(100% - ${(padding || 0) * 2}px - 20px)`,
             },
-            { maxHeight: `calc(100vh - ${padding * 2}px - 200px)` },
+            { maxHeight: `calc(100vh - ${(padding || 0) * 2}px - 200px)` },
           ]}
         >
           <div className="modal-header">
