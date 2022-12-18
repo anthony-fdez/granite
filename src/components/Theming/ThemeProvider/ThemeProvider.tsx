@@ -10,6 +10,7 @@ import { getGlobalStyles } from "./ThemeProvider.styles";
 import { BUTTON_DEFAULT_PROPS } from "../../Buttons/Button/Button.props";
 import { MODAL_DEFAULT_PROPS } from "../../Overlays/Modal/Modal.props";
 import { DIALOG_DEFAULT_PROPS } from "../../Overlays/Dialog/Dialog.props";
+import { DIVIDER_DEFAULT_PROPS } from "../../Extra/Divider/Divider.props";
 
 export const StateContext = createContext<IContext>({
   styles: DEFAULT_STYLES,
@@ -48,6 +49,10 @@ const ThemeProvider = ({
         Dialog: {
           ...DIALOG_DEFAULT_PROPS,
           ...defaultStyles.components?.Dialog,
+        },
+        Divider: {
+          ...DIVIDER_DEFAULT_PROPS,
+          ...defaultStyles.components?.Divider,
         },
       },
     });

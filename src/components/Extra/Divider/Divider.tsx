@@ -6,26 +6,28 @@ import { useStyles } from "../../../styles/useStyles";
 import Flex from "../../Layout/Flex";
 import { StateContext } from "../../Theming/ThemeProvider/ThemeProvider";
 import { IDividerProps } from "./Divider.types";
+import { useDividerDefaultProps } from "./Divider.props";
 
-const Divider = ({
-  label,
-  labelPadding = 15,
-  labelPosition = "center",
-  width = 1,
-  variant = "solid",
-  marginTop = 20,
-  marginBottom = 20,
-  color,
-  ...args
-}: IDividerProps) => {
+const Divider = (props: IDividerProps) => {
   const { styles } = useContext(StateContext);
-
   const { getColor } = useStyles({ styles });
+
+  const {
+    label,
+    labelPadding,
+    labelPosition,
+    width,
+    dividerVariant,
+    marginTop,
+    marginBottom,
+    color,
+    ...args
+  } = useDividerDefaultProps({ styles, props });
 
   const lineStyles = css([
     {
       border: `${width}px`,
-      borderStyle: variant,
+      borderStyle: dividerVariant,
       borderColor: color ?? getColor({}).border,
       width: "100%",
     },

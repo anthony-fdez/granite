@@ -1,3 +1,4 @@
+import { DIVIDER_DEFAULT_PROPS } from "./../../components/Extra/Divider/Divider.props";
 import { BUTTON_DEFAULT_PROPS } from "../../components/Buttons/Button/Button.props";
 import { IStyles } from "../../components/Theming/ThemeProvider/Interfaces/IStyles";
 import { MODAL_DEFAULT_PROPS } from "../../components/Overlays/Modal/Modal.props";
@@ -16,5 +17,6 @@ export const DEFAULT_STYLES: IStyles = {
     Button: BUTTON_DEFAULT_PROPS,
     Modal: MODAL_DEFAULT_PROPS,
     Dialog: DIALOG_DEFAULT_PROPS,
+    Divider: DIVIDER_DEFAULT_PROPS,
   },
 };
