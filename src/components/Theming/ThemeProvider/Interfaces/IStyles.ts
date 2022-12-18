@@ -5,6 +5,7 @@ import { ITheme } from "./../../../../types/theme";
 import { IColors } from "./../../../../constants/theme/colors";
 import { ISizes } from "./../../../../types/sizes";
 import { IButtonPropsOptional } from "../../../Buttons/Button/Button.types";
+import { ITextInputProps } from "../../../Inputs/TextInput/TextInput.types";
 
 export type numberRange = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9;
 
@@ -21,6 +22,7 @@ export interface IStyles {
     Button?: IButtonPropsOptional;
     Modal?: IModalPropsOptional;
     Dialog?: IDialogPropsOptional;
+    TextInput?: ITextInputProps;
   };
 }
 
