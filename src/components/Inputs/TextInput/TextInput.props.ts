@@ -7,6 +7,7 @@ export const TEXT_INPUT_DEFAULT_PROPS: ITextInputProps = {
   defaultValue: undefined,
   disabled: false,
   error: false,
+  errorText: undefined,
   fullWidth: false,
   helperText: undefined,
   inputProps: undefined,

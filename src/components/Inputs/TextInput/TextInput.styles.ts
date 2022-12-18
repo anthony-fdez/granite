@@ -1,7 +1,7 @@
 import { css, SerializedStyles } from "@emotion/react";
 import { getVariantStyles } from "./../../Theming/ThemeProvider/getValues/getVariantStyles";
 import { useStyles } from "./../../../styles/useStyles";
-import { IColors } from "./../../../constants/theme/colors";
+import { DEFAULT_COLORS, IColors } from "./../../../constants/theme/colors";
 import { IVariants } from "./../../../types/variants";
 import { IStyles } from "./../../Theming/ThemeProvider/Interfaces/IStyles";
 
@@ -10,6 +10,8 @@ interface Props {
   variant?: IVariants;
   color?: IColors;
   disabled?: boolean;
+  error?: boolean;
+  margin?: number;
 }
 
 export const getTextInputStyles = ({
@@ -17,6 +19,8 @@ export const getTextInputStyles = ({
   variant,
   color,
   disabled,
+  error,
+  margin,
 }: Props) => {
   const { getColor } = useStyles({
     styles,
@@ -52,6 +56,19 @@ export const getTextInputStyles = ({
   });
 
   const common: SerializedStyles = css({
+    p: {
+      margin: 0,
+      padding: 0,
+    },
+    ".input-label": {},
+    ".input-helper-text": {
+      fontSize: 12,
+      color: getColor({}).fontLight,
+    },
+    ".input-error-text": {
+      fontSize: 12,
+      color: DEFAULT_COLORS.red[6],
+    },
     ".INPUT": [
       {
         outline: 0,
@@ -60,7 +77,6 @@ export const getTextInputStyles = ({
         ".button-icon-container-left": {},
         ".button-icon-container-right": {},
         "&:hover": {},
-
         "&:focus": {},
       },
       {

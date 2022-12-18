@@ -10,6 +10,7 @@ export interface ITextInputProps
   defaultValue?: any;
   disabled?: boolean;
   error?: boolean;
+  errorText?: string;
   fullWidth?: boolean;
   helperText?: string;
   inputProps?: React.HTMLAttributes<HTMLInputElement>;

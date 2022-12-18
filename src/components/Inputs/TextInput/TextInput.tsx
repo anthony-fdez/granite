@@ -6,6 +6,7 @@ import { ITextInputProps } from "./TextInput.types";
 import { useTextInputDefaultProps } from "./TextInput.props";
 import { StateContext } from "../../Theming/ThemeProvider/ThemeProvider";
 import { getTextInputStyles } from "./TextInput.styles";
+import { DEFAULT_COLORS } from "../../../constants/theme/colors";
 
 const TextInput = (props: ITextInputProps) => {
   const { styles } = useContext(StateContext);
@@ -16,6 +17,7 @@ const TextInput = (props: ITextInputProps) => {
     defaultValue,
     disabled,
     error,
+    errorText,
     fullWidth,
     helperText,
     inputProps,
@@ -40,11 +42,22 @@ const TextInput = (props: ITextInputProps) => {
   return (
     <div
       css={[
-        getTextInputStyles({ styles, variant, color, disabled }),
+        getTextInputStyles({ styles, variant, color, disabled, error, margin }),
         margin && { margin },
       ]}
       {...args}
     >
+      {label && (
+        <p className="input-label">
+          {label}
+          {required && (
+            <span style={{ color: DEFAULT_COLORS.red[6], marginLeft: 2 }}>
+              *
+            </span>
+          )}
+        </p>
+      )}
+      {helperText && <p className="input-helper-text">{helperText}</p>}
       <input
         css={[padding && { padding }, borderRadius && { borderRadius }]}
         disabled={disabled}
@@ -53,6 +66,7 @@ const TextInput = (props: ITextInputProps) => {
         autoFocus={autofocus}
         required={required}
       />
+      {errorText && <p className="input-error-text">{errorText}</p>}
     </div>
   );
 };
