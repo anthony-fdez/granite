@@ -40,6 +40,11 @@ export const Form: ComponentStory<typeof TextInput> = (args) => {
             onChange={(e) => setText2(e.target.value)}
           />
         </Flex>
+        <Flex>
+          <TextInput placeholder="Outlined Variant" />
+          <TextInput variant="filled" placeholder="Filled Variant" />
+          <TextInput variant="subtle" placeholder="Subtle Variant" />
+        </Flex>
         <Button type="submit">Submit</Button>
       </form>
       <p>Value 1: {text1}</p>
