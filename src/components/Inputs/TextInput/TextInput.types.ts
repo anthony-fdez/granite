@@ -29,4 +29,5 @@ export interface ITextInputProps
   loading?: boolean;
   iconLeft?: JSX.Element;
   borderRadius?: ISizes | number;
+  width?: number;
 }

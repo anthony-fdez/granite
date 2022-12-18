@@ -20,10 +20,10 @@ const TextInput = (props: ITextInputProps) => {
     errorText,
     fullWidth,
     helperText,
-    inputProps,
     label,
     margin,
     padding,
+    width,
     name,
     multiline,
     onChange,
@@ -36,14 +36,26 @@ const TextInput = (props: ITextInputProps) => {
     loading,
     iconLeft,
     borderRadius,
+    inputProps,
     ...args
   } = useTextInputDefaultProps({ styles, props });
 
   return (
     <div
       css={[
-        getTextInputStyles({ styles, variant, color, disabled, error, margin }),
+        getTextInputStyles({
+          styles,
+          variant,
+          color,
+          disabled,
+          error,
+          margin,
+          fullWidth,
+          padding,
+          width,
+        }),
         margin && { margin },
+        fullWidth && { width: `calc(100% - ${margin ? margin * 2 : 0}px)` },
       ]}
       {...args}
     >
@@ -59,12 +71,18 @@ const TextInput = (props: ITextInputProps) => {
       )}
       {helperText && <p className="input-helper-text">{helperText}</p>}
       <input
+        {...inputProps}
+        type={type}
         css={[padding && { padding }, borderRadius && { borderRadius }]}
         disabled={disabled}
         placeholder={placeholder}
         className={`INPUT ${classes}`}
         autoFocus={autofocus}
         required={required}
+        name={name}
+        value={value}
+        defaultValue={defaultValue}
+        onChange={onChange}
       />
       {errorText && <p className="input-error-text">{errorText}</p>}
     </div>
