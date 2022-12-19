@@ -14,15 +14,16 @@ import { IAccordionItemProps } from "./AccordionItem.types";
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 import { motion } from "framer-motion/dist/framer-motion";
+import { ACCORDION_DEFAULT_PROPS } from "../Accordion.props";
 
 const AccordionItem = ({
   label,
   children,
   activeElement,
   setActiveElement,
-  variant = "filled",
-  arrowPosition = "left",
-  arrowSize = 10,
+  variant = ACCORDION_DEFAULT_PROPS.variant || "filled",
+  arrowPosition = ACCORDION_DEFAULT_PROPS.arrowPosition || "left",
+  arrowSize = ACCORDION_DEFAULT_PROPS.arrowSize || 10,
 }: IAccordionItemProps) => {
   const { styles } = useContext(StateContext);
 
