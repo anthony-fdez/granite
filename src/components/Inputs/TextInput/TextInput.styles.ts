@@ -37,9 +37,20 @@ export const getTextInputStyles = ({
     color,
   });
 
-  const iconLeftPadding = 30;
+  const iconWidth = 30;
   const calculatedWidthContainer = `calc(100% - ${margin + padding}px)`;
-  const calculatedWidthInput = `calc(100% - ${padding * (iconLeft ? 1 : 2) + (iconLeft ? iconLeftPadding : 0)}px)`;
+
+  const getInputWidth = () => {
+    let width = padding;
+
+    if (loading && iconLeft) {
+      width = iconWidth * 2 - padding;
+    } else if (iconLeft || loading) {
+      width = iconWidth;
+    }
+
+    return `calc(100% - ${width}px)`;
+  };
 
   const filled: SerializedStyles = css({
     backgroundColor: getColor({}).backgroundAccent,
@@ -78,6 +89,7 @@ export const getTextInputStyles = ({
       padding: 0,
     },
     width: width,
+    position: "relative",
 
     ".input-label": {},
     ".input-helper-text": {
@@ -90,43 +102,57 @@ export const getTextInputStyles = ({
       color: DEFAULT_COLORS.red[6],
       marginTop: 5,
     },
+
     ".input-wrapper": {
       position: "relative",
-    },
-    ".input-icon-left": {
-      position: "absolute",
-      top: "50%",
-      left: 2,
-      transform: "translateY(-50%)",
-      height: iconLeftPadding,
-      width: iconLeftPadding,
-      pointerEvents: "none",
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center",
-    },
-    ".INPUT": [
-      fullWidth && { width: calculatedWidthContainer },
-      {
-        width: calculatedWidthInput,
-        outline: 0,
-        borderWidth: 0,
-        color: getColor({}).font,
-
-        ".button-icon-container-right": {},
-        "&:hover": {},
-        "&:focus": {},
-      },
-      iconLeft && { paddingLeft: iconLeftPadding },
-      {
-        ...getVariantStyles({ filled, subtle, outlined, variant }),
-      },
-      disabled && {
-        filter: "grayscale(1)",
+      ".input-icon-left": {
+        position: "absolute",
+        top: "50%",
+        left: 0,
+        transform: "translateY(-50%)",
+        height: iconWidth,
+        width: iconWidth,
         pointerEvents: "none",
-        color: "red",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
       },
-    ],
+      ".input-loading": {
+        position: "absolute",
+        top: "50%",
+        right: -10,
+        transform: "translateY(-50%)",
+        height: iconWidth,
+        width: iconWidth,
+        pointerEvents: "none",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+      },
+      ".INPUT": [
+        fullWidth && { width: calculatedWidthContainer },
+        {
+          width: getInputWidth(),
+          outline: 0,
+          borderWidth: 0,
+          color: getColor({}).font,
+
+          ".button-icon-container-right": {},
+          "&:hover": {},
+          "&:focus": {},
+        },
+        iconLeft && { paddingLeft: iconWidth },
+        loading && { paddingRight: iconWidth },
+        {
+          ...getVariantStyles({ filled, subtle, outlined, variant }),
+        },
+        disabled && {
+          filter: "grayscale(1)",
+          pointerEvents: "none",
+          color: "red",
+        },
+      ],
+    },
   });
 
   return common;

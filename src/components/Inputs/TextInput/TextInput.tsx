@@ -1,12 +1,13 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
 
-import React, { useContext, useRef } from "react";
+import React, { useContext } from "react";
 import { ITextInputProps } from "./TextInput.types";
 import { useTextInputDefaultProps } from "./TextInput.props";
 import { StateContext } from "../../Theming/ThemeProvider/ThemeProvider";
 import { getTextInputStyles } from "./TextInput.styles";
 import { DEFAULT_COLORS } from "../../../constants/theme/colors";
+import Spinner from "../../Feedback/Spinner";
 
 const TextInput = (props: ITextInputProps) => {
   const { styles } = useContext(StateContext);
@@ -85,6 +86,11 @@ const TextInput = (props: ITextInputProps) => {
           defaultValue={defaultValue}
           onChange={onChange}
         />
+        {loading && (
+          <span className="input-loading">
+            <Spinner variant="circular" color={color} />
+          </span>
+        )}
       </div>
 
       {errorText && <p className="input-error-text">{errorText}</p>}
