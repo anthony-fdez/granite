@@ -73,4 +73,5 @@ export const Default = Template.bind({});
 
 Default.args = {
   placeholder: "Text input",
+  iconLeft: <>t</>,
 };

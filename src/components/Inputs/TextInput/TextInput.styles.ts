@@ -54,8 +54,10 @@ export const getTextInputStyles = ({
 
   const filled: SerializedStyles = css({
     backgroundColor: getColor({}).backgroundAccent,
+
     "&:focus": {
       borderBottomWidth: 3,
+      marginBottom: -3,
       borderBottomStyle: "solid",
       borderBottomColor: getColor({}).color,
     },
@@ -63,6 +65,7 @@ export const getTextInputStyles = ({
 
   const outlined: SerializedStyles = css([
     {
+      transition: "100ms",
       borderWidth: 1,
       borderColor: getColor({}).border,
       borderStyle: "solid",
@@ -75,9 +78,14 @@ export const getTextInputStyles = ({
   ]);
 
   const subtle: SerializedStyles = css({
-    backgroundColor: getColor({ variant: "subtle" }).color,
+    backgroundColor: getColor({ variant: "subtle" }).background,
+    borderBottomWidth: 1,
+    marginBottom: -1,
+    borderBottomColor: getColor({}).backgroundHover,
     "&:focus": {
       borderBottomWidth: 3,
+      marginBottom: -3,
+
       borderBottomStyle: "solid",
       borderBottomColor: getColor({}).color,
     },
@@ -134,8 +142,10 @@ export const getTextInputStyles = ({
         {
           width: getInputWidth(),
           outline: 0,
+          marginTop: 3,
           borderWidth: 0,
           color: getColor({}).font,
+          backgroundColor: getColor({}).background,
 
           ".button-icon-container-right": {},
           "&:hover": {},
