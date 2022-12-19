@@ -1,5 +1,4 @@
-import { IStyles } from "./../../../../types/components/Theming/ThemeProvider/Interfaces/IStyles.d";
-import { colors } from "./../../../constants/theme/colors";
+import { IStyles } from "./../../Theming/ThemeProvider/Interfaces/IStyles";
 import { TooltipPositionsType } from "./Tooltip.types";
 import { css, SerializedStyles } from "@emotion/react";
 
@@ -15,7 +14,7 @@ export const getTooltipStyles = ({ styles, position }: Props) => {
     {
       backgroundColor: BACKGROUND,
       position: "absolute",
-      bottom: `calc(100% + 10px)`,
+      bottom: "calc(100% + 10px)",
       borderStyle: "solid",
       borderWidth: 1,
       borderColor: "gray",
@@ -28,10 +27,7 @@ export const getTooltipStyles = ({ styles, position }: Props) => {
     position === "left" && {},
   ]);
 
-  const stylesClosed: SerializedStyles = css([
-    stylesOpen,
-    { pointerEvents: "none" },
-  ]);
+  const stylesClosed: SerializedStyles = css([stylesOpen, { pointerEvents: "none" }]);
 
   return { stylesOpen, stylesClosed };
 };
