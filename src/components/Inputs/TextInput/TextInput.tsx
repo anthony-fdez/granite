@@ -70,7 +70,7 @@ const TextInput = (props: ITextInputProps) => {
       )}
       {helperText && <p className="input-helper-text">{helperText}</p>}
       <div className="input-wrapper">
-        {iconLeft && <span className="input-icon-left">L</span>}
+        {iconLeft && <span className="input-icon-left">{iconLeft}</span>}
 
         <input
           {...inputProps}

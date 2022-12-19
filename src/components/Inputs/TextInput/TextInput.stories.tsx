@@ -34,6 +34,7 @@ export const Form: ComponentStory<typeof TextInput> = (args) => {
             onChange={(e) => setText1(e.target.value)}
             required={true}
             autofocus={true}
+            iconLeft={<>X</>}
           />
           <TextInput
             loading
