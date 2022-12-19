@@ -1,3 +1,4 @@
+import { IAccordionPropsOptional } from "./../../../DataDisplay/Accordion/Accordion.types";
 import { IDialogPropsOptional } from "./../../../Overlays/Dialog/Dialog.types";
 import { IModalPropsOptional } from "./../../../Overlays/Modal/Modal.types";
 import { IVariants } from "./../../../../types/variants";
@@ -23,6 +24,7 @@ export interface IStyles {
     Modal?: IModalPropsOptional;
     Dialog?: IDialogPropsOptional;
     TextInput?: ITextInputProps;
+    Accordion?: IAccordionPropsOptional;
   };
 }
 

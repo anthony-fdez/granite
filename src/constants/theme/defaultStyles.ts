@@ -3,6 +3,7 @@ import { IStyles } from "../../components/Theming/ThemeProvider/Interfaces/IStyl
 import { MODAL_DEFAULT_PROPS } from "../../components/Overlays/Modal/Modal.props";
 import { DIALOG_DEFAULT_PROPS } from "../../components/Overlays/Dialog/Dialog.props";
 import { TEXT_INPUT_DEFAULT_PROPS } from "../../components/Inputs/TextInput/TextInput.props";
+import { ACCORDION_DEFAULT_PROPS } from "../../components/DataDisplay/Accordion/Accordion.props";
 
 export const DEFAULT_STYLES: IStyles = {
   theme: "light",
@@ -18,5 +19,6 @@ export const DEFAULT_STYLES: IStyles = {
     Modal: MODAL_DEFAULT_PROPS,
     Dialog: DIALOG_DEFAULT_PROPS,
     TextInput: TEXT_INPUT_DEFAULT_PROPS,
+    Accordion: ACCORDION_DEFAULT_PROPS,
   },
 };

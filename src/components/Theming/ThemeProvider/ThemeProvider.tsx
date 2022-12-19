@@ -11,6 +11,7 @@ import { BUTTON_DEFAULT_PROPS } from "../../Buttons/Button/Button.props";
 import { MODAL_DEFAULT_PROPS } from "../../Overlays/Modal/Modal.props";
 import { DIALOG_DEFAULT_PROPS } from "../../Overlays/Dialog/Dialog.props";
 import { TEXT_INPUT_DEFAULT_PROPS } from "../../Inputs/TextInput/TextInput.props";
+import { ACCORDION_DEFAULT_PROPS } from "../../DataDisplay/Accordion/Accordion.props";
 
 export const StateContext = createContext<IContext>({
   styles: DEFAULT_STYLES,
@@ -53,6 +54,9 @@ const ThemeProvider = ({
         TextInput: {
           ...TEXT_INPUT_DEFAULT_PROPS,
           ...defaultStyles.components?.TextInput,
+        Accordion: {
+          ...ACCORDION_DEFAULT_PROPS,
+          ...defaultStyles.components?.Accordion,
         },
       },
     });
