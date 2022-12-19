@@ -15,6 +15,8 @@ interface Props {
   fullWidth?: boolean;
   padding?: number;
   width?: number;
+  iconLeft?: JSX.Element;
+  loading?: boolean;
 }
 
 export const getTextInputStyles = ({
@@ -24,22 +26,20 @@ export const getTextInputStyles = ({
   disabled,
   error,
   fullWidth,
-  margin,
-  padding,
+  margin = 0,
+  padding = 0,
   width,
+  iconLeft,
+  loading,
 }: Props) => {
   const { getColor } = useStyles({
     styles,
     color,
   });
 
-  const calculatedWidthContainer = `calc(100% - ${
-    margin ? margin * 2 + (padding || 0) * 2 : 0
-  }px)`;
-
-  const calculatedWidthInput = `calc(100% - ${
-    margin ? margin * 2 + (padding || 0) * 2 : 0
-  }px)`;
+  const iconLeftPadding = 30;
+  const calculatedWidthContainer = `calc(100% - ${margin + padding}px)`;
+  const calculatedWidthInput = `calc(100% - ${padding * (iconLeft ? 1 : 2) + (iconLeft ? iconLeftPadding : 0)}px)`;
 
   const filled: SerializedStyles = css({
     backgroundColor: getColor({}).backgroundAccent,
@@ -90,18 +90,34 @@ export const getTextInputStyles = ({
       color: DEFAULT_COLORS.red[6],
       marginTop: 5,
     },
+    ".input-wrapper": {
+      position: "relative",
+    },
+    ".input-icon-left": {
+      position: "absolute",
+      top: "50%",
+      left: 2,
+      transform: "translateY(-50%)",
+      height: iconLeftPadding,
+      width: iconLeftPadding,
+      pointerEvents: "none",
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+    },
     ".INPUT": [
-      fullWidth && { widows: calculatedWidthContainer },
+      fullWidth && { width: calculatedWidthContainer },
       {
         width: calculatedWidthInput,
         outline: 0,
         borderWidth: 0,
         color: getColor({}).font,
-        ".button-icon-container-left": {},
+
         ".button-icon-container-right": {},
         "&:hover": {},
         "&:focus": {},
       },
+      iconLeft && { paddingLeft: iconLeftPadding },
       {
         ...getVariantStyles({ filled, subtle, outlined, variant }),
       },

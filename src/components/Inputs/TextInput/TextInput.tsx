@@ -53,6 +53,8 @@ const TextInput = (props: ITextInputProps) => {
           fullWidth,
           padding,
           width,
+          iconLeft,
+          loading,
         }),
         margin && { margin },
         fullWidth && { width: `calc(100% - ${margin ? margin * 2 : 0}px)` },
@@ -62,28 +64,29 @@ const TextInput = (props: ITextInputProps) => {
       {label && (
         <p className="input-label">
           {label}
-          {required && (
-            <span style={{ color: DEFAULT_COLORS.red[6], marginLeft: 2 }}>
-              *
-            </span>
-          )}
+          {required && <span style={{ color: DEFAULT_COLORS.red[6], marginLeft: 2 }}>*</span>}
         </p>
       )}
       {helperText && <p className="input-helper-text">{helperText}</p>}
-      <input
-        {...inputProps}
-        type={type}
-        css={[padding && { padding }, borderRadius && { borderRadius }]}
-        disabled={disabled}
-        placeholder={placeholder}
-        className={`INPUT ${classes}`}
-        autoFocus={autofocus}
-        required={required}
-        name={name}
-        value={value}
-        defaultValue={defaultValue}
-        onChange={onChange}
-      />
+      <div className="input-wrapper">
+        {iconLeft && <span className="input-icon-left">L</span>}
+
+        <input
+          {...inputProps}
+          type={type}
+          css={[padding && { padding }, borderRadius && { borderRadius }]}
+          disabled={disabled}
+          placeholder={placeholder}
+          className={`INPUT ${classes}`}
+          autoFocus={autofocus}
+          required={required}
+          name={name}
+          value={value}
+          defaultValue={defaultValue}
+          onChange={onChange}
+        />
+      </div>
+
       {errorText && <p className="input-error-text">{errorText}</p>}
     </div>
   );
