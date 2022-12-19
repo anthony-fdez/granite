@@ -26,6 +26,7 @@ export const Form: ComponentStory<typeof TextInput> = (args) => {
       >
         <Flex alignItems="flex-end">
           <TextInput
+            loading
             label="Input 1"
             placeholder="Text 1"
             helperText="With autofocus"
@@ -35,6 +36,7 @@ export const Form: ComponentStory<typeof TextInput> = (args) => {
             autofocus={true}
           />
           <TextInput
+            loading
             label="Input 2"
             helperText="Default value = 'Banana'"
             placeholder="Text 2"
@@ -53,29 +55,18 @@ export const Form: ComponentStory<typeof TextInput> = (args) => {
           <TextInput disabled variant="subtle" placeholder="Subtle Variant" />
         </Flex>
         <Flex>
-          <TextInput
-            errorText="With an error text"
-            title="Full Width"
-            fullWidth
-            placeholder="Long..."
-          />
+          <TextInput errorText="With an error text" title="Full Width" fullWidth placeholder="Long..." />
         </Flex>
         <Button type="submit">Submit</Button>
       </form>
       <p>Value 1: {text1}</p>
       <p>Value 2: {text2}</p>
-      <TextInput
-        placeholder="Controls input 1"
-        onChange={(e) => setText1(e.target.value)}
-        required={true}
-      />
+      <TextInput placeholder="Controls input 1" onChange={(e) => setText1(e.target.value)} required={true} />
     </>
   );
 };
 
-const Template: ComponentStory<typeof TextInput> = (args) => (
-  <TextInput {...args} />
-);
+const Template: ComponentStory<typeof TextInput> = (args) => <TextInput {...args} />;
 
 export const Default = Template.bind({});
 

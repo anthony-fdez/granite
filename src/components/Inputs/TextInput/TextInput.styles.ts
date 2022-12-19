@@ -49,7 +49,7 @@ export const getTextInputStyles = ({
       width = iconWidth;
     }
 
-    return `calc(100% - ${width}px)`;
+    return `calc(100% - ${width + padding}px)`;
   };
 
   const filled: SerializedStyles = css({
@@ -120,7 +120,7 @@ export const getTextInputStyles = ({
       ".input-loading": {
         position: "absolute",
         top: "50%",
-        right: -10,
+        right: 0,
         transform: "translateY(-50%)",
         height: iconWidth,
         width: iconWidth,
