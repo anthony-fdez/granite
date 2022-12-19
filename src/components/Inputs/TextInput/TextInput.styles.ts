@@ -1,4 +1,3 @@
-import { _getBackgroundAccent } from "./../../../styles/methods/_getBackgroundAccent";
 import { css, SerializedStyles } from "@emotion/react";
 import { getVariantStyles } from "./../../Theming/ThemeProvider/getValues/getVariantStyles";
 import { useStyles } from "./../../../styles/useStyles";
@@ -33,6 +32,14 @@ export const getTextInputStyles = ({
     styles,
     color,
   });
+
+  const calculatedWidthContainer = `calc(100% - ${
+    margin ? margin * 2 + (padding || 0) * 2 : 0
+  }px)`;
+
+  const calculatedWidthInput = `calc(100% - ${
+    margin ? margin * 2 + (padding || 0) * 2 : 0
+  }px)`;
 
   const filled: SerializedStyles = css({
     backgroundColor: getColor({}).backgroundAccent,
@@ -84,10 +91,9 @@ export const getTextInputStyles = ({
       marginTop: 5,
     },
     ".INPUT": [
-      fullWidth && {
-        width: `calc(100% - ${margin ? (margin + (padding || 0)) * 2 : 0}px)`,
-      },
+      fullWidth && { widows: calculatedWidthContainer },
       {
+        width: calculatedWidthInput,
         outline: 0,
         borderWidth: 0,
         color: getColor({}).font,

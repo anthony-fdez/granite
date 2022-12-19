@@ -26,7 +26,7 @@ export const TEXT_INPUT_DEFAULT_PROPS: ITextInputProps = {
   loading: false,
   iconLeft: undefined,
   borderRadius: "xs",
-  width: 200,
+  width: 250,
 };
 
 interface Props {

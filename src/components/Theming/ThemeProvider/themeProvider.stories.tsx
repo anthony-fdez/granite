@@ -236,16 +236,14 @@ CustomStyles.args = {
   theme: "dark",
   defaultStyles: {
     global: {
-      color: "cyan",
-      borderRadius: "sm",
+      color: "orange",
+      borderRadius: "xs",
     },
     components: {
       Button: {
-        // borderRadius: "md",
+        borderRadius: "lg",
       },
-      Modal: {
-        height: 2000,
-      },
+      Modal: {},
       Dialog: {
         width: 500,
       },

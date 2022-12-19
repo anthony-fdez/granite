@@ -28,9 +28,11 @@ export const Form: ComponentStory<typeof TextInput> = (args) => {
           <TextInput
             label="Input 1"
             placeholder="Text 1"
+            helperText="With autofocus"
             value={text1}
             onChange={(e) => setText1(e.target.value)}
             required={true}
+            autofocus={true}
           />
           <TextInput
             label="Input 2"
@@ -45,12 +47,25 @@ export const Form: ComponentStory<typeof TextInput> = (args) => {
           <TextInput variant="filled" placeholder="Filled Variant" />
           <TextInput variant="subtle" placeholder="Subtle Variant" />
         </Flex>
+        <Flex>
+          <TextInput disabled placeholder="Outlined Variant" />
+          <TextInput disabled variant="filled" placeholder="Filled Variant" />
+          <TextInput disabled variant="subtle" placeholder="Subtle Variant" />
+        </Flex>
+        <Flex>
+          <TextInput
+            errorText="With an error text"
+            title="Full Width"
+            fullWidth
+            placeholder="Long..."
+          />
+        </Flex>
         <Button type="submit">Submit</Button>
       </form>
       <p>Value 1: {text1}</p>
       <p>Value 2: {text2}</p>
       <TextInput
-        placeholder="Controles input 1"
+        placeholder="Controls input 1"
         onChange={(e) => setText1(e.target.value)}
         required={true}
       />
