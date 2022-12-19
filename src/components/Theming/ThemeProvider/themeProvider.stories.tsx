@@ -203,6 +203,9 @@ CustomStyles.args = {
       Dialog: {
         width: 500,
       },
+      Divider: {
+        dividerVariant: "dashed",
+      },
     },
   },
 };

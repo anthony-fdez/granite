@@ -1,3 +1,4 @@
+import { IDividerProps } from "./../../../Extra/Divider/Divider.types";
 import { IAccordionPropsOptional } from "./../../../DataDisplay/Accordion/Accordion.types";
 import { IDialogPropsOptional } from "./../../../Overlays/Dialog/Dialog.types";
 import { IModalPropsOptional } from "./../../../Overlays/Modal/Modal.types";
@@ -23,6 +24,7 @@ export interface IStyles {
     Button?: IButtonPropsOptional;
     Modal?: IModalPropsOptional;
     Dialog?: IDialogPropsOptional;
+    Divider?: IDividerProps;
     TextInput?: ITextInputProps;
     Accordion?: IAccordionPropsOptional;
   };
