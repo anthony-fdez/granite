@@ -8,11 +8,11 @@ name: Lint Code Base
 
 on:
   push:
-    branches: [ "main", "develop" ]
+    branches: ["main", "develop"]
   pull_request:
-    branches: [ "main", "develop" ]
+    branches: ["main", "develop"]
 jobs:
-  run-lint:
+  run-extra-lint:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
