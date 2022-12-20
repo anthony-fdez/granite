@@ -12,7 +12,7 @@ on:
   pull_request:
     branches: ["main", "develop"]
 jobs:
-  run-lint:
+  run-extra-lint:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
