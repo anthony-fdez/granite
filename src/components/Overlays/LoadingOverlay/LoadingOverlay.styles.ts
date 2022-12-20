@@ -1,5 +1,4 @@
-import { SerializedStyles } from "@emotion/react";
-import { css } from "@emotion/react";
+import { SerializedStyles, css } from "@emotion/react";
 
 interface Props {
   fullScreen: boolean;
@@ -24,10 +23,7 @@ export const getLoadingOverlayStyles = ({ fullScreen }: Props) => {
     },
   ]);
 
-  const stylesClosed: SerializedStyles = css([
-    stylesOpen,
-    { pointerEvents: "none", opacity: 0 },
-  ]);
+  const stylesClosed: SerializedStyles = css([stylesOpen, { pointerEvents: "none", opacity: 0 }]);
 
   return { stylesOpen, stylesClosed };
 };

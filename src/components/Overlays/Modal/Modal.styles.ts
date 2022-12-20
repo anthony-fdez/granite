@@ -1,8 +1,7 @@
 import { useStyles } from "../../../styles/useStyles";
 import { Variants } from "framer-motion";
-import { SerializedStyles } from "@emotion/react";
+import { SerializedStyles, css } from "@emotion/react";
 import { IStyles } from "../../Theming/ThemeProvider/Interfaces/IStyles";
-import { css } from "@emotion/react";
 
 interface Props {
   styles: IStyles;
@@ -47,10 +46,7 @@ export const getModalStyles = ({ styles }: Props) => {
     },
   });
 
-  const stylesClosed: SerializedStyles = css([
-    stylesOpen,
-    { pointerEvents: "none" },
-  ]);
+  const stylesClosed: SerializedStyles = css([stylesOpen, { pointerEvents: "none" }]);
 
   return { stylesOpen, stylesClosed };
 };

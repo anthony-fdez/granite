@@ -55,9 +55,11 @@ const ThemeProvider = ({
         Divider: {
           ...DIVIDER_DEFAULT_PROPS,
           ...defaultStyles.components?.Divider,
+        },
         TextInput: {
           ...TEXT_INPUT_DEFAULT_PROPS,
           ...defaultStyles.components?.TextInput,
+        },
         Accordion: {
           ...ACCORDION_DEFAULT_PROPS,
           ...defaultStyles.components?.Accordion,
