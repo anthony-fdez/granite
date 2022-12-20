@@ -1,7 +1,7 @@
 name: esLint
 
 on:
- push:
+  push:
     branches:
       - main
       - develop
