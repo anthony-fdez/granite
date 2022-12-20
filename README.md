@@ -1,5 +1,7 @@
 # Component library
 
+Follow git workflow https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow
+
 Blueprintjs is a pretty good inspiration
 
 ## Next up to work on:
