@@ -1,13 +1,17 @@
-name: Node.js CI
+name: esLint
 
 on:
   push:
-    branches: ["main", "develop"]
+    branches:
+      - main
+      - develop
   pull_request:
-    branches: ["main", "develop"]
-
+    branches:
+      - main
+      - develop
 jobs:
-  build:
+  linting:
+    name: Linting
     runs-on: ubuntu-latest
 
     strategy:
