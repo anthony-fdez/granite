@@ -3,7 +3,7 @@
   "version": "0.0.2",
   "description": "A react component library",
   "scripts": {
-    "rollup": "rollup -c && tsc",
+    "build": "rollup -c && tsc",
     "sb": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "lint": "npx eslint src"

@@ -22,4 +22,4 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - run: npm install
       - run: npm ci
-      - run: npm run rollup --if-present
+      - run: npm run build
