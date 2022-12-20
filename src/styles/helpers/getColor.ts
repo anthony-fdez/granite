@@ -1,7 +1,4 @@
-import {
-  IStyles,
-  numberRange,
-} from "./../../components/Theming/ThemeProvider/Interfaces/IStyles";
+import { IStyles, numberRange } from "./../../components/Theming/ThemeProvider/Interfaces/IStyles";
 import { DEFAULT_COLORS, IColors } from "./../../constants/theme/colors";
 
 interface Props {
@@ -12,7 +9,6 @@ interface Props {
 
 export const getColor = ({ color, styles, shade }: Props) => {
   if (!styles) {
-    console.log("Styles context not found");
     return;
   }
 

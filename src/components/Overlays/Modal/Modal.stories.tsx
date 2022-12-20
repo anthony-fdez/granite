@@ -3,7 +3,6 @@ import { ComponentStory } from "@storybook/react";
 import "@storybook/addon-console";
 
 import Modal from "./Modal";
-import Button from "../../Buttons/Button";
 
 export default {
   title: "Components/Overlays/Modal",

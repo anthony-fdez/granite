@@ -3,10 +3,10 @@ import { IVariants } from "./../../../types/variants";
 import { HTMLInputTypeAttribute } from "react";
 import { IColors } from "./../../../constants/theme/colors";
 
-export interface ITextInputProps
-  extends React.HtmlHTMLAttributes<HTMLDivElement> {
+export interface ITextInputProps extends React.HtmlHTMLAttributes<HTMLDivElement> {
   autofocus?: boolean;
   color?: IColors;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   defaultValue?: any;
   disabled?: boolean;
   error?: boolean;
@@ -23,6 +23,7 @@ export interface ITextInputProps
   placeholder?: string;
   required?: boolean;
   type?: HTMLInputTypeAttribute;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   value?: any;
   variant?: IVariants;
   classes?: string;
