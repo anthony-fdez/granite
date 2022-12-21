@@ -1,6 +1,6 @@
+import { HTMLInputTypeAttribute } from "react";
 import { ISizes } from "./../../../types/sizes";
 import { IVariants } from "./../../../types/variants";
-import { HTMLInputTypeAttribute } from "react";
 import { IColors } from "./../../../constants/theme/colors";
 
 export interface ITextInputProps extends React.HtmlHTMLAttributes<HTMLDivElement> {
