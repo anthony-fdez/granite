@@ -6,7 +6,7 @@ import { DIALOG_DEFAULT_PROPS } from "../../components/Overlays/Dialog/Dialog.pr
 import { TEXT_INPUT_DEFAULT_PROPS } from "../../components/Inputs/TextInput/TextInput.props";
 import { ACCORDION_DEFAULT_PROPS } from "../../components/DataDisplay/Accordion/Accordion.props";
 
-export const DEFAULT_STYLES: IStyles = {
+const DEFAULT_STYLES: IStyles = {
   theme: "light",
   global: {
     color: "blue",
@@ -24,3 +24,5 @@ export const DEFAULT_STYLES: IStyles = {
     Accordion: ACCORDION_DEFAULT_PROPS,
   },
 };
+
+export default DEFAULT_STYLES;

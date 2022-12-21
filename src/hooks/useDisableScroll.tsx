@@ -4,11 +4,15 @@ interface Props {
   isOpen: boolean;
 }
 
-// This hook is meant to disable the scrolling behind modals, popups, drawers...
-
-export const useDisableScroll = ({ isOpen }: Props) => {
+const useDisableScroll = ({ isOpen }: Props): void => {
   useEffect(() => {
-    isOpen && (document.body.style.overflow = "hidden");
-    !isOpen && (document.body.style.overflow = "unset");
+    if (isOpen) document.body.style.overflow = "hidden";
+    if (!isOpen) document.body.style.overflow = "unset";
+
+    return (): void => {
+      document.body.style.overflow = "hidden";
+    };
   }, [isOpen]);
 };
+
+export default useDisableScroll;

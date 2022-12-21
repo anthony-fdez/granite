@@ -35,6 +35,21 @@
     "import/no-cycle": "off",
     "object-curly-newline": "off",
     "max-len": ["error", 120],
-    "max-lines": ["error", 400]
+    "max-lines": ["error", 400],
+    "arrow-body-style": "off",
+    "react/jsx-props-no-spreading": "off",
+    "react/function-component-definition": [
+      2,
+      {
+        "namedComponents": ["arrow-function", "function-declaration"],
+        "unnamedComponents": "arrow-function"
+      }
+    ],
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": ["**/*.stories.tsx"]
+      }
+    ]
   }
 }
