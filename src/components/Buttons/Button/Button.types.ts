@@ -1,12 +1,11 @@
-import { numberRange } from "./../../Theming/ThemeProvider/Interfaces/IStyles";
+import React from "react";
+import { INumberRange } from "./../../Theming/ThemeProvider/Interfaces/IStyles";
 import { IColors } from "./../../../constants/theme/colors";
 import { ISizes } from "./../../../types/sizes";
 import { IVariants } from "./../../../types/variants";
 import { SpinnersType } from "../../Feedback/Spinner/Spinner.types";
-import React from "react";
 
-export interface IButtonPropsOptional
-  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+export interface IButtonPropsOptional extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: IVariants;
   color?: IColors;
   padding?: number;
@@ -23,7 +22,7 @@ export interface IButtonPropsOptional
   iconRight?: JSX.Element;
   iconLeftProps?: React.HTMLAttributes<HTMLDivElement>;
   iconRightProps?: React.HTMLAttributes<HTMLDivElement>;
-  shade?: numberRange;
+  shade?: INumberRange;
 }
 
 export interface IButtonProps extends IButtonPropsOptional {

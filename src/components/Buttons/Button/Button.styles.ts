@@ -1,32 +1,18 @@
-import { numberRange } from "./../../Theming/ThemeProvider/Interfaces/IStyles";
-import { IColors } from "./../../../constants/theme/colors";
-import { useStyles } from "../../../styles/useStyles";
+import { css, SerializedStyles } from "@emotion/react";
+import { IStyles } from "./../../Theming/ThemeProvider/Interfaces/IStyles";
+import { GetColorProps } from "../../../styles/useStyles";
 import { IVariants } from "./../../../types/variants";
 import { getVariantStyles } from "../../Theming/ThemeProvider/getValues/getVariantStyles";
-import { IStyles } from "../../Theming/ThemeProvider/Interfaces/IStyles";
-import { css, SerializedStyles } from "@emotion/react";
+import IUseStyles from "../../../styles/interfaces/IUseStyles";
 
 interface Props {
   styles: IStyles;
   variant?: IVariants;
-  color?: IColors;
   disabled?: boolean;
-  shade?: numberRange;
+  getColor: (props: GetColorProps) => IUseStyles;
 }
 
-export const getButtonStyles = ({
-  styles,
-  variant,
-  color,
-  disabled,
-  shade,
-}: Props) => {
-  const { getColor } = useStyles({
-    styles,
-    color,
-    shade,
-  });
-
+const getButtonStyles = ({ styles, variant, disabled, getColor }: Props): SerializedStyles => {
   const filled: SerializedStyles = css({
     backgroundColor: getColor({}).color,
   });
@@ -92,3 +78,5 @@ export const getButtonStyles = ({
 
   return common;
 };
+
+export default getButtonStyles;

@@ -3,14 +3,14 @@ import { css } from "@emotion/react";
 
 import React, { useContext } from "react";
 import { StateContext } from "../../Theming/ThemeProvider/ThemeProvider";
-import { getButtonStyles } from "./Button.styles";
+import getButtonStyles from "./Button.styles";
 import { getBorderRadius } from "../../Theming/ThemeProvider/getValues/getBorderRadius";
 import Spinner from "../../Feedback/Spinner";
 import { IButtonProps } from "./Button.types";
-import { useStyles } from "../../../styles/useStyles";
+import useStyles from "../../../styles/useStyles";
 import { useButtonDefaultProps } from "./Button.props";
 
-const Button = (props: IButtonProps) => {
+const Button = (props: IButtonProps): JSX.Element => {
   const { styles } = useContext(StateContext);
   const {
     children,
@@ -33,10 +33,10 @@ const Button = (props: IButtonProps) => {
     iconRightProps,
   } = useButtonDefaultProps({ styles, props });
 
-  const { getColor } = useStyles({ styles, shade });
+  const { getColor } = useStyles({ styles, shade, color });
 
   const buttonStyles = css([
-    getButtonStyles({ styles, variant, color, disabled, shade }),
+    getButtonStyles({ styles, variant, disabled, getColor }),
     fontColor && { color: fontColor },
     padding && { padding },
     margin && { margin },
@@ -53,12 +53,7 @@ const Button = (props: IButtonProps) => {
   return (
     <button type="button" {...props} disabled={disabled} css={buttonStyles}>
       {loading ? (
-        <Spinner
-          variant={spinnerVariant}
-          backgroundAccentColor={getColor({}).fontContrast}
-          size={11}
-          color={color}
-        />
+        <Spinner variant={spinnerVariant} backgroundAccentColor={getColor({}).fontContrast} size={11} color={color} />
       ) : (
         <>
           {iconLeft && (
