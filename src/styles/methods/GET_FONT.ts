@@ -1,5 +1,5 @@
 import { DEFAULT_COLORS } from "../../constants/theme/colors";
-import { IMethodProps } from "../useStyles";
+import IMethodProps from "../interfaces/IMethodProps";
 
 const GET_FONT = ({ dark }: IMethodProps): string => {
   if (dark) return DEFAULT_COLORS.gray[0];

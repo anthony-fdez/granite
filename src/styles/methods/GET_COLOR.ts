@@ -1,5 +1,5 @@
-import { IMethodProps } from "../useStyles";
 import getColor from "../helpers/getColor";
+import IMethodProps from "../interfaces/IMethodProps";
 
 const GET_COLOR = ({ styles, color, shade, variant, dark }: IMethodProps): string => {
   if (variant === "subtle") {

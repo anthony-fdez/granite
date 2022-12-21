@@ -1,56 +1,47 @@
-import { IStyles, numberRange } from "../components/Theming/ThemeProvider/Interfaces/IStyles";
+import { IStyles, INumberRange } from "../components/Theming/ThemeProvider/Interfaces/IStyles";
 import { IColors } from "../constants/theme/colors";
 import { IVariants } from "../types/variants";
-import { _getBackground } from "./methods/GET_BACKGROUND";
-import { _getBackgroundAccent } from "./methods/GET_BACKGROUND_ACCENT";
-import { _getBackgroundHover } from "./methods/GET_BACKGROUND_HOVER";
-import { _getBorder } from "./methods/GET_BORDER";
-import { _getColor } from "./methods/GET_COLOR";
-import { _getColorHover } from "./methods/GET_COLOR_HOVER";
-import { _getContrastFont } from "./methods/GET_CONTRAST_FONT";
-import { _getFont } from "./methods/GET_FONT";
-import { _getFontLight } from "./methods/GET_FONT_LIGHT";
+import IUseStyles from "./interfaces/IUseStyles";
+import * as methods from "./methods/index";
 
 interface Props {
   styles: IStyles;
   color?: IColors;
-  shade?: numberRange;
+  shade?: INumberRange;
 }
 
 interface GetColorProps {
   color?: IColors;
-  shade?: numberRange;
+  shade?: INumberRange;
   variant?: IVariants;
 }
 
-export interface IMethodProps {
-  styles: IStyles;
-  color: IColors;
-  shade: numberRange;
-  variant: IVariants;
-  dark: boolean;
-}
-
-export const useStyles = ({ styles, color, shade }: Props) => {
-  const _color: IColors = color || styles.global.color || "blue";
-  const _dark: boolean = styles.theme === "dark";
-  const _shade: numberRange = shade || styles.global.shade || 6;
+const useStyles = ({ styles, color, shade }: Props): { getColor: (props: GetColorProps) => IUseStyles } => {
+  const COLOR: IColors = color || styles.global.color || "blue";
+  const DARK: boolean = styles.theme === "dark";
+  const SHADE: INumberRange = shade || styles.global.shade || 6;
 
   return {
-    getColor: ({ color = _color, shade = _shade, variant = styles.global.variant || "filled" }: GetColorProps) => {
-      const props = { styles, color, shade, variant, dark: _dark };
+    getColor: (props: GetColorProps): IUseStyles => {
+      const colorOverride = props.color || COLOR;
+      const shadeOverride = props.shade || SHADE;
+      const variantOverride = props.variant || styles.global.variant || "filled";
+
+      const methodProps = { styles, color: colorOverride, shade: shadeOverride, variant: variantOverride, dark: DARK };
 
       return {
-        color: _getColor({ ...props }),
-        colorHover: _getColorHover({ ...props }),
-        font: _getFont({ ...props }),
-        fontLight: _getFontLight({ ...props }),
-        fontContrast: _getContrastFont({ ...props }),
-        border: _getBorder({ ...props }),
-        background: _getBackground({ ...props }),
-        backgroundHover: _getBackgroundHover({ ...props }),
-        backgroundAccent: _getBackgroundAccent({ ...props }),
+        color: methods.GET_COLOR({ ...methodProps }),
+        colorHover: methods.GET_COLOR_HOVER({ ...methodProps }),
+        font: methods.GET_FONT({ ...methodProps }),
+        fontDimmed: methods.GET_FONT_DIMMED({ ...methodProps }),
+        fontContrast: methods.GET_CONTRAST_FONT({ ...methodProps }),
+        border: methods.GET_BORDER({ ...methodProps }),
+        background: methods.GET_BACKGROUND({ ...methodProps }),
+        backgroundHover: methods.GET_BACKGROUND_HOVER({ ...methodProps }),
+        backgroundAccent: methods.GET_BACKGROUND_ACCENT({ ...methodProps }),
       };
     },
   };
 };
+
+export default useStyles;

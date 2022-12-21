@@ -33,6 +33,8 @@
     "@typescript-eslint/explicit-function-return-type": "warn",
     "import/no-useless-path-segments": "off",
     "import/no-cycle": "off",
-    "object-curly-newline": "off"
+    "object-curly-newline": "off",
+    "max-len": ["error", 120],
+    "max-lines": ["error", 400]
   }
 }

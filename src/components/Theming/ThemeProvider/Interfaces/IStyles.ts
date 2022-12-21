@@ -9,7 +9,7 @@ import { ISizes } from "./../../../../types/sizes";
 import { IButtonPropsOptional } from "../../../Buttons/Button/Button.types";
 import { ITextInputProps } from "../../../Inputs/TextInput/TextInput.types";
 
-export type numberRange = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9;
+export type INumberRange = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9;
 
 export interface IStyles {
   theme?: ITheme;
@@ -17,7 +17,7 @@ export interface IStyles {
     color?: IColors;
     borderRadius?: ISizes;
     animated?: boolean;
-    shade?: numberRange;
+    shade?: INumberRange;
     variant?: IVariants;
   };
   components?: {

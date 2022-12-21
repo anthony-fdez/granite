@@ -1,5 +1,5 @@
 import { getButtonFontColor } from "../helpers/getButtonFontColor";
-import { IMethodProps } from "../useStyles";
+import IMethodProps from "../interfaces/IMethodProps";
 
 const GET_CONTRAST_FONT = ({ color, shade, variant, dark }: IMethodProps): string => {
   if (variant === "subtle") {
