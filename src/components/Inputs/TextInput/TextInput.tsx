@@ -1,15 +1,17 @@
 /** @jsxImportSource @emotion/react */
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { css } from "@emotion/react";
 
 import React, { useContext } from "react";
 import { ITextInputProps } from "./TextInput.types";
 import { useTextInputDefaultProps } from "./TextInput.props";
 import { StateContext } from "../../Theming/ThemeProvider/ThemeProvider";
-import { getTextInputStyles } from "./TextInput.styles";
+import getTextInputStyles from "./TextInput.styles";
 import { DEFAULT_COLORS } from "../../../constants/theme/colors";
 import Spinner from "../../Feedback/Spinner";
+import useStyles from "../../../styles/useStyles";
 
-const TextInput = (props: ITextInputProps) => {
+const TextInput = (props: ITextInputProps): JSX.Element => {
   const { styles } = useContext(StateContext);
 
   const {
@@ -41,13 +43,13 @@ const TextInput = (props: ITextInputProps) => {
     ...args
   } = useTextInputDefaultProps({ styles, props });
 
+  const { getColor } = useStyles({ styles, color });
+
   return (
     <div
       css={[
         getTextInputStyles({
-          styles,
           variant,
-          color,
           disabled,
           error,
           margin,
@@ -56,6 +58,7 @@ const TextInput = (props: ITextInputProps) => {
           width,
           iconLeft,
           loading,
+          getColor,
         }),
         margin && { margin },
         fullWidth && { width: `calc(100% - ${margin ? margin * 2 : 0}px)` },
@@ -79,7 +82,8 @@ const TextInput = (props: ITextInputProps) => {
           disabled={disabled}
           placeholder={placeholder}
           className={`INPUT ${classes}`}
-          autoFocus={autofocus}
+          // eslint-disable-next-line jsx-a11y/no-autofocus
+          autoFocus={autofocus} // Even tho this is not recommended, the user can decide if they ant it or not
           required={required}
           name={name}
           value={value}

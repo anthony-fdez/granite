@@ -11,16 +11,17 @@ export default {
   component: TextInput,
 };
 
-export const Form: ComponentStory<typeof TextInput> = (args) => {
+export const Form: ComponentStory<typeof TextInput> = () => {
   const [text1, setText1] = useState("");
   const [text2, setText2] = useState("");
 
   return (
     <>
       <form
-        onSubmit={(e) => {
+        onSubmit={(e): void => {
           e.preventDefault();
 
+          // eslint-disable-next-line no-alert
           alert("Submitted");
         }}
       >
@@ -31,9 +32,9 @@ export const Form: ComponentStory<typeof TextInput> = (args) => {
             placeholder="Text 1"
             helperText="With autofocus"
             value={text1}
-            onChange={(e) => setText1(e.target.value)}
-            required={true}
-            autofocus={true}
+            onChange={(e): void => setText1(e.target.value)}
+            required
+            autofocus
             iconLeft={<>X</>}
           />
           <TextInput
@@ -42,7 +43,7 @@ export const Form: ComponentStory<typeof TextInput> = (args) => {
             helperText="Default value = 'Banana'"
             placeholder="Text 2"
             defaultValue="Banana"
-            onChange={(e) => setText2(e.target.value)}
+            onChange={(e): void => setText2(e.target.value)}
           />
         </Flex>
         <Flex>
@@ -60,9 +61,9 @@ export const Form: ComponentStory<typeof TextInput> = (args) => {
         </Flex>
         <Button type="submit">Submit</Button>
       </form>
-      <p>Value 1: {text1}</p>
-      <p>Value 2: {text2}</p>
-      <TextInput placeholder="Controls input 1" onChange={(e) => setText1(e.target.value)} required={true} />
+      <p>{`Value 1: ${text1}`}</p>
+      <p>{`Value 2: ${text2}`}</p>
+      <TextInput placeholder="Controls input 1" onChange={(e): void => setText1(e.target.value)} required />
     </>
   );
 };

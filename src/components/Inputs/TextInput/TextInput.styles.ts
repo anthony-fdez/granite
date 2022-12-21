@@ -1,14 +1,12 @@
 import { css, SerializedStyles } from "@emotion/react";
 import { getVariantStyles } from "./../../Theming/ThemeProvider/getValues/getVariantStyles";
-import { useStyles } from "./../../../styles/useStyles";
-import { DEFAULT_COLORS, IColors } from "./../../../constants/theme/colors";
+import { GetColorProps } from "./../../../styles/useStyles";
+import { DEFAULT_COLORS } from "./../../../constants/theme/colors";
 import { IVariants } from "./../../../types/variants";
-import { IStyles } from "./../../Theming/ThemeProvider/Interfaces/IStyles";
+import IUseStyles from "../../../styles/interfaces/IUseStyles";
 
 interface Props {
-  styles: IStyles;
   variant?: IVariants;
-  color?: IColors;
   disabled?: boolean;
   error?: boolean;
   margin?: number;
@@ -17,12 +15,11 @@ interface Props {
   width?: number;
   iconLeft?: JSX.Element;
   loading?: boolean;
+  getColor: (props: GetColorProps) => IUseStyles;
 }
 
-export const getTextInputStyles = ({
-  styles,
+const getTextInputStyles = ({
   variant,
-  color,
   disabled,
   error,
   fullWidth,
@@ -31,25 +28,21 @@ export const getTextInputStyles = ({
   width,
   iconLeft,
   loading,
-}: Props) => {
-  const { getColor } = useStyles({
-    styles,
-    color,
-  });
-
+  getColor,
+}: Props): SerializedStyles => {
   const iconWidth = 30;
   const calculatedWidthContainer = `calc(100% - ${margin + padding}px)`;
 
-  const getInputWidth = () => {
-    let width = padding;
+  const getInputWidth = (): string => {
+    let WIDTH = padding;
 
     if (loading && iconLeft) {
-      width = iconWidth * 2 - padding;
+      WIDTH = iconWidth * 2 - padding;
     } else if (iconLeft || loading) {
-      width = iconWidth;
+      WIDTH = iconWidth;
     }
 
-    return `calc(100% - ${width + padding}px)`;
+    return `calc(100% - ${WIDTH + padding}px)`;
   };
 
   const filled: SerializedStyles = css({
@@ -96,14 +89,14 @@ export const getTextInputStyles = ({
       margin: 0,
       padding: 0,
     },
-    width: width,
+    width,
     position: "relative",
 
     ".input-label": {},
     ".input-helper-text": {
       flexWrap: "wrap",
       fontSize: 12,
-      color: getColor({}).fontLight,
+      color: getColor({}).fontDimmed,
     },
     ".input-error-text": {
       fontSize: 12,
@@ -115,7 +108,7 @@ export const getTextInputStyles = ({
       position: "relative",
       ".input-icon-left": {
         position: "absolute",
-        top: "50%",
+        top: `calc(50% + ${2}px)`,
         left: 0,
         transform: "translateY(-50%)",
         height: iconWidth,
@@ -127,7 +120,7 @@ export const getTextInputStyles = ({
       },
       ".input-loading": {
         position: "absolute",
-        top: "50%",
+        top: `calc(50% + ${2}px)`,
         right: 0,
         transform: "translateY(-50%)",
         height: iconWidth,
@@ -167,3 +160,5 @@ export const getTextInputStyles = ({
 
   return common;
 };
+
+export default getTextInputStyles;
