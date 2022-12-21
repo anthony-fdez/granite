@@ -10,7 +10,7 @@ interface Props {
   styles: IStyles;
 }
 
-export const useCloseButtonDefaultProps = ({ props, styles }: Props) => {
+export const useCloseButtonDefaultProps = ({ props, styles }: Props): ICloseButtonProps => {
   const defaultProps = styles.components?.CloseButton;
 
   if (!defaultProps) return { ...props };

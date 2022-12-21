@@ -1,3 +1,4 @@
+import { ICloseButtonProps } from "./../../../Buttons/CloseButton/CloseButton.types";
 import { IDividerProps } from "./../../../Extra/Divider/Divider.types";
 import { IAccordionPropsOptional } from "./../../../DataDisplay/Accordion/Accordion.types";
 import { IDialogPropsOptional } from "./../../../Overlays/Dialog/Dialog.types";
@@ -22,6 +23,7 @@ export interface IStyles {
   };
   components?: {
     Button?: IButtonPropsOptional;
+    CloseButton?: ICloseButtonProps;
     Modal?: IModalPropsOptional;
     Dialog?: IDialogPropsOptional;
     Divider?: IDividerProps;

@@ -1,14 +1,12 @@
-import { useStyles } from "../../../styles/useStyles";
-import { IStyles } from "./Interfaces/IStyles";
-import { css } from "@emotion/react";
+import { SerializedStyles, css } from "@emotion/react";
+import { GetColorProps } from "./../../../styles/useStyles";
+import IUseStyles from "../../../styles/interfaces/IUseStyles";
 
 interface Props {
-  styles: IStyles;
+  getColor: (props: GetColorProps) => IUseStyles;
 }
 
-export const getGlobalStyles = ({ styles }: Props) => {
-  const { getColor } = useStyles({ styles });
-
+const getGlobalStyles = ({ getColor }: Props): SerializedStyles => {
   return css({
     html: {
       backgroundColor: getColor({}).background,
@@ -17,3 +15,5 @@ export const getGlobalStyles = ({ styles }: Props) => {
     },
   });
 };
+
+export default getGlobalStyles;

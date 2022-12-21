@@ -31,7 +31,7 @@ const Template: ComponentStory<typeof ThemeProvider> = (args) => {
         <Button>Button</Button>
         <Button variant="outlined">Outlined</Button>
         <Button variant="subtle">Subtle</Button>
-        <Button loading={true}>Loading</Button>
+        <Button loading>Loading</Button>
         <Button disabled>Disabled</Button>
         <Button disabled variant="outlined">
           Disabled Outlined

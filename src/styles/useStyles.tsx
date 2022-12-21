@@ -10,7 +10,7 @@ interface Props {
   shade?: INumberRange;
 }
 
-interface GetColorProps {
+export interface GetColorProps {
   color?: IColors;
   shade?: INumberRange;
   variant?: IVariants;

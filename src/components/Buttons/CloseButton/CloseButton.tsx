@@ -2,12 +2,12 @@
 import { css, SerializedStyles } from "@emotion/react";
 
 import React, { useContext } from "react";
-import { useStyles } from "../../../styles/useStyles";
+import useStyles from "../../../styles/useStyles";
 import { StateContext } from "../../Theming/ThemeProvider/ThemeProvider";
 import { ICloseButtonProps } from "./CloseButton.types";
 import { useCloseButtonDefaultProps } from "./CloseButton.props";
 
-const CloseButton = (props: ICloseButtonProps) => {
+const CloseButton = (props: ICloseButtonProps): JSX.Element => {
   const { styles } = useContext(StateContext);
   const { getColor } = useStyles({ styles });
 
@@ -40,14 +40,11 @@ const CloseButton = (props: ICloseButtonProps) => {
   ]);
 
   return (
-    <button {...props} css={[common, size && { height: size, width: size }]}>
+    <button type="button" {...props} css={[common, size && { height: size, width: size }]}>
       <img
+        alt="Close button"
         className="close-button-icon"
-        src={
-          styles.theme === "light"
-            ? require("./assets/close-light.svg")
-            : require("./assets/close-dark.svg")
-        }
+        src={styles.theme === "light" ? require("./assets/close-light.svg") : require("./assets/close-dark.svg")}
       />
     </button>
   );

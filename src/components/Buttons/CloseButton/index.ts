@@ -1,1 +1,3 @@
-export { default } from "./CloseButton";
+import CloseButton from "./CloseButton";
+
+export default CloseButton;

@@ -10,9 +10,7 @@ export default {
   component: CloseButton,
 };
 
-const Template: ComponentStory<typeof CloseButton> = (args) => (
-  <CloseButton {...args} />
-);
+const Template: ComponentStory<typeof CloseButton> = (args) => <CloseButton {...args} />;
 
 export const Default = Template.bind({});
 
