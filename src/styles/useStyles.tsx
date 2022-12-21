@@ -1,18 +1,15 @@
-import {
-  IStyles,
-  numberRange,
-} from "../components/Theming/ThemeProvider/Interfaces/IStyles";
+import { IStyles, numberRange } from "../components/Theming/ThemeProvider/Interfaces/IStyles";
 import { IColors } from "../constants/theme/colors";
 import { IVariants } from "../types/variants";
-import { _getBackground } from "./methods/_getBackground";
-import { _getBackgroundAccent } from "./methods/_getBackgroundAccent";
-import { _getBackgroundHover } from "./methods/_getBackgroundHover";
-import { _getBorder } from "./methods/_getBorder";
-import { _getColor } from "./methods/_getColor";
-import { _getColorHover } from "./methods/_getColorHover";
-import { _getContrastFont } from "./methods/_getContrastFont";
-import { _getFont } from "./methods/_getFont";
-import { _getFontLight } from "./methods/_getFontLight";
+import { _getBackground } from "./methods/GET_BACKGROUND";
+import { _getBackgroundAccent } from "./methods/GET_BACKGROUND_ACCENT";
+import { _getBackgroundHover } from "./methods/GET_BACKGROUND_HOVER";
+import { _getBorder } from "./methods/GET_BORDER";
+import { _getColor } from "./methods/GET_COLOR";
+import { _getColorHover } from "./methods/GET_COLOR_HOVER";
+import { _getContrastFont } from "./methods/GET_CONTRAST_FONT";
+import { _getFont } from "./methods/GET_FONT";
+import { _getFontLight } from "./methods/GET_FONT_LIGHT";
 
 interface Props {
   styles: IStyles;
@@ -40,11 +37,7 @@ export const useStyles = ({ styles, color, shade }: Props) => {
   const _shade: numberRange = shade || styles.global.shade || 6;
 
   return {
-    getColor: ({
-      color = _color,
-      shade = _shade,
-      variant = styles.global.variant || "filled",
-    }: GetColorProps) => {
+    getColor: ({ color = _color, shade = _shade, variant = styles.global.variant || "filled" }: GetColorProps) => {
       const props = { styles, color, shade, variant, dark: _dark };
 
       return {

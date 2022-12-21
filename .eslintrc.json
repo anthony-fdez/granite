@@ -22,13 +22,17 @@
   },
   "plugins": ["react", "@typescript-eslint", "import"],
   "rules": {
-    "react/no-unknown-property": 0,
+    "react/no-unknown-property": "off",
     "@typescript-eslint/ban-ts-comment": "off",
-    "quotes": [2, "double", { "avoidEscape": true }],
+    "quotes": ["error", "double", { "avoidEscape": true }],
     "no-console": ["error"],
     "no-duplicate-imports": "error",
     "no-template-curly-in-string": "error",
     "no-restricted-syntax": ["error"],
-    "@typescript-eslint/quotes": ["error", "double"]
+    "@typescript-eslint/quotes": ["error", "double"],
+    "@typescript-eslint/explicit-function-return-type": "warn",
+    "import/no-useless-path-segments": "off",
+    "import/no-cycle": "off",
+    "object-curly-newline": "off"
   }
 }

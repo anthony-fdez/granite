@@ -7,9 +7,10 @@ interface Props {
   shade: numberRange | number;
 }
 
-export const getColor = ({ color, styles, shade }: Props) => {
+const getColor = ({ color, styles, shade }: Props): string => {
   if (!styles) {
-    return;
+    // If this is ever returned something is really broken
+    return DEFAULT_COLORS.blue[6];
   }
 
   const newShade = styles.theme === "dark" && shade < 9 ? shade + 1 : shade;
@@ -20,3 +21,5 @@ export const getColor = ({ color, styles, shade }: Props) => {
 
   return DEFAULT_COLORS[styles.global.color ?? "blue"][newShade];
 };
+
+export default getColor;
