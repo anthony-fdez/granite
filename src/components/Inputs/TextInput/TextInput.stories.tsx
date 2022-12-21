@@ -27,7 +27,7 @@ export const Form: ComponentStory<typeof TextInput> = () => {
       >
         <Flex alignItems="flex-end">
           <TextInput
-            loading
+            loading={text1 !== ""}
             label="Input 1"
             placeholder="Text 1"
             helperText="With autofocus"
