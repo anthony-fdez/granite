@@ -44,6 +44,7 @@ const CloseButton = (props: ICloseButtonProps): JSX.Element => {
       <img
         alt="Close button"
         className="close-button-icon"
+        // eslint-disable-next-line global-require
         src={styles.theme === "light" ? require("./assets/close-light.svg") : require("./assets/close-dark.svg")}
       />
     </button>

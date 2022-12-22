@@ -15,6 +15,7 @@ import { TEXT_INPUT_DEFAULT_PROPS } from "../../Inputs/TextInput/TextInput.props
 import { ACCORDION_DEFAULT_PROPS } from "../../DataDisplay/Accordion/Accordion.props";
 import { CLOSE_BUTTON_DEFAULT_PROPS } from "../../Buttons/CloseButton/CloseButton.props";
 import useStyles from "../../../styles/useStyles";
+import { BACKDROP_DEFAULT_PROPS } from "../../Overlays/Backdrop/Backdrop.props";
 
 export const StateContext = createContext<IContext>({
   styles: DEFAULT_STYLES,
@@ -27,6 +28,7 @@ const ThemeProvider = ({
   theme = DEFAULT_STYLES.theme ?? "light",
   ...args
 }: IProviderProps): JSX.Element => {
+  // eslint-disable-next-line no-param-reassign
   defaultStyles = { ...DEFAULT_STYLES, ...defaultStyles };
 
   const [styles, setStyles] = useState<IStyles>(defaultStyles);
@@ -78,6 +80,10 @@ const ThemeProvider = ({
         Accordion: {
           ...ACCORDION_DEFAULT_PROPS,
           ...defaultStyles.components?.Accordion,
+        },
+        Backdrop: {
+          ...BACKDROP_DEFAULT_PROPS,
+          ...defaultStyles.components?.Backdrop,
         },
       },
     });

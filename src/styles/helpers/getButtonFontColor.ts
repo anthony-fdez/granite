@@ -18,7 +18,7 @@ function getContrastYIQ(hexcolor: string): string {
   if (hexcolor.length === 3) {
     hexcolor = hexcolor
       .split("")
-      .map(function (hex) {
+      .map((hex) => {
         return hex + hex;
       })
       .join("");

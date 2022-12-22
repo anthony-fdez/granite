@@ -1,3 +1,4 @@
+import { IBackdropProps } from "./../../../Overlays/Backdrop/Backdrop.types";
 import { ICloseButtonProps } from "./../../../Buttons/CloseButton/CloseButton.types";
 import { IDividerProps } from "./../../../Extra/Divider/Divider.types";
 import { IAccordionPropsOptional } from "./../../../DataDisplay/Accordion/Accordion.types";
@@ -29,6 +30,7 @@ export interface IStyles {
     Divider?: IDividerProps;
     TextInput?: ITextInputProps;
     Accordion?: IAccordionPropsOptional;
+    Backdrop?: IBackdropProps;
   };
 }
 

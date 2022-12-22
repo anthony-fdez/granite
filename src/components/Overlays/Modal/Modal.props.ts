@@ -18,6 +18,7 @@ export const MODAL_DEFAULT_PROPS: IModalPropsOptional = {
   borderColor: undefined,
   borderWidth: 3,
   unmount: true,
+  backdrop: true,
 };
 
 interface Props {

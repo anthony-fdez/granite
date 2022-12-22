@@ -1,17 +1,15 @@
 import AccordionItem from "./AccordionItem/AccordionItem";
 
-export type AccordionVariants = "filled" | "outlined" | "subtle";
+export type IAccordionVariants = "filled" | "outlined" | "subtle";
 
 export interface IAccordionPropsOptional {
   defaultValue?: string;
-  variant?: AccordionVariants;
+  variant?: IAccordionVariants;
   arrowPosition?: "left" | "right";
   arrowSize?: number;
+  value?: string | null;
 }
 
 export interface IAccordionProps extends IAccordionPropsOptional {
-  children:
-    | React.ReactElement<typeof AccordionItem>
-    | React.ReactElement<typeof AccordionItem>[];
-  value: string | null;
+  children: React.ReactElement<typeof AccordionItem> | React.ReactElement<typeof AccordionItem>[];
 }

@@ -1,10 +1,11 @@
-import { AccordionVariants } from "../Accordion.types";
+import { IAccordionVariants } from "../Accordion.types";
+
 export interface IAccordionItemProps {
   children: JSX.Element | JSX.Element[];
   label: string;
   activeElement?: string | null;
   setActiveElement?: React.Dispatch<React.SetStateAction<string | null>>;
-  variant?: AccordionVariants;
+  variant?: IAccordionVariants;
   arrowPosition?: "left" | "right";
   arrowSize?: number;
 }

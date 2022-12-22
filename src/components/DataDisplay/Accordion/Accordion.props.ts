@@ -13,10 +13,7 @@ interface Props {
   styles: IStyles;
 }
 
-export const useAccordionDefaultProps = ({
-  props,
-  styles,
-}: Props): IAccordionProps => {
+export const useAccordionDefaultProps = ({ props, styles }: Props): IAccordionProps => {
   const defaultProps = styles.components?.Accordion;
 
   if (!defaultProps) return { ...props };

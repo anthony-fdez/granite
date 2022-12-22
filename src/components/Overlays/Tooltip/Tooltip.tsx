@@ -1,26 +1,22 @@
 /** @jsxImportSource @emotion/react */
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { css } from "@emotion/react";
 
-import React, { useContext, useState } from "react";
-import { StateContext } from "../../Theming/ThemeProvider/ThemeProvider";
-import { getTooltipStyles } from "./Tooltip.styles";
+import React, { useState } from "react";
+
 import { ITooltipProps } from "./Tooltip.types";
 
 const Tooltip = ({
   children,
   label,
-  position = "top",
+  // position = "top",
   delay = 400,
-  animated = true,
+  // animated = true,
   ...args
-}: ITooltipProps) => {
-  const { styles } = useContext(StateContext);
-
+}: ITooltipProps): JSX.Element => {
   let timeout: NodeJS.Timeout;
 
   const [active, setActive] = useState(false);
-
-  const { stylesClosed, stylesOpen } = getTooltipStyles({ styles, position });
 
   const showTooltip = () => {
     timeout = setTimeout(() => {
@@ -34,14 +30,9 @@ const Tooltip = ({
   };
 
   return (
-    <div
-      {...args}
-      css={{ position: "relative" }}
-      onMouseEnter={showTooltip}
-      onMouseLeave={hideTooltip}
-    >
+    <div {...args} css={{ position: "relative" }} onMouseEnter={showTooltip} onMouseLeave={hideTooltip}>
       {active && (
-        <div css={[active ? stylesOpen : stylesClosed]}>
+        <div>
           <span>{label}</span>
         </div>
       )}

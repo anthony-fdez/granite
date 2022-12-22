@@ -4,7 +4,9 @@ interface Props {
   fullScreen: boolean;
 }
 
-export const getLoadingOverlayStyles = ({ fullScreen }: Props) => {
+const getLoadingOverlayStyles = ({
+  fullScreen,
+}: Props): { stylesOpen: SerializedStyles; stylesClosed: SerializedStyles } => {
   const margin = 20;
 
   const stylesOpen: SerializedStyles = css([
@@ -27,3 +29,5 @@ export const getLoadingOverlayStyles = ({ fullScreen }: Props) => {
 
   return { stylesOpen, stylesClosed };
 };
+
+export default getLoadingOverlayStyles;
