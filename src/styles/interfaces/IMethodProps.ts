@@ -1,6 +1,6 @@
 import { IVariants } from "./../../types/variants";
-import { IColors } from "./../../../types/constants/theme/colors.d";
 import { IStyles, INumberRange } from "./../../components/Theming/ThemeProvider/Interfaces/IStyles";
+import { IColors } from "../../constants/theme/colors";
 
 interface IMethodProps {
   styles: IStyles;

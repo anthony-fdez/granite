@@ -4,7 +4,7 @@ import { css } from "@emotion/react";
 import React, { useContext } from "react";
 import { StateContext } from "../../Theming/ThemeProvider/ThemeProvider";
 import getButtonStyles from "./Button.styles";
-import { getBorderRadius } from "../../Theming/ThemeProvider/getValues/getBorderRadius";
+import getBorderRadius from "../../Theming/ThemeProvider/getValues/getBorderRadius";
 import Spinner from "../../Feedback/Spinner";
 import { IButtonProps } from "./Button.types";
 import useStyles from "../../../styles/useStyles";
