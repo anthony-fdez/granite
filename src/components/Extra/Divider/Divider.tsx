@@ -2,27 +2,19 @@
 import { css } from "@emotion/react";
 
 import React, { useContext } from "react";
-import { useStyles } from "../../../styles/useStyles";
+import useStyles from "../../../styles/useStyles";
 import Flex from "../../Layout/Flex";
 import { StateContext } from "../../Theming/ThemeProvider/ThemeProvider";
 import { IDividerProps } from "./Divider.types";
 import { useDividerDefaultProps } from "./Divider.props";
 
-const Divider = (props: IDividerProps) => {
+const Divider = (props: IDividerProps): JSX.Element => {
   const { styles } = useContext(StateContext);
   const { getColor } = useStyles({ styles });
 
-  const {
-    label,
-    labelPadding,
-    labelPosition,
-    width,
-    dividerVariant,
-    marginTop,
-    marginBottom,
-    color,
-    ...args
-  } = useDividerDefaultProps({ styles, props });
+  // eslint-disable-next-line operator-linebreak
+  const { label, labelPadding, labelPosition, width, dividerVariant, marginTop, marginBottom, color, ...args } =
+    useDividerDefaultProps({ styles, props });
 
   const lineStyles = css([
     {
@@ -35,23 +27,23 @@ const Divider = (props: IDividerProps) => {
 
   return (
     <Flex {...args} css={{ marginTop, marginBottom }}>
-      {labelPosition !== "left" ? <div css={lineStyles}></div> : <></>}
-      {label ? (
-        <span
-          css={{
-            marginLeft: labelPadding,
-            marginRight: labelPadding,
-            whiteSpace: "nowrap",
-            fontSize: 14,
-            color: color ?? getColor({}).font,
-          }}
-        >
-          {label}
-        </span>
-      ) : (
-        <></>
-      )}
-      {labelPosition !== "right" ? <div css={lineStyles}></div> : <></>}
+      <>
+        {labelPosition !== "left" && <div css={lineStyles} />}
+        {label && (
+          <span
+            css={{
+              marginLeft: labelPadding,
+              marginRight: labelPadding,
+              whiteSpace: "nowrap",
+              fontSize: 14,
+              color: color ?? getColor({}).font,
+            }}
+          >
+            {label}
+          </span>
+        )}
+        {labelPosition !== "right" && <div css={lineStyles} />}
+      </>
     </Flex>
   );
 };

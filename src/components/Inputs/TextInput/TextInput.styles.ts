@@ -149,6 +149,12 @@ const getTextInputStyles = ({
         {
           ...getVariantStyles({ filled, subtle, outlined, variant }),
         },
+        error && {
+          borderColor: "red",
+          ":focus": {
+            borderColor: "red",
+          },
+        },
         disabled && {
           filter: "grayscale(1)",
           pointerEvents: "none",

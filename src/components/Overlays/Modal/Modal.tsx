@@ -6,7 +6,7 @@ import React, { useContext } from "react";
 // @ts-ignore
 import { motion } from "framer-motion/dist/framer-motion";
 import CloseButton from "../../Buttons/CloseButton";
-import { getBorderRadius } from "../../Theming/ThemeProvider/getValues/getBorderRadius";
+import getBorderRadius from "../../Theming/ThemeProvider/getValues/getBorderRadius";
 import { StateContext } from "../../Theming/ThemeProvider/ThemeProvider";
 import { getModalStyles, modalVariants } from "./Modal.styles";
 import { IModalProps } from "./Modal.types";

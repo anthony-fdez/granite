@@ -28,6 +28,7 @@ const ThemeProvider = ({
   theme = DEFAULT_STYLES.theme ?? "light",
   ...args
 }: IProviderProps): JSX.Element => {
+  // eslint-disable-next-line no-param-reassign
   defaultStyles = { ...DEFAULT_STYLES, ...defaultStyles };
 
   const [styles, setStyles] = useState<IStyles>(defaultStyles);
