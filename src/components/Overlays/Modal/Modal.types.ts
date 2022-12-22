@@ -1,10 +1,10 @@
+import { IBackdropOpacity } from "./../Backdrop/Backdrop.types";
 import { ISizes } from "../../../types/sizes";
 
-export interface IModalPropsOptional
-  extends React.HtmlHTMLAttributes<HTMLDivElement> {
+export interface IModalPropsOptional extends React.HtmlHTMLAttributes<HTMLDivElement> {
   closeButton?: boolean;
   closeOnClickOutside?: boolean;
-  backdropOpacity?: 0 | 0.1 | 0.2 | 0.3 | 0.4 | 0.5 | 0.6 | 0.7 | 0.8 | 0.9 | 1;
+  backdropOpacity?: IBackdropOpacity;
   animated?: boolean;
   animationDuration?: number;
   width?: number | string;
@@ -18,6 +18,7 @@ export interface IModalPropsOptional
   borderColor?: string;
   borderWidth?: number;
   unmount?: boolean;
+  backdrop?: boolean;
 }
 
 export interface IModalProps extends IModalPropsOptional {

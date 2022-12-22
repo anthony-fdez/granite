@@ -1,11 +1,11 @@
-import { useStyles } from "../../../styles/useStyles";
 import { Variants } from "framer-motion";
 import { SerializedStyles, css } from "@emotion/react";
-import { IStyles } from "../../Theming/ThemeProvider/Interfaces/IStyles";
+import { GetColorProps } from "./../../../styles/useStyles";
 import { DialogAnimationTypes, DialogPositionTypes } from "./Dialog.types";
+import IUseStyles from "../../../styles/interfaces/IUseStyles";
 
 interface Props {
-  styles: IStyles;
+  getColor: (props: GetColorProps) => IUseStyles;
   position: DialogPositionTypes;
 }
 
@@ -13,7 +13,7 @@ interface VariantsProps {
   animation: DialogAnimationTypes;
 }
 
-export const getDialogVariants = ({ animation }: VariantsProps) => {
+export const getDialogVariants = ({ animation }: VariantsProps): Variants => {
   const scale: Variants = {
     open: {
       opacity: 1,
@@ -84,11 +84,14 @@ export const getDialogVariants = ({ animation }: VariantsProps) => {
   if (animation === "fade") return fade;
   if (animation === "slide-top") return slideTop;
   if (animation === "slide-bottom") return slideBottom;
+
+  return scale;
 };
 
-export const getDialogStyles = ({ styles, position }: Props) => {
-  const { getColor } = useStyles({ styles });
-
+export const getDialogStyles = ({
+  getColor,
+  position,
+}: Props): { stylesOpen: SerializedStyles; stylesClosed: SerializedStyles } => {
   const margin = 20;
 
   const stylesOpen: SerializedStyles = css([

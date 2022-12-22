@@ -15,6 +15,7 @@ import { TEXT_INPUT_DEFAULT_PROPS } from "../../Inputs/TextInput/TextInput.props
 import { ACCORDION_DEFAULT_PROPS } from "../../DataDisplay/Accordion/Accordion.props";
 import { CLOSE_BUTTON_DEFAULT_PROPS } from "../../Buttons/CloseButton/CloseButton.props";
 import useStyles from "../../../styles/useStyles";
+import { BACKDROP_DEFAULT_PROPS } from "../../Overlays/Backdrop/Backdrop.props";
 
 export const StateContext = createContext<IContext>({
   styles: DEFAULT_STYLES,
@@ -78,6 +79,10 @@ const ThemeProvider = ({
         Accordion: {
           ...ACCORDION_DEFAULT_PROPS,
           ...defaultStyles.components?.Accordion,
+        },
+        Backdrop: {
+          ...BACKDROP_DEFAULT_PROPS,
+          ...defaultStyles.components?.Backdrop,
         },
       },
     });

@@ -9,16 +9,9 @@ export type DialogPositionTypes =
   | "bottom-center"
   | "center";
 
-export type DialogAnimationTypes =
-  | "fade"
-  | "scale"
-  | "slide-bottom"
-  | "slide-left"
-  | "slide-right"
-  | "slide-top";
+export type DialogAnimationTypes = "fade" | "scale" | "slide-bottom" | "slide-left" | "slide-right" | "slide-top";
 
-export interface IDialogPropsOptional
-  extends React.HTMLAttributes<HTMLDivElement> {
+export interface IDialogPropsOptional extends React.HTMLAttributes<HTMLDivElement> {
   closeButton?: boolean;
   closeOnClickOutside?: boolean;
   backdrop?: boolean;
@@ -36,6 +29,7 @@ export interface IDialogPropsOptional
   borderWidth?: number;
   position?: DialogPositionTypes;
   animation?: DialogAnimationTypes;
+  unmount?: boolean;
 }
 
 export interface IDialogProps extends IDialogPropsOptional {

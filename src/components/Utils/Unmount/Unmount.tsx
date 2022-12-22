@@ -2,20 +2,14 @@ import React, { useEffect, useState } from "react";
 // @ts-ignore
 
 interface Props {
-  children: JSX.Element | JSX.Element[];
+  children: JSX.Element;
   isOpen: boolean;
   animated: boolean;
   animationDuration: number;
   shouldUnmount: boolean;
 }
 
-const Unmount = ({
-  children,
-  isOpen,
-  animated,
-  animationDuration,
-  shouldUnmount,
-}: Props): JSX.Element | JSX.Element | null => {
+const Unmount = ({ children, isOpen, animated, animationDuration, shouldUnmount }: Props): JSX.Element | null => {
   const [IS_OPEN, SET_IS_OPEN] = useState(isOpen);
 
   useEffect(() => {

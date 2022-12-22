@@ -1,3 +1,4 @@
+import { BACKDROP_DEFAULT_PROPS } from "./../../components/Overlays/Backdrop/Backdrop.props";
 import { CLOSE_BUTTON_DEFAULT_PROPS } from "./../../components/Buttons/CloseButton/CloseButton.props";
 import { DIVIDER_DEFAULT_PROPS } from "./../../components/Extra/Divider/Divider.props";
 import { BUTTON_DEFAULT_PROPS } from "../../components/Buttons/Button/Button.props";
@@ -24,6 +25,7 @@ const DEFAULT_STYLES: IStyles = {
     Divider: DIVIDER_DEFAULT_PROPS,
     TextInput: TEXT_INPUT_DEFAULT_PROPS,
     Accordion: ACCORDION_DEFAULT_PROPS,
+    Backdrop: BACKDROP_DEFAULT_PROPS,
   },
 };
 
