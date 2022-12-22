@@ -1,5 +1,5 @@
-import { IVariants } from "./../../../../types/variants";
 import { SerializedStyles } from "@emotion/react";
+import { IVariants } from "./../../../../types/variants";
 
 export interface Props {
   filled: SerializedStyles;
@@ -8,12 +8,7 @@ export interface Props {
   variant?: IVariants;
 }
 
-export const getVariantStyles = ({
-  filled,
-  outlined,
-  subtle,
-  variant,
-}: Props) => {
+export const getVariantStyles = ({ filled, outlined, subtle, variant }: Props): SerializedStyles => {
   const DEFAULT = filled;
 
   if (variant === "filled") return DEFAULT;

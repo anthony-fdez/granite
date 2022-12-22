@@ -1,14 +1,14 @@
 /** @jsxImportSource @emotion/react */
 import { css, SerializedStyles } from "@emotion/react";
 
-import { useStyles } from "../../../../styles/useStyles";
-import { AccordionVariants } from "../Accordion.types";
-import { IStyles } from "../../../Theming/ThemeProvider/Interfaces/IStyles";
 import { Variants } from "framer-motion";
+import { GetColorProps } from "./../../../../styles/useStyles";
+import { IAccordionVariants } from "../Accordion.types";
+import IUseStyles from "../../../../styles/interfaces/IUseStyles";
 
 interface Props {
-  styles: IStyles;
-  variant: AccordionVariants;
+  getColor: (props: GetColorProps) => IUseStyles;
+  variant: IAccordionVariants;
   isActive: boolean;
   arrowSize: number;
 }
@@ -19,20 +19,10 @@ export const accordionAnimation: Variants = {
     marginTop: 20,
     marginBottom: 20,
     height: "auto",
-    transition: {
-      type: "spring",
-      damping: 30,
-      stiffness: 500,
-    },
   },
   closed: {
     opacity: 0,
     height: 0,
-    transition: {
-      type: "spring",
-      damping: 30,
-      stiffness: 500,
-    },
   },
 };
 
@@ -42,14 +32,7 @@ export const chevronAnimation: Variants = {
   },
 };
 
-export const getAccordionItemStyles = ({
-  styles,
-  variant,
-  isActive,
-  arrowSize,
-}: Props): SerializedStyles => {
-  const { getColor } = useStyles({ styles });
-
+export const getAccordionItemStyles = ({ getColor, variant, isActive, arrowSize }: Props): SerializedStyles => {
   const common = css(
     [
       {
@@ -87,7 +70,7 @@ export const getAccordionItemStyles = ({
       borderColor: `${isActive ? getColor({}).border : "transparent"}`,
       borderWidth: 3,
       borderStyle: "solid",
-    }
+    },
   );
 
   return common;

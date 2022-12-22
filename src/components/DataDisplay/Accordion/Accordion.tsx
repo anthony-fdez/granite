@@ -4,15 +4,15 @@ import AccordionItem from "./AccordionItem/AccordionItem";
 import { StateContext } from "../../Theming/ThemeProvider/ThemeProvider";
 import { useAccordionDefaultProps } from "./Accordion.props";
 
-const Accordion = (props: IAccordionProps) => {
+const Accordion = (props: IAccordionProps): JSX.Element => {
   const { styles } = useContext(StateContext);
 
-  const { children, defaultValue, value, variant, arrowPosition, arrowSize } =
-    useAccordionDefaultProps({ styles, props });
+  const { children, defaultValue, value, variant, arrowPosition, arrowSize } = useAccordionDefaultProps({
+    styles,
+    props,
+  });
 
-  const [activeElement, setActiveElement] = useState<string | null>(
-    defaultValue ?? null
-  );
+  const [activeElement, setActiveElement] = useState<string | null>(defaultValue ?? null);
 
   useEffect(() => {
     if (!value) return;

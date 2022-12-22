@@ -1,1 +1,3 @@
-export { default } from "./Accordion";
+import Accordion from "./Accordion";
+
+export default Accordion;
