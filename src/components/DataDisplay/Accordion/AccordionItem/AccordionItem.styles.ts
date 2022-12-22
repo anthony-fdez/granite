@@ -1,14 +1,14 @@
 /** @jsxImportSource @emotion/react */
 import { css, SerializedStyles } from "@emotion/react";
 
-import { useStyles } from "../../../../styles/useStyles";
-import { AccordionVariants } from "../Accordion.types";
-import { IStyles } from "../../../Theming/ThemeProvider/Interfaces/IStyles";
 import { Variants } from "framer-motion";
+import { GetColorProps } from "./../../../../styles/useStyles";
+import { IAccordionVariants } from "../Accordion.types";
+import IUseStyles from "../../../../styles/interfaces/IUseStyles";
 
 interface Props {
-  styles: IStyles;
-  variant: AccordionVariants;
+  getColor: (props: GetColorProps) => IUseStyles;
+  variant: IAccordionVariants;
   isActive: boolean;
   arrowSize: number;
 }
@@ -32,14 +32,7 @@ export const chevronAnimation: Variants = {
   },
 };
 
-export const getAccordionItemStyles = ({
-  styles,
-  variant,
-  isActive,
-  arrowSize,
-}: Props): SerializedStyles => {
-  const { BORDER, BG_ACCENT } = useStyles({ styles });
-
+export const getAccordionItemStyles = ({ getColor, variant, isActive, arrowSize }: Props): SerializedStyles => {
   const common = css(
     [
       {
@@ -61,23 +54,23 @@ export const getAccordionItemStyles = ({
     ],
     variant === "subtle" && {
       borderBottomWidth: 1,
-      borderBottomColor: BORDER,
+      borderBottomColor: getColor({}).border,
       borderBottomStyle: "solid",
       ".accordion-item-header": {
         ":hover": {
-          backgroundColor: BG_ACCENT,
+          backgroundColor: getColor({}).backgroundAccent,
         },
       },
     },
     variant === "filled" && {
-      backgroundColor: `${isActive && BG_ACCENT}`,
+      backgroundColor: `${isActive && getColor({}).backgroundAccent}`,
       transition: "background 200ms",
     },
     variant === "outlined" && {
-      borderColor: `${isActive ? BORDER : "transparent"}`,
+      borderColor: `${isActive ? getColor({}).border : "transparent"}`,
       borderWidth: 3,
       borderStyle: "solid",
-    }
+    },
   );
 
   return common;

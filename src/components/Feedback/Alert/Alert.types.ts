@@ -1,5 +1,6 @@
+import { IColors } from "../../../constants/theme/colors";
 import { ISizes } from "./../../../types/sizes";
-import { IColors } from "./../../../constants/theme/colors";
+
 export type AlertVariantTypes = "filled" | "outlined" | "subtle";
 
 export interface IAlertProps {

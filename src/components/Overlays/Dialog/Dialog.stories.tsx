@@ -2,7 +2,6 @@ import React from "react";
 import { ComponentStory } from "@storybook/react";
 import "@storybook/addon-console";
 
-import Button from "../../Buttons/Button";
 import Dialog from "./Dialog";
 
 export default {

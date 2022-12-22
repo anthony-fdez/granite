@@ -1,26 +1,16 @@
-import { useStyles } from "../../../styles/useStyles";
-import { IColors } from "./../../../constants/theme/colors";
-import { SpinnersType } from "./Spinner.types";
-import { IStyles } from "../../Theming/ThemeProvider/Interfaces/IStyles";
 import { css, keyframes, SerializedStyles } from "@emotion/react";
+import { GetColorProps } from "./../../../styles/useStyles";
+import { SpinnersType } from "./Spinner.types";
+import IUseStyles from "../../../styles/interfaces/IUseStyles";
 
 interface Props {
-  styles: IStyles;
   variant?: SpinnersType;
-  color?: IColors;
   size?: number;
   backgroundAccentColor?: string;
+  getColor: (props: GetColorProps) => IUseStyles;
 }
 
-export const getSpinnerStyles = ({
-  styles,
-  variant,
-  color,
-  size,
-  backgroundAccentColor,
-}: Props) => {
-  const { getColor } = useStyles({ styles, color });
-
+const getSpinnerStyles = ({ variant, size, backgroundAccentColor, getColor }: Props): SerializedStyles => {
   const circularKeyframes = keyframes({
     to: {
       transform: "rotate(360deg)",
@@ -35,7 +25,7 @@ export const getSpinnerStyles = ({
     border: 3,
     borderStyle: "solid",
 
-    borderColor: backgroundAccentColor || getColor({}).background,
+    borderColor: backgroundAccentColor || getColor({}).backgroundAccent,
     borderTopColor: getColor({}).color,
     borderRadius: "50%",
     animation: circularKeyframes,
@@ -50,3 +40,5 @@ export const getSpinnerStyles = ({
 
   return circular;
 };
+
+export default getSpinnerStyles;

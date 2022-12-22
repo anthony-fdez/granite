@@ -1,12 +1,12 @@
-import { SerializedStyles } from "@emotion/react";
-import { IStyles } from "../../Theming/ThemeProvider/Interfaces/IStyles";
-import { css } from "@emotion/react";
+import { SerializedStyles, css } from "@emotion/react";
 
 interface Props {
   fullScreen: boolean;
 }
 
-export const getLoadingOverlayStyles = ({ fullScreen }: Props) => {
+const getLoadingOverlayStyles = ({
+  fullScreen,
+}: Props): { stylesOpen: SerializedStyles; stylesClosed: SerializedStyles } => {
   const margin = 20;
 
   const stylesOpen: SerializedStyles = css([
@@ -25,10 +25,9 @@ export const getLoadingOverlayStyles = ({ fullScreen }: Props) => {
     },
   ]);
 
-  const stylesClosed: SerializedStyles = css([
-    stylesOpen,
-    { pointerEvents: "none", opacity: 0 },
-  ]);
+  const stylesClosed: SerializedStyles = css([stylesOpen, { pointerEvents: "none", opacity: 0 }]);
 
   return { stylesOpen, stylesClosed };
 };
+
+export default getLoadingOverlayStyles;

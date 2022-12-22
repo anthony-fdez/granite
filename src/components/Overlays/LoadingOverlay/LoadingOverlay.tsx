@@ -1,11 +1,11 @@
 /** @jsxImportSource @emotion/react */
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { css } from "@emotion/react";
 
-import React, { useContext } from "react";
+import React from "react";
 import Spinner from "../../Feedback/Spinner";
 import Center from "../../Layout/Center";
-import { StateContext } from "../../Theming/ThemeProvider/ThemeProvider";
-import { getLoadingOverlayStyles } from "./LoadingOverlay.styles";
+import getLoadingOverlayStyles from "./LoadingOverlay.styles";
 import { ILoadingOverlayProps } from "./LoadingOverlay.types";
 
 const LoadingOverlay = ({
@@ -20,9 +20,7 @@ const LoadingOverlay = ({
   animationDuration = 200,
   fullScreen = false,
   ...args
-}: ILoadingOverlayProps) => {
-  const { styles } = useContext(StateContext);
-
+}: ILoadingOverlayProps): JSX.Element => {
   const { stylesClosed, stylesOpen } = getLoadingOverlayStyles({
     fullScreen,
   });
@@ -39,7 +37,7 @@ const LoadingOverlay = ({
             width: fullScreen ? "100vw" : "100%",
             backgroundColor: `rgb(0, 0, 0, ${backdrop ? backdropOpacity : 0})`,
           },
-          zIndex ? { zIndex: zIndex } : { zIndex: "inherit" },
+          zIndex ? { zIndex } : { zIndex: "inherit" },
           animated && { transition: `${animationDuration}ms` },
           backdropBlur && { backdropFilter: `blur(${backdropBlur}px)` },
           show ? { opacity: 1 } : { opacity: 0, pointerEvents: "none" },
@@ -55,7 +53,7 @@ const LoadingOverlay = ({
         ]}
         {...args}
       >
-        {children ? children : <Spinner {...spinnerProps} />}
+        {children || <Spinner {...spinnerProps} />}
       </Center>
     </>
   );

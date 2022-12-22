@@ -1,1 +1,3 @@
-export { default } from "./Center";
+import Center from "./Center";
+
+export default Center;

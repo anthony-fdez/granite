@@ -1,11 +1,10 @@
-import { useStyles } from "../../../styles/useStyles";
 import { Variants } from "framer-motion";
-import { SerializedStyles } from "@emotion/react";
-import { IStyles } from "../../Theming/ThemeProvider/Interfaces/IStyles";
-import { css } from "@emotion/react";
+import { SerializedStyles, css } from "@emotion/react";
+import { GetColorProps } from "./../../../styles/useStyles";
+import IUseStyles from "../../../styles/interfaces/IUseStyles";
 
 interface Props {
-  styles: IStyles;
+  getColor: (props: GetColorProps) => IUseStyles;
 }
 
 export const modalVariants: Variants = {
@@ -19,9 +18,9 @@ export const modalVariants: Variants = {
   },
 };
 
-export const getModalStyles = ({ styles }: Props) => {
-  const { getColor } = useStyles({ styles });
-
+export const getModalStyles = ({
+  getColor,
+}: Props): { stylesOpen: SerializedStyles; stylesClosed: SerializedStyles } => {
   const stylesOpen: SerializedStyles = css({
     position: "fixed",
     backgroundColor: getColor({}).background,
@@ -47,10 +46,7 @@ export const getModalStyles = ({ styles }: Props) => {
     },
   });
 
-  const stylesClosed: SerializedStyles = css([
-    stylesOpen,
-    { pointerEvents: "none" },
-  ]);
+  const stylesClosed: SerializedStyles = css([stylesOpen, { pointerEvents: "none" }]);
 
   return { stylesOpen, stylesClosed };
 };

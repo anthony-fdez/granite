@@ -17,7 +17,7 @@ export const Examples: ComponentStory<typeof Button> = () => {
         <Button>Default</Button>
         <Button variant="outlined">Outlined</Button>
         <Button variant="subtle">Subtle</Button>
-        <Button loading={true}>Loading</Button>
+        <Button loading>Loading</Button>
       </Flex>
       <Flex>
         <Button color="red">Default</Button>
@@ -27,7 +27,7 @@ export const Examples: ComponentStory<typeof Button> = () => {
         <Button color="red" variant="subtle">
           Subtle
         </Button>
-        <Button color="red" loading={true}>
+        <Button color="red" loading>
           Loading
         </Button>
       </Flex>

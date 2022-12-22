@@ -1,12 +1,14 @@
-import { numberRange } from "../../components/Theming/ThemeProvider/Interfaces/IStyles";
+/* eslint-disable prefer-arrow-callback */
+/* eslint-disable no-param-reassign */
+import { INumberRange } from "../../components/Theming/ThemeProvider/Interfaces/IStyles";
 import { DEFAULT_COLORS, IColors } from "../../constants/theme/colors";
 
 interface Props {
   color?: IColors;
-  shade?: numberRange;
+  shade?: INumberRange;
 }
 
-function getContrastYIQ(hexcolor: string) {
+function getContrastYIQ(hexcolor: string): string {
   // If a leading # is provided, remove it
   if (hexcolor.slice(0, 1) === "#") {
     hexcolor = hexcolor.slice(1);
@@ -16,7 +18,7 @@ function getContrastYIQ(hexcolor: string) {
   if (hexcolor.length === 3) {
     hexcolor = hexcolor
       .split("")
-      .map(function (hex) {
+      .map((hex) => {
         return hex + hex;
       })
       .join("");
@@ -34,6 +36,8 @@ function getContrastYIQ(hexcolor: string) {
   return yiq >= 128 ? DEFAULT_COLORS.gray[9] : DEFAULT_COLORS.gray[1];
 }
 
-export const getButtonFontColor = ({ color, shade }: Props) => {
+const getButtonFontColor = ({ color, shade }: Props): string => {
   return getContrastYIQ(DEFAULT_COLORS[color ?? "blue"][shade || 6]);
 };
+
+export default getButtonFontColor;

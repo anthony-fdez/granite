@@ -1,4 +1,3 @@
-export interface ICloseButtonProps
-  extends React.HTMLAttributes<HTMLButtonElement> {
+export interface ICloseButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
   size?: number;
 }

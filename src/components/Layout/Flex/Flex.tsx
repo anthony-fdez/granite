@@ -1,4 +1,5 @@
 /** @jsxImportSource @emotion/react */
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { css } from "@emotion/react";
 
 import React from "react";
@@ -11,7 +12,7 @@ const Flex = ({
   alignItems = "center",
   wrap = "nowrap",
   ...args
-}: IFlexProps) => {
+}: IFlexProps): JSX.Element => {
   return (
     <div
       {...args}

@@ -2,7 +2,6 @@ import React from "react";
 import { ComponentStory } from "@storybook/react";
 import "@storybook/addon-console";
 import Accordion from "./Accordion";
-import AccordionItem from "./AccordionItem";
 
 export default {
   title: "Components/DataDisplay/Accordion",
@@ -12,7 +11,7 @@ export default {
 const Template: ComponentStory<typeof Accordion> = (args) => (
   <div>
     <Accordion {...args}>
-      <AccordionItem label="Accordion 1">
+      <Accordion.Item label="Accordion 1">
         <p>
           Without interfaces, you will lack architectures. Our infinitely
           reconfigurable feature set is unparalleled in the industry, but our
@@ -60,8 +59,8 @@ const Template: ComponentStory<typeof Accordion> = (args) => (
           macro-vertical CAE, you will lack synergies. Without interfaces, you
           will lack cross-media CAE.
         </p>
-      </AccordionItem>
-      <AccordionItem label="Accordion 2">
+      </Accordion.Item>
+      <Accordion.Item label="Accordion 2">
         <p>
           And if there be more than three days, nor to any other Place than that
           in which the two Houses shall be bound thereby, any Thing in the
@@ -102,8 +101,8 @@ const Template: ComponentStory<typeof Accordion> = (args) => (
           painted jungle of rainbow foliage, a lurid communal mural that
           completely covered the hull of the bright void beyond the chain link.
         </p>
-      </AccordionItem>
-      <AccordionItem label="Accordion 3">
+      </Accordion.Item>
+      <Accordion.Item label="Accordion 3">
         <p>
           They were dropping, losing altitude in a canyon of rainbow foliage, a
           lurid communal mural that completely covered the hull of the deck
@@ -124,8 +123,8 @@ const Template: ComponentStory<typeof Accordion> = (args) => (
           communal mural that completely covered the hull of the bright void
           beyond the chain link.
         </p>
-      </AccordionItem>
-      <AccordionItem label="Accordion 4">
+      </Accordion.Item>
+      <Accordion.Item label="Accordion 4">
         <p>
           It may seem confusing, but it&apos;s 100% realistic! What does the
           buzzword &apos;technologies&apos; really mean? Think
@@ -150,7 +149,7 @@ const Template: ComponentStory<typeof Accordion> = (args) => (
           that&apos;s because it is! What does the commonly-accepted buzzword
           &apos;long-term&apos; really mean?
         </p>
-      </AccordionItem>
+      </Accordion.Item>
     </Accordion>
   </div>
 );

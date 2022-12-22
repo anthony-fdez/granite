@@ -2,20 +2,22 @@
 import { css, SerializedStyles } from "@emotion/react";
 
 import React, { useContext } from "react";
-import { useStyles } from "../../../styles/useStyles";
+import useStyles from "../../../styles/useStyles";
 import { StateContext } from "../../Theming/ThemeProvider/ThemeProvider";
 import { ICloseButtonProps } from "./CloseButton.types";
+import { useCloseButtonDefaultProps } from "./CloseButton.props";
 
-const CloseButton = ({ size = 35, ...args }: ICloseButtonProps) => {
+const CloseButton = (props: ICloseButtonProps): JSX.Element => {
   const { styles } = useContext(StateContext);
+  const { getColor } = useStyles({ styles });
 
-  const { FONT, BG, BG_HOVER } = useStyles({ styles });
+  const { size } = useCloseButtonDefaultProps({ styles, props });
 
   const common: SerializedStyles = css([
     {
-      color: FONT,
+      color: getColor({}).font,
       transition: "100ms",
-      backgroundColor: BG,
+      backgroundColor: getColor({}).background,
       border: 0,
       padding: 5,
       outline: 0,
@@ -24,7 +26,7 @@ const CloseButton = ({ size = 35, ...args }: ICloseButtonProps) => {
       alignItems: "center",
       cursor: "pointer",
       "&:hover": {
-        backgroundColor: BG_HOVER,
+        backgroundColor: getColor({}).backgroundHover,
       },
       "&:active": {
         transform: "translateY(2px)",
@@ -38,14 +40,12 @@ const CloseButton = ({ size = 35, ...args }: ICloseButtonProps) => {
   ]);
 
   return (
-    <button {...args} css={[common, size && { height: size, width: size }]}>
+    <button type="button" {...props} css={[common, size && { height: size, width: size }]}>
       <img
+        alt="Close button"
         className="close-button-icon"
-        src={
-          styles.theme === "light"
-            ? require("./assets/close-light.svg")
-            : require("./assets/close-dark.svg")
-        }
+        // eslint-disable-next-line global-require
+        src={styles.theme === "light" ? require("./assets/close-light.svg") : require("./assets/close-dark.svg")}
       />
     </button>
   );

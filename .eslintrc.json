@@ -7,17 +7,49 @@
     "eslint:recommended",
     "plugin:react/recommended",
     "plugin:@typescript-eslint/recommended",
-    "plugin:import/typescript"
+    "plugin:import/typescript",
+    "airbnb",
+    "airbnb/hooks",
+    "airbnb-typescript"
   ],
   "overrides": [],
   "parser": "@typescript-eslint/parser",
+
   "parserOptions": {
     "ecmaVersion": "latest",
-    "sourceType": "module"
+    "sourceType": "module",
+    "project": "./tsconfig.json"
   },
   "plugins": ["react", "@typescript-eslint", "import"],
   "rules": {
-    "react/no-unknown-property": 0,
-    "@typescript-eslint/ban-ts-comment": "off"
+    "react/no-unknown-property": "off",
+    "@typescript-eslint/ban-ts-comment": "off",
+    "quotes": ["error", "double", { "avoidEscape": true }],
+    "no-console": ["error"],
+    "no-duplicate-imports": "error",
+    "no-template-curly-in-string": "error",
+    "no-restricted-syntax": ["error"],
+    "@typescript-eslint/quotes": ["error", "double"],
+    "@typescript-eslint/explicit-function-return-type": "warn",
+    "import/no-useless-path-segments": "off",
+    "import/no-cycle": "off",
+    "object-curly-newline": "off",
+    "max-len": ["error", 120],
+    "max-lines": ["error", 400],
+    "arrow-body-style": "off",
+    "react/jsx-props-no-spreading": "off",
+    "react/function-component-definition": [
+      2,
+      {
+        "namedComponents": ["arrow-function", "function-declaration"],
+        "unnamedComponents": "arrow-function"
+      }
+    ],
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": ["**/*.stories.tsx"]
+      }
+    ]
   }
 }
