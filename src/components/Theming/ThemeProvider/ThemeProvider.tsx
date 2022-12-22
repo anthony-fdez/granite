@@ -1,8 +1,6 @@
-/** @jsxImportSource @emotion/react */
-import { Global } from "@emotion/react";
-
 /* eslint-disable @typescript-eslint/no-empty-function */
 import React, { createContext, useCallback, useEffect, useMemo, useState } from "react";
+import { Global } from "@emotion/react";
 import { IStyles, IContext } from "./Interfaces/IStyles";
 import { IProviderProps } from "./Interfaces/IProviderProps";
 import DEFAULT_STYLES from "../../../constants/theme/defaultStyles";

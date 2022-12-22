@@ -3,7 +3,7 @@
 import { css } from "@emotion/react";
 
 // @ts-ignore
-import { motion } from "framer-motion/dist/framer-motion";
+import { motion } from "framer-motion";
 
 import React, { useContext } from "react";
 import useStyles from "../../../styles/useStyles";
@@ -43,7 +43,6 @@ const Dialog = (props: IDialogProps): JSX.Element => {
     animated = DIALOG_DEFAULT_PROPS.animated || true,
     animationDuration = DIALOG_DEFAULT_PROPS.animationDuration || 500,
     unmount = DIALOG_DEFAULT_PROPS.unmount || true,
-    ...args
   } = useDialogDefaultStyles({ styles, props });
 
   const { getColor } = useStyles({ styles });
@@ -55,7 +54,6 @@ const Dialog = (props: IDialogProps): JSX.Element => {
         {backdrop && <Backdrop {...{ isOpen, backdropBlur, backdropOpacity, zIndex, animated, animationDuration }} />}
         <ClickAwayListener onClickOutside={() => closeOnClickOutside && onClose()}>
           <motion.div
-            {...args}
             variants={getDialogVariants({ animation })}
             initial="closed"
             animate={isOpen ? "open" : "closed"}

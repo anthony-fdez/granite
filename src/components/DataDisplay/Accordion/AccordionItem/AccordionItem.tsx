@@ -3,12 +3,11 @@
 import { css } from "@emotion/react";
 
 import React, { useContext } from "react";
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
-import { motion } from "framer-motion/dist/framer-motion";
+
+import { motion } from "framer-motion";
 import Flex from "../../../Layout/Flex";
 import { StateContext } from "../../../Theming/ThemeProvider/ThemeProvider";
-import { accordionAnimation, chevronAnimation, getAccordionItemStyles } from "./AccordionItem.styles";
+import { accordionAnimation, getAccordionItemStyles } from "./AccordionItem.styles";
 import { IAccordionItemProps } from "./AccordionItem.types";
 
 import { ACCORDION_DEFAULT_PROPS } from "../Accordion.props";
@@ -56,13 +55,13 @@ const AccordionItem = ({
           justifyContent={arrowPosition === "left" ? "flex-end" : "space-between"}
         >
           <span css={arrowPosition === "left" && { marginLeft: 15 }}>{label}</span>
-          <motion.img
+          {/* <motion.img
             variants={chevronAnimation}
             animate={label === activeElement ? "open" : "closed"}
             className="icon"
             // eslint-disable-next-line import/no-dynamic-require, global-require
             src={require(`./assets/chevron-${styles.theme}.svg`)}
-          />
+          /> */}
         </Flex>
       </div>
 
@@ -71,7 +70,7 @@ const AccordionItem = ({
         className="accordion-item-content"
         animate={label === activeElement ? "open" : "closed"}
         variants={accordionAnimation}
-        transition={{ stiffness: 400, ease: [0.17, 0.67, 0.83, 0.67], type: "spring", damping: 50 }}
+        transition={{ stiffness: 400, type: "spring", damping: 50 }}
       >
         {children}
       </motion.div>

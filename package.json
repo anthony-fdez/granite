@@ -1,12 +1,13 @@
 {
-  "name": "anthony-fdez-component-library",
-  "version": "0.0.2",
+  "name": "@granite/core",
+  "version": "0.0.10",
   "description": "A react component library",
   "scripts": {
     "build": "rollup -c && tsc",
     "sb": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "lint": "npx eslint src && tsc"
+    "lint": "npx eslint src && tsc",
+    "publish": "npm publish --access private"
   },
   "author": "anthony-fdez",
   "license": "MIT",
@@ -14,6 +15,7 @@
   "devDependencies": {
     "@babel/core": "^7.20.2",
     "@babel/preset-react": "^7.18.6",
+    "@emotion/babel-preset-css-prop": "^11.10.0",
     "@emotion/react": "^11.10.5",
     "@rollup/plugin-commonjs": "^23.0.2",
     "@rollup/plugin-node-resolve": "^15.0.1",
@@ -59,7 +61,7 @@
   },
   "peerDependencies": {
     "@emotion/react": ">=11.9.0",
-    "framer-motion": "^7.6.12",
+    "framer-motion": ">=7.6.12",
     "react": ">=16.8.0",
     "react-dom": ">=16.8.0"
   },
