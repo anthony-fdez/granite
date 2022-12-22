@@ -34,6 +34,7 @@ export default [
       external(),
       resolve(),
       commonjs(),
+      terser(),
       typescript({ tsconfig: "./tsconfig.json" }),
       postcss({
         plugins: [autoprefixer()],
