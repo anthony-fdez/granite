@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - main
+permissions:
+  contents: write
 jobs:
   docs:
     name: Deploy Docs
@@ -31,7 +33,7 @@ jobs:
         run: npm run build-sb
       - name: Deploy docs
         if: steps.build.outcome == 'success'
-        uses: anthony-fdez/granite@3
+        uses: anthony-fdez/granite@v4
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: main
