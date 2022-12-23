@@ -1,3 +1,5 @@
+/* eslint-disable import/prefer-default-export */
+
 export { default as Button } from "./Buttons/Button";
 export { default as ThemeProvider } from "./Theming/ThemeProvider";
 export { default as Spinner } from "./Feedback/Spinner";
