@@ -6,8 +6,7 @@
     "build": "rollup -c && tsc",
     "sb": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "lint": "npx eslint src && tsc",
-    "publish": "npm publish --access private"
+    "lint": "npx eslint src && tsc"
   },
   "author": "anthony-fdez",
   "license": "MIT",
