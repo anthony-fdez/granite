@@ -1,8 +1,30 @@
-# Component library
+# Granite. A ReactJS component library
 
-Follow git workflow https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow
+## Getting started
 
-Blueprintjs is a pretty good inspiration
+To install and get the project up and running you'll first need a React app
+
+### Create ReactJS App
+
+An easy and fast way to create a new React app is with Vite
+
+Using JavaScript
+
+```
+npm create vite@latest my-react-app --template react
+```
+
+Using TypeScript
+
+```
+npm create vite@latest my-react-app --template react-ts
+```
+
+### Install Granite and peer dependencies
+
+```
+npm i @granite/core @emotion/react framer-motion
+```
 
 ## Next up to work on:
 
