@@ -33,7 +33,7 @@ jobs:
         run: npm run build-sb
       - name: Deploy docs
         if: steps.build.outcome == 'success'
-        uses: anthony-fdez/granite@v4
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: main
