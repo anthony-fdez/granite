@@ -5,7 +5,7 @@
   "scripts": {
     "build": "rollup -c && tsc",
     "sb": "start-storybook -p 6006",
-    "build-storybook": "build-storybook",
+    "build-sb": "build-storybook -o docs-build",
     "lint": "npx eslint src && tsc"
   },
   "author": "anthony-fdez",
