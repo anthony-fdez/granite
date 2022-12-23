@@ -1,13 +1,12 @@
-name: Publish
+name: Deploy Docs
 
 on:
   push:
     branches:
       - main
-    paths: ["src/**"]
 jobs:
-  publish:
-    name: Publish Package
+  docs:
+    name: Deploy Docs
     runs-on: ubuntu-latest
 
     strategy:
@@ -26,12 +25,16 @@ jobs:
       - name: Lint project
         id: lint
         run: npm run lint
-      - name: Make a build
+      - name: Build storybook docs
         id: build
         if: steps.lint.outcome == 'success'
-        run: npm run build
-      - name: Publish to NPM
+        run: npm run build-sb
+      - name: Deploy docs
         if: steps.build.outcome == 'success'
-        run: npm publish --access public
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        uses: anthony-fdez/github-pages-deploy-action@3
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: main
+          FOLDER: docs-build
+          CLEAN: true
+          TARGET_FOLDER: docs
