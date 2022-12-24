@@ -1,5 +1,7 @@
 # Granite. A ReactJS component library
 
+Live Demo: https://anthony-fdez.github.io/granite/
+
 ## Getting started
 
 To install and get the project up and running you'll first need a React app
