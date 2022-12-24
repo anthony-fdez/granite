@@ -4,7 +4,7 @@ import { css } from "@emotion/react";
 
 import React, { useContext } from "react";
 
-import { motion } from "framer-motion";
+import { motion } from "framer-motion/dist/framer-motion";
 import Flex from "../../../Layout/Flex";
 import { StateContext } from "../../../Theming/ThemeProvider/ThemeProvider";
 import { accordionAnimation, getAccordionItemStyles } from "./AccordionItem.styles";
