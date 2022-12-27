@@ -196,9 +196,6 @@ CustomStyles.args = {
       color: "grape",
       borderRadius: "lg",
     },
-    colors: {
-      grape: ["#fff", "#fff", "#fff", "#fff", "#fff", "#fff", "#fff", "#fff", "#fff", "#fff"],
-    },
     components: {
       Button: {
         borderRadius: "lg",

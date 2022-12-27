@@ -13,13 +13,14 @@ const getColor = ({ color, styles, shade }: Props): string => {
     return DEFAULT_COLORS.blue[6];
   }
 
+  const colors = styles.colors ?? DEFAULT_COLORS;
   const newShade = styles.theme === "dark" && shade < 9 ? shade + 1 : shade;
 
   if (color) {
-    return DEFAULT_COLORS[color][newShade];
+    return colors[color][newShade];
   }
 
-  return DEFAULT_COLORS[styles.global.color ?? "blue"][newShade];
+  return colors[styles.global?.color ?? "blue"][newShade];
 };
 
 export default getColor;

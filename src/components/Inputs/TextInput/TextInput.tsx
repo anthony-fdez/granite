@@ -7,7 +7,6 @@ import { ITextInputProps } from "./TextInput.types";
 import { useTextInputDefaultProps } from "./TextInput.props";
 import { StateContext } from "../../Theming/ThemeProvider/ThemeProvider";
 import getTextInputStyles from "./TextInput.styles";
-import { DEFAULT_COLORS } from "../../../constants/theme/colors";
 import Spinner from "../../Feedback/Spinner";
 import useStyles from "../../../styles/useStyles";
 
@@ -68,7 +67,7 @@ const TextInput = (props: ITextInputProps): JSX.Element => {
       {label && (
         <p className="input-label">
           {label}
-          {required && <span style={{ color: DEFAULT_COLORS.red[6], marginLeft: 2 }}>*</span>}
+          {required && <span style={{ color: styles.colors?.red?.[6], marginLeft: 2 }}>*</span>}
         </p>
       )}
       {helperText && <p className="input-helper-text">{helperText}</p>}
