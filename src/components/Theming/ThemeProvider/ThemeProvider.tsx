@@ -14,6 +14,7 @@ import { ACCORDION_DEFAULT_PROPS } from "../../DataDisplay/Accordion/Accordion.p
 import { CLOSE_BUTTON_DEFAULT_PROPS } from "../../Buttons/CloseButton/CloseButton.props";
 import useStyles from "../../../styles/useStyles";
 import { BACKDROP_DEFAULT_PROPS } from "../../Overlays/Backdrop/Backdrop.props";
+import { DEFAULT_COLORS } from "../../../constants/theme/colors";
 
 export const StateContext = createContext<IContext>({
   styles: DEFAULT_STYLES,
@@ -26,10 +27,47 @@ const ThemeProvider = ({
   theme = DEFAULT_STYLES.theme ?? "light",
   ...args
 }: IProviderProps): JSX.Element => {
-  // eslint-disable-next-line no-param-reassign
-  defaultStyles = { ...DEFAULT_STYLES, ...defaultStyles };
+  const mergedStyles = {
+    theme,
+    global: defaultStyles?.global,
+    colors: { ...DEFAULT_COLORS, ...defaultStyles?.colors },
+    components: {
+      Button: {
+        ...BUTTON_DEFAULT_PROPS,
+        ...defaultStyles?.components?.Button,
+      },
+      CloseButton: {
+        ...CLOSE_BUTTON_DEFAULT_PROPS,
+        ...defaultStyles?.components?.CloseButton,
+      },
+      Modal: {
+        ...MODAL_DEFAULT_PROPS,
+        ...defaultStyles?.components?.Modal,
+      },
+      Dialog: {
+        ...DIALOG_DEFAULT_PROPS,
+        ...defaultStyles?.components?.Dialog,
+      },
+      Divider: {
+        ...DIVIDER_DEFAULT_PROPS,
+        ...defaultStyles?.components?.Divider,
+      },
+      TextInput: {
+        ...TEXT_INPUT_DEFAULT_PROPS,
+        ...defaultStyles?.components?.TextInput,
+      },
+      Accordion: {
+        ...ACCORDION_DEFAULT_PROPS,
+        ...defaultStyles?.components?.Accordion,
+      },
+      Backdrop: {
+        ...BACKDROP_DEFAULT_PROPS,
+        ...defaultStyles?.components?.Backdrop,
+      },
+    },
+  };
 
-  const [styles, setStyles] = useState<IStyles>(defaultStyles);
+  const [styles, setStyles] = useState<IStyles>(mergedStyles);
   const { getColor } = useStyles({ styles });
 
   const handleUpdateState = useCallback(
@@ -39,52 +77,12 @@ const ThemeProvider = ({
     [styles],
   );
 
-  // const handleUpdateState = (newState: IStyles): void => {
-  //   setStyles({ ...styles, ...newState });
-  // };
   const memoizedStyles = useMemo(() => ({ styles, setState: handleUpdateState }), [styles, handleUpdateState]);
 
   useEffect(() => {
     if (!defaultStyles) return;
 
-    handleUpdateState({
-      theme,
-      global: defaultStyles.global,
-      components: {
-        Button: {
-          ...BUTTON_DEFAULT_PROPS,
-          ...defaultStyles.components?.Button,
-        },
-        CloseButton: {
-          ...CLOSE_BUTTON_DEFAULT_PROPS,
-          ...defaultStyles.components?.CloseButton,
-        },
-        Modal: {
-          ...MODAL_DEFAULT_PROPS,
-          ...defaultStyles.components?.Modal,
-        },
-        Dialog: {
-          ...DIALOG_DEFAULT_PROPS,
-          ...defaultStyles.components?.Dialog,
-        },
-        Divider: {
-          ...DIVIDER_DEFAULT_PROPS,
-          ...defaultStyles.components?.Divider,
-        },
-        TextInput: {
-          ...TEXT_INPUT_DEFAULT_PROPS,
-          ...defaultStyles.components?.TextInput,
-        },
-        Accordion: {
-          ...ACCORDION_DEFAULT_PROPS,
-          ...defaultStyles.components?.Accordion,
-        },
-        Backdrop: {
-          ...BACKDROP_DEFAULT_PROPS,
-          ...defaultStyles.components?.Backdrop,
-        },
-      },
-    });
+    handleUpdateState(mergedStyles);
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [theme]);

@@ -23,6 +23,8 @@ const useStyles = ({ styles, color, shade }: Props): { getColor: (props: GetColo
 
   return {
     getColor: (props: GetColorProps): IUseStyles => {
+      if (!styles.colors) throw new Error("'colors' property not found in the styles object.");
+
       const colorOverride = props.color || COLOR;
       const shadeOverride = props.shade || SHADE;
       const variantOverride = props.variant || styles.global.variant || "filled";
