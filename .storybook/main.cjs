@@ -5,6 +5,7 @@ module.exports = {
     "@storybook/addon-essentials",
     "@storybook/addon-interactions",
     "@storybook/addon-console",
+    "@storybook/addon-a11y",
   ],
   framework: "@storybook/react",
 };
