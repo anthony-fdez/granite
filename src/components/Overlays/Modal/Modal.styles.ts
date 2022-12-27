@@ -46,7 +46,7 @@ export const getModalStyles = ({
     },
   });
 
-  const stylesClosed: SerializedStyles = css([stylesOpen, { pointerEvents: "none", display: "none" }]);
+  const stylesClosed: SerializedStyles = css([stylesOpen, { pointerEvents: "none" }]);
 
   return { stylesOpen, stylesClosed };
 };
