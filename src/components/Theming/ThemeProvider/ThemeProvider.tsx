@@ -29,7 +29,7 @@ const ThemeProvider = ({
 }: IProviderProps): JSX.Element => {
   const mergedStyles = {
     theme,
-    global: defaultStyles?.global,
+    global: { ...DEFAULT_STYLES.global, ...defaultStyles?.global },
     colors: { ...DEFAULT_COLORS, ...defaultStyles?.colors },
     components: {
       Button: {

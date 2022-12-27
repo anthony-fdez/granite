@@ -194,7 +194,7 @@ CustomStyles.args = {
   defaultStyles: {
     global: {
       color: "grape",
-      borderRadius: "xs",
+      borderRadius: "lg",
     },
     colors: {
       grape: ["#fff", "#fff", "#fff", "#fff", "#fff", "#fff", "#fff", "#fff", "#fff", "#fff"],
@@ -203,7 +203,10 @@ CustomStyles.args = {
       Button: {
         borderRadius: "lg",
       },
-      Modal: {},
+      Modal: {
+        unmount: false,
+        backdropBlur: 10,
+      },
       Dialog: {
         width: 500,
       },
