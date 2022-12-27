@@ -1,10 +1,19 @@
-import { DEFAULT_COLORS } from "../../constants/theme/colors";
+import { DEFAULT_COLORS } from "./../../constants/theme/colors";
+import errorWrapper from "../helpers/errorWrapper";
 import IMethodProps from "../interfaces/IMethodProps";
 
-const GET_BORDER = ({ dark }: IMethodProps): string => {
-  if (dark) return DEFAULT_COLORS.dark[4];
+const GET_BORDER = (props: IMethodProps): string => {
+  return errorWrapper({
+    props,
+    callback: (p) => {
+      const { dark, styles } = p;
+      const colors = styles.colors ?? DEFAULT_COLORS;
 
-  return DEFAULT_COLORS.gray[3];
+      if (dark) return colors.dark?.[4];
+
+      return colors.gray?.[3];
+    },
+  });
 };
 
 export default GET_BORDER;

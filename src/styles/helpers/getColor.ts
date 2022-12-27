@@ -10,16 +10,19 @@ interface Props {
 const getColor = ({ color, styles, shade }: Props): string => {
   if (!styles) {
     // If this is ever returned something is really broken
-    return DEFAULT_COLORS.blue[6];
+    return DEFAULT_COLORS.blue?.[6] || "";
   }
 
+  const colors = styles.colors ?? DEFAULT_COLORS;
   const newShade = styles.theme === "dark" && shade < 9 ? shade + 1 : shade;
 
-  if (color) {
-    return DEFAULT_COLORS[color][newShade];
+  if (color && colors) {
+    // @ts-ignore
+    return colors[color || "blue"][newShade];
   }
 
-  return DEFAULT_COLORS[styles.global.color ?? "blue"][newShade];
+  // @ts-ignore
+  return colors[styles.global?.color ?? "blue"][newShade];
 };
 
 export default getColor;

@@ -1,9 +1,9 @@
 import { css, SerializedStyles } from "@emotion/react";
 import { getVariantStyles } from "./../../Theming/ThemeProvider/getValues/getVariantStyles";
 import { GetColorProps } from "./../../../styles/useStyles";
-import { DEFAULT_COLORS } from "./../../../constants/theme/colors";
 import { IVariants } from "./../../../types/variants";
 import IUseStyles from "../../../styles/interfaces/IUseStyles";
+import { IStyles } from "../../Theming/ThemeProvider/Interfaces/IStyles";
 
 interface Props {
   variant?: IVariants;
@@ -16,6 +16,7 @@ interface Props {
   iconLeft?: JSX.Element;
   loading?: boolean;
   getColor: (props: GetColorProps) => IUseStyles;
+  styles: IStyles;
 }
 
 const getTextInputStyles = ({
@@ -29,6 +30,7 @@ const getTextInputStyles = ({
   iconLeft,
   loading,
   getColor,
+  styles,
 }: Props): SerializedStyles => {
   const iconWidth = 30;
   const calculatedWidthContainer = `calc(100% - ${margin + padding}px)`;
@@ -100,7 +102,7 @@ const getTextInputStyles = ({
     },
     ".input-error-text": {
       fontSize: 12,
-      color: DEFAULT_COLORS.red[6],
+      color: styles.colors?.red?.[6],
       marginTop: 5,
     },
 
@@ -150,15 +152,15 @@ const getTextInputStyles = ({
           ...getVariantStyles({ filled, subtle, outlined, variant }),
         },
         error && {
-          borderColor: "red",
+          borderColor: styles.colors?.red?.[6],
           ":focus": {
-            borderColor: "red",
+            borderColor: styles.colors?.red?.[6],
           },
         },
         disabled && {
           filter: "grayscale(1)",
           pointerEvents: "none",
-          color: "red",
+          color: styles.colors?.red?.[6],
         },
       ],
     },

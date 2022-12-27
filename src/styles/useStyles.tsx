@@ -17,15 +17,17 @@ export interface GetColorProps {
 }
 
 const useStyles = ({ styles, color, shade }: Props): { getColor: (props: GetColorProps) => IUseStyles } => {
-  const COLOR: IColors = color || styles.global.color || "blue";
+  const COLOR: IColors = color || styles.global?.color || "blue";
   const DARK: boolean = styles.theme === "dark";
-  const SHADE: INumberRange = shade || styles.global.shade || 6;
+  const SHADE: INumberRange = shade || styles.global?.shade || 6;
 
   return {
     getColor: (props: GetColorProps): IUseStyles => {
+      if (!styles.colors) throw new Error("'colors' property not found in the styles object.");
+
       const colorOverride = props.color || COLOR;
       const shadeOverride = props.shade || SHADE;
-      const variantOverride = props.variant || styles.global.variant || "filled";
+      const variantOverride = props.variant || styles.global?.variant || "filled";
 
       const methodProps = { styles, color: colorOverride, shade: shadeOverride, variant: variantOverride, dark: DARK };
 

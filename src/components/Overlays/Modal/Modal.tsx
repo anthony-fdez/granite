@@ -75,7 +75,7 @@ const Modal = (props: IModalProps): JSX.Element => {
                 borderStyle: "solid",
               },
               borderColor ? { borderColor } : { borderColor: getColor({}).border },
-              { borderRadius: getBorderRadius({ size: borderRadius || styles.global.borderRadius }) },
+              { borderRadius: getBorderRadius({ size: borderRadius || styles.global?.borderRadius }) },
               {
                 maxWidth: `calc(100% - ${(padding || 0) * 2}px - 20px)`,
               },
