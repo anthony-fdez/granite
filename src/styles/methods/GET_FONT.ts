@@ -9,9 +9,9 @@ const GET_FONT = (props: IMethodProps): string => {
       const { dark, styles } = p;
       const colors = styles.colors ?? DEFAULT_COLORS;
 
-      if (dark) return colors.gray[0];
+      if (dark) return colors.gray?.[0];
 
-      return colors.dark[9];
+      return colors.dark?.[9];
     },
   });
 };

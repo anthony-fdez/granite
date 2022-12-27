@@ -9,9 +9,9 @@ const GET_BACKGROUND = (props: IMethodProps): string => {
       const { dark, styles } = p;
       const colors = styles.colors ?? DEFAULT_COLORS;
 
-      if (dark) return colors.dark[9];
+      if (dark) return colors.dark?.[9];
 
-      return colors.gray[0];
+      return colors.gray?.[0];
     },
   });
 };

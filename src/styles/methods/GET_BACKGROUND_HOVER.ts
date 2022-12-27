@@ -9,7 +9,7 @@ const GET_BACKGROUND_HOVER = (props: IMethodProps): string => {
       const { dark, styles } = p;
       const colors = styles.colors ?? DEFAULT_COLORS;
 
-      if (dark) return colors.dark[6];
+      if (dark) return colors.dark?.[6];
 
       return colors.gray?.[3];
     },

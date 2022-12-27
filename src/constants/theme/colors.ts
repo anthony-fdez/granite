@@ -1,4 +1,4 @@
-export type IColorType = [string, string, string, string, string, string, string, string, string, string];
+export type IColorType = [string, string, string, string, string, string, string, string, string, string] | undefined;
 
 export type IColors =
   | "dark"
@@ -17,20 +17,20 @@ export type IColors =
   | "orange";
 
 export interface IColorShades {
-  dark: IColorType;
-  gray: IColorType;
-  red: IColorType;
-  pink: IColorType;
-  grape: IColorType;
-  violet: IColorType;
-  indigo: IColorType;
-  blue: IColorType;
-  cyan: IColorType;
-  teal: IColorType;
-  green: IColorType;
-  lime: IColorType;
-  yellow: IColorType;
-  orange: IColorType;
+  dark?: IColorType;
+  gray?: IColorType;
+  red?: IColorType;
+  pink?: IColorType;
+  grape?: IColorType;
+  violet?: IColorType;
+  indigo?: IColorType;
+  blue?: IColorType;
+  cyan?: IColorType;
+  teal?: IColorType;
+  green?: IColorType;
+  lime?: IColorType;
+  yellow?: IColorType;
+  orange?: IColorType;
   [key: string]: IColorType;
 }
 

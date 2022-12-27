@@ -9,9 +9,9 @@ const GET_BACKGROUND_ACCENT = (props: IMethodProps): string => {
       const { dark, styles } = p;
       const colors = styles.colors ?? DEFAULT_COLORS;
 
-      if (dark) return colors.dark[7];
+      if (dark) return colors.dark?.[7];
 
-      return colors.gray[2];
+      return colors.gray?.[2];
     },
   });
 };

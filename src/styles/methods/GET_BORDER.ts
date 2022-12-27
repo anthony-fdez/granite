@@ -9,9 +9,9 @@ const GET_BORDER = (props: IMethodProps): string => {
       const { dark, styles } = p;
       const colors = styles.colors ?? DEFAULT_COLORS;
 
-      if (dark) return colors.dark[4];
+      if (dark) return colors.dark?.[4];
 
-      return colors.gray[3];
+      return colors.gray?.[3];
     },
   });
 };

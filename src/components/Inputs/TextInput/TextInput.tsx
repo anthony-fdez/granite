@@ -58,6 +58,7 @@ const TextInput = (props: ITextInputProps): JSX.Element => {
           iconLeft,
           loading,
           getColor,
+          styles,
         }),
         margin && { margin },
         fullWidth && { width: `calc(100% - ${margin ? margin * 2 : 0}px)` },

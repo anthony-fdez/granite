@@ -149,7 +149,7 @@ const Template: ComponentStory<typeof ThemeProvider> = (args) => {
       <Divider label="Inputs" labelPosition="left" />
       <Flex alignItems="flex-end">
         <TextInput label="Default" helperText="This is the default input" placeholder="Enter some text" />
-        <TextInput label="Filled Variant" variant="filled" placeholder="Enter some text" />
+        <TextInput error label="Filled Variant" variant="filled" placeholder="Enter some text" />
         <TextInput label="Subtle Variant" variant="subtle" placeholder="Enter some text" loading />
       </Flex>
     </ThemeProvider>
@@ -195,6 +195,20 @@ CustomStyles.args = {
     global: {
       color: "grape",
       borderRadius: "lg",
+    },
+    colors: {
+      red: [
+        "#f3f0ff",
+        "#e5dbff",
+        "#d0bfff",
+        "#b197fc",
+        "#9775fa",
+        "#845ef7",
+        "#7950f2",
+        "#7048e8",
+        "#6741d9",
+        "#5f3dc4",
+      ],
     },
     components: {
       Button: {

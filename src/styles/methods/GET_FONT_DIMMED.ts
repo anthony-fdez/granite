@@ -9,9 +9,9 @@ const GET_FONT_DIMMED = (props: IMethodProps): string => {
       const { dark, styles } = p;
       const colors = styles.colors ?? DEFAULT_COLORS;
 
-      if (dark) return colors.gray[3];
+      if (dark) return colors.gray?.[3];
 
-      return colors.dark[6];
+      return colors.dark?.[6];
     },
   });
 };
