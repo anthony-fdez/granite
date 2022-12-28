@@ -3,6 +3,7 @@ import { ComponentStory } from "@storybook/react";
 import "@storybook/addon-console";
 
 import Modal from "./Modal";
+import ThemeProvider from "../../Theming/ThemeProvider";
 
 export default {
   title: "Components/Overlays/Modal",
@@ -11,7 +12,11 @@ export default {
 
 const isOpen = false;
 
-const Template: ComponentStory<typeof Modal> = (args) => <Modal {...args} />;
+const Template: ComponentStory<typeof Modal> = (args) => (
+  <ThemeProvider>
+    <Modal {...args} />
+  </ThemeProvider>
+);
 
 export const Default = Template.bind({});
 

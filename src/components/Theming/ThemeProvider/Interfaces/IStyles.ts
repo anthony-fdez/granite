@@ -36,6 +36,6 @@ export interface IStyles {
 }
 
 export interface IContext {
-  styles: IStyles;
+  styles: IStyles | null;
   setState: (state: IStyles) => void;
 }

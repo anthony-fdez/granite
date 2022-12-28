@@ -3,6 +3,7 @@ import { ComponentStory } from "@storybook/react";
 import "@storybook/addon-console";
 
 import Divider from "./Divider";
+import ThemeProvider from "../../Theming/ThemeProvider";
 
 export default {
   title: "Components/Extra/Divider",
@@ -10,7 +11,9 @@ export default {
 };
 
 const Template: ComponentStory<typeof Divider> = (args) => (
-  <Divider {...args} />
+  <ThemeProvider>
+    <Divider {...args} />
+  </ThemeProvider>
 );
 
 export const Default = Template.bind({});
