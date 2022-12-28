@@ -77,4 +77,14 @@ describe("Button", () => {
 
     expect(button.getByTestId("button-spinner")).toBeInTheDocument();
   });
+
+  it("is disabled", () => {
+    const button = render(
+      <W>
+        <Button {...defaultProps} disabled />
+      </W>,
+    );
+
+    expect(button.getByLabelText(defaultProps.children)).toHaveAttribute("disabled");
+  });
 });

@@ -50,7 +50,7 @@ const Button = (props: IButtonProps): JSX.Element => {
   ]);
 
   return (
-    <button type="button" {...props} disabled={disabled} css={buttonStyles}>
+    <button aria-label={children} aria-disabled="true" type="button" {...props} disabled={disabled} css={buttonStyles}>
       {loading ? (
         <Spinner
           data-testid="button-spinner"
