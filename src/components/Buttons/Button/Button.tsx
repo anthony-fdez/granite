@@ -1,17 +1,17 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
 
-import React, { useContext } from "react";
-import { StateContext } from "../../Theming/ThemeProvider/ThemeProvider";
+import React from "react";
 import getButtonStyles from "./Button.styles";
 import getBorderRadius from "../../Theming/ThemeProvider/getValues/getBorderRadius";
 import Spinner from "../../Feedback/Spinner";
 import { IButtonProps } from "./Button.types";
 import useStyles from "../../../styles/useStyles";
 import { useButtonDefaultProps } from "./Button.props";
+import useAppContext from "../../../utils/hooks/useAppContext";
 
 const Button = (props: IButtonProps): JSX.Element => {
-  const { styles } = useContext(StateContext);
+  const { styles } = useAppContext();
   const {
     children,
     variant,
@@ -32,7 +32,6 @@ const Button = (props: IButtonProps): JSX.Element => {
     iconLeftProps,
     iconRightProps,
   } = useButtonDefaultProps({ styles, props });
-
   const { getColor } = useStyles({ styles, shade, color });
 
   const buttonStyles = css([
