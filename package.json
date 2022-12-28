@@ -95,5 +95,8 @@
   "homepage": "https://github.com/anthony-fdez/component-library#readme",
   "publishConfig": {
     "access": "public"
+  },
+  "dependencies": {
+    "react-feather": "^2.0.10"
   }
 }

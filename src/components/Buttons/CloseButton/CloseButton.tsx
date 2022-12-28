@@ -2,6 +2,7 @@
 import { css, SerializedStyles } from "@emotion/react";
 
 import React from "react";
+import { X } from "react-feather";
 import useStyles from "../../../styles/useStyles";
 import { ICloseButtonProps } from "./CloseButton.types";
 import { useCloseButtonDefaultProps } from "./CloseButton.props";
@@ -17,7 +18,7 @@ const CloseButton = (props: ICloseButtonProps): JSX.Element => {
     {
       color: getColor({}).font,
       transition: "100ms",
-      backgroundColor: getColor({}).background,
+      backgroundColor: "transparent",
       border: 0,
       padding: 5,
       outline: 0,
@@ -41,12 +42,7 @@ const CloseButton = (props: ICloseButtonProps): JSX.Element => {
 
   return (
     <button type="button" {...props} css={[common, size && { height: size, width: size }]}>
-      {/* <img
-        alt="Close button"
-        className="close-button-icon"
-        // eslint-disable-next-line global-require
-        src={styles.theme === "light" ? require("./assets/close-light.svg") : require("./assets/close-dark.svg")}
-      /> */}
+      <X />
     </button>
   );
 };

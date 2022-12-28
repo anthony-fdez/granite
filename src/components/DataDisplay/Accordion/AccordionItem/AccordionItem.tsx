@@ -3,8 +3,9 @@
 import React from "react";
 // @ts-ignore
 import { motion } from "framer-motion/dist/framer-motion";
+import { ChevronDown } from "react-feather";
 import Flex from "../../../Layout/Flex";
-import { accordionAnimation, getAccordionItemStyles } from "./AccordionItem.styles";
+import { accordionAnimation, chevronAnimation, getAccordionItemStyles } from "./AccordionItem.styles";
 import { IAccordionItemProps } from "./AccordionItem.types";
 
 import useStyles from "../../../../styles/useStyles";
@@ -53,13 +54,13 @@ const AccordionItem = ({
           justifyContent={arrowPosition === "left" ? "flex-end" : "space-between"}
         >
           <span css={arrowPosition === "left" && { marginLeft: 15 }}>{label}</span>
-          {/* <motion.img
+          <motion.div
+            transition={{ type: "spring", damping: 20, stiffness: 200 }}
             variants={chevronAnimation}
             animate={label === activeElement ? "open" : "closed"}
-            className="icon"
-            // eslint-disable-next-line import/no-dynamic-require, global-require
-            src={require(`./assets/chevron-${styles.theme}.svg`)}
-          /> */}
+          >
+            <ChevronDown className="icon" />
+          </motion.div>
         </Flex>
       </div>
 

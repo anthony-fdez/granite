@@ -28,7 +28,7 @@ export const accordionAnimation: Variants = {
 
 export const chevronAnimation: Variants = {
   open: {
-    transform: "rotate(180deg)",
+    transform: "rotateX(180deg)",
   },
 };
 
@@ -40,6 +40,9 @@ export const getAccordionItemStyles = ({ getColor, variant, isActive, arrowSize 
         ".icon": {
           height: arrowSize,
           width: arrowSize,
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
         },
         ".accordion-item-header": {
           padding: 20,
