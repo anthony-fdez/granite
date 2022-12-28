@@ -1,6 +1,6 @@
 # Granite. A ReactJS component library
 
-Live Demo: https://anthony-fdez.github.io/granite/
+Live Demo/Documentation: https://anthony-fdez.github.io/granite/
 
 ## Getting started
 
