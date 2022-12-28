@@ -7,7 +7,7 @@
     "sb": "start-storybook -p 6006",
     "build-sb": "build-storybook -o docs-build",
     "lint": "npx eslint src && tsc",
-    "test": "jest --coverage",
+    "test": "jest",
     "deploy-storybook": "storybook-to-ghpages"
   },
   "author": "anthony-fdez",

@@ -10,7 +10,7 @@ import getBorderRadius from "../../Theming/ThemeProvider/getValues/getBorderRadi
 import { StateContext } from "../../Theming/ThemeProvider/ThemeProvider";
 import { getModalStyles, modalVariants } from "./Modal.styles";
 import { IModalProps } from "./Modal.types";
-import useDisableScroll from "../../../hooks/useDisableScroll";
+import useDisableScroll from "../../../utils/hooks/useDisableScroll";
 import useStyles from "../../../styles/useStyles";
 import Unmount from "../../Utils/Unmount/Unmount";
 import { MODAL_DEFAULT_PROPS, useModalDefaultProps } from "./Modal.props";

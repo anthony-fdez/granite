@@ -1,7 +1,7 @@
 import { css, SerializedStyles } from "@emotion/react";
 import { IStyles } from "./../../Theming/ThemeProvider/Interfaces/IStyles";
 import { GetColorProps } from "../../../styles/useStyles";
-import { IVariants } from "./../../../types/variants";
+import { IVariants } from "../../../utils/types/variants";
 import { getVariantStyles } from "../../Theming/ThemeProvider/getValues/getVariantStyles";
 import IUseStyles from "../../../styles/interfaces/IUseStyles";
 

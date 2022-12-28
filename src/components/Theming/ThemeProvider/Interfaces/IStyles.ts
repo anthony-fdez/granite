@@ -4,10 +4,10 @@ import { IDividerProps } from "./../../../Extra/Divider/Divider.types";
 import { IAccordionPropsOptional } from "./../../../DataDisplay/Accordion/Accordion.types";
 import { IDialogPropsOptional } from "./../../../Overlays/Dialog/Dialog.types";
 import { IModalPropsOptional } from "./../../../Overlays/Modal/Modal.types";
-import { IVariants } from "./../../../../types/variants";
-import { ITheme } from "./../../../../types/theme";
+import { IVariants } from "../../../../utils/types/variants";
+import { ITheme } from "../../../../utils/types/theme";
 import { IColorShades, IColors } from "./../../../../constants/theme/colors";
-import { ISizes } from "./../../../../types/sizes";
+import { ISizes } from "../../../../utils/types/sizes";
 import { IButtonPropsOptional } from "../../../Buttons/Button/Button.types";
 import { ITextInputProps } from "../../../Inputs/TextInput/TextInput.types";
 
