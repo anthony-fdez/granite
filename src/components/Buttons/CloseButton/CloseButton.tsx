@@ -1,14 +1,15 @@
 /** @jsxImportSource @emotion/react */
 import { css, SerializedStyles } from "@emotion/react";
 
-import React, { useContext } from "react";
+import React from "react";
+import { X } from "react-feather";
 import useStyles from "../../../styles/useStyles";
-import { StateContext } from "../../Theming/ThemeProvider/ThemeProvider";
 import { ICloseButtonProps } from "./CloseButton.types";
 import { useCloseButtonDefaultProps } from "./CloseButton.props";
+import useAppContext from "../../../utils/hooks/useAppContext";
 
 const CloseButton = (props: ICloseButtonProps): JSX.Element => {
-  const { styles } = useContext(StateContext);
+  const { styles } = useAppContext();
   const { getColor } = useStyles({ styles });
 
   const { size } = useCloseButtonDefaultProps({ styles, props });
@@ -17,7 +18,7 @@ const CloseButton = (props: ICloseButtonProps): JSX.Element => {
     {
       color: getColor({}).font,
       transition: "100ms",
-      backgroundColor: getColor({}).background,
+      backgroundColor: "transparent",
       border: 0,
       padding: 5,
       outline: 0,
@@ -40,13 +41,8 @@ const CloseButton = (props: ICloseButtonProps): JSX.Element => {
   ]);
 
   return (
-    <button type="button" {...props} css={[common, size && { height: size, width: size }]}>
-      {/* <img
-        alt="Close button"
-        className="close-button-icon"
-        // eslint-disable-next-line global-require
-        src={styles.theme === "light" ? require("./assets/close-light.svg") : require("./assets/close-dark.svg")}
-      /> */}
+    <button aria-label="Close" type="button" {...props} css={[common, size && { height: size, width: size }]}>
+      <X data-testid="CloseButton/close-icon" />
     </button>
   );
 };

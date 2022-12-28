@@ -5,7 +5,7 @@ export const ACCORDION_DEFAULT_PROPS: IAccordionPropsOptional = {
   defaultValue: undefined,
   variant: "subtle",
   arrowPosition: "left",
-  arrowSize: 10,
+  arrowSize: 20,
 };
 
 interface Props {

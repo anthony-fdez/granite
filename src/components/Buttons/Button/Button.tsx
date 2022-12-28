@@ -50,19 +50,25 @@ const Button = (props: IButtonProps): JSX.Element => {
   ]);
 
   return (
-    <button type="button" {...props} disabled={disabled} css={buttonStyles}>
+    <button aria-label={children} aria-disabled="true" type="button" {...props} disabled={disabled} css={buttonStyles}>
       {loading ? (
-        <Spinner variant={spinnerVariant} backgroundAccentColor={getColor({}).fontContrast} size={11} color={color} />
+        <Spinner
+          data-testid="button-spinner"
+          variant={spinnerVariant}
+          backgroundAccentColor={getColor({}).fontContrast}
+          size={11}
+          color={color}
+        />
       ) : (
         <>
           {iconLeft && (
-            <div {...iconLeftProps} className="button-icon-container-left">
+            <div data-testid="button-icon-left" {...iconLeftProps} className="button-icon-container-left">
               {iconLeft}
             </div>
           )}
           {children}
           {iconRight && (
-            <div {...iconRightProps} className="button-icon-container-right">
+            <div data-testid="button-icon-right" {...iconRightProps} className="button-icon-container-right">
               {iconRight}
             </div>
           )}

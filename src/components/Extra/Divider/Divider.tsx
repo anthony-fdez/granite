@@ -1,15 +1,15 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
 
-import React, { useContext } from "react";
+import React from "react";
 import useStyles from "../../../styles/useStyles";
 import Flex from "../../Layout/Flex";
-import { StateContext } from "../../Theming/ThemeProvider/ThemeProvider";
 import { IDividerProps } from "./Divider.types";
 import { useDividerDefaultProps } from "./Divider.props";
+import useAppContext from "../../../utils/hooks/useAppContext";
 
 const Divider = (props: IDividerProps): JSX.Element => {
-  const { styles } = useContext(StateContext);
+  const { styles } = useAppContext();
   const { getColor } = useStyles({ styles });
 
   // eslint-disable-next-line operator-linebreak

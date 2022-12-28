@@ -17,7 +17,7 @@ import { BACKDROP_DEFAULT_PROPS } from "../../Overlays/Backdrop/Backdrop.props";
 import { DEFAULT_COLORS } from "../../../constants/theme/colors";
 
 export const StateContext = createContext<IContext>({
-  styles: DEFAULT_STYLES,
+  styles: null,
   setState: () => {},
 });
 

@@ -2,6 +2,7 @@ import React from "react";
 import { ComponentStory } from "@storybook/react";
 
 import Spinner from "./Spinner";
+import ThemeProvider from "../../Theming/ThemeProvider";
 
 export default {
   title: "Components/Feedback/Spinner",
@@ -9,7 +10,9 @@ export default {
 };
 
 const Template: ComponentStory<typeof Spinner> = (args) => (
-  <Spinner {...args} />
+  <ThemeProvider>
+    <Spinner {...args} />
+  </ThemeProvider>
 );
 
 export const Default = Template.bind({});

@@ -4,13 +4,18 @@ import "@storybook/addon-console";
 
 import Flex from "./Flex";
 import Button from "../../Buttons/Button";
+import ThemeProvider from "../../Theming/ThemeProvider";
 
 export default {
   title: "Components/Layout/Flex",
   component: Flex,
 };
 
-const Template: ComponentStory<typeof Flex> = (args) => <Flex {...args} />;
+const Template: ComponentStory<typeof Flex> = (args) => (
+  <ThemeProvider>
+    <Flex {...args} />
+  </ThemeProvider>
+);
 
 export const Default = Template.bind({});
 

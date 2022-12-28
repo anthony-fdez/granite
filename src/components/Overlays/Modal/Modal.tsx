@@ -2,12 +2,11 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { css } from "@emotion/react";
 
-import React, { useContext } from "react";
+import React from "react";
 // @ts-ignore
 import { motion } from "framer-motion/dist/framer-motion";
 import CloseButton from "../../Buttons/CloseButton";
 import getBorderRadius from "../../Theming/ThemeProvider/getValues/getBorderRadius";
-import { StateContext } from "../../Theming/ThemeProvider/ThemeProvider";
 import { getModalStyles, modalVariants } from "./Modal.styles";
 import { IModalProps } from "./Modal.types";
 import useDisableScroll from "../../../utils/hooks/useDisableScroll";
@@ -16,9 +15,10 @@ import Unmount from "../../Utils/Unmount/Unmount";
 import { MODAL_DEFAULT_PROPS, useModalDefaultProps } from "./Modal.props";
 import Backdrop from "../Backdrop/Backdrop";
 import ClickAwayListener from "../../Utils/ClickAwayListener";
+import useAppContext from "../../../utils/hooks/useAppContext";
 
 const Modal = (props: IModalProps): JSX.Element => {
-  const { styles } = useContext(StateContext);
+  const { styles } = useAppContext();
 
   const {
     children,

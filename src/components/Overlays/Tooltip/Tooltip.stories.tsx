@@ -4,6 +4,7 @@ import "@storybook/addon-console";
 
 import Button from "../../Buttons/Button";
 import Tooltip from "./Tooltip";
+import ThemeProvider from "../../Theming/ThemeProvider";
 
 export default {
   title: "Components/Overlays/Tooltip",
@@ -11,7 +12,9 @@ export default {
 };
 
 const Template: ComponentStory<typeof Tooltip> = (args) => (
-  <Tooltip {...args} />
+  <ThemeProvider>
+    <Tooltip {...args} />
+  </ThemeProvider>
 );
 
 export const Default = Template.bind({});

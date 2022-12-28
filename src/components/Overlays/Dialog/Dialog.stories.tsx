@@ -3,13 +3,18 @@ import { ComponentStory } from "@storybook/react";
 import "@storybook/addon-console";
 
 import Dialog from "./Dialog";
+import ThemeProvider from "../../Theming/ThemeProvider";
 
 export default {
   title: "Components/Overlays/Dialog",
   component: Dialog,
 };
 
-const Template: ComponentStory<typeof Dialog> = (args) => <Dialog {...args} />;
+const Template: ComponentStory<typeof Dialog> = (args) => (
+  <ThemeProvider>
+    <Dialog {...args} />
+  </ThemeProvider>
+);
 
 export const Default = Template.bind({});
 

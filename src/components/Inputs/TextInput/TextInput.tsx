@@ -2,16 +2,16 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { css } from "@emotion/react";
 
-import React, { useContext } from "react";
+import React from "react";
 import { ITextInputProps } from "./TextInput.types";
 import { useTextInputDefaultProps } from "./TextInput.props";
-import { StateContext } from "../../Theming/ThemeProvider/ThemeProvider";
 import getTextInputStyles from "./TextInput.styles";
 import Spinner from "../../Feedback/Spinner";
 import useStyles from "../../../styles/useStyles";
+import useAppContext from "../../../utils/hooks/useAppContext";
 
 const TextInput = (props: ITextInputProps): JSX.Element => {
-  const { styles } = useContext(StateContext);
+  const { styles } = useAppContext();
 
   const {
     autofocus,

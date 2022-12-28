@@ -1,24 +1,22 @@
 /** @jsxImportSource @emotion/react */
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import { css } from "@emotion/react";
+import React from "react";
 
 // @ts-ignore
 import { motion } from "framer-motion/dist/framer-motion";
-
-import React, { useContext } from "react";
 import useStyles from "../../../styles/useStyles";
+import useAppContext from "../../../utils/hooks/useAppContext";
 import CloseButton from "../../Buttons/CloseButton";
 import getBorderRadius from "../../Theming/ThemeProvider/getValues/getBorderRadius";
-import { StateContext } from "../../Theming/ThemeProvider/ThemeProvider";
 import ClickAwayListener from "../../Utils/ClickAwayListener";
+import Unmount from "../../Utils/Unmount/Unmount";
+import Backdrop from "../Backdrop/Backdrop";
+import { DIALOG_DEFAULT_PROPS, useDialogDefaultStyles } from "./Dialog.props";
 import { getDialogStyles, getDialogVariants } from "./Dialog.styles";
 import { IDialogProps } from "./Dialog.types";
-import { DIALOG_DEFAULT_PROPS, useDialogDefaultStyles } from "./Dialog.props";
-import Backdrop from "../Backdrop/Backdrop";
-import Unmount from "../../Utils/Unmount/Unmount";
 
 const Dialog = (props: IDialogProps): JSX.Element => {
-  const { styles } = useContext(StateContext);
+  const { styles } = useAppContext();
 
   const {
     children,

@@ -1,11 +1,11 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
+import useAppContext from "../../../utils/hooks/useAppContext";
+import { useAccordionDefaultProps } from "./Accordion.props";
 import { IAccordionProps } from "./Accordion.types";
 import AccordionItem from "./AccordionItem/AccordionItem";
-import { StateContext } from "../../Theming/ThemeProvider/ThemeProvider";
-import { useAccordionDefaultProps } from "./Accordion.props";
 
 const Accordion = (props: IAccordionProps): JSX.Element => {
-  const { styles } = useContext(StateContext);
+  const { styles } = useAppContext();
 
   const { children, defaultValue, value, variant, arrowPosition, arrowSize } = useAccordionDefaultProps({
     styles,
