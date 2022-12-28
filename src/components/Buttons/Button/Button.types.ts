@@ -1,8 +1,8 @@
 import React from "react";
 import { INumberRange } from "./../../Theming/ThemeProvider/Interfaces/IStyles";
 import { IColors } from "./../../../constants/theme/colors";
-import { ISizes } from "./../../../types/sizes";
-import { IVariants } from "./../../../types/variants";
+import { ISizes } from "../../../utils/types/sizes";
+import { IVariants } from "../../../utils/types/variants";
 import { SpinnersType } from "../../Feedback/Spinner/Spinner.types";
 
 export interface IButtonPropsOptional extends React.ButtonHTMLAttributes<HTMLButtonElement> {

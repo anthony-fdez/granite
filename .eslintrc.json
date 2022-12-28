@@ -10,7 +10,8 @@
     "plugin:import/typescript",
     "airbnb",
     "airbnb/hooks",
-    "airbnb-typescript"
+    "airbnb-typescript",
+    "plugin:jest/recommended"
   ],
   "overrides": [],
   "parser": "@typescript-eslint/parser",
@@ -20,7 +21,7 @@
     "sourceType": "module",
     "project": "./tsconfig.json"
   },
-  "plugins": ["react", "@typescript-eslint", "import"],
+  "plugins": ["react", "@typescript-eslint", "import", "jest"],
   "rules": {
     "react/no-unknown-property": "off",
     "@typescript-eslint/ban-ts-comment": "off",
@@ -48,7 +49,7 @@
     "import/no-extraneous-dependencies": [
       "error",
       {
-        "devDependencies": ["**/*.stories.tsx"]
+        "devDependencies": ["**/*.stories.tsx", "**/*.test.tsx"]
       }
     ]
   }

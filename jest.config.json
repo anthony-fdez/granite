@@ -1,0 +1,8 @@
+{
+  "collectCoverage": false,
+  "collectCoverageFrom": ["src/**/*.{js,jsx,ts,tsx}"],
+  "coverageDirectory": "coverage",
+  "coveragePathIgnorePatterns": [".stories.tsx"],
+  "testEnvironment": "jsdom",
+  "setupFilesAfterEnv": ["<rootDir>/jest.setup.js"]
+}
