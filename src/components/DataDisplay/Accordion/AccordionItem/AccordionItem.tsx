@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import React from "react";
-
+// @ts-ignore
 import { motion } from "framer-motion/dist/framer-motion";
 import Flex from "../../../Layout/Flex";
 import { accordionAnimation, getAccordionItemStyles } from "./AccordionItem.styles";
