@@ -3,7 +3,7 @@ import { render, screen } from "@testing-library/react";
 import Button from "./Button";
 import { IButtonProps } from "./Button.types";
 import ThemeProvider from "../../Theming/ThemeProvider";
-import errors from "../../../constants/errors/errors";
+import itThrowsContextError from "../../../utils/tests/helpers/itThrowsContextError";
 
 const W = ThemeProvider;
 
@@ -12,6 +12,8 @@ const defaultProps: IButtonProps = {
 };
 
 describe("Button", () => {
+  itThrowsContextError(Button, defaultProps);
+
   it("renders a string as children", () => {
     render(
       <W>
@@ -20,12 +22,6 @@ describe("Button", () => {
     );
 
     expect(screen.getByText(defaultProps.children)).toBeInTheDocument();
-  });
-
-  it("throws error if outside context provider", () => {
-    jest.spyOn(console, "error").mockImplementation(() => {}); // Silence errors, they are expected
-
-    expect(() => render(<Button {...defaultProps} />)).toThrow(errors.no_context);
   });
 
   it("renders icon left", () => {

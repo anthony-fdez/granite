@@ -2,12 +2,14 @@ import React from "react";
 import { render, screen } from "@testing-library/react";
 
 import ThemeProvider from "../../Theming/ThemeProvider";
-import errors from "../../../constants/errors/errors";
 import CloseButton from "./CloseButton";
+import itThrowsContextError from "../../../utils/tests/helpers/itThrowsContextError";
 
 const W = ThemeProvider;
 
-describe("Button", () => {
+describe("CloseButton", () => {
+  itThrowsContextError(CloseButton);
+
   it("renders close icon", () => {
     render(
       <W>
@@ -16,11 +18,5 @@ describe("Button", () => {
     );
 
     expect(screen.getByTestId("CloseButton/close-icon")).toBeInTheDocument();
-  });
-
-  it("throws error if outside context provider", () => {
-    jest.spyOn(console, "error").mockImplementation(() => {}); // Silence errors, they are expected
-
-    expect(() => render(<CloseButton />)).toThrow(errors.no_context);
   });
 });
