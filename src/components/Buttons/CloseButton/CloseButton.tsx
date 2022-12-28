@@ -1,14 +1,14 @@
 /** @jsxImportSource @emotion/react */
 import { css, SerializedStyles } from "@emotion/react";
 
-import React, { useContext } from "react";
+import React from "react";
 import useStyles from "../../../styles/useStyles";
-import { StateContext } from "../../Theming/ThemeProvider/ThemeProvider";
 import { ICloseButtonProps } from "./CloseButton.types";
 import { useCloseButtonDefaultProps } from "./CloseButton.props";
+import useAppContext from "../../../utils/hooks/useAppContext";
 
 const CloseButton = (props: ICloseButtonProps): JSX.Element => {
-  const { styles } = useContext(StateContext);
+  const { styles } = useAppContext();
   const { getColor } = useStyles({ styles });
 
   const { size } = useCloseButtonDefaultProps({ styles, props });

@@ -1,7 +1,6 @@
-import { useContext } from "react";
-import { StateContext } from "../Theming/ThemeProvider/ThemeProvider";
 import { IStyles } from "../Theming/ThemeProvider/Interfaces/IStyles";
 import { IColorShades } from "../../constants/theme/colors";
+import useAppContext from "../../utils/hooks/useAppContext";
 
 interface IReturnInterface {
   styles?: IStyles;
@@ -10,13 +9,7 @@ interface IReturnInterface {
 }
 
 const useTheme = (): IReturnInterface => {
-  const { styles } = useContext(StateContext);
-
-  if (!styles) {
-    return {
-      error: "You can only call useTheme hook inside a ThemeProvider",
-    };
-  }
+  const { styles } = useAppContext();
 
   return {
     styles,

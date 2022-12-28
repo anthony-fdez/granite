@@ -1,15 +1,13 @@
 /** @jsxImportSource @emotion/react */
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import { css } from "@emotion/react";
-import React, { useContext } from "react";
-import { StateContext } from "../../Theming/ThemeProvider/ThemeProvider";
+import React from "react";
 import getSpinnerStyles from "./Spinner.styles";
-
-import { ISpinnerProps } from "./Spinner.types";
 import useStyles from "../../../styles/useStyles";
+import useAppContext from "../../../utils/hooks/useAppContext";
+import { ISpinnerProps } from "./Spinner.types";
 
 const Spinner = ({ variant, color, size, backgroundAccentColor, ...args }: ISpinnerProps): JSX.Element => {
-  const { styles } = useContext(StateContext);
+  const { styles } = useAppContext();
   const { getColor } = useStyles({ styles, color });
 
   return (

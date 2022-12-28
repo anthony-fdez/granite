@@ -2,13 +2,13 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { css } from "@emotion/react";
 
-import React, { useContext } from "react";
+import React from "react";
 import { IBackdropProps } from "./Backdrop.types";
 import { useBackdropDefaultProps } from "./Backdrop.props";
-import { StateContext } from "../../Theming/ThemeProvider/ThemeProvider";
+import useAppContext from "../../../utils/hooks/useAppContext";
 
 const Backdrop = (props: IBackdropProps): JSX.Element => {
-  const { styles } = useContext(StateContext);
+  const { styles } = useAppContext();
   const { isOpen, backdropBlur, backdropOpacity, zIndex, animated, animationDuration } = useBackdropDefaultProps({
     props,
     styles,

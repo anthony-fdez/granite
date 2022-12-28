@@ -1,7 +1,7 @@
 import React from "react";
-import { render, screen } from "@testing-library/react";
 import Button from "./Button";
 import { IButtonProps } from "./Button.types";
+import { render, screen } from "../../../utils/testing";
 
 const defaultProps: IButtonProps = {
   children: "test-button-title",
