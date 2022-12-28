@@ -41,8 +41,8 @@ const CloseButton = (props: ICloseButtonProps): JSX.Element => {
   ]);
 
   return (
-    <button type="button" {...props} css={[common, size && { height: size, width: size }]}>
-      <X />
+    <button aria-label="Close" type="button" {...props} css={[common, size && { height: size, width: size }]}>
+      <X data-testid="CloseButton/close-icon" />
     </button>
   );
 };
