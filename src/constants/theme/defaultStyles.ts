@@ -1,3 +1,4 @@
+import { DEFAULT_COLORS } from "./colors";
 import { BACKDROP_DEFAULT_PROPS } from "./../../components/Overlays/Backdrop/Backdrop.props";
 import { CLOSE_BUTTON_DEFAULT_PROPS } from "./../../components/Buttons/CloseButton/CloseButton.props";
 import { DIVIDER_DEFAULT_PROPS } from "./../../components/Extra/Divider/Divider.props";
@@ -17,6 +18,7 @@ const DEFAULT_STYLES: IStyles = {
     shade: 6,
     variant: "filled",
   },
+  colors: DEFAULT_COLORS,
   components: {
     Button: BUTTON_DEFAULT_PROPS,
     CloseButton: CLOSE_BUTTON_DEFAULT_PROPS,

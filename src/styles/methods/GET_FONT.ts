@@ -1,10 +1,19 @@
 import { DEFAULT_COLORS } from "../../constants/theme/colors";
+import errorWrapper from "../helpers/errorWrapper";
 import IMethodProps from "../interfaces/IMethodProps";
 
-const GET_FONT = ({ dark }: IMethodProps): string => {
-  if (dark) return DEFAULT_COLORS.gray[0];
+const GET_FONT = (props: IMethodProps): string => {
+  return errorWrapper({
+    props,
+    callback: (p) => {
+      const { dark, styles } = p;
+      const colors = styles.colors ?? DEFAULT_COLORS;
 
-  return DEFAULT_COLORS.dark[9];
+      if (dark) return colors.gray?.[0];
+
+      return colors.dark?.[9];
+    },
+  });
 };
 
 export default GET_FONT;

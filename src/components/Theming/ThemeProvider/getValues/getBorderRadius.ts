@@ -1,4 +1,4 @@
-import { ISizes } from "./../../../../types/sizes";
+import { ISizes } from "../../../../utils/types/sizes";
 
 interface Props {
   size?: ISizes;

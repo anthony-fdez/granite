@@ -33,11 +33,11 @@ function getContrastYIQ(hexcolor: string): string {
   const yiq = (r * 299 + g * 587 + b * 114) / 1000;
 
   // Check contrast
-  return yiq >= 128 ? DEFAULT_COLORS.gray[9] : DEFAULT_COLORS.gray[1];
+  return yiq >= 128 ? DEFAULT_COLORS.gray?.[9] || "black" : DEFAULT_COLORS.gray?.[1] || "white";
 }
 
 const getButtonFontColor = ({ color, shade }: Props): string => {
-  return getContrastYIQ(DEFAULT_COLORS[color ?? "blue"][shade || 6]);
+  return getContrastYIQ(DEFAULT_COLORS[color ?? "blue"]?.[shade || 6] || "");
 };
 
 export default getButtonFontColor;
