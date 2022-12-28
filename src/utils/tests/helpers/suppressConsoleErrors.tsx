@@ -1,5 +1,8 @@
 const suppressConsoleError = () => {
-  return jest.spyOn(console, "error").mockImplementation(() => {}); // Silence errors, they are expected
+  return {
+    suppress: () => jest.spyOn(console, "error").mockImplementation(() => {}),
+    resume: () => jest.spyOn(console, "error").mockRestore(),
+  };
 };
 
 export default suppressConsoleError;
