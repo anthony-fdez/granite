@@ -11,5 +11,6 @@
     "^.+\\.(ts|tsx)?$": "ts-jest",
     "^.+\\.(js|jsx)$": "babel-jest"
   },
-  "modulePaths": ["<rootDir>"]
+  "modulePaths": ["<rootDir>"],
+  "silent": true
 }
