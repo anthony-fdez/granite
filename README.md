@@ -79,7 +79,7 @@ npm i @granite/core @emotion/react framer-motion
 - [ ] Checkbox
 - [ ] Radio
 - [ ] Select (with autocomplete)
-- [ ] Switch
+- [ ] Switch - Style like githubs switch
 - [ ] Text area
 - [ ] Segmented control
 
