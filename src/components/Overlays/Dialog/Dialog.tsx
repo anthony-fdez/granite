@@ -2,8 +2,7 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import React from "react";
 
-// @ts-ignore
-import { motion } from "framer-motion/dist/framer-motion";
+import { motion } from "framer-motion";
 import useStyles from "../../../styles/useStyles";
 import useAppContext from "../../../utils/hooks/useAppContext";
 import CloseButton from "../../Buttons/CloseButton";
