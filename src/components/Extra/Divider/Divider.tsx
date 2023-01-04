@@ -43,7 +43,7 @@ const Divider = (props: IDividerProps): JSX.Element => {
             {label}
           </span>
         )}
-        {labelPosition !== "right" && <div data-testid="Divider/label-left" css={lineStyles} />}
+        {labelPosition !== "right" && <div data-testid="Divider/label-right" css={lineStyles} />}
       </>
     </Flex>
   );
