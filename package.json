@@ -76,6 +76,10 @@
     "typescript-styled-plugin": "^0.18.2"
   },
   "dependencies": {
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
+    "framer-motion": ">=7.6.12",
+    "@emotion/react": ">=11.9.0",
     "react-feather": "^2.0.10"
   },
   "peerDependencies": {
