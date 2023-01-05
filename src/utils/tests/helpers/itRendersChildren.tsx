@@ -1,7 +1,7 @@
 import React from "react";
 import { render } from "../test-utils";
 
-const itRendersChildren = (Component: React.ElementType, defaultProps: any): void => {
+const itRendersChildren = (Component: React.ElementType, defaultProps?: any): void => {
   it("renders children", () => {
     const { queryAllByText } = render(
       <Component {...defaultProps}>
