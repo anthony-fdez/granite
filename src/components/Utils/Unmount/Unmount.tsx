@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from "react";
-// @ts-ignore
+import IUnmountProps from "./Unmount.types";
+import useAppContext from "../../../utils/hooks/useAppContext";
 
-interface Props {
-  children: JSX.Element;
-  isOpen: boolean;
-  animated: boolean;
-  animationDuration: number;
-  shouldUnmount: boolean;
-}
-
-const Unmount = ({ children, isOpen, animated, animationDuration, shouldUnmount }: Props): JSX.Element | null => {
+const Unmount = ({
+  children,
+  isOpen,
+  animated,
+  animationDuration,
+  shouldUnmount,
+}: IUnmountProps): JSX.Element | null => {
+  useAppContext();
   const [IS_OPEN, SET_IS_OPEN] = useState(isOpen);
 
   useEffect(() => {
