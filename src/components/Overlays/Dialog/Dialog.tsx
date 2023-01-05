@@ -48,9 +48,15 @@ const Dialog = (props: IDialogProps): JSX.Element => {
   return (
     <Unmount shouldUnmount={unmount} animated={animated} animationDuration={animationDuration} isOpen={isOpen}>
       <>
-        {backdrop && <Backdrop {...{ isOpen, backdropBlur, backdropOpacity, zIndex, animated, animationDuration }} />}
+        {backdrop && (
+          <Backdrop
+            {...{ isOpen, backdropBlur, backdropOpacity, zIndex, animated, animationDuration }}
+            data-testid="Dialog/backdrop"
+          />
+        )}
         <ClickAwayListener onClickOutside={() => closeOnClickOutside && onClose()}>
           <motion.div
+            data-testid="Dialog"
             variants={getDialogVariants({ animation })}
             initial="closed"
             animate={isOpen ? "open" : "closed"}
@@ -78,8 +84,8 @@ const Dialog = (props: IDialogProps): JSX.Element => {
             ]}
           >
             <div className="dialog-header">
-              <span>{title}</span>
-              {closeButton && <CloseButton onClick={onClose} />}
+              <span data-testid="Dialog/title">{title}</span>
+              {closeButton && <CloseButton data-testid="Dialog/close-button" onClick={onClose} />}
             </div>
             {children}
           </motion.div>

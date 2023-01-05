@@ -16,6 +16,7 @@ const Backdrop = (props: IBackdropProps): JSX.Element => {
 
   return (
     <div
+      {...props}
       role="presentation"
       css={[
         {
