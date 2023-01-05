@@ -4,6 +4,7 @@ import { css } from "@emotion/react";
 
 import React from "react";
 import { IFlexProps } from "./Flex.types";
+import useAppContext from "../../../utils/hooks/useAppContext";
 
 const Flex = ({
   children,
@@ -13,6 +14,8 @@ const Flex = ({
   wrap = "nowrap",
   ...args
 }: IFlexProps): JSX.Element => {
+  useAppContext();
+
   return (
     <div
       {...args}
