@@ -1,3 +1,4 @@
+/* eslint-disable import/no-extraneous-dependencies */
 import { SerializedStyles, css } from "@emotion/react";
 import { GetColorProps } from "./../../../styles/useStyles";
 import IUseStyles from "../../../styles/interfaces/IUseStyles";
