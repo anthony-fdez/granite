@@ -1,6 +1,6 @@
 {
   "name": "@granite/core",
-  "version": "0.0.14",
+  "version": "0.0.15",
   "description": "A react component library",
   "scripts": {
     "build": "rollup -c && tsc",
@@ -75,9 +75,13 @@
     "typescript-plugin-css-modules": "^3.4.0",
     "typescript-styled-plugin": "^0.18.2"
   },
-  "peerDependencies": {
-    "@emotion/react": ">=11.9.0",
+  "dependencies": {
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
     "framer-motion": ">=7.6.12",
+    "@emotion/react": ">=11.9.0"
+  },
+  "peerDependencies": {
     "react": ">=16.8.0",
     "react-dom": ">=16.8.0"
   },
