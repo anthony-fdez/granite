@@ -5,6 +5,8 @@ import { IColors } from "../../constants/theme/colors";
 
 export interface ITextInputProps extends React.HtmlHTMLAttributes<HTMLDivElement> {
   autofocus?: boolean;
+  borderRadius?: ISizes | number;
+  classes?: string;
   color?: IColors;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   defaultValue?: any;
@@ -13,22 +15,20 @@ export interface ITextInputProps extends React.HtmlHTMLAttributes<HTMLDivElement
   errorText?: string;
   fullWidth?: boolean;
   helperText?: string;
+  iconLeft?: JSX.Element;
   inputProps?: React.HTMLAttributes<HTMLInputElement>;
   label?: string;
+  loading?: boolean;
   margin?: number;
-  padding?: number;
-  name?: string;
   multiline?: boolean;
+  name?: string;
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  padding?: number;
   placeholder?: string;
   required?: boolean;
   type?: HTMLInputTypeAttribute;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   value?: any;
   variant?: IVariants;
-  classes?: string;
-  loading?: boolean;
-  iconLeft?: JSX.Element;
-  borderRadius?: ISizes | number;
   width?: number;
 }

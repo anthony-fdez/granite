@@ -3,11 +3,11 @@ import AccordionItem from "./AccordionItem/AccordionItem";
 export type IAccordionVariants = "filled" | "outlined" | "subtle";
 
 export interface IAccordionPropsOptional {
-  defaultValue?: string;
-  variant?: IAccordionVariants;
   arrowPosition?: "left" | "right";
   arrowSize?: number;
+  defaultValue?: string;
   value?: string | null;
+  variant?: IAccordionVariants;
 }
 
 export interface IAccordionProps extends IAccordionPropsOptional {

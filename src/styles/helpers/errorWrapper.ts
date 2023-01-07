@@ -1,8 +1,8 @@
 import IMethodProps from "../interfaces/IMethodProps";
 
 interface Props {
-  props: IMethodProps;
   callback: (props: IMethodProps) => string | undefined;
+  props: IMethodProps;
 }
 
 const errorWrapper = ({ props, callback }: Props): string => {

@@ -91,7 +91,7 @@ export const getDialogVariants = ({ animation }: VariantsProps): Variants => {
 export const getDialogStyles = ({
   getColor,
   position,
-}: Props): { stylesOpen: SerializedStyles; stylesClosed: SerializedStyles } => {
+}: Props): { stylesClosed: SerializedStyles, stylesOpen: SerializedStyles; } => {
   const margin = 20;
 
   const stylesOpen: SerializedStyles = css([

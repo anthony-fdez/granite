@@ -21,7 +21,7 @@
     "sourceType": "module",
     "project": "./tsconfig.json"
   },
-  "plugins": ["react", "@typescript-eslint", "import", "jest"],
+  "plugins": ["react", "@typescript-eslint", "import", "jest", "typescript-sort-keys"],
   "rules": {
     "react/no-unknown-property": "off",
     "@typescript-eslint/ban-ts-comment": "off",
@@ -39,6 +39,8 @@
     "max-lines": ["error", 400],
     "arrow-body-style": "off",
     "react/jsx-props-no-spreading": "off",
+    "typescript-sort-keys/interface": "error",
+    "typescript-sort-keys/string-enum": "error",
     // "sort-keys": ["error", "asc", { "caseSensitive": true, "natural": false, "minKeys": 2 }],
     "react/function-component-definition": [
       2,

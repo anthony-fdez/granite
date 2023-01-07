@@ -6,10 +6,10 @@ import { getVariantStyles } from "../ThemeProvider/getValues/getVariantStyles";
 import IUseStyles from "../../styles/interfaces/IUseStyles";
 
 interface Props {
-  styles: IStyles;
-  variant?: IVariants;
   disabled?: boolean;
   getColor: (props: GetColorProps) => IUseStyles;
+  styles: IStyles;
+  variant?: IVariants;
 }
 
 const getButtonStyles = ({ styles, variant, disabled, getColor }: Props): SerializedStyles => {

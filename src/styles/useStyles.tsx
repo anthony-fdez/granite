@@ -5,9 +5,9 @@ import IUseStyles from "./interfaces/IUseStyles";
 import * as methods from "./methods/index";
 
 interface Props {
-  styles: IStyles;
   color?: IColors;
   shade?: INumberRange;
+  styles: IStyles;
 }
 
 export interface GetColorProps {

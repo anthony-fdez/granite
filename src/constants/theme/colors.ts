@@ -17,21 +17,21 @@ export type IColors =
   | "orange";
 
 export interface IColorShades {
-  dark?: IColorType;
-  gray?: IColorType;
-  red?: IColorType;
-  pink?: IColorType;
-  grape?: IColorType;
-  violet?: IColorType;
-  indigo?: IColorType;
+  [key: string]: IColorType;
   blue?: IColorType;
   cyan?: IColorType;
-  teal?: IColorType;
+  dark?: IColorType;
+  grape?: IColorType;
+  gray?: IColorType;
   green?: IColorType;
+  indigo?: IColorType;
   lime?: IColorType;
-  yellow?: IColorType;
   orange?: IColorType;
-  [key: string]: IColorType;
+  pink?: IColorType;
+  red?: IColorType;
+  teal?: IColorType;
+  violet?: IColorType;
+  yellow?: IColorType;
 }
 
 export const DEFAULT_COLORS: IColorShades = {

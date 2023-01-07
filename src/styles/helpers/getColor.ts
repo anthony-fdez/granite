@@ -3,8 +3,8 @@ import { DEFAULT_COLORS, IColors } from "./../../constants/theme/colors";
 
 interface Props {
   color: IColors;
-  styles: IStyles;
   shade: INumberRange | number;
+  styles: IStyles;
 }
 
 const getColor = ({ color, styles, shade }: Props): string => {
