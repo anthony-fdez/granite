@@ -1,13 +1,13 @@
 import { DEFAULT_COLORS } from "./colors";
-import { BACKDROP_DEFAULT_PROPS } from "./../../components/Overlays/Backdrop/Backdrop.props";
-import { CLOSE_BUTTON_DEFAULT_PROPS } from "./../../components/Buttons/CloseButton/CloseButton.props";
-import { DIVIDER_DEFAULT_PROPS } from "./../../components/Extra/Divider/Divider.props";
-import { BUTTON_DEFAULT_PROPS } from "../../components/Buttons/Button/Button.props";
-import { IStyles } from "../../components/Theming/ThemeProvider/Interfaces/IStyles";
-import { MODAL_DEFAULT_PROPS } from "../../components/Overlays/Modal/Modal.props";
-import { DIALOG_DEFAULT_PROPS } from "../../components/Overlays/Dialog/Dialog.props";
-import { TEXT_INPUT_DEFAULT_PROPS } from "../../components/Inputs/TextInput/TextInput.props";
-import { ACCORDION_DEFAULT_PROPS } from "../../components/DataDisplay/Accordion/Accordion.props";
+import { BACKDROP_DEFAULT_PROPS } from "../../components/Backdrop/Backdrop.props";
+import { CLOSE_BUTTON_DEFAULT_PROPS } from "../../components/CloseButton/CloseButton.props";
+import { DIVIDER_DEFAULT_PROPS } from "../../components/Divider/Divider.props";
+import { BUTTON_DEFAULT_PROPS } from "../../components/Button/Button.props";
+import { IStyles } from "../../components/ThemeProvider/Interfaces/IStyles";
+import { MODAL_DEFAULT_PROPS } from "../../components/Modal/Modal.props";
+import { DIALOG_DEFAULT_PROPS } from "../../components/Dialog/Dialog.props";
+import { TEXT_INPUT_DEFAULT_PROPS } from "../../components/TextInput/TextInput.props";
+import { ACCORDION_DEFAULT_PROPS } from "../../components/Accordion/Accordion.props";
 
 const DEFAULT_STYLES: IStyles = {
   theme: "light",

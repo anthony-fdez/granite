@@ -1,5 +1,5 @@
 import { IVariants } from "../../utils/types/variants";
-import { IStyles, INumberRange } from "./../../components/Theming/ThemeProvider/Interfaces/IStyles";
+import { IStyles, INumberRange } from "../../components/ThemeProvider/Interfaces/IStyles";
 import { IColors } from "../../constants/theme/colors";
 
 interface IMethodProps {

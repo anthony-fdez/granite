@@ -1,4 +1,4 @@
-import { IStyles } from "../Theming/ThemeProvider/Interfaces/IStyles";
+import { IStyles } from "../ThemeProvider/Interfaces/IStyles";
 import { IColorShades } from "../../constants/theme/colors";
 import useAppContext from "../../utils/hooks/useAppContext";
 
