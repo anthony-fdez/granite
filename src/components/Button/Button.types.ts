@@ -6,23 +6,23 @@ import { IVariants } from "../../utils/types/variants";
 import { SpinnersType } from "../Spinner/Spinner.types";
 
 export interface IButtonPropsOptional extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: IVariants;
-  color?: IColors;
-  padding?: number;
-  margin?: number;
-  borderRadius?: ISizes;
-  loading?: boolean;
-  fontColor?: "white" | "black" | string;
-  backgroundColor?: string;
   align?: "start" | "center" | "end";
-  spinnerVariant?: SpinnersType;
+  backgroundColor?: string;
+  borderRadius?: ISizes;
+  color?: IColors;
   disabled?: boolean;
+  fontColor?: "white" | "black" | string;
   fullWidth?: boolean;
   iconLeft?: JSX.Element;
-  iconRight?: JSX.Element;
   iconLeftProps?: React.HTMLAttributes<HTMLDivElement>;
+  iconRight?: JSX.Element;
   iconRightProps?: React.HTMLAttributes<HTMLDivElement>;
+  loading?: boolean;
+  margin?: number;
+  padding?: number;
   shade?: INumberRange;
+  spinnerVariant?: SpinnersType;
+  variant?: IVariants;
 }
 
 export interface IButtonProps extends IButtonPropsOptional {

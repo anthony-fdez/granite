@@ -6,17 +6,17 @@ import IUseStyles from "../../styles/interfaces/IUseStyles";
 import { IStyles } from "../ThemeProvider/Interfaces/IStyles";
 
 interface Props {
-  variant?: IVariants;
   disabled?: boolean;
   error?: boolean;
-  margin?: number;
   fullWidth?: boolean;
-  padding?: number;
-  width?: number;
+  getColor: (props: GetColorProps) => IUseStyles;
   iconLeft?: JSX.Element;
   loading?: boolean;
-  getColor: (props: GetColorProps) => IUseStyles;
+  margin?: number;
+  padding?: number;
   styles: IStyles;
+  variant?: IVariants;
+  width?: number;
 }
 
 const getTextInputStyles = ({
@@ -51,10 +51,10 @@ const getTextInputStyles = ({
     backgroundColor: getColor({}).backgroundAccent,
 
     "&:focus": {
+      borderBottomColor: getColor({}).color,
+      borderBottomStyle: "solid",
       borderBottomWidth: 3,
       marginBottom: -3,
-      borderBottomStyle: "solid",
-      borderBottomColor: getColor({}).color,
     },
   });
 

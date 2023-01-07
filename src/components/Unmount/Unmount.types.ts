@@ -1,8 +1,8 @@
 interface IUnmountProps {
-  children: JSX.Element;
-  isOpen: boolean;
   animated: boolean;
   animationDuration: number;
+  children: JSX.Element;
+  isOpen: boolean;
   shouldUnmount: boolean;
 }
 

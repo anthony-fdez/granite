@@ -6,7 +6,7 @@ import Dialog from "./Dialog";
 import ThemeProvider from "../ThemeProvider";
 
 export default {
-  title: "Components/Overlays/Dialog",
+  title: "Components/Dialog",
   component: Dialog,
 };
 

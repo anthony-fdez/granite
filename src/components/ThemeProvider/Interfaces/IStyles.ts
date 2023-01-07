@@ -10,32 +10,34 @@ import { IColorShades, IColors } from "../../../constants/theme/colors";
 import { ISizes } from "../../../utils/types/sizes";
 import { IButtonPropsOptional } from "../../Button/Button.types";
 import { ITextInputProps } from "../../TextInput/TextInput.types";
+import { ILoadingOverlayPropsOptional } from "../../LoadingOverlay/LoadingOverlay.types";
 
 export type INumberRange = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9;
 
 export interface IStyles {
-  theme?: ITheme;
+  colors?: IColorShades;
+  components?: {
+    Accordion?: IAccordionPropsOptional;
+    Backdrop?: IBackdropProps;
+    Button?: IButtonPropsOptional;
+    CloseButton?: ICloseButtonProps;
+    Dialog?: IDialogPropsOptional;
+    Divider?: IDividerProps;
+    LoadingOverlay?: ILoadingOverlayPropsOptional;
+    Modal?: IModalPropsOptional;
+    TextInput?: ITextInputProps;
+  };
   global?: {
-    color?: IColors;
-    borderRadius?: ISizes;
     animated?: boolean;
+    borderRadius?: ISizes;
+    color?: IColors;
     shade?: INumberRange;
     variant?: IVariants;
   };
-  colors?: IColorShades;
-  components?: {
-    Button?: IButtonPropsOptional;
-    CloseButton?: ICloseButtonProps;
-    Modal?: IModalPropsOptional;
-    Dialog?: IDialogPropsOptional;
-    Divider?: IDividerProps;
-    TextInput?: ITextInputProps;
-    Accordion?: IAccordionPropsOptional;
-    Backdrop?: IBackdropProps;
-  };
+  theme?: ITheme;
 }
 
 export interface IContext {
-  styles: IStyles | null;
   setState: (state: IStyles) => void;
+  styles: IStyles | null;
 }

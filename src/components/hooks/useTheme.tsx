@@ -3,9 +3,9 @@ import { IColorShades } from "../../constants/theme/colors";
 import useAppContext from "../../utils/hooks/useAppContext";
 
 interface IReturnInterface {
-  styles?: IStyles;
-  error?: string;
   colors?: IColorShades;
+  error?: string;
+  styles?: IStyles;
 }
 
 const useTheme = (): IReturnInterface => {

@@ -3,11 +3,11 @@ import { IStyles, INumberRange } from "../../components/ThemeProvider/Interfaces
 import { IColors } from "../../constants/theme/colors";
 
 interface IMethodProps {
-  styles: IStyles;
   color: IColors;
-  shade: INumberRange;
-  variant: IVariants;
   dark: boolean;
+  shade: INumberRange;
+  styles: IStyles;
+  variant: IVariants;
 }
 
 export default IMethodProps;

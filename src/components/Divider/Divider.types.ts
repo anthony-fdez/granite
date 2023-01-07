@@ -1,9 +1,9 @@
 export interface IDividerProps extends React.HTMLAttributes<HTMLDivElement> {
-  label?: string;
-  labelPosition?: "left" | "center" | "right";
-  width?: number;
   dividerVariant?: "dashed" | "solid" | "dotted";
+  label?: string;
   labelPadding?: number;
-  marginTop?: number;
+  labelPosition?: "left" | "center" | "right";
   marginBottom?: number;
+  marginTop?: number;
+  width?: number;
 }

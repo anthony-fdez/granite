@@ -5,7 +5,7 @@ import Spinner from "./Spinner";
 import ThemeProvider from "../ThemeProvider";
 
 export default {
-  title: "Components/Feedback/Spinner",
+  title: "Components/Spinner",
   component: Spinner,
 };
 

@@ -7,10 +7,10 @@ import { IAccordionVariants } from "../Accordion.types";
 import IUseStyles from "../../../styles/interfaces/IUseStyles";
 
 interface Props {
-  getColor: (props: GetColorProps) => IUseStyles;
-  variant: IAccordionVariants;
-  isActive: boolean;
   arrowSize: number;
+  getColor: (props: GetColorProps) => IUseStyles;
+  isActive: boolean;
+  variant: IAccordionVariants;
 }
 
 export const accordionAnimation: Variants = {

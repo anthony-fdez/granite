@@ -3,8 +3,8 @@ import { IColors } from "../../constants/theme/colors";
 export type SpinnersType = "circular" | "dots";
 
 export interface ISpinnerProps {
-  variant?: SpinnersType;
+  backgroundAccentColor?: string;
   color?: IColors;
   size?: number;
-  backgroundAccentColor?: string;
+  variant?: SpinnersType;
 }

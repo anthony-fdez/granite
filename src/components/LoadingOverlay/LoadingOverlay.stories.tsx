@@ -7,7 +7,7 @@ import Button from "../Button";
 import ThemeProvider from "../ThemeProvider";
 
 export default {
-  title: "Components/Overlays/LoadingOverlay",
+  title: "Components/LoadingOverlay",
   component: LoadingOverlay,
 };
 
@@ -18,7 +18,7 @@ export const Examples: ComponentStory<typeof LoadingOverlay> = () => {
   return (
     <ThemeProvider>
       <>
-        <LoadingOverlay zIndex={10} fullScreen show={fullScreenLoading} />
+        <LoadingOverlay fullScreen show={fullScreenLoading} zIndex={10} />
         <div>
           <Center>
             <div

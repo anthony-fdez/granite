@@ -1,13 +1,13 @@
 interface IUseStyles {
+  background: string;
+  backgroundAccent: string;
+  backgroundHover: string;
+  border: string;
   color: string;
   colorHover: string;
   font: string;
-  fontDimmed: string;
   fontContrast: string;
-  border: string;
-  background: string;
-  backgroundHover: string;
-  backgroundAccent: string;
+  fontDimmed: string;
 }
 
 export default IUseStyles;

@@ -6,7 +6,7 @@ interface Props {
 
 const getLoadingOverlayStyles = ({
   fullScreen,
-}: Props): { stylesOpen: SerializedStyles; stylesClosed: SerializedStyles } => {
+}: Props): { stylesClosed: SerializedStyles; stylesOpen: SerializedStyles } => {
   const margin = 20;
 
   const stylesOpen: SerializedStyles = css([

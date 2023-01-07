@@ -5,7 +5,7 @@ import Accordion from "./Accordion";
 import ThemeProvider from "../ThemeProvider";
 
 export default {
-  title: "Components/DataDisplay/Accordion",
+  title: "Components/Accordion",
   component: Accordion,
 };
 

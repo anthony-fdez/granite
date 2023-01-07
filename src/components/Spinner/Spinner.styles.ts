@@ -4,10 +4,10 @@ import { SpinnersType } from "./Spinner.types";
 import IUseStyles from "../../styles/interfaces/IUseStyles";
 
 interface Props {
-  variant?: SpinnersType;
-  size?: number;
   backgroundAccentColor?: string;
   getColor: (props: GetColorProps) => IUseStyles;
+  size?: number;
+  variant?: SpinnersType;
 }
 
 const getSpinnerStyles = ({ variant, size, backgroundAccentColor, getColor }: Props): SerializedStyles => {

@@ -16,10 +16,11 @@ import { CLOSE_BUTTON_DEFAULT_PROPS } from "../CloseButton/CloseButton.props";
 import useStyles from "../../styles/useStyles";
 import { BACKDROP_DEFAULT_PROPS } from "../Backdrop/Backdrop.props";
 import { DEFAULT_COLORS } from "../../constants/theme/colors";
+import { LOADING_OVERLAY_DEFAULT_PROPS } from "../LoadingOverlay/LoadingOverlay.props";
 
 export const StateContext = createContext<IContext>({
-  styles: null,
   setState: () => {},
+  styles: null,
 });
 
 const ThemeProvider = ({
@@ -64,6 +65,10 @@ const ThemeProvider = ({
       Backdrop: {
         ...BACKDROP_DEFAULT_PROPS,
         ...defaultStyles?.components?.Backdrop,
+      },
+      LoadingOverlay: {
+        ...LOADING_OVERLAY_DEFAULT_PROPS,
+        ...defaultStyles?.components?.LoadingOverlay,
       },
     },
   };

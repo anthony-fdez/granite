@@ -5,9 +5,9 @@ import IUseStyles from "./interfaces/IUseStyles";
 import * as methods from "./methods/index";
 
 interface Props {
-  styles: IStyles;
   color?: IColors;
   shade?: INumberRange;
+  styles: IStyles;
 }
 
 export interface GetColorProps {
@@ -29,18 +29,24 @@ const useStyles = ({ styles, color, shade }: Props): { getColor: (props: GetColo
       const shadeOverride = props.shade || SHADE;
       const variantOverride = props.variant || styles.global?.variant || "filled";
 
-      const methodProps = { styles, color: colorOverride, shade: shadeOverride, variant: variantOverride, dark: DARK };
+      const methodProps = {
+        color: colorOverride,
+        dark: DARK,
+        shade: shadeOverride,
+        styles,
+        variant: variantOverride,
+      };
 
       return {
+        background: methods.GET_BACKGROUND({ ...methodProps }),
+        backgroundAccent: methods.GET_BACKGROUND_ACCENT({ ...methodProps }),
+        backgroundHover: methods.GET_BACKGROUND_HOVER({ ...methodProps }),
+        border: methods.GET_BORDER({ ...methodProps }),
         color: methods.GET_COLOR({ ...methodProps }),
         colorHover: methods.GET_COLOR_HOVER({ ...methodProps }),
         font: methods.GET_FONT({ ...methodProps }),
-        fontDimmed: methods.GET_FONT_DIMMED({ ...methodProps }),
         fontContrast: methods.GET_CONTRAST_FONT({ ...methodProps }),
-        border: methods.GET_BORDER({ ...methodProps }),
-        background: methods.GET_BACKGROUND({ ...methodProps }),
-        backgroundHover: methods.GET_BACKGROUND_HOVER({ ...methodProps }),
-        backgroundAccent: methods.GET_BACKGROUND_ACCENT({ ...methodProps }),
+        fontDimmed: methods.GET_FONT_DIMMED({ ...methodProps }),
       };
     },
   };

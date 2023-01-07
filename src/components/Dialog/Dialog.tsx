@@ -10,7 +10,7 @@ import getBorderRadius from "../ThemeProvider/getValues/getBorderRadius";
 import ClickAwayListener from "../ClickAwayListener";
 import Unmount from "../Unmount/Unmount";
 import Backdrop from "../Backdrop/Backdrop";
-import { DIALOG_DEFAULT_PROPS, useDialogDefaultStyles } from "./Dialog.props";
+import { DIALOG_DEFAULT_PROPS, useDialogDefaultProps } from "./Dialog.props";
 import { getDialogStyles, getDialogVariants } from "./Dialog.styles";
 import { IDialogProps } from "./Dialog.types";
 
@@ -40,13 +40,13 @@ const Dialog = (props: IDialogProps): JSX.Element => {
     animated = DIALOG_DEFAULT_PROPS.animated || true,
     animationDuration = DIALOG_DEFAULT_PROPS.animationDuration || 500,
     unmount = DIALOG_DEFAULT_PROPS.unmount || true,
-  } = useDialogDefaultStyles({ styles, props });
+  } = useDialogDefaultProps({ styles, props });
 
   const { getColor } = useStyles({ styles });
   const { stylesClosed, stylesOpen } = getDialogStyles({ getColor, position });
 
   return (
-    <Unmount shouldUnmount={unmount} animated={animated} animationDuration={animationDuration} isOpen={isOpen}>
+    <Unmount animated={animated} animationDuration={animationDuration} isOpen={isOpen} shouldUnmount={unmount}>
       <>
         {backdrop && (
           <Backdrop
@@ -56,14 +56,7 @@ const Dialog = (props: IDialogProps): JSX.Element => {
         )}
         <ClickAwayListener onClickOutside={() => closeOnClickOutside && onClose()}>
           <motion.div
-            data-testid="Dialog"
-            variants={getDialogVariants({ animation })}
-            initial="closed"
             animate={isOpen ? "open" : "closed"}
-            transition={{
-              duration: animated ? animationDuration * 0.001 : 0,
-              type: "spring",
-            }}
             css={[
               isOpen ? stylesOpen : stylesClosed,
               width && { width },
@@ -82,6 +75,13 @@ const Dialog = (props: IDialogProps): JSX.Element => {
               },
               { maxHeight: `calc(100vh - ${(padding || 0) * 2}px - 200px)` },
             ]}
+            data-testid="Dialog"
+            initial="closed"
+            transition={{
+              duration: animated ? animationDuration * 0.001 : 0,
+              type: "spring",
+            }}
+            variants={getDialogVariants({ animation })}
           >
             <div className="dialog-header">
               <span data-testid="Dialog/title">{title}</span>

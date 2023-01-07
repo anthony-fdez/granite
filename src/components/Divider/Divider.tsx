@@ -28,10 +28,9 @@ const Divider = (props: IDividerProps): JSX.Element => {
   return (
     <Flex {...args} css={{ marginTop, marginBottom }}>
       <>
-        {labelPosition !== "left" && <div data-testid="Divider/label-left" css={lineStyles} />}
+        {labelPosition !== "left" && <div css={lineStyles} data-testid="Divider/label-left" />}
         {label && (
           <span
-            data-testid="Divider/label-center"
             css={{
               marginLeft: labelPadding,
               marginRight: labelPadding,
@@ -39,11 +38,12 @@ const Divider = (props: IDividerProps): JSX.Element => {
               fontSize: 14,
               color: color ?? getColor({}).font,
             }}
+            data-testid="Divider/label-center"
           >
             {label}
           </span>
         )}
-        {labelPosition !== "right" && <div data-testid="Divider/label-right" css={lineStyles} />}
+        {labelPosition !== "right" && <div css={lineStyles} data-testid="Divider/label-right" />}
       </>
     </Flex>
   );
