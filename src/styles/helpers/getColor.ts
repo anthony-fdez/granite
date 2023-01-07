@@ -1,4 +1,4 @@
-import { IStyles, INumberRange } from "./../../components/Theming/ThemeProvider/Interfaces/IStyles";
+import { IStyles, INumberRange } from "../../components/ThemeProvider/Interfaces/IStyles";
 import { DEFAULT_COLORS, IColors } from "./../../constants/theme/colors";
 
 interface Props {
