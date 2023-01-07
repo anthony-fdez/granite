@@ -46,7 +46,7 @@ const Dialog = (props: IDialogProps): JSX.Element => {
   const { stylesClosed, stylesOpen } = getDialogStyles({ getColor, position });
 
   return (
-    <Unmount shouldUnmount={unmount} animated={animated} animationDuration={animationDuration} isOpen={isOpen}>
+    <Unmount animated={animated} animationDuration={animationDuration} isOpen={isOpen} shouldUnmount={unmount}>
       <>
         {backdrop && (
           <Backdrop
@@ -56,14 +56,7 @@ const Dialog = (props: IDialogProps): JSX.Element => {
         )}
         <ClickAwayListener onClickOutside={() => closeOnClickOutside && onClose()}>
           <motion.div
-            data-testid="Dialog"
-            variants={getDialogVariants({ animation })}
-            initial="closed"
             animate={isOpen ? "open" : "closed"}
-            transition={{
-              duration: animated ? animationDuration * 0.001 : 0,
-              type: "spring",
-            }}
             css={[
               isOpen ? stylesOpen : stylesClosed,
               width && { width },
@@ -82,6 +75,13 @@ const Dialog = (props: IDialogProps): JSX.Element => {
               },
               { maxHeight: `calc(100vh - ${(padding || 0) * 2}px - 200px)` },
             ]}
+            data-testid="Dialog"
+            initial="closed"
+            transition={{
+              duration: animated ? animationDuration * 0.001 : 0,
+              type: "spring",
+            }}
+            variants={getDialogVariants({ animation })}
           >
             <div className="dialog-header">
               <span data-testid="Dialog/title">{title}</span>

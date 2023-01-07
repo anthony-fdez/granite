@@ -19,8 +19,8 @@ import { DEFAULT_COLORS } from "../../constants/theme/colors";
 import { LOADING_OVERLAY_DEFAULT_PROPS } from "../LoadingOverlay/LoadingOverlay.props";
 
 export const StateContext = createContext<IContext>({
-  styles: null,
   setState: () => {},
+  styles: null,
 });
 
 const ThemeProvider = ({

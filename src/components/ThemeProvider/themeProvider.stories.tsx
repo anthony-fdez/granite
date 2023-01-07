@@ -17,8 +17,8 @@ import Dialog from "../Dialog";
 import TextInput from "../TextInput";
 
 export default {
-  title: "Components/ThemeProvider",
   component: ThemeProvider,
+  title: "Components/ThemeProvider",
 };
 
 const Template: ComponentStory<typeof ThemeProvider> = (args) => {
@@ -26,7 +26,13 @@ const Template: ComponentStory<typeof ThemeProvider> = (args) => {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
 
   return (
-    <ThemeProvider css={{ maxWidth: 1000, margin: "auto" }} {...args}>
+    <ThemeProvider
+      css={{
+        margin: "auto",
+        maxWidth: 1000,
+      }}
+      {...args}
+    >
       <h2>Buttons</h2>
       <Flex wrap="wrap">
         <Button>Button</Button>
@@ -41,10 +47,10 @@ const Template: ComponentStory<typeof ThemeProvider> = (args) => {
           Disabled Subtle
         </Button>
       </Flex>
-      <Button onClick={() => setIsModalOpen(true)} fullWidth>
+      <Button fullWidth onClick={() => setIsModalOpen(true)}>
         Full Width (open modal)
       </Button>
-      <Modal zIndex={1000} title="My Modal" isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+      <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} title="My Modal" zIndex={1000}>
         <h2>This is the modal</h2>
         <p>
           Deserunt excepteur aliquip velit consectetur. Ea voluptate enim laboris nulla incididunt reprehenderit sit
@@ -54,7 +60,7 @@ const Template: ComponentStory<typeof ThemeProvider> = (args) => {
           eiusmod aute duis non. Veniam commodo anim consequat exercitation est incididunt commodo est. Occaecat
           deserunt nostrud id mollit commodo laborum. Ut id mollit irure quis.
         </p>
-        <Divider label="This is the footer" labelPosition="left" marginTop={50} marginBottom={10} />
+        <Divider label="This is the footer" labelPosition="left" marginBottom={10} marginTop={50} />
         <Flex justifyContent="flex-end">
           <Button onClick={() => setIsModalOpen(false)} variant="outlined">
             Close
@@ -97,8 +103,8 @@ const Template: ComponentStory<typeof ThemeProvider> = (args) => {
       </Center>
       <Divider />
       <Divider label="Divider with a label" />
-      <Divider labelPosition="left" label="Label to the left" />
-      <Divider labelPosition="right" label="Label to the right" />
+      <Divider label="Label to the left" labelPosition="left" />
+      <Divider label="Label to the right" labelPosition="right" />
       <h2>Accordion</h2>
       <Accordion>
         <Accordion.Item label="Accordion 1">
@@ -148,9 +154,9 @@ const Template: ComponentStory<typeof ThemeProvider> = (args) => {
       </Accordion>
       <Divider label="Inputs" labelPosition="left" />
       <Flex alignItems="flex-end">
-        <TextInput label="Default" helperText="This is the default input" placeholder="Enter some text" />
-        <TextInput error label="Filled Variant" variant="filled" placeholder="Enter some text" />
-        <TextInput label="Subtle Variant" variant="subtle" placeholder="Enter some text" loading />
+        <TextInput helperText="This is the default input" label="Default" placeholder="Enter some text" />
+        <TextInput error label="Filled Variant" placeholder="Enter some text" variant="filled" />
+        <TextInput label="Subtle Variant" loading placeholder="Enter some text" variant="subtle" />
       </Flex>
     </ThemeProvider>
   );
@@ -165,12 +171,12 @@ Dark.args = {
 export const Light = Template.bind({});
 
 Light.args = {
-  theme: "light",
   defaultStyles: {
     global: {
       borderRadius: "sm",
     },
   },
+  theme: "light",
 };
 
 export const Default = Template.bind({});
@@ -190,12 +196,7 @@ PrimaryRed.args = {
 export const CustomStyles = Template.bind({});
 
 CustomStyles.args = {
-  theme: "dark",
   defaultStyles: {
-    global: {
-      color: "grape",
-      borderRadius: "lg",
-    },
     colors: {
       red: [
         "#f3f0ff",
@@ -214,16 +215,21 @@ CustomStyles.args = {
       Button: {
         borderRadius: "lg",
       },
-      Modal: {
-        unmount: false,
-        backdropBlur: 10,
-      },
       Dialog: {
         width: 500,
       },
       Divider: {
         dividerVariant: "dashed",
       },
+      Modal: {
+        backdropBlur: 10,
+        unmount: false,
+      },
+    },
+    global: {
+      borderRadius: "lg",
+      color: "grape",
     },
   },
+  theme: "dark",
 };

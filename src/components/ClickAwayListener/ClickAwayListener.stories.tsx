@@ -32,7 +32,7 @@ export const Example: ComponentStory<typeof ClickAwayListener> = () => {
         What does it really mean to optimize &apos;vertically&apos;? Without robust, web-enabled, 60/60/24/7/365
         implementation supervising, you will lack affiliate-based compliance.
       </p>
-      <ClickAwayListener style={{ width: "100%" }} onClickOutside={() => alert("Check that out")}>
+      <ClickAwayListener onClickOutside={() => alert("Check that out")} style={{ width: "100%" }}>
         <Center>
           <div
             style={{

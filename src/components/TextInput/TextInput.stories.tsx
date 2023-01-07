@@ -29,43 +29,43 @@ export const Form: ComponentStory<typeof TextInput> = () => {
         >
           <Flex alignItems="flex-end">
             <TextInput
-              loading={text1 !== ""}
-              label="Input 1"
-              placeholder="Text 1"
-              helperText="With autofocus"
-              value={text1}
-              onChange={(e): void => setText1(e.target.value)}
-              required
               autofocus
+              helperText="With autofocus"
               iconLeft={<>X</>}
+              label="Input 1"
+              loading={text1 !== ""}
+              onChange={(e): void => setText1(e.target.value)}
+              placeholder="Text 1"
+              required
+              value={text1}
             />
             <TextInput
-              loading
-              label="Input 2"
-              helperText="Default value = 'Banana'"
-              placeholder="Text 2"
               defaultValue="Banana"
+              helperText="Default value = 'Banana'"
+              label="Input 2"
+              loading
               onChange={(e): void => setText2(e.target.value)}
+              placeholder="Text 2"
             />
           </Flex>
           <Flex>
             <TextInput placeholder="Outlined Variant" />
-            <TextInput variant="filled" placeholder="Filled Variant" />
-            <TextInput variant="subtle" placeholder="Subtle Variant" />
+            <TextInput placeholder="Filled Variant" variant="filled" />
+            <TextInput placeholder="Subtle Variant" variant="subtle" />
           </Flex>
           <Flex>
             <TextInput disabled placeholder="Outlined Variant" />
-            <TextInput disabled variant="filled" placeholder="Filled Variant" />
-            <TextInput disabled variant="subtle" placeholder="Subtle Variant" />
+            <TextInput disabled placeholder="Filled Variant" variant="filled" />
+            <TextInput disabled placeholder="Subtle Variant" variant="subtle" />
           </Flex>
           <Flex>
-            <TextInput errorText="With an error text" title="Full Width" fullWidth placeholder="Long..." />
+            <TextInput errorText="With an error text" fullWidth placeholder="Long..." title="Full Width" />
           </Flex>
           <Button type="submit">Submit</Button>
         </form>
         <p>{`Value 1: ${text1}`}</p>
         <p>{`Value 2: ${text2}`}</p>
-        <TextInput placeholder="Controls input 1" onChange={(e): void => setText1(e.target.value)} required />
+        <TextInput onChange={(e): void => setText1(e.target.value)} placeholder="Controls input 1" required />
       </>
     </ThemeProvider>
   );

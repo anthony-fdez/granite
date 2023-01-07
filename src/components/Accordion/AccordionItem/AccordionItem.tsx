@@ -48,16 +48,16 @@ const AccordionItem = ({
         }),
       ]}
     >
-      <div role="presentation" onClick={handleOpenAccordionItem} className="accordion-item-header">
+      <div className="accordion-item-header" onClick={handleOpenAccordionItem} role="presentation">
         <Flex
           flexDirection={arrowPosition === "left" ? "row-reverse" : "row"}
           justifyContent={arrowPosition === "left" ? "flex-end" : "space-between"}
         >
           <span css={arrowPosition === "left" && { marginLeft: 15 }}>{label}</span>
           <motion.div
+            animate={label === activeElement ? "open" : "closed"}
             transition={{ type: "spring", damping: 20, stiffness: 200 }}
             variants={chevronAnimation}
-            animate={label === activeElement ? "open" : "closed"}
           >
             <ChevronDown className="icon" />
           </motion.div>
@@ -65,11 +65,11 @@ const AccordionItem = ({
       </div>
 
       <motion.div
-        initial="closed"
-        className="accordion-item-content"
         animate={label === activeElement ? "open" : "closed"}
-        variants={accordionAnimation}
+        className="accordion-item-content"
+        initial="closed"
         transition={{ stiffness: 400, type: "spring", damping: 50 }}
+        variants={accordionAnimation}
       >
         {children}
       </motion.div>

@@ -17,7 +17,6 @@ const Backdrop = (props: IBackdropProps): JSX.Element => {
   return (
     <div
       {...props}
-      role="presentation"
       css={[
         {
           left: 0,
@@ -32,6 +31,7 @@ const Backdrop = (props: IBackdropProps): JSX.Element => {
         backdropBlur && { backdropFilter: `blur(${backdropBlur}px)` },
         isOpen ? { opacity: 1 } : { opacity: 0, pointerEvents: "none" },
       ]}
+      role="presentation"
     />
   );
 };

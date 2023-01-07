@@ -46,7 +46,7 @@ describe("Divider", () => {
     const user = userEvent.setup();
     const onClose = jest.fn();
 
-    const dialog = render(<Dialog {...defaultProps} onClose={onClose} closeOnClickOutside backdrop />);
+    const dialog = render(<Dialog {...defaultProps} backdrop closeOnClickOutside onClose={onClose} />);
     const backdrop = dialog.getByTestId("Dialog/backdrop");
 
     await user.click(backdrop);
@@ -57,7 +57,7 @@ describe("Divider", () => {
     const user = userEvent.setup();
     const onClose = jest.fn();
 
-    const dialog = render(<Dialog {...defaultProps} onClose={onClose} closeButton />);
+    const dialog = render(<Dialog {...defaultProps} closeButton onClose={onClose} />);
     const closeButton = dialog.getByTestId("Dialog/close-button");
 
     await user.click(closeButton);

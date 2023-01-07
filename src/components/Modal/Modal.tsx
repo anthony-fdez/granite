@@ -50,17 +50,11 @@ const Modal = (props: IModalProps): JSX.Element => {
   useDisableScroll({ isOpen });
 
   return (
-    <Unmount shouldUnmount={unmount} animated={animated} animationDuration={animationDuration} isOpen={isOpen}>
+    <Unmount animated={animated} animationDuration={animationDuration} isOpen={isOpen} shouldUnmount={unmount}>
       <>
         {backdrop && <Backdrop {...{ isOpen, backdropBlur, backdropOpacity, zIndex, animated, animationDuration }} />}
         <ClickAwayListener onClickOutside={() => closeOnClickOutside && onClose()}>
           <motion.div
-            variants={modalVariants}
-            initial="closed"
-            transition={{
-              duration: animated ? animationDuration * 0.001 : 0,
-              type: "spring",
-            }}
             animate={isOpen ? "open" : "closed"}
             css={[
               isOpen ? stylesOpen : stylesClosed,
@@ -81,6 +75,12 @@ const Modal = (props: IModalProps): JSX.Element => {
               },
               { maxHeight: `calc(100vh - ${(padding || 0) * 2}px - 200px)` },
             ]}
+            initial="closed"
+            transition={{
+              duration: animated ? animationDuration * 0.001 : 0,
+              type: "spring",
+            }}
+            variants={modalVariants}
           >
             <div className="modal-header">
               <span>{title}</span>

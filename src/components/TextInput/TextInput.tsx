@@ -77,22 +77,22 @@ const TextInput = (props: ITextInputProps): JSX.Element => {
 
         <input
           {...inputProps}
-          type={type}
-          css={[padding && { padding }, borderRadius && { borderRadius }]}
-          disabled={disabled}
-          placeholder={placeholder}
-          className={`INPUT ${classes}`}
           // eslint-disable-next-line jsx-a11y/no-autofocus
-          autoFocus={autofocus} // Even tho this is not recommended, the user can decide if they ant it or not
-          required={required}
-          name={name}
-          value={value}
+          autoFocus={autofocus}
+          className={`INPUT ${classes}`}
+          css={[padding && { padding }, borderRadius && { borderRadius }]}
           defaultValue={defaultValue}
-          onChange={onChange}
+          disabled={disabled}
+          name={name}
+          onChange={onChange} // Even tho this is not recommended, the user can decide if they ant it or not
+          placeholder={placeholder}
+          required={required}
+          type={type}
+          value={value}
         />
         {loading && (
           <span className="input-loading">
-            <Spinner variant="circular" color={color} />
+            <Spinner color={color} variant="circular" />
           </span>
         )}
       </div>

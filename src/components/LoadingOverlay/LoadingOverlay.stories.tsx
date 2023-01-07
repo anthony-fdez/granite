@@ -18,7 +18,7 @@ export const Examples: ComponentStory<typeof LoadingOverlay> = () => {
   return (
     <ThemeProvider>
       <>
-        <LoadingOverlay zIndex={10} fullScreen show={fullScreenLoading} />
+        <LoadingOverlay fullScreen show={fullScreenLoading} zIndex={10} />
         <div>
           <Center>
             <div

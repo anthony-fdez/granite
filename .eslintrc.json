@@ -41,7 +41,7 @@
     "react/jsx-props-no-spreading": "off",
     "typescript-sort-keys/interface": "error",
     "typescript-sort-keys/string-enum": "error",
-    // "sort-keys": ["error", "asc", { "caseSensitive": true, "natural": false, "minKeys": 2 }],
+    "react/jsx-sort-props": "error",
     "react/function-component-definition": [
       2,
       {

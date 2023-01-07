@@ -51,10 +51,10 @@ const getTextInputStyles = ({
     backgroundColor: getColor({}).backgroundAccent,
 
     "&:focus": {
+      borderBottomColor: getColor({}).color,
+      borderBottomStyle: "solid",
       borderBottomWidth: 3,
       marginBottom: -3,
-      borderBottomStyle: "solid",
-      borderBottomColor: getColor({}).color,
     },
   });
 
