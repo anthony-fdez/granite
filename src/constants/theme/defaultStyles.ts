@@ -8,6 +8,7 @@ import { MODAL_DEFAULT_PROPS } from "../../components/Modal/Modal.props";
 import { DIALOG_DEFAULT_PROPS } from "../../components/Dialog/Dialog.props";
 import { TEXT_INPUT_DEFAULT_PROPS } from "../../components/TextInput/TextInput.props";
 import { ACCORDION_DEFAULT_PROPS } from "../../components/Accordion/Accordion.props";
+import { LOADING_OVERLAY_DEFAULT_PROPS } from "../../components/LoadingOverlay/LoadingOverlay.props";
 
 const DEFAULT_STYLES: IStyles = {
   theme: "light",
@@ -28,6 +29,7 @@ const DEFAULT_STYLES: IStyles = {
     TextInput: TEXT_INPUT_DEFAULT_PROPS,
     Accordion: ACCORDION_DEFAULT_PROPS,
     Backdrop: BACKDROP_DEFAULT_PROPS,
+    LoadingOverlay: LOADING_OVERLAY_DEFAULT_PROPS,
   },
 };
 

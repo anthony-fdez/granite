@@ -10,6 +10,7 @@ import { IColorShades, IColors } from "../../../constants/theme/colors";
 import { ISizes } from "../../../utils/types/sizes";
 import { IButtonPropsOptional } from "../../Button/Button.types";
 import { ITextInputProps } from "../../TextInput/TextInput.types";
+import { ILoadingOverlayPropsOptional } from "../../LoadingOverlay/LoadingOverlay.types";
 
 export type INumberRange = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9;
 
@@ -32,6 +33,7 @@ export interface IStyles {
     TextInput?: ITextInputProps;
     Accordion?: IAccordionPropsOptional;
     Backdrop?: IBackdropProps;
+    LoadingOverlay?: ILoadingOverlayPropsOptional;
   };
 }
 

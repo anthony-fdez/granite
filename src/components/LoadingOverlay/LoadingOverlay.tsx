@@ -7,20 +7,25 @@ import Spinner from "../Spinner";
 import Center from "../Center";
 import getLoadingOverlayStyles from "./LoadingOverlay.styles";
 import { ILoadingOverlayProps } from "./LoadingOverlay.types";
+import useAppContext from "../../utils/hooks/useAppContext";
+import { useLoadingOverlayDefaultProps } from "./LoadingOverlay.props";
 
-const LoadingOverlay = ({
-  show,
-  children,
-  spinnerProps = { size: 30 },
-  backdrop = true,
-  backdropBlur = 5,
-  backdropOpacity = 0.6,
-  zIndex,
-  animated = true,
-  animationDuration = 200,
-  fullScreen = false,
-  ...args
-}: ILoadingOverlayProps): JSX.Element => {
+const LoadingOverlay = (props: ILoadingOverlayProps): JSX.Element => {
+  const { styles } = useAppContext();
+  const {
+    show,
+    children,
+    spinnerProps = { size: 30 },
+    backdrop = true,
+    backdropBlur = 5,
+    backdropOpacity = 0.6,
+    zIndex,
+    animated = true,
+    animationDuration = 200,
+    fullScreen = false,
+    ...args
+  } = useLoadingOverlayDefaultProps({ props, styles });
+
   const { stylesClosed, stylesOpen } = getLoadingOverlayStyles({
     fullScreen,
   });
@@ -45,16 +50,18 @@ const LoadingOverlay = ({
         ]}
       />
 
-      <Center
-        css={[
-          zIndex ? { zIndex: zIndex + 1 } : { zIndex: "inherit" },
-          show ? stylesOpen : stylesClosed,
-          animated && { transitionDuration: `${animationDuration}ms` },
-        ]}
-        {...args}
-      >
-        {children || <Spinner {...spinnerProps} />}
-      </Center>
+      {children || (
+        <Center
+          css={[
+            zIndex ? { zIndex: zIndex + 1 } : { zIndex: "inherit" },
+            show ? stylesOpen : stylesClosed,
+            animated && { transitionDuration: `${animationDuration}ms` },
+          ]}
+          {...args}
+        >
+          <Spinner {...spinnerProps} />
+        </Center>
+      )}
     </>
   );
 };

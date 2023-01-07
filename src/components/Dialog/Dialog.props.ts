@@ -27,7 +27,7 @@ interface Props {
   styles: IStyles;
 }
 
-export const useDialogDefaultStyles = ({ props, styles }: Props): IDialogProps => {
+export const useDialogDefaultProps = ({ props, styles }: Props): IDialogProps => {
   const defaultProps = styles.components?.Dialog;
 
   if (!defaultProps) return { ...props };

@@ -1,9 +1,7 @@
 import { IBackdropOpacity } from "../Backdrop/Backdrop.types";
 import { ISpinnerProps } from "../Spinner/Spinner.types";
 
-export interface ILoadingOverlayProps extends React.HTMLAttributes<HTMLDivElement> {
-  children?: JSX.Element | JSX.Element[];
-  show: boolean;
+export interface ILoadingOverlayPropsOptional extends React.HTMLAttributes<HTMLDivElement> {
   spinnerProps?: ISpinnerProps;
   backdrop?: boolean;
   zIndex?: number;
@@ -12,4 +10,9 @@ export interface ILoadingOverlayProps extends React.HTMLAttributes<HTMLDivElemen
   animated?: boolean;
   animationDuration?: number;
   fullScreen?: boolean;
+  children?: JSX.Element | JSX.Element[];
+}
+
+export interface ILoadingOverlayProps extends ILoadingOverlayPropsOptional {
+  show: boolean;
 }

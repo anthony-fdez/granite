@@ -10,7 +10,7 @@ import getBorderRadius from "../ThemeProvider/getValues/getBorderRadius";
 import ClickAwayListener from "../ClickAwayListener";
 import Unmount from "../Unmount/Unmount";
 import Backdrop from "../Backdrop/Backdrop";
-import { DIALOG_DEFAULT_PROPS, useDialogDefaultStyles } from "./Dialog.props";
+import { DIALOG_DEFAULT_PROPS, useDialogDefaultProps } from "./Dialog.props";
 import { getDialogStyles, getDialogVariants } from "./Dialog.styles";
 import { IDialogProps } from "./Dialog.types";
 
@@ -40,7 +40,7 @@ const Dialog = (props: IDialogProps): JSX.Element => {
     animated = DIALOG_DEFAULT_PROPS.animated || true,
     animationDuration = DIALOG_DEFAULT_PROPS.animationDuration || 500,
     unmount = DIALOG_DEFAULT_PROPS.unmount || true,
-  } = useDialogDefaultStyles({ styles, props });
+  } = useDialogDefaultProps({ styles, props });
 
   const { getColor } = useStyles({ styles });
   const { stylesClosed, stylesOpen } = getDialogStyles({ getColor, position });
