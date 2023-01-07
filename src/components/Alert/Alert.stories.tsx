@@ -4,7 +4,7 @@ import Alert from "./Alert";
 import ThemeProvider from "../ThemeProvider";
 
 export default {
-  title: "Components/Feedback/Alert",
+  title: "Components/Alert",
   component: Alert,
 };
 

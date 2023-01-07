@@ -6,7 +6,7 @@ import ClickAwayListener from "./ClickAwayListener";
 import Center from "../Center";
 
 export default {
-  title: "Components/Utils/ClickAwayListener",
+  title: "Components/ClickAwayListener",
   component: ClickAwayListener,
 };
 

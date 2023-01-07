@@ -7,7 +7,7 @@ import Flex from "../Flex";
 import ThemeProvider from "../ThemeProvider";
 
 export default {
-  title: "Components/Buttons/Button",
+  title: "Components/Button",
   component: Button,
 };
 

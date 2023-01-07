@@ -7,7 +7,7 @@ import Button from "../Button";
 import ThemeProvider from "../ThemeProvider";
 
 export default {
-  title: "Components/Overlays/LoadingOverlay",
+  title: "Components/LoadingOverlay",
   component: LoadingOverlay,
 };
 

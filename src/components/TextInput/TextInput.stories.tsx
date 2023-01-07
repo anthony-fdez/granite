@@ -8,7 +8,7 @@ import Button from "../Button";
 import ThemeProvider from "../ThemeProvider";
 
 export default {
-  title: "Components/Inputs/TextInput",
+  title: "Components/TextInput",
   component: TextInput,
 };
 

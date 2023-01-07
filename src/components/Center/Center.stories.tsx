@@ -7,7 +7,7 @@ import Button from "../Button";
 import ThemeProvider from "../ThemeProvider";
 
 export default {
-  title: "Components/Layout/Center",
+  title: "Components/Center",
   component: Center,
 };
 

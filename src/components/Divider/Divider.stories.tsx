@@ -6,7 +6,7 @@ import Divider from "./Divider";
 import ThemeProvider from "../ThemeProvider";
 
 export default {
-  title: "Components/Extra/Divider",
+  title: "Components/Divider",
   component: Divider,
 };
 

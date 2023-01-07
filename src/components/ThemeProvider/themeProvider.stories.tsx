@@ -17,7 +17,7 @@ import Dialog from "../Dialog";
 import TextInput from "../TextInput";
 
 export default {
-  title: "Components/Theming/ThemeProvider",
+  title: "Components/ThemeProvider",
   component: ThemeProvider,
 };
 

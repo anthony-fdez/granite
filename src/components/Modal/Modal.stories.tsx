@@ -6,7 +6,7 @@ import Modal from "./Modal";
 import ThemeProvider from "../ThemeProvider";
 
 export default {
-  title: "Components/Overlays/Modal",
+  title: "Components/Modal",
   component: Modal,
 };
 

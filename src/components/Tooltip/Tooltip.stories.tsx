@@ -7,7 +7,7 @@ import Tooltip from "./Tooltip";
 import ThemeProvider from "../ThemeProvider";
 
 export default {
-  title: "Components/Overlays/Tooltip",
+  title: "Components/Tooltip",
   component: Tooltip,
 };
 
