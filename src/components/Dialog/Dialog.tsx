@@ -70,9 +70,7 @@ const Dialog = (props: IDialogProps): JSX.Element => {
               },
               borderColor ? { borderColor } : { borderColor: getColor({}).border },
               { borderRadius: getBorderRadius({ size: borderRadius || styles.global?.borderRadius }) },
-              {
-                maxWidth: `calc(100% - ${(padding || 0) * 2}px - 40px)`,
-              },
+              { maxWidth: `calc(100% - ${(padding || 0) * 2}px - 40px)` },
               { maxHeight: `calc(100vh - ${(padding || 0) * 2}px - 200px)` },
             ]}
             data-testid="Dialog"

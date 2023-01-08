@@ -21,10 +21,8 @@ const getSpinnerStyles = ({ variant, size, backgroundAccentColor, getColor }: Pr
     pointerEvents: "none",
     width: size ?? 10,
     height: size ?? 10,
-
     border: 3,
     borderStyle: "solid",
-
     borderColor: backgroundAccentColor || getColor({}).backgroundAccent,
     borderTopColor: getColor({}).color,
     borderRadius: "50%",
