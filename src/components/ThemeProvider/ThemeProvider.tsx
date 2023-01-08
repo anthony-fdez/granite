@@ -17,6 +17,7 @@ import useStyles from "../../styles/useStyles";
 import { BACKDROP_DEFAULT_PROPS } from "../Backdrop/Backdrop.props";
 import { DEFAULT_COLORS } from "../../constants/theme/colors";
 import { LOADING_OVERLAY_DEFAULT_PROPS } from "../LoadingOverlay/LoadingOverlay.props";
+import { DRAWER_DEFAULT_PROPS } from "../Drawer/Drawer.props";
 
 export const StateContext = createContext<IContext>({
   setState: () => {},
@@ -53,6 +54,10 @@ const ThemeProvider = ({
       Divider: {
         ...DIVIDER_DEFAULT_PROPS,
         ...defaultStyles?.components?.Divider,
+      },
+      Drawer: {
+        ...DRAWER_DEFAULT_PROPS,
+        ...defaultStyles?.components?.Drawer,
       },
       TextInput: {
         ...TEXT_INPUT_DEFAULT_PROPS,
