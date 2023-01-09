@@ -1,9 +1,15 @@
 export type TooltipPositionsType = "top" | "bottom" | "right" | "left";
 
-export interface ITooltipProps extends React.HTMLAttributes<HTMLDivElement> {
+export interface ITooltipPropsOptional extends React.HTMLAttributes<HTMLDivElement> {
   animated?: boolean;
-  children: JSX.Element | JSX.Element[];
-  delay?: number;
-  label: string;
+  animationDuration?: number;
+  closeDelay?: number;
+  isOpen?: boolean;
+  openDelay?: number;
   position?: TooltipPositionsType;
+  zIndex?: number;
+}
+
+export interface ITooltipProps extends ITooltipPropsOptional {
+  children: JSX.Element | JSX.Element[];
 }
