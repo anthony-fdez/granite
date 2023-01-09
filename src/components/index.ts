@@ -13,6 +13,7 @@ export { default as Dialog } from "./Dialog";
 export { default as ClickAwayListener } from "./ClickAwayListener";
 export { default as TextInput } from "./TextInput";
 export { default as LoadingOverlay } from "./LoadingOverlay";
+export { default as Drawer } from "./Drawer";
 
 // Hooks
 export { default as useTheme } from "./hooks/useTheme";
