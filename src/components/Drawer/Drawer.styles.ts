@@ -9,7 +9,58 @@ interface Props {
   position?: IDrawerPositions;
 }
 
-export const drawerVariants = (position: IDrawerPositions): Variants => {};
+export const getDrawerVariants = (position?: IDrawerPositions): Variants => {
+  const top: Variants = {
+    open: {
+      opacity: 1,
+      y: 0,
+    },
+    closed: {
+      opacity: 0,
+      y: "-100%",
+    },
+  };
+
+  const bottom: Variants = {
+    open: {
+      opacity: 1,
+      y: 0,
+    },
+    closed: {
+      opacity: 0,
+      y: "100%",
+    },
+  };
+
+  const left: Variants = {
+    open: {
+      opacity: 1,
+      x: 0,
+    },
+    closed: {
+      opacity: 0,
+      x: "-100%",
+    },
+  };
+
+  const right: Variants = {
+    open: {
+      opacity: 1,
+      x: 0,
+    },
+    closed: {
+      opacity: 0,
+      x: "100%",
+    },
+  };
+
+  if (position === "top") return top;
+  if (position === "bottom") return bottom;
+  if (position === "left") return left;
+  if (position === "right") return right;
+
+  return right;
+};
 
 export const getDrawerStyles = ({
   getColor,
@@ -20,7 +71,17 @@ export const getDrawerStyles = ({
       position: "fixed",
       backgroundColor: getColor({}).background,
       overflow: "auto",
-      maxHeight: "95vh",
+
+      ".drawer-header": {
+        paddingBottom: 10,
+        display: "flex",
+        justifyContent: "space-between",
+        alignItems: "center",
+        marginBottom: 10,
+        span: {
+          fontSize: 18,
+        },
+      },
     },
     position === "bottom" && {
       width: "100%",
@@ -36,6 +97,11 @@ export const getDrawerStyles = ({
       height: "100% !important",
       top: 0,
       left: 0,
+    },
+    position === "right" && {
+      height: "100% !important",
+      top: 0,
+      right: 0,
     },
   );
 

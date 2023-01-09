@@ -3,7 +3,6 @@
 import { css } from "@emotion/react";
 
 import React from "react";
-// @ts-ignore
 import { motion } from "framer-motion/dist/framer-motion";
 import CloseButton from "../CloseButton";
 import getBorderRadius from "../ThemeProvider/getValues/getBorderRadius";

@@ -8,7 +8,7 @@ import { IDrawerProps } from "./Drawer.types";
 import useAppContext from "../../utils/hooks/useAppContext";
 import { DRAWER_DEFAULT_PROPS, useDrawerDefaultProps } from "./Drawer.props";
 import useStyles from "../../styles/useStyles";
-import { getDrawerStyles } from "./Drawer.styles";
+import { getDrawerStyles, getDrawerVariants } from "./Drawer.styles";
 import useDisableScroll from "../../utils/hooks/useDisableScroll";
 import Unmount from "../Unmount/Unmount";
 import Backdrop from "../Backdrop/Backdrop";
@@ -73,8 +73,14 @@ const Drawer = (props: IDrawerProps): JSX.Element => {
               height && (position === "bottom" || position === "top") && { height },
               width && (position === "left" || position === "right") && { width },
             ]}
+            initial="closed"
+            transition={{
+              duration: animated ? animationDuration * 0.001 : 0,
+              type: "spring",
+            }}
+            variants={getDrawerVariants(position)}
           >
-            <div className="Drawer/header">
+            <div className="drawer-header">
               <span>{title}</span>
               {closeButton && <CloseButton onClick={onClose} />}
             </div>

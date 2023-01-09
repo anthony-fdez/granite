@@ -31,7 +31,6 @@ export const getModalStyles = ({
     overflow: "auto",
 
     ".modal-header": {
-      paddingTop: 10,
       paddingBottom: 10,
       display: "flex",
       justifyContent: "space-between",
