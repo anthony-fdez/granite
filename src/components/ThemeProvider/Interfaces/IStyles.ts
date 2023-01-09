@@ -12,6 +12,7 @@ import { IButtonPropsOptional } from "../../Button/Button.types";
 import { ITextInputProps } from "../../TextInput/TextInput.types";
 import { ILoadingOverlayPropsOptional } from "../../LoadingOverlay/LoadingOverlay.types";
 import { IDrawerPropsOptional } from "../../Drawer/Drawer.types";
+import { ITooltipPropsOptional } from "../../Tooltip/Tooltip.types";
 
 export type INumberRange = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9;
 
@@ -28,6 +29,7 @@ export interface IStyles {
     LoadingOverlay?: ILoadingOverlayPropsOptional;
     Modal?: IModalPropsOptional;
     TextInput?: ITextInputProps;
+    Tooltip?: ITooltipPropsOptional;
   };
   global?: {
     animated?: boolean;

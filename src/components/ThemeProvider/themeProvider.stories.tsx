@@ -16,6 +16,7 @@ import Accordion from "../Accordion";
 import Dialog from "../Dialog";
 import TextInput from "../TextInput";
 import Drawer from "../Drawer/Drawer";
+import Tooltip from "../Tooltip";
 
 export default {
   component: ThemeProvider,
@@ -41,7 +42,9 @@ const Template: ComponentStory<typeof ThemeProvider> = (args) => {
         <Button variant="outlined">Outlined</Button>
         <Button variant="subtle">Subtle</Button>
         <Button loading>Loading</Button>
-        <Button disabled>Disabled</Button>
+        <Tooltip tooltip="You cant click disabled buttons :)">
+          <Button disabled>Disabled</Button>
+        </Tooltip>
         <Button disabled variant="outlined">
           Disabled Outlined
         </Button>

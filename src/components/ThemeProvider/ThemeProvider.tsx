@@ -18,6 +18,7 @@ import { BACKDROP_DEFAULT_PROPS } from "../Backdrop/Backdrop.props";
 import { DEFAULT_COLORS } from "../../constants/theme/colors";
 import { LOADING_OVERLAY_DEFAULT_PROPS } from "../LoadingOverlay/LoadingOverlay.props";
 import { DRAWER_DEFAULT_PROPS } from "../Drawer/Drawer.props";
+import { TOOLTIP_DEFAULT_PROPS } from "../Tooltip/Tooltip.props";
 
 export const StateContext = createContext<IContext>({
   setState: () => {},
@@ -62,6 +63,10 @@ const ThemeProvider = ({
       TextInput: {
         ...TEXT_INPUT_DEFAULT_PROPS,
         ...defaultStyles?.components?.TextInput,
+      },
+      Tooltip: {
+        ...TOOLTIP_DEFAULT_PROPS,
+        ...defaultStyles?.components?.Tooltip,
       },
       Accordion: {
         ...ACCORDION_DEFAULT_PROPS,

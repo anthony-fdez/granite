@@ -10,6 +10,7 @@ import { DIALOG_DEFAULT_PROPS } from "../../components/Dialog/Dialog.props";
 import { TEXT_INPUT_DEFAULT_PROPS } from "../../components/TextInput/TextInput.props";
 import { ACCORDION_DEFAULT_PROPS } from "../../components/Accordion/Accordion.props";
 import { LOADING_OVERLAY_DEFAULT_PROPS } from "../../components/LoadingOverlay/LoadingOverlay.props";
+import { TOOLTIP_DEFAULT_PROPS } from "../../components/Tooltip/Tooltip.props";
 
 const DEFAULT_STYLES: IStyles = {
   colors: DEFAULT_COLORS,
@@ -24,6 +25,7 @@ const DEFAULT_STYLES: IStyles = {
     LoadingOverlay: LOADING_OVERLAY_DEFAULT_PROPS,
     Modal: MODAL_DEFAULT_PROPS,
     TextInput: TEXT_INPUT_DEFAULT_PROPS,
+    Tooltip: TOOLTIP_DEFAULT_PROPS,
   },
   global: {
     animated: true,
