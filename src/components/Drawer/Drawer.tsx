@@ -3,7 +3,7 @@
 import { css } from "@emotion/react";
 
 import React from "react";
-import { motion } from "framer-motion/dist/framer-motion";
+import { motion } from "framer-motion";
 import { IDrawerProps } from "./Drawer.types";
 import useAppContext from "../../utils/hooks/useAppContext";
 import { DRAWER_DEFAULT_PROPS, useDrawerDefaultProps } from "./Drawer.props";
@@ -51,7 +51,12 @@ const Drawer = (props: IDrawerProps): JSX.Element => {
   return (
     <Unmount animated={animated} animationDuration={animationDuration} isOpen={isOpen} shouldUnmount={unmount}>
       <>
-        {backdrop && <Backdrop {...{ isOpen, backdropBlur, backdropOpacity, zIndex, animated, animationDuration }} />}
+        {backdrop && (
+          <Backdrop
+            data-testid="Drawer/backdrop"
+            {...{ isOpen, backdropBlur, backdropOpacity, zIndex, animated, animationDuration }}
+          />
+        )}
         <ClickAwayListener onClickOutside={() => closeOnClickOutside && onClose()}>
           <motion.div
             animate={isOpen ? "open" : "closed"}
@@ -73,6 +78,7 @@ const Drawer = (props: IDrawerProps): JSX.Element => {
               height && (position === "bottom" || position === "top") && { height },
               width && (position === "left" || position === "right") && { width },
             ]}
+            data-testid="Drawer"
             initial="closed"
             transition={{
               duration: animated ? animationDuration * 0.001 : 0,
@@ -81,8 +87,8 @@ const Drawer = (props: IDrawerProps): JSX.Element => {
             variants={getDrawerVariants(position)}
           >
             <div className="drawer-header">
-              <span>{title}</span>
-              {closeButton && <CloseButton onClick={onClose} />}
+              <span data-testid="Drawer/title">{title}</span>
+              {closeButton && <CloseButton data-testid="Drawer/close-button" onClick={onClose} />}
             </div>
             {children}
           </motion.div>
