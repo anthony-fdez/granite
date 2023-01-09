@@ -12,4 +12,5 @@ export interface ITooltipPropsOptional extends React.HTMLAttributes<HTMLDivEleme
 
 export interface ITooltipProps extends ITooltipPropsOptional {
   children: JSX.Element | JSX.Element[];
+  tooltip: JSX.Element;
 }

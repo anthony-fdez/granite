@@ -3,39 +3,66 @@
 import { css } from "@emotion/react";
 
 import React, { useState } from "react";
-
+import { motion } from "framer-motion";
 import { ITooltipProps } from "./Tooltip.types";
+import useAppContext from "../../utils/hooks/useAppContext";
+import { TOOLTIP_DEFAULT_PROPS, useTooltipDefaultProps } from "./Tooltip.props";
+import getTooltipStyles, { getTooltipVariants } from "./Tooltip.styles";
+import Unmount from "../Unmount/Unmount";
 
-const Tooltip = ({
-  children,
-  label,
-  // position = "top",
-  delay = 400,
-  // animated = true,
-  ...args
-}: ITooltipProps): JSX.Element => {
-  let timeout: NodeJS.Timeout;
+const Tooltip = (props: ITooltipProps): JSX.Element => {
+  const { styles } = useAppContext();
+
+  const {
+    tooltip,
+    children,
+    animated = TOOLTIP_DEFAULT_PROPS.animated || true,
+    animationDuration = TOOLTIP_DEFAULT_PROPS.animationDuration || 200,
+    closeDelay,
+    openDelay,
+    position,
+    zIndex,
+    ...args
+  } = useTooltipDefaultProps({
+    props,
+    styles,
+  });
 
   const [active, setActive] = useState(false);
 
   const showTooltip = () => {
-    timeout = setTimeout(() => {
+    const timeout = setTimeout(() => {
       setActive(true);
-    }, delay);
+    }, openDelay);
+
+    return () => clearTimeout(timeout);
   };
 
   const hideTooltip = () => {
-    clearInterval(timeout);
-    setActive(false);
+    const timeout = setTimeout(() => {
+      setActive(false);
+    }, closeDelay);
+
+    return () => clearTimeout(timeout);
   };
 
   return (
-    <div {...args} css={{ position: "relative" }} onMouseEnter={showTooltip} onMouseLeave={hideTooltip}>
-      {active && (
-        <div>
-          <span>{label}</span>
-        </div>
-      )}
+    <div {...args} css={getTooltipStyles({ styles, position })} onMouseEnter={showTooltip} onMouseLeave={hideTooltip}>
+      <Unmount animated={animated} animationDuration={animationDuration} isOpen={active} shouldUnmount>
+        <motion.div
+          animate={active ? "open" : "closed"}
+          className="tooltip"
+          initial="closed"
+          transition={{
+            duration: animated ? animationDuration * 0.001 : 0,
+            type: "spring",
+          }}
+          variants={getTooltipVariants()}
+        >
+          {tooltip}
+        </motion.div>
+      </Unmount>
+
       {children}
     </div>
   );
