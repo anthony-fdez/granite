@@ -14,9 +14,9 @@ const HoverListener = ({ children, onHover, ...args }: IHoverListenerProps): JSX
   }, [isHover, onHover]);
 
   return (
-    <div {...args} onMouseEnter={() => setIsHover(true)} onMouseLeave={() => setIsHover(false)}>
+    <span {...args} onMouseEnter={() => setIsHover(true)} onMouseLeave={() => setIsHover(false)}>
       {children}
-    </div>
+    </span>
   );
 };
 

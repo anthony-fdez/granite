@@ -48,6 +48,7 @@ const getButtonStyles = ({ styles, variant, disabled, getColor }: Props): Serial
       display: "flex",
       justifyContent: "center",
       alignItems: "center",
+      width: "auto",
       cursor: "pointer",
       ".button-icon-container-left": {
         marginRight: 10,

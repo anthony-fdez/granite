@@ -14,7 +14,7 @@ export const Example: ComponentStory<typeof HoverListener> = () => {
   const [hover, setHover] = useState(false);
   return (
     <ThemeProvider>
-      <div>
+      <div style={{ display: "flex" }}>
         <HoverListener onHover={(isHover) => setHover(isHover)}>
           <Button>Hover over me</Button>
         </HoverListener>
