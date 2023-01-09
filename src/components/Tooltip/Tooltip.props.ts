@@ -4,8 +4,8 @@ import { ITooltipProps, ITooltipPropsOptional } from "./Tooltip.types";
 export const TOOLTIP_DEFAULT_PROPS: ITooltipPropsOptional = {
   animated: true,
   animationDuration: 500,
-  closeDelay: 500,
-  openDelay: 0,
+  closeDelay: 0,
+  openDelay: 200,
   position: "top",
   zIndex: 5000,
 };

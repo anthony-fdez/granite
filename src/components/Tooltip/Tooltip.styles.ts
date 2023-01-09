@@ -1,11 +1,12 @@
 import { css, SerializedStyles } from "@emotion/react";
 import { Variants } from "framer-motion";
+import { GetColorProps } from "./../../styles/useStyles";
 import { TooltipPositionsType } from "./Tooltip.types";
-import { IStyles } from "../ThemeProvider/Interfaces/IStyles";
+import IUseStyles from "../../styles/interfaces/IUseStyles";
 
 interface Props {
+  getColor: (props: GetColorProps) => IUseStyles;
   position?: TooltipPositionsType;
-  styles: IStyles;
 }
 
 export const getTooltipVariants = (): Variants => {
@@ -19,22 +20,24 @@ export const getTooltipVariants = (): Variants => {
   };
 };
 
-const getTooltipStyles = ({ position }: Props): SerializedStyles => {
+const getTooltipStyles = ({ getColor, position }: Props): SerializedStyles => {
   return css(
     {
       position: "relative",
       display: "inline-block",
       ".tooltip": {
         position: "absolute",
-        borderRadius: 3,
         left: "50%",
         transform: "translateX(-50%)",
         padding: 10,
-        color: "white",
-        background: "black",
+        color: getColor({}).font,
+        background: getColor({}).backgroundAccent,
         fontSize: 14,
         fontFamily: "sans-serif",
         lineHeight: 1,
+        borderColor: getColor({}).border,
+        borderWidth: 2,
+        borderStyle: "solid",
         zIndex: 100,
         lineBreak: "auto",
         whiteSpace: "nowrap",
