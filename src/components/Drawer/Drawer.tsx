@@ -67,9 +67,9 @@ const Drawer = (props: IDrawerProps): JSX.Element => {
               borderColor ? { borderColor } : { borderColor: getColor({}).border },
               { borderRadius: getBorderRadius({ size: borderRadius || styles.global?.borderRadius }) },
               { maxWidth: `calc(100% - ${(padding || 0) * 2}px - 5px)` },
-              (position === "top" || position === "bottom") && {
-                maxHeight: `calc(100vh - ${(padding || 0) * 2}px - 50px)`,
-              },
+              position === "top" || position === "bottom"
+                ? { maxHeight: `calc(100vh - ${(padding || 0) * 2}px - 50px)` }
+                : { maxHeight: `calc(100vh - ${(padding || 0) * 2}px - 6px)` },
               height && (position === "bottom" || position === "top") && { height },
               width && (position === "left" || position === "right") && { width },
             ]}

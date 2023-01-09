@@ -15,6 +15,7 @@ import Divider from "../Divider";
 import Accordion from "../Accordion";
 import Dialog from "../Dialog";
 import TextInput from "../TextInput";
+import Drawer from "../Drawer/Drawer";
 
 export default {
   component: ThemeProvider,
@@ -24,6 +25,7 @@ export default {
 const Template: ComponentStory<typeof ThemeProvider> = (args) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
   return (
     <ThemeProvider
@@ -50,6 +52,9 @@ const Template: ComponentStory<typeof ThemeProvider> = (args) => {
       <Button fullWidth onClick={() => setIsModalOpen(true)}>
         Full Width (open modal)
       </Button>
+      <Button fullWidth onClick={() => setIsDrawerOpen(true)} variant="outlined">
+        Full Width (open drawer)
+      </Button>
       <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} title="My Modal" zIndex={1000}>
         <h2>This is the modal</h2>
         <p>
@@ -68,6 +73,9 @@ const Template: ComponentStory<typeof ThemeProvider> = (args) => {
           <Button onClick={() => setIsModalOpen(false)}>This is a nice modal</Button>
         </Flex>
       </Modal>
+      <Drawer backdropBlur={5} closeButton isOpen={isDrawerOpen} onClose={() => setIsDrawerOpen(false)} title="Drawer">
+        <p>This is the very simple drawer</p>
+      </Drawer>
       <h2>Layout</h2>
 
       <>
