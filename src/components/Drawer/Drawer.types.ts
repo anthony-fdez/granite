@@ -15,6 +15,7 @@ export interface IDrawerPropsOptional extends React.HtmlHTMLAttributes<HTMLDivEl
   borderWidth?: number;
   closeButton?: boolean;
   closeOnClickOutside?: boolean;
+  height?: number | string;
   padding?: number;
   position?: IDrawerPositions;
   unmount?: boolean;
