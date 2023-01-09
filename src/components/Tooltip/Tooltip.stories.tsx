@@ -37,6 +37,6 @@ const Template: ComponentStory<typeof Tooltip> = (args) => (
 export const Default = Template.bind({});
 
 Default.args = {
-  tooltip: <span>Tooltip!</span>,
+  tooltip: "You can click on a button :)",
   children: <Button>Hover over me</Button>,
 };

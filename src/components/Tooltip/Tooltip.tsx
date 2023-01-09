@@ -70,7 +70,7 @@ const Tooltip = (props: ITooltipProps): JSX.Element => {
           }}
           variants={getTooltipVariants()}
         >
-          {tooltip}
+          <span>{tooltip}</span>
         </motion.div>
       </Unmount>
 

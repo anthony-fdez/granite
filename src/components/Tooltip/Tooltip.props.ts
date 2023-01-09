@@ -3,7 +3,7 @@ import { ITooltipProps, ITooltipPropsOptional } from "./Tooltip.types";
 
 export const TOOLTIP_DEFAULT_PROPS: ITooltipPropsOptional = {
   animated: true,
-  animationDuration: 200,
+  animationDuration: 500,
   closeDelay: 500,
   openDelay: 0,
   position: "top",
