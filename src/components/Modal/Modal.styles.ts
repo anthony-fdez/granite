@@ -20,7 +20,7 @@ export const modalVariants: Variants = {
 
 export const getModalStyles = ({
   getColor,
-}: Props): { stylesClosed: SerializedStyles, stylesOpen: SerializedStyles; } => {
+}: Props): { stylesClosed: SerializedStyles; stylesOpen: SerializedStyles } => {
   const stylesOpen: SerializedStyles = css({
     position: "fixed",
     backgroundColor: getColor({}).background,
@@ -31,7 +31,6 @@ export const getModalStyles = ({
     overflow: "auto",
 
     ".modal-header": {
-      paddingTop: 10,
       paddingBottom: 10,
       display: "flex",
       justifyContent: "space-between",

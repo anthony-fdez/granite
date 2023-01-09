@@ -1,8 +1,7 @@
 /** @jsxImportSource @emotion/react */
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import React from "react";
-// @ts-ignore
-import { motion } from "framer-motion/dist/framer-motion";
+import { motion } from "framer-motion";
 import { ChevronDown } from "react-feather";
 import Flex from "../../Flex";
 import { accordionAnimation, chevronAnimation, getAccordionItemStyles } from "./AccordionItem.styles";

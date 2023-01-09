@@ -1,3 +1,4 @@
+import { DRAWER_DEFAULT_PROPS } from "./../../components/Drawer/Drawer.props";
 import { DEFAULT_COLORS } from "./colors";
 import { BACKDROP_DEFAULT_PROPS } from "../../components/Backdrop/Backdrop.props";
 import { CLOSE_BUTTON_DEFAULT_PROPS } from "../../components/CloseButton/CloseButton.props";
@@ -19,6 +20,7 @@ const DEFAULT_STYLES: IStyles = {
     CloseButton: CLOSE_BUTTON_DEFAULT_PROPS,
     Dialog: DIALOG_DEFAULT_PROPS,
     Divider: DIVIDER_DEFAULT_PROPS,
+    Drawer: DRAWER_DEFAULT_PROPS,
     LoadingOverlay: LOADING_OVERLAY_DEFAULT_PROPS,
     Modal: MODAL_DEFAULT_PROPS,
     TextInput: TEXT_INPUT_DEFAULT_PROPS,
