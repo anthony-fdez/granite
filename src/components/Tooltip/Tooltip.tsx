@@ -2,7 +2,7 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { css } from "@emotion/react";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { ITooltipProps } from "./Tooltip.types";
 import useAppContext from "../../utils/hooks/useAppContext";
@@ -14,6 +14,7 @@ const Tooltip = (props: ITooltipProps): JSX.Element => {
   const { styles } = useAppContext();
 
   const {
+    isOpen,
     tooltip,
     children,
     animated = TOOLTIP_DEFAULT_PROPS.animated || true,
@@ -22,6 +23,7 @@ const Tooltip = (props: ITooltipProps): JSX.Element => {
     openDelay,
     position,
     zIndex,
+    customCSS,
     ...args
   } = useTooltipDefaultProps({
     props,
@@ -46,8 +48,17 @@ const Tooltip = (props: ITooltipProps): JSX.Element => {
     return () => clearTimeout(timeout);
   };
 
+  useEffect(() => {
+    if (isOpen !== undefined) setActive(isOpen);
+  }, [active, isOpen]);
+
   return (
-    <div {...args} css={getTooltipStyles({ styles, position })} onMouseEnter={showTooltip} onMouseLeave={hideTooltip}>
+    <div
+      {...args}
+      css={[getTooltipStyles({ styles, position }), customCSS]}
+      onMouseEnter={showTooltip}
+      onMouseLeave={hideTooltip}
+    >
       <Unmount animated={animated} animationDuration={animationDuration} isOpen={active} shouldUnmount>
         <motion.div
           animate={active ? "open" : "closed"}

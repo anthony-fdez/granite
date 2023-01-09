@@ -19,7 +19,7 @@ export const getTooltipVariants = (): Variants => {
   };
 };
 
-const getTooltipStyles = ({ styles, position }: Props): SerializedStyles => {
+const getTooltipStyles = ({ position }: Props): SerializedStyles => {
   return css(
     {
       position: "relative",
