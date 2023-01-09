@@ -59,13 +59,19 @@ const Tooltip = (props: ITooltipProps): JSX.Element => {
     <div
       {...args}
       css={[getTooltipStyles({ getColor, position }), customCSS]}
-      onMouseEnter={() => setHover(true)}
-      onMouseLeave={() => setHover(false)}
+      onMouseEnter={(): void => setHover(true)}
+      onMouseLeave={(): void => setHover(false)}
     >
-      <Unmount animated={animated} animationDuration={animationDuration} isOpen={active} shouldUnmount>
+      <Unmount
+        animated={animated}
+        animationDuration={hover ? (openDelay || 0) + animationDuration : (closeDelay || 0) + animationDuration}
+        isOpen={hover}
+        shouldUnmount
+      >
         <motion.div
           animate={active ? "open" : "closed"}
           className="tooltip"
+          data-testid="Tooltip/tooltip"
           initial="closed"
           transition={{
             duration: animated ? animationDuration * 0.001 : 0,
@@ -73,7 +79,7 @@ const Tooltip = (props: ITooltipProps): JSX.Element => {
           }}
           variants={getTooltipVariants()}
         >
-          <span>{tooltip}</span>
+          {tooltip}
         </motion.div>
       </Unmount>
 

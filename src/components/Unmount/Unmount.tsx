@@ -14,6 +14,7 @@ const Unmount = ({
 
   useEffect(() => {
     if (isOpen) return SET_IS_OPEN(true);
+    if (animated === false) return SET_IS_OPEN(false);
 
     const timeout = setTimeout(() => {
       SET_IS_OPEN(false);
@@ -22,7 +23,7 @@ const Unmount = ({
     return () => {
       clearTimeout(timeout);
     };
-  }, [isOpen, animationDuration]);
+  }, [isOpen, animationDuration, animated]);
 
   if (!shouldUnmount) return <div>{children}</div>;
   if (!animated && isOpen) return <div>{children}</div>;
