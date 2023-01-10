@@ -9,10 +9,11 @@ import useAppContext from "../../utils/hooks/useAppContext";
 
 const Backdrop = (props: IBackdropProps): JSX.Element => {
   const { styles } = useAppContext();
-  const { isOpen, backdropBlur, backdropOpacity, zIndex, animated, animationDuration } = useBackdropDefaultProps({
-    props,
-    styles,
-  });
+  const { isOpen, backdropBlur, backdropOpacity, zIndex, animated, animationDuration, customCSS } =
+    useBackdropDefaultProps({
+      props,
+      styles,
+    });
 
   return (
     <div
@@ -30,6 +31,7 @@ const Backdrop = (props: IBackdropProps): JSX.Element => {
         animated && { transition: `${animationDuration}ms` },
         backdropBlur && { backdropFilter: `blur(${backdropBlur}px)` },
         isOpen ? { opacity: 1 } : { opacity: 0, pointerEvents: "none" },
+        customCSS,
       ]}
       role="presentation"
     />

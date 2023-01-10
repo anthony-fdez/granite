@@ -2,6 +2,7 @@ import React from "react";
 import { ComponentStory } from "@storybook/react";
 import "@storybook/addon-console";
 
+import { css } from "@emotion/react";
 import Button from "./Button";
 import Flex from "../Flex";
 import ThemeProvider from "../ThemeProvider";
@@ -30,7 +31,7 @@ export const Examples: ComponentStory<typeof Button> = () => {
             Subtle
           </Button>
           <Button color="red" loading>
-            Loading
+            Loading...
           </Button>
         </Flex>
         <Flex>
@@ -48,6 +49,18 @@ export const Examples: ComponentStory<typeof Button> = () => {
           </Button>
         </Flex>
         <Button fullWidth>Full width</Button>
+        <Button
+          customCSS={css({
+            backgroundColor: "rebeccapurple",
+            borderRadius: 10,
+            ":hover": {
+              backgroundColor: "red",
+              color: "blue",
+            },
+          })}
+        >
+          With custom CSS
+        </Button>
       </>
     </ThemeProvider>
   );

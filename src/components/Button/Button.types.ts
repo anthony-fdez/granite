@@ -1,3 +1,4 @@
+import { SerializedStyles } from "@emotion/react";
 import React from "react";
 import { INumberRange } from "../ThemeProvider/Interfaces/IStyles";
 import { IColors } from "../../constants/theme/colors";
@@ -10,6 +11,7 @@ export interface IButtonPropsOptional extends React.ButtonHTMLAttributes<HTMLBut
   backgroundColor?: string;
   borderRadius?: ISizes;
   color?: IColors;
+  customCSS?: SerializedStyles;
   disabled?: boolean;
   fontColor?: "white" | "black" | string;
   fullWidth?: boolean;
