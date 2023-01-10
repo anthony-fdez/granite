@@ -1,3 +1,4 @@
+import { SerializedStyles } from "@emotion/react";
 import { IBackdropOpacity } from "../Backdrop/Backdrop.types";
 import { ISpinnerProps } from "../Spinner/Spinner.types";
 
@@ -8,6 +9,7 @@ export interface ILoadingOverlayPropsOptional extends React.HTMLAttributes<HTMLD
   backdropBlur?: number;
   backdropOpacity?: IBackdropOpacity;
   children?: JSX.Element | JSX.Element[];
+  customCSS?: SerializedStyles;
   fullScreen?: boolean;
   spinnerProps?: ISpinnerProps;
   zIndex?: number;
