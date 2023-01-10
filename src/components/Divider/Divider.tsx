@@ -13,8 +13,18 @@ const Divider = (props: IDividerProps): JSX.Element => {
   const { getColor } = useStyles({ styles });
 
   // eslint-disable-next-line operator-linebreak
-  const { label, labelPadding, labelPosition, width, dividerVariant, marginTop, marginBottom, color, ...args } =
-    useDividerDefaultProps({ styles, props });
+  const {
+    label,
+    labelPadding,
+    labelPosition,
+    width,
+    dividerVariant,
+    marginTop,
+    marginBottom,
+    color,
+    customCSS,
+    ...args
+  } = useDividerDefaultProps({ styles, props });
 
   const lineStyles = css([
     {
@@ -28,22 +38,25 @@ const Divider = (props: IDividerProps): JSX.Element => {
   return (
     <Flex {...args} css={{ marginTop, marginBottom }}>
       <>
-        {labelPosition !== "left" && <div css={lineStyles} data-testid="Divider/label-left" />}
+        {labelPosition !== "left" && <div css={[lineStyles, customCSS]} data-testid="Divider/label-left" />}
         {label && (
           <span
-            css={{
-              marginLeft: labelPadding,
-              marginRight: labelPadding,
-              whiteSpace: "nowrap",
-              fontSize: 14,
-              color: color ?? getColor({}).font,
-            }}
+            css={[
+              {
+                marginLeft: labelPadding,
+                marginRight: labelPadding,
+                whiteSpace: "nowrap",
+                fontSize: 14,
+                color: color ?? getColor({}).font,
+              },
+              customCSS,
+            ]}
             data-testid="Divider/label-center"
           >
             {label}
           </span>
         )}
-        {labelPosition !== "right" && <div css={lineStyles} data-testid="Divider/label-right" />}
+        {labelPosition !== "right" && <div css={[lineStyles, customCSS]} data-testid="Divider/label-right" />}
       </>
     </Flex>
   );
