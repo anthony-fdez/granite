@@ -1,3 +1,4 @@
+import { SerializedStyles } from "@emotion/react";
 import AccordionItem from "./AccordionItem/AccordionItem";
 
 export type IAccordionVariants = "filled" | "outlined" | "subtle";
@@ -5,6 +6,7 @@ export type IAccordionVariants = "filled" | "outlined" | "subtle";
 export interface IAccordionPropsOptional {
   arrowPosition?: "left" | "right";
   arrowSize?: number;
+  customCSS?: SerializedStyles;
   defaultValue?: string;
   value?: string | null;
   variant?: IAccordionVariants;

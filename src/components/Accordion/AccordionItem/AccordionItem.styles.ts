@@ -44,11 +44,11 @@ export const getAccordionItemStyles = ({ getColor, variant, isActive, arrowSize 
           alignItems: "center",
           justifyContent: "center",
         },
-        ".accordion-item-header": {
+        ".Granite-Accordion-header": {
           padding: 20,
           cursor: "pointer",
         },
-        ".accordion-item-content": {
+        ".Granite-Accordion-content": {
           paddingLeft: 20,
           paddingRight: 20,
           overflow: "hidden",
@@ -59,7 +59,7 @@ export const getAccordionItemStyles = ({ getColor, variant, isActive, arrowSize 
       borderBottomWidth: 1,
       borderBottomColor: getColor({}).border,
       borderBottomStyle: "solid",
-      ".accordion-item-header": {
+      ".Granite-Accordion-header": {
         ":hover": {
           backgroundColor: getColor({}).backgroundAccent,
         },
