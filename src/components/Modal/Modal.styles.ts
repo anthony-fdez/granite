@@ -11,10 +11,12 @@ export const modalVariants: Variants = {
   open: {
     opacity: 1,
     scale: 1,
+    y: 0,
   },
   closed: {
     opacity: 0,
     scale: 0.9,
+    y: 20,
   },
 };
 
@@ -29,8 +31,7 @@ export const getModalStyles = ({
     right: 0,
     top: 100,
     overflow: "auto",
-
-    ".modal-header": {
+    ".Granite-Modal-header": {
       paddingBottom: 10,
       display: "flex",
       justifyContent: "space-between",
@@ -38,9 +39,6 @@ export const getModalStyles = ({
       marginBottom: 10,
       span: {
         fontSize: 18,
-      },
-      ".modal-header-close-button": {
-        cursor: "pointer",
       },
     },
   });

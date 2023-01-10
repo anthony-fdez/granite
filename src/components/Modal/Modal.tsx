@@ -41,6 +41,7 @@ const Modal = (props: IModalProps): JSX.Element => {
     animated = MODAL_DEFAULT_PROPS.animated || true,
     animationDuration = MODAL_DEFAULT_PROPS.animationDuration || 500,
     unmount = MODAL_DEFAULT_PROPS.unmount || true,
+    customCSS,
   } = useModalDefaultProps({ styles, props });
 
   const { getColor } = useStyles({ styles });
@@ -73,6 +74,7 @@ const Modal = (props: IModalProps): JSX.Element => {
                 maxWidth: `calc(100% - ${(padding || 0) * 2}px - 20px)`,
               },
               { maxHeight: `calc(100vh - ${(padding || 0) * 2}px - 200px)` },
+              customCSS,
             ]}
             initial="closed"
             transition={{
@@ -81,9 +83,9 @@ const Modal = (props: IModalProps): JSX.Element => {
             }}
             variants={modalVariants}
           >
-            <div className="modal-header">
+            <div className="Granite-Modal-header">
               <span>{title}</span>
-              {closeButton && <CloseButton onClick={onClose} />}
+              {closeButton && <CloseButton className="Granite-Modal-CloseButton" onClick={onClose} />}
             </div>
             {children}
           </motion.div>
