@@ -9,6 +9,8 @@ import useAppContext from "../../utils/hooks/useAppContext";
 
 const Backdrop = (props: IBackdropProps): JSX.Element => {
   const { styles } = useAppContext();
+
+  // eslint-disable-next-line operator-linebreak
   const { isOpen, backdropBlur, backdropOpacity, zIndex, animated, animationDuration, customCSS } =
     useBackdropDefaultProps({
       props,
