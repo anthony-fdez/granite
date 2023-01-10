@@ -17,6 +17,7 @@ import Dialog from "../Dialog";
 import TextInput from "../TextInput";
 import Drawer from "../Drawer/Drawer";
 import Tooltip from "../Tooltip";
+import HoverCard from "../HoverCard";
 
 export default {
   component: ThemeProvider,
@@ -27,6 +28,17 @@ const Template: ComponentStory<typeof ThemeProvider> = (args) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+
+  const hoverCardElement = (): JSX.Element => (
+    <div>
+      <h1>Did you know?</h1>
+      <p>You can click this button to open a dialog? Fascinationg isnt it</p>
+      <Flex justifyContent="flex-end">
+        <Button variant="outlined">No</Button>
+        <Button>Yes</Button>
+      </Flex>
+    </div>
+  );
 
   return (
     <ThemeProvider
@@ -90,7 +102,9 @@ const Template: ComponentStory<typeof ThemeProvider> = (args) => {
         <h3>Flex</h3>
         <Flex justifyContent="space-between">
           <Button>1</Button>
-          <Button onClick={() => setIsDialogOpen(true)}>2 (open dialog)</Button>
+          <HoverCard card={hoverCardElement()}>
+            <Button onClick={() => setIsDialogOpen(true)}>2 (open dialog)</Button>
+          </HoverCard>
           <Button>3</Button>
         </Flex>
       </>
