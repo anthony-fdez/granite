@@ -1,3 +1,4 @@
+import { SerializedStyles } from "@emotion/react";
 import { ISizes } from "../../utils/types/sizes";
 import { IBackdropOpacity } from "../Backdrop/Backdrop.types";
 
@@ -15,6 +16,7 @@ export interface IDrawerPropsOptional extends React.HtmlHTMLAttributes<HTMLDivEl
   borderWidth?: number;
   closeButton?: boolean;
   closeOnClickOutside?: boolean;
+  customCSS?: SerializedStyles;
   height?: number | string;
   padding?: number;
   position?: IDrawerPositions;

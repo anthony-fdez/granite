@@ -72,7 +72,7 @@ export const getDrawerStyles = ({
       backgroundColor: getColor({}).background,
       overflow: "auto",
 
-      ".drawer-header": {
+      ".Granite-Drawer-header": {
         paddingBottom: 10,
         display: "flex",
         justifyContent: "space-between",
