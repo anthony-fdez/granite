@@ -1,3 +1,4 @@
+import { SerializedStyles } from "@emotion/react";
 import { ISizes } from "../../utils/types/sizes";
 
 export type DialogPositionTypes =
@@ -24,6 +25,7 @@ export interface IDialogPropsOptional extends React.HTMLAttributes<HTMLDivElemen
   borderWidth?: number;
   closeButton?: boolean;
   closeOnClickOutside?: boolean;
+  customCSS?: SerializedStyles;
   height?: number | string;
   padding?: number;
   position?: DialogPositionTypes;
