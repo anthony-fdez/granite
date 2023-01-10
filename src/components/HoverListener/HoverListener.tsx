@@ -1,8 +1,12 @@
+/** @jsxImportSource @emotion/react */
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import { css } from "@emotion/react";
+
 import React, { useEffect, useState } from "react";
 import { IHoverListenerProps } from "./HoverListener.types";
 import useAppContext from "../../utils/hooks/useAppContext";
 
-const HoverListener = ({ children, onHover, ...args }: IHoverListenerProps): JSX.Element => {
+const HoverListener = ({ children, customCSS, onHover, ...args }: IHoverListenerProps): JSX.Element => {
   useAppContext();
 
   const [isHover, setIsHover] = useState(false);
@@ -14,7 +18,7 @@ const HoverListener = ({ children, onHover, ...args }: IHoverListenerProps): JSX
   }, [isHover, onHover]);
 
   return (
-    <span {...args} onMouseEnter={() => setIsHover(true)} onMouseLeave={() => setIsHover(false)}>
+    <span {...args} css={customCSS} onMouseEnter={() => setIsHover(true)} onMouseLeave={() => setIsHover(false)}>
       {children}
     </span>
   );

@@ -10,6 +10,7 @@ import { TOOLTIP_DEFAULT_PROPS, useTooltipDefaultProps } from "./Tooltip.props";
 import getTooltipStyles, { getTooltipVariants } from "./Tooltip.styles";
 import Unmount from "../Unmount/Unmount";
 import useStyles from "../../styles/useStyles";
+import HoverListener from "../HoverListener/HoverListener";
 
 const Tooltip = (props: ITooltipProps): JSX.Element => {
   const { styles } = useAppContext();
@@ -56,35 +57,36 @@ const Tooltip = (props: ITooltipProps): JSX.Element => {
   }, [hover, active, closeDelay, openDelay]);
 
   return (
-    <div
+    <HoverListener
+      customCSS={css([getTooltipStyles({ getColor, position }), customCSS])}
+      onHover={(isHover): void => setHover(isHover)}
       {...args}
-      css={[getTooltipStyles({ getColor, position }), customCSS]}
-      onMouseEnter={(): void => setHover(true)}
-      onMouseLeave={(): void => setHover(false)}
     >
-      <Unmount
-        animated={animated}
-        animationDuration={hover ? (openDelay || 0) + animationDuration : (closeDelay || 0) + animationDuration}
-        isOpen={hover}
-        shouldUnmount
-      >
-        <motion.div
-          animate={active ? "open" : "closed"}
-          className="Granite-Tooltip-tooltip"
-          data-testid="Tooltip/tooltip"
-          initial="closed"
-          transition={{
-            duration: animated ? animationDuration * 0.001 : 0,
-            type: "spring",
-          }}
-          variants={getTooltipVariants()}
+      <>
+        <Unmount
+          animated={animated}
+          animationDuration={hover ? (openDelay || 0) + animationDuration : (closeDelay || 0) + animationDuration}
+          isOpen={hover}
+          shouldUnmount
         >
-          {tooltip}
-        </motion.div>
-      </Unmount>
+          <motion.div
+            animate={active ? "open" : "closed"}
+            className="Granite-Tooltip-tooltip"
+            data-testid="Tooltip/tooltip"
+            initial="closed"
+            transition={{
+              duration: animated ? animationDuration * 0.001 : 0,
+              type: "spring",
+            }}
+            variants={getTooltipVariants()}
+          >
+            {tooltip}
+          </motion.div>
+        </Unmount>
 
-      {children}
-    </div>
+        {children}
+      </>
+    </HoverListener>
   );
 };
 
