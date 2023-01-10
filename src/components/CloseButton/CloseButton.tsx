@@ -12,7 +12,7 @@ const CloseButton = (props: ICloseButtonProps): JSX.Element => {
   const { styles } = useAppContext();
   const { getColor } = useStyles({ styles });
 
-  const { size } = useCloseButtonDefaultProps({ styles, props });
+  const { size, customCSS } = useCloseButtonDefaultProps({ styles, props });
 
   const common: SerializedStyles = css([
     {
@@ -38,6 +38,7 @@ const CloseButton = (props: ICloseButtonProps): JSX.Element => {
         height: "100%",
       },
     },
+    customCSS,
   ]);
 
   return (

@@ -19,6 +19,7 @@ const AccordionItem = ({
   variant = ACCORDION_DEFAULT_PROPS.variant || "filled",
   arrowPosition = ACCORDION_DEFAULT_PROPS.arrowPosition || "left",
   arrowSize = ACCORDION_DEFAULT_PROPS.arrowSize || 10,
+  customCSS,
 }: IAccordionItemProps): JSX.Element => {
   const { styles } = useAppContext();
   const { getColor } = useStyles({ styles });
@@ -45,9 +46,10 @@ const AccordionItem = ({
           isActive: label === activeElement,
           arrowSize,
         }),
+        customCSS,
       ]}
     >
-      <div className="accordion-item-header" onClick={handleOpenAccordionItem} role="presentation">
+      <div className="Granite-Accordion-header" onClick={handleOpenAccordionItem} role="presentation">
         <Flex
           flexDirection={arrowPosition === "left" ? "row-reverse" : "row"}
           justifyContent={arrowPosition === "left" ? "flex-end" : "space-between"}
@@ -65,7 +67,7 @@ const AccordionItem = ({
 
       <motion.div
         animate={label === activeElement ? "open" : "closed"}
-        className="accordion-item-content"
+        className="Granite-Accordion-content"
         initial="closed"
         transition={{ stiffness: 400, type: "spring", damping: 50 }}
         variants={accordionAnimation}

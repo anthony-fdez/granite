@@ -91,7 +91,7 @@ export const getDialogVariants = ({ animation }: VariantsProps): Variants => {
 export const getDialogStyles = ({
   getColor,
   position,
-}: Props): { stylesClosed: SerializedStyles, stylesOpen: SerializedStyles; } => {
+}: Props): { stylesClosed: SerializedStyles; stylesOpen: SerializedStyles } => {
   const margin = 20;
 
   const stylesOpen: SerializedStyles = css([
@@ -100,7 +100,7 @@ export const getDialogStyles = ({
       position: "fixed",
       margin,
       overflowY: "auto",
-      ".dialog-header": {
+      ".Granite-Dialog-header": {
         display: "flex",
         alignItems: "center",
         justifyContent: "space-between",

@@ -50,11 +50,14 @@ const getButtonStyles = ({ styles, variant, disabled, getColor }: Props): Serial
       alignItems: "center",
       width: "auto",
       cursor: "pointer",
-      ".button-icon-container-left": {
+      ".Granite-Button-icon-left": {
         marginRight: 10,
       },
-      ".button-icon-container-right": {
+      ".Granite-Button-icon-right": {
         marginLeft: 10,
+      },
+      ".Granite-button-spinner": {
+        marginLeft: 5,
       },
       "&:hover": {
         backgroundColor: getColor({ variant }).colorHover,

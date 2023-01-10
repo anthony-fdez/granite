@@ -23,6 +23,7 @@ const LoadingOverlay = (props: ILoadingOverlayProps): JSX.Element => {
     animated = true,
     animationDuration = 200,
     fullScreen = false,
+    customCSS,
     ...args
   } = useLoadingOverlayDefaultProps({ props, styles });
 
@@ -47,6 +48,7 @@ const LoadingOverlay = (props: ILoadingOverlayProps): JSX.Element => {
           backdropBlur && { backdropFilter: `blur(${backdropBlur}px)` },
           show ? { opacity: 1 } : { opacity: 0, pointerEvents: "none" },
           backdrop && { pointerEvents: "none" },
+          customCSS,
         ]}
       />
 

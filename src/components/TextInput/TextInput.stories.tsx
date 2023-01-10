@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { ComponentStory } from "@storybook/react";
 import "@storybook/addon-console";
 
+import { AlertCircle } from "react-feather";
 import TextInput from "./TextInput";
 import Flex from "../Flex";
 import Button from "../Button";
@@ -31,7 +32,7 @@ export const Form: ComponentStory<typeof TextInput> = () => {
             <TextInput
               autofocus
               helperText="With autofocus"
-              iconLeft={<>X</>}
+              iconLeft={<AlertCircle size={15} />}
               label="Input 1"
               loading={text1 !== ""}
               onChange={(e): void => setText1(e.target.value)}

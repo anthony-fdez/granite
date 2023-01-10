@@ -25,7 +25,7 @@ const getTooltipStyles = ({ getColor, position }: Props): SerializedStyles => {
     {
       position: "relative",
       display: "inline-block",
-      ".tooltip": {
+      ".Granite-Tooltip-tooltip": {
         position: "absolute",
         left: "50%",
         transform: "translateX(-50%)",
@@ -45,10 +45,10 @@ const getTooltipStyles = ({ getColor, position }: Props): SerializedStyles => {
         overflow: "auto",
       },
     },
-    position === "top" && { ".tooltip": { bottom: "100%" } },
-    position === "bottom" && { ".tooltip": { top: "100%" } },
+    position === "top" && { ".Granite-Tooltip-tooltip": { bottom: "100%" } },
+    position === "bottom" && { ".Granite-Tooltip-tooltip": { top: "100%" } },
     position === "left" && {
-      ".tooltip": {
+      ".Granite-Tooltip-tooltip": {
         left: "auto",
         right: "100%",
         top: "50%",
@@ -56,7 +56,7 @@ const getTooltipStyles = ({ getColor, position }: Props): SerializedStyles => {
       },
     },
     position === "right" && {
-      ".tooltip": {
+      ".Granite-Tooltip-tooltip": {
         left: "100%",
         top: "50%",
         transform: "translateX(0px) translateY(-50%)",

@@ -31,6 +31,7 @@ const Button = (props: IButtonProps): JSX.Element => {
     iconRight,
     iconLeftProps,
     iconRightProps,
+    customCSS,
   } = useButtonDefaultProps({ styles, props });
   const { getColor } = useStyles({ styles, shade, color });
 
@@ -50,29 +51,36 @@ const Button = (props: IButtonProps): JSX.Element => {
   ]);
 
   return (
-    <button aria-disabled="true" aria-label={children} type="button" {...props} css={buttonStyles} disabled={disabled}>
+    <button
+      aria-disabled="true"
+      aria-label={children}
+      type="button"
+      {...props}
+      css={[buttonStyles, customCSS]}
+      disabled={disabled}
+    >
+      {iconLeft && (
+        <div data-testid="button-icon-left" {...iconLeftProps} className="Granite-Button-icon-left">
+          {iconLeft}
+        </div>
+      )}
+      {children}
       {loading ? (
-        <Spinner
-          backgroundAccentColor={getColor({}).fontContrast}
-          color={color}
-          data-testid="button-spinner"
-          size={11}
-          variant={spinnerVariant}
-        />
+        <div className="Granite-button-spinner">
+          <Spinner
+            backgroundAccentColor={getColor({}).fontContrast}
+            color={color}
+            data-testid="button-spinner"
+            size={11}
+            variant={spinnerVariant}
+          />
+        </div>
       ) : (
-        <>
-          {iconLeft && (
-            <div data-testid="button-icon-left" {...iconLeftProps} className="button-icon-container-left">
-              {iconLeft}
-            </div>
-          )}
-          {children}
-          {iconRight && (
-            <div data-testid="button-icon-right" {...iconRightProps} className="button-icon-container-right">
-              {iconRight}
-            </div>
-          )}
-        </>
+        iconRight && (
+          <div data-testid="button-icon-right" {...iconRightProps} className="Granite-Button-icon-right">
+            {iconRight}
+          </div>
+        )
       )}
     </button>
   );

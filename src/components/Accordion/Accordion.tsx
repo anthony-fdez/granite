@@ -7,7 +7,7 @@ import AccordionItem from "./AccordionItem/AccordionItem";
 const Accordion = (props: IAccordionProps): JSX.Element => {
   const { styles } = useAppContext();
 
-  const { children, defaultValue, value, variant, arrowPosition, arrowSize } = useAccordionDefaultProps({
+  const { children, defaultValue, value, variant, arrowPosition, arrowSize, customCSS } = useAccordionDefaultProps({
     styles,
     props,
   });
@@ -30,6 +30,7 @@ const Accordion = (props: IAccordionProps): JSX.Element => {
         variant,
         arrowPosition,
         arrowSize,
+        customCSS,
       });
     }
 

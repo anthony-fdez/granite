@@ -41,6 +41,7 @@ const Drawer = (props: IDrawerProps): JSX.Element => {
     animated = DRAWER_DEFAULT_PROPS.animated || true,
     animationDuration = DRAWER_DEFAULT_PROPS.animationDuration || 500,
     unmount = DRAWER_DEFAULT_PROPS.unmount || true,
+    customCSS,
   } = useDrawerDefaultProps({ styles, props });
 
   const { getColor } = useStyles({ styles });
@@ -77,6 +78,7 @@ const Drawer = (props: IDrawerProps): JSX.Element => {
                 : { maxHeight: `calc(100vh - ${(padding || 0) * 2}px - 6px)` },
               height && (position === "bottom" || position === "top") && { height },
               width && (position === "left" || position === "right") && { width },
+              customCSS,
             ]}
             data-testid="Drawer"
             initial="closed"
@@ -86,9 +88,15 @@ const Drawer = (props: IDrawerProps): JSX.Element => {
             }}
             variants={getDrawerVariants(position)}
           >
-            <div className="drawer-header">
+            <div className="Granite-Drawer-header">
               <span data-testid="Drawer/title">{title}</span>
-              {closeButton && <CloseButton data-testid="Drawer/close-button" onClick={onClose} />}
+              {closeButton && (
+                <CloseButton
+                  className="Granite-Drawer-CloseButton"
+                  data-testid="Drawer/close-button"
+                  onClick={onClose}
+                />
+              )}
             </div>
             {children}
           </motion.div>

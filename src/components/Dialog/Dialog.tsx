@@ -40,6 +40,7 @@ const Dialog = (props: IDialogProps): JSX.Element => {
     animated = DIALOG_DEFAULT_PROPS.animated || true,
     animationDuration = DIALOG_DEFAULT_PROPS.animationDuration || 500,
     unmount = DIALOG_DEFAULT_PROPS.unmount || true,
+    customCSS,
   } = useDialogDefaultProps({ styles, props });
 
   const { getColor } = useStyles({ styles });
@@ -72,6 +73,7 @@ const Dialog = (props: IDialogProps): JSX.Element => {
               { borderRadius: getBorderRadius({ size: borderRadius || styles.global?.borderRadius }) },
               { maxWidth: `calc(100% - ${(padding || 0) * 2}px - 40px)` },
               { maxHeight: `calc(100vh - ${(padding || 0) * 2}px - 200px)` },
+              customCSS,
             ]}
             data-testid="Dialog"
             initial="closed"
@@ -81,9 +83,15 @@ const Dialog = (props: IDialogProps): JSX.Element => {
             }}
             variants={getDialogVariants({ animation })}
           >
-            <div className="dialog-header">
+            <div className="Granite-Dialog-header">
               <span data-testid="Dialog/title">{title}</span>
-              {closeButton && <CloseButton data-testid="Dialog/close-button" onClick={onClose} />}
+              {closeButton && (
+                <CloseButton
+                  className="Granite-Dialog-CloseButton"
+                  data-testid="Dialog/close-button"
+                  onClick={onClose}
+                />
+              )}
             </div>
             {children}
           </motion.div>

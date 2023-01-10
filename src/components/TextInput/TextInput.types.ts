@@ -1,3 +1,4 @@
+import { SerializedStyles } from "@emotion/react";
 import { HTMLInputTypeAttribute } from "react";
 import { ISizes } from "../../utils/types/sizes";
 import { IVariants } from "../../utils/types/variants";
@@ -8,6 +9,7 @@ export interface ITextInputProps extends React.HtmlHTMLAttributes<HTMLDivElement
   borderRadius?: ISizes | number;
   classes?: string;
   color?: IColors;
+  customCSS?: SerializedStyles;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   defaultValue?: any;
   disabled?: boolean;

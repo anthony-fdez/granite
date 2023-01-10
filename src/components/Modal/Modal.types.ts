@@ -1,3 +1,4 @@
+import { SerializedStyles } from "@emotion/react";
 import { IBackdropOpacity } from "../Backdrop/Backdrop.types";
 import { ISizes } from "../../utils/types/sizes";
 
@@ -14,6 +15,7 @@ export interface IModalPropsOptional extends React.HtmlHTMLAttributes<HTMLDivEle
   centered?: boolean;
   closeButton?: boolean;
   closeOnClickOutside?: boolean;
+  customCSS?: SerializedStyles;
   height?: number | string;
   padding?: number;
   unmount?: boolean;

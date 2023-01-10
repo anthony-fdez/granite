@@ -70,7 +70,7 @@ const Tooltip = (props: ITooltipProps): JSX.Element => {
       >
         <motion.div
           animate={active ? "open" : "closed"}
-          className="tooltip"
+          className="Granite-Tooltip-tooltip"
           data-testid="Tooltip/tooltip"
           initial="closed"
           transition={{

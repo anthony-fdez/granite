@@ -94,23 +94,23 @@ const getTextInputStyles = ({
     width,
     position: "relative",
 
-    ".input-label": {},
-    ".input-helper-text": {
+    ".Granite-TextInput-label": {},
+    ".Granite-TextInput-helperText": {
       flexWrap: "wrap",
       fontSize: 12,
       color: getColor({}).fontDimmed,
     },
-    ".input-error-text": {
+    ".Granite-TextInput-errorText": {
       fontSize: 12,
       color: styles.colors?.red?.[6],
       marginTop: 5,
     },
 
-    ".input-wrapper": {
+    ".Granite-TextInput-inputWrapper": {
       position: "relative",
-      ".input-icon-left": {
+      ".Granite-TextInput-iconLeft": {
         position: "absolute",
-        top: `calc(50% + ${2}px)`,
+        top: "50%",
         left: 0,
         transform: "translateY(-50%)",
         height: iconWidth,
@@ -120,7 +120,7 @@ const getTextInputStyles = ({
         justifyContent: "center",
         alignItems: "center",
       },
-      ".input-loading": {
+      ".Granite-TextInput-spinner": {
         position: "absolute",
         top: `calc(50% + ${2}px)`,
         right: 0,
@@ -132,7 +132,7 @@ const getTextInputStyles = ({
         justifyContent: "center",
         alignItems: "center",
       },
-      ".INPUT": [
+      ".Granite-TextInput-input": [
         fullWidth && { width: calculatedWidthContainer },
         {
           width: getInputWidth(),
@@ -141,10 +141,6 @@ const getTextInputStyles = ({
           borderWidth: 0,
           color: getColor({}).font,
           backgroundColor: getColor({}).background,
-
-          ".button-icon-container-right": {},
-          "&:hover": {},
-          "&:focus": {},
         },
         iconLeft && { paddingLeft: iconWidth },
         loading && { paddingRight: iconWidth },

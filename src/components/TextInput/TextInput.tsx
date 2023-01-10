@@ -39,6 +39,7 @@ const TextInput = (props: ITextInputProps): JSX.Element => {
     iconLeft,
     borderRadius,
     inputProps,
+    customCSS,
     ...args
   } = useTextInputDefaultProps({ styles, props });
 
@@ -62,24 +63,25 @@ const TextInput = (props: ITextInputProps): JSX.Element => {
         }),
         margin && { margin },
         fullWidth && { width: `calc(100% - ${margin ? margin * 2 : 0}px)` },
+        customCSS,
       ]}
       {...args}
     >
       {label && (
-        <p className="input-label">
+        <p className="Granite-TextInput-label">
           {label}
           {required && <span style={{ color: styles.colors?.red?.[6], marginLeft: 2 }}>*</span>}
         </p>
       )}
-      {helperText && <p className="input-helper-text">{helperText}</p>}
-      <div className="input-wrapper">
-        {iconLeft && <span className="input-icon-left">{iconLeft}</span>}
+      {helperText && <p className="Granite-TextInput-helperText">{helperText}</p>}
+      <div className="Granite-TextInput-inputWrapper">
+        {iconLeft && <span className="Granite-TextInput-iconLeft">{iconLeft}</span>}
 
         <input
           {...inputProps}
           // eslint-disable-next-line jsx-a11y/no-autofocus
           autoFocus={autofocus}
-          className={`INPUT ${classes}`}
+          className="Granite-TextInput-input"
           css={[padding && { padding }, borderRadius && { borderRadius }]}
           defaultValue={defaultValue}
           disabled={disabled}
@@ -91,13 +93,13 @@ const TextInput = (props: ITextInputProps): JSX.Element => {
           value={value}
         />
         {loading && (
-          <span className="input-loading">
+          <span className="Granite-TextInput-spinner">
             <Spinner color={color} variant="circular" />
           </span>
         )}
       </div>
 
-      {errorText && <p className="input-error-text">{errorText}</p>}
+      {errorText && <p className="Granite-TextInput-errorText">{errorText}</p>}
     </div>
   );
 };
