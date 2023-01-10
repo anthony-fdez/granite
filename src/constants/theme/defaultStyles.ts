@@ -1,3 +1,4 @@
+import { HOVER_CARD_DEFAULT_PROPS } from "./../../components/HoverCard/HoverCard.props";
 import { DRAWER_DEFAULT_PROPS } from "./../../components/Drawer/Drawer.props";
 import { DEFAULT_COLORS } from "./colors";
 import { BACKDROP_DEFAULT_PROPS } from "../../components/Backdrop/Backdrop.props";
@@ -26,6 +27,7 @@ const DEFAULT_STYLES: IStyles = {
     Modal: MODAL_DEFAULT_PROPS,
     TextInput: TEXT_INPUT_DEFAULT_PROPS,
     Tooltip: TOOLTIP_DEFAULT_PROPS,
+    HoverCard: HOVER_CARD_DEFAULT_PROPS,
   },
   global: {
     animated: true,

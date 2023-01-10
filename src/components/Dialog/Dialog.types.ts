@@ -1,5 +1,5 @@
 import { SerializedStyles } from "@emotion/react";
-import { ISizes } from "../../utils/types/sizes";
+import { ISizes } from "../../utils/types/ISizes";
 
 export type DialogPositionTypes =
   | "top-left"

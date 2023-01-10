@@ -1,6 +1,6 @@
 import { SerializedStyles } from "@emotion/react";
 import { IBackdropOpacity } from "../Backdrop/Backdrop.types";
-import { ISizes } from "../../utils/types/sizes";
+import { ISizes } from "../../utils/types/ISizes";
 
 export interface IModalPropsOptional extends React.HtmlHTMLAttributes<HTMLDivElement> {
   animated?: boolean;

@@ -1,21 +1,24 @@
+import { IHoverCardPropsOptional, IHoverCardProps } from "./HoverCard.types";
 import { IStyles } from "../ThemeProvider/Interfaces/IStyles";
-import { ITooltipProps, ITooltipPropsOptional } from "./Tooltip.types";
 
-export const TOOLTIP_DEFAULT_PROPS: ITooltipPropsOptional = {
+export const HOVER_CARD_DEFAULT_PROPS: IHoverCardPropsOptional = {
   animated: true,
   animationDuration: 500,
   closeDelay: 0,
   openDelay: 200,
   position: "top",
-  zIndex: 5050,
+  zIndex: 5000,
+  disabled: false,
+  height: undefined,
+  width: 200,
 };
 
 interface Props {
-  props: ITooltipProps;
+  props: IHoverCardProps;
   styles: IStyles;
 }
 
-export const useTooltipDefaultProps = ({ props, styles }: Props): ITooltipProps => {
+export const useHoverCardDefaultProps = ({ props, styles }: Props): IHoverCardProps => {
   const defaultProps = styles.components?.Tooltip;
 
   if (!defaultProps) return { ...props };

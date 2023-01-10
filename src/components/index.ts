@@ -14,6 +14,8 @@ export { default as ClickAwayListener } from "./ClickAwayListener";
 export { default as TextInput } from "./TextInput";
 export { default as LoadingOverlay } from "./LoadingOverlay";
 export { default as Drawer } from "./Drawer";
+export { default as Tooltip } from "./Tooltip";
+export { default as HoverCard } from "./HoverCard";
 
 // Hooks
 export { default as useTheme } from "./hooks/useTheme";
