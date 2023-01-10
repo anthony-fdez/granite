@@ -10,7 +10,7 @@ export const HOVER_CARD_DEFAULT_PROPS: IHoverCardPropsOptional = {
   zIndex: 5000,
   disabled: false,
   height: undefined,
-  width: 200,
+  width: 300,
 };
 
 interface Props {
@@ -19,7 +19,7 @@ interface Props {
 }
 
 export const useHoverCardDefaultProps = ({ props, styles }: Props): IHoverCardProps => {
-  const defaultProps = styles.components?.Tooltip;
+  const defaultProps = styles.components?.HoverCard;
 
   if (!defaultProps) return { ...props };
 

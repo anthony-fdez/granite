@@ -11,11 +11,12 @@ export interface IHoverCardPropsOptional extends React.HTMLAttributes<HTMLDivEle
   isOpen?: boolean;
   openDelay?: number;
   position?: IPopupPositions;
+  unmount?: true;
   width?: number;
   zIndex?: number;
 }
 
 export interface IHoverCardProps extends IHoverCardPropsOptional {
+  card: JSX.Element;
   children: JSX.Element | JSX.Element[];
-  tooltip: string;
 }

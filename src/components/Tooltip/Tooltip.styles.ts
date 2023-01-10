@@ -1,12 +1,12 @@
 import { css, SerializedStyles } from "@emotion/react";
 import { Variants } from "framer-motion";
 import { GetColorProps } from "./../../styles/useStyles";
-import { TooltipPositionsType } from "./Tooltip.types";
 import IUseStyles from "../../styles/interfaces/IUseStyles";
+import { IPopupPositions } from "../../utils/types/IPopupPositions";
 
 interface Props {
   getColor: (props: GetColorProps) => IUseStyles;
-  position?: TooltipPositionsType;
+  position?: IPopupPositions;
 }
 
 export const getTooltipVariants = (): Variants => {
@@ -20,7 +20,7 @@ export const getTooltipVariants = (): Variants => {
   };
 };
 
-const getTooltipStyles = ({ getColor, position }: Props): SerializedStyles => {
+export const getTooltipStyles = ({ getColor, position }: Props): SerializedStyles => {
   return css(
     {
       position: "relative",
@@ -64,5 +64,3 @@ const getTooltipStyles = ({ getColor, position }: Props): SerializedStyles => {
     },
   );
 };
-
-export default getTooltipStyles;
