@@ -7,7 +7,7 @@ export const TOOLTIP_DEFAULT_PROPS: ITooltipPropsOptional = {
   closeDelay: 0,
   openDelay: 200,
   position: "top",
-  zIndex: 5000,
+  zIndex: 5050,
 };
 
 interface Props {

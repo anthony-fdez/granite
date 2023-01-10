@@ -9,7 +9,7 @@ interface Props {
   position?: IPopupPositions;
 }
 
-export const getTooltipVariants = (): Variants => {
+export const getHoverCardVariants = (): Variants => {
   return {
     open: {
       opacity: 1,
@@ -20,12 +20,12 @@ export const getTooltipVariants = (): Variants => {
   };
 };
 
-export const getTooltipStyles = ({ getColor, position }: Props): SerializedStyles => {
+export const getHoverCardStyles = ({ getColor, position }: Props): SerializedStyles => {
   return css(
     {
       position: "relative",
       display: "inline-block",
-      ".Granite-Tooltip-tooltip": {
+      ".Granite-HoverCard-card": {
         position: "absolute",
         left: "50%",
         transform: "translateX(-50%)",
@@ -39,16 +39,14 @@ export const getTooltipStyles = ({ getColor, position }: Props): SerializedStyle
         borderWidth: 2,
         borderStyle: "solid",
         zIndex: 100,
-        lineBreak: "auto",
-        whiteSpace: "nowrap",
-        maxWidth: "90vw",
+        maxWidth: "calc(90vw - 20px)",
         overflow: "auto",
       },
     },
-    position === "top" && { ".Granite-Tooltip-tooltip": { bottom: "100%" } },
-    position === "bottom" && { ".Granite-Tooltip-tooltip": { top: "100%" } },
+    position === "top" && { ".Granite-HoverCard-card": { bottom: "100%" } },
+    position === "bottom" && { ".Granite-HoverCard-card": { top: "100%" } },
     position === "left" && {
-      ".Granite-Tooltip-tooltip": {
+      ".Granite-HoverCard-card": {
         left: "auto",
         right: "100%",
         top: "50%",
@@ -56,7 +54,7 @@ export const getTooltipStyles = ({ getColor, position }: Props): SerializedStyle
       },
     },
     position === "right" && {
-      ".Granite-Tooltip-tooltip": {
+      ".Granite-HoverCard-card": {
         left: "100%",
         top: "50%",
         transform: "translateX(0px) translateY(-50%)",

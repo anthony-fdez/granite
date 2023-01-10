@@ -2,8 +2,8 @@ import { SerializedStyles } from "@emotion/react";
 import React from "react";
 import { INumberRange } from "../ThemeProvider/Interfaces/IStyles";
 import { IColors } from "../../constants/theme/colors";
-import { ISizes } from "../../utils/types/sizes";
-import { IVariants } from "../../utils/types/variants";
+import { ISizes } from "../../utils/types/ISizes";
+import { IVariants } from "../../utils/types/IVariants";
 import { SpinnersType } from "../Spinner/Spinner.types";
 
 export interface IButtonPropsOptional extends React.ButtonHTMLAttributes<HTMLButtonElement> {

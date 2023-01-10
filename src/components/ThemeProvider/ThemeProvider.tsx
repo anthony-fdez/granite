@@ -19,6 +19,7 @@ import { DEFAULT_COLORS } from "../../constants/theme/colors";
 import { LOADING_OVERLAY_DEFAULT_PROPS } from "../LoadingOverlay/LoadingOverlay.props";
 import { DRAWER_DEFAULT_PROPS } from "../Drawer/Drawer.props";
 import { TOOLTIP_DEFAULT_PROPS } from "../Tooltip/Tooltip.props";
+import { HOVER_CARD_DEFAULT_PROPS } from "../HoverCard/HoverCard.props";
 
 export const StateContext = createContext<IContext>({
   setState: () => {},
@@ -79,6 +80,10 @@ const ThemeProvider = ({
       LoadingOverlay: {
         ...LOADING_OVERLAY_DEFAULT_PROPS,
         ...defaultStyles?.components?.LoadingOverlay,
+      },
+      HoverCard: {
+        ...HOVER_CARD_DEFAULT_PROPS,
+        ...defaultStyles?.components?.HoverCard,
       },
     },
   };

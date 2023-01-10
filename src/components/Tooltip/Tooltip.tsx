@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 import { ITooltipProps } from "./Tooltip.types";
 import useAppContext from "../../utils/hooks/useAppContext";
 import { TOOLTIP_DEFAULT_PROPS, useTooltipDefaultProps } from "./Tooltip.props";
-import getTooltipStyles, { getTooltipVariants } from "./Tooltip.styles";
+import { getTooltipStyles, getTooltipVariants } from "./Tooltip.styles";
 import Unmount from "../Unmount/Unmount";
 import useStyles from "../../styles/useStyles";
 import HoverListener from "../HoverListener/HoverListener";
@@ -37,10 +37,6 @@ const Tooltip = (props: ITooltipProps): JSX.Element => {
   const [active, setActive] = useState(false);
 
   useEffect(() => {
-    if (isOpen !== undefined) setActive(isOpen);
-  }, [active, isOpen]);
-
-  useEffect(() => {
     let timeout: NodeJS.Timeout;
 
     if (hover) {
@@ -66,11 +62,11 @@ const Tooltip = (props: ITooltipProps): JSX.Element => {
         <Unmount
           animated={animated}
           animationDuration={hover ? (openDelay || 0) + animationDuration : (closeDelay || 0) + animationDuration}
-          isOpen={hover}
+          isOpen={isOpen || hover}
           shouldUnmount
         >
           <motion.div
-            animate={active ? "open" : "closed"}
+            animate={isOpen || active ? "open" : "closed"}
             className="Granite-Tooltip-tooltip"
             data-testid="Tooltip/tooltip"
             initial="closed"

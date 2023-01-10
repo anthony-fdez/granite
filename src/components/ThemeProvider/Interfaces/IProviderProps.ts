@@ -1,4 +1,4 @@
-import { ITheme } from "../../../utils/types/theme";
+import { ITheme } from "../../../utils/types/ITheme";
 import { IStyles } from "./IStyles";
 
 export interface IProviderProps extends React.HtmlHTMLAttributes<HTMLDivElement> {

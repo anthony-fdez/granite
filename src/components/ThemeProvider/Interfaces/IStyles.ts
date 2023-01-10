@@ -1,13 +1,14 @@
+import { IHoverCardPropsOptional } from "./../../HoverCard/HoverCard.types";
 import { IBackdropProps } from "../../Backdrop/Backdrop.types";
 import { ICloseButtonProps } from "../../CloseButton/CloseButton.types";
 import { IDividerProps } from "../../Divider/Divider.types";
 import { IAccordionPropsOptional } from "../../Accordion/Accordion.types";
 import { IDialogPropsOptional } from "../../Dialog/Dialog.types";
 import { IModalPropsOptional } from "../../Modal/Modal.types";
-import { IVariants } from "../../../utils/types/variants";
-import { ITheme } from "../../../utils/types/theme";
+import { IVariants } from "../../../utils/types/IVariants";
+import { ITheme } from "../../../utils/types/ITheme";
 import { IColorShades, IColors } from "../../../constants/theme/colors";
-import { ISizes } from "../../../utils/types/sizes";
+import { ISizes } from "../../../utils/types/ISizes";
 import { IButtonPropsOptional } from "../../Button/Button.types";
 import { ITextInputProps } from "../../TextInput/TextInput.types";
 import { ILoadingOverlayPropsOptional } from "../../LoadingOverlay/LoadingOverlay.types";
@@ -26,6 +27,7 @@ export interface IStyles {
     Dialog?: IDialogPropsOptional;
     Divider?: IDividerProps;
     Drawer?: IDrawerPropsOptional;
+    HoverCard?: IHoverCardPropsOptional;
     LoadingOverlay?: ILoadingOverlayPropsOptional;
     Modal?: IModalPropsOptional;
     TextInput?: ITextInputProps;

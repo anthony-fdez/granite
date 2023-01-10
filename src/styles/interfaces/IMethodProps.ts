@@ -1,4 +1,4 @@
-import { IVariants } from "../../utils/types/variants";
+import { IVariants } from "../../utils/types/IVariants";
 import { IStyles, INumberRange } from "../../components/ThemeProvider/Interfaces/IStyles";
 import { IColors } from "../../constants/theme/colors";
 

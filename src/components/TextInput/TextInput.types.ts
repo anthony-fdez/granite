@@ -1,7 +1,7 @@
 import { SerializedStyles } from "@emotion/react";
 import { HTMLInputTypeAttribute } from "react";
-import { ISizes } from "../../utils/types/sizes";
-import { IVariants } from "../../utils/types/variants";
+import { ISizes } from "../../utils/types/ISizes";
+import { IVariants } from "../../utils/types/IVariants";
 import { IColors } from "../../constants/theme/colors";
 
 export interface ITextInputProps extends React.HtmlHTMLAttributes<HTMLDivElement> {
