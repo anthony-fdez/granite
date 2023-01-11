@@ -31,7 +31,7 @@ export const getHoverCardStyles = ({ getColor, position }: Props): SerializedSty
         transform: "translateX(-50%)",
         padding: 10,
         color: getColor({}).font,
-        background: getColor({}).backgroundAccent,
+        background: getColor({}).background,
         fontSize: 14,
         fontFamily: "sans-serif",
         lineHeight: 1,

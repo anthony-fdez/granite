@@ -5,7 +5,7 @@ export const HOVER_CARD_DEFAULT_PROPS: IHoverCardPropsOptional = {
   animated: true,
   animationDuration: 500,
   closeDelay: 0,
-  openDelay: 200,
+  openDelay: 500,
   position: "top",
   zIndex: 5000,
   disabled: false,
