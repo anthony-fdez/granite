@@ -3,6 +3,7 @@ import { Variants } from "framer-motion";
 import { GetColorProps } from "./../../styles/useStyles";
 import IUseStyles from "../../styles/interfaces/IUseStyles";
 import { IPopupPositions } from "../../utils/types/IPopupPositions";
+import getPopupPosition from "../../styles/helpers/getPopupPosition";
 
 interface Props {
   getColor: (props: GetColorProps) => IUseStyles;
@@ -21,7 +22,7 @@ export const getHoverCardVariants = (): Variants => {
 };
 
 export const getHoverCardStyles = ({ getColor, position }: Props): SerializedStyles => {
-  return css(
+  return css([
     {
       position: "relative",
       display: "inline-block",
@@ -43,22 +44,6 @@ export const getHoverCardStyles = ({ getColor, position }: Props): SerializedSty
         overflow: "auto",
       },
     },
-    position === "top" && { ".Granite-HoverCard-card": { bottom: "100%" } },
-    position === "bottom" && { ".Granite-HoverCard-card": { top: "100%" } },
-    position === "left" && {
-      ".Granite-HoverCard-card": {
-        left: "auto",
-        right: "100%",
-        top: "50%",
-        transform: "translateX(0px) translateY(-50%)",
-      },
-    },
-    position === "right" && {
-      ".Granite-HoverCard-card": {
-        left: "100%",
-        top: "50%",
-        transform: "translateX(0px) translateY(-50%)",
-      },
-    },
-  );
+    position && getPopupPosition({ position }),
+  ]);
 };

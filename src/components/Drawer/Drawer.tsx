@@ -14,7 +14,7 @@ import Unmount from "../Unmount/Unmount";
 import Backdrop from "../Backdrop/Backdrop";
 import ClickAwayListener from "../ClickAwayListener";
 import CloseButton from "../CloseButton";
-import getBorderRadius from "../ThemeProvider/getValues/getBorderRadius";
+import getBorderRadius from "../../styles/helpers/getBorderRadius";
 
 const Drawer = (props: IDrawerProps): JSX.Element => {
   const { styles } = useAppContext();
