@@ -18,6 +18,7 @@ import TextInput from "../TextInput";
 import Drawer from "../Drawer/Drawer";
 import Tooltip from "../Tooltip";
 import HoverCard from "../HoverCard";
+import Skeleton from "../Skeleton";
 
 export default {
   component: ThemeProvider,
@@ -32,7 +33,8 @@ const Template: ComponentStory<typeof ThemeProvider> = (args) => {
   const hoverCardElement = (): JSX.Element => (
     <div>
       <h1>Did you know?</h1>
-      <p>You can click this button to open a dialog? Fascinationg isnt it</p>
+      <Skeleton count={3} />
+      <br />
       <Flex justifyContent="flex-end">
         <Button variant="outlined">No</Button>
         <Button>Yes</Button>
@@ -90,6 +92,10 @@ const Template: ComponentStory<typeof ThemeProvider> = (args) => {
       </Modal>
       <Drawer backdropBlur={5} closeButton isOpen={isDrawerOpen} onClose={() => setIsDrawerOpen(false)} title="Drawer">
         <p>This is the very simple drawer</p>
+        <Skeleton count={5} />
+        <Skeleton height={100} />
+        <Skeleton count={5} />
+        <p>Keep waiting, it will load... eventually</p>
       </Drawer>
       <h2>Layout</h2>
 
@@ -237,9 +243,6 @@ CustomStyles.args = {
       ],
     },
     components: {
-      Button: {
-        borderRadius: "lg",
-      },
       Dialog: {
         width: 500,
       },
