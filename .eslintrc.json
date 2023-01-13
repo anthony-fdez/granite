@@ -42,6 +42,7 @@
     "typescript-sort-keys/interface": "error",
     "typescript-sort-keys/string-enum": "error",
     "react/jsx-sort-props": "error",
+    "operator-linebreak": "off",
     "react/function-component-definition": [
       2,
       {

@@ -12,7 +12,7 @@ export const DRAWER_DEFAULT_PROPS: IDrawerPropsOptional = {
   position: "right",
   borderRadius: undefined,
   backdropBlur: 0,
-  zIndex: undefined,
+  zIndex: 5000,
   border: true,
   borderColor: undefined,
   borderWidth: 3,

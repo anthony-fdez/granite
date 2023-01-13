@@ -12,6 +12,7 @@ import { TEXT_INPUT_DEFAULT_PROPS } from "../../components/TextInput/TextInput.p
 import { ACCORDION_DEFAULT_PROPS } from "../../components/Accordion/Accordion.props";
 import { LOADING_OVERLAY_DEFAULT_PROPS } from "../../components/LoadingOverlay/LoadingOverlay.props";
 import { TOOLTIP_DEFAULT_PROPS } from "../../components/Tooltip/Tooltip.props";
+import { SKELETON_DEFAULT_PROPS } from "../../components/Skeleton/Skeleton.props";
 
 const DEFAULT_STYLES: IStyles = {
   colors: DEFAULT_COLORS,
@@ -28,6 +29,7 @@ const DEFAULT_STYLES: IStyles = {
     TextInput: TEXT_INPUT_DEFAULT_PROPS,
     Tooltip: TOOLTIP_DEFAULT_PROPS,
     HoverCard: HOVER_CARD_DEFAULT_PROPS,
+    Skeleton: SKELETON_DEFAULT_PROPS,
   },
   global: {
     animated: true,

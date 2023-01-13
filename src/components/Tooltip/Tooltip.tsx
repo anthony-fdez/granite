@@ -61,7 +61,7 @@ const Tooltip = (props: ITooltipProps): JSX.Element => {
       <>
         <Unmount
           animated={animated}
-          animationDuration={hover ? (openDelay || 0) + animationDuration : (closeDelay || 0) + animationDuration}
+          animationDuration={hover ? (openDelay || 0) + animationDuration : (closeDelay || 0) + animationDuration / 2}
           isOpen={isOpen || hover}
           shouldUnmount
         >
