@@ -20,6 +20,7 @@ import { LOADING_OVERLAY_DEFAULT_PROPS } from "../LoadingOverlay/LoadingOverlay.
 import { DRAWER_DEFAULT_PROPS } from "../Drawer/Drawer.props";
 import { TOOLTIP_DEFAULT_PROPS } from "../Tooltip/Tooltip.props";
 import { HOVER_CARD_DEFAULT_PROPS } from "../HoverCard/HoverCard.props";
+import { SKELETON_DEFAULT_PROPS } from "../Skeleton/Skeleton.props";
 
 export const StateContext = createContext<IContext>({
   setState: () => {},
@@ -84,6 +85,10 @@ const ThemeProvider = ({
       HoverCard: {
         ...HOVER_CARD_DEFAULT_PROPS,
         ...defaultStyles?.components?.HoverCard,
+      },
+      Skeleton: {
+        ...SKELETON_DEFAULT_PROPS,
+        ...defaultStyles?.components?.Skeleton,
       },
     },
   };

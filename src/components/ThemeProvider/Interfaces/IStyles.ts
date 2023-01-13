@@ -14,6 +14,7 @@ import { ITextInputProps } from "../../TextInput/TextInput.types";
 import { ILoadingOverlayPropsOptional } from "../../LoadingOverlay/LoadingOverlay.types";
 import { IDrawerPropsOptional } from "../../Drawer/Drawer.types";
 import { ITooltipPropsOptional } from "../../Tooltip/Tooltip.types";
+import { ISkeletonPropsOptional } from "../../Skeleton/Skeleton.types";
 
 export type INumberRange = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9;
 
@@ -30,6 +31,7 @@ export interface IStyles {
     HoverCard?: IHoverCardPropsOptional;
     LoadingOverlay?: ILoadingOverlayPropsOptional;
     Modal?: IModalPropsOptional;
+    Skeleton?: ISkeletonPropsOptional;
     TextInput?: ITextInputProps;
     Tooltip?: ITooltipPropsOptional;
   };
