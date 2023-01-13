@@ -25,16 +25,27 @@ const Skeleton = (props: ISkeletonPropsOptional): JSX.Element => {
   const { styles } = useAppContext();
   const { getColor } = useStyles({ styles });
 
-  const { marginBottom, circle, height, borderRadius, width, customCSS, highlightColor, baseColor, count } =
-    useSkeletonDefaultProps({ props, styles });
+  const {
+    marginBottom,
+    circle,
+    height,
+    borderRadius,
+    width,
+    customCSS,
+    highlightColor,
+    baseColor,
+    count,
+    animationSpeed,
+  } = useSkeletonDefaultProps({ props, styles });
 
   const BASE_COLOR = baseColor ?? getColor({}).backgroundHover;
   const HIGH_LIGHT_COLOR = highlightColor ?? getColor({}).background;
 
   return (
     <div>
-      {[...Array(count)].map((element, index) => (
+      {[...Array(count)].map((_element, index) => (
         <div
+          aria-label="Loading"
           css={[
             {
               position: "relative",
@@ -53,7 +64,7 @@ const Skeleton = (props: ISkeletonPropsOptional): JSX.Element => {
                 backgroundRepeat: "no-repeat",
                 backgroundImage: `linear-gradient(90deg, ${BASE_COLOR}, ${HIGH_LIGHT_COLOR}, ${BASE_COLOR})`,
                 transform: "translateX(-100%)",
-                animation: `${animation} 2s ease infinite`,
+                animation: `${animation} ${animationSpeed}ms ease infinite`,
               },
             },
             height && {
@@ -66,6 +77,8 @@ const Skeleton = (props: ISkeletonPropsOptional): JSX.Element => {
             circle && { width: height, borderRadius: "50%" },
             customCSS,
           ]}
+          data-testid="Skeleton/skeleton"
+          role="progressbar"
         />
       ))}
     </div>

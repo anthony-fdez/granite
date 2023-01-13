@@ -8,6 +8,7 @@ export const SKELETON_DEFAULT_PROPS: ISkeletonPropsOptional = {
   borderRadius: 0,
   count: 1,
   marginBottom: 10,
+  animationSpeed: 2000,
 };
 
 interface Props {
