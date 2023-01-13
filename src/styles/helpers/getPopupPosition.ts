@@ -7,9 +7,9 @@ interface Props {
 
 const getPopupPosition = ({ position }: Props): SerializedStyles => {
   return css([
-    position === "top" && { ".Granite-Tooltip-tooltip": { bottom: "100%" } },
+    position === "top" && { ".Granite-Tooltip-tooltip, .Granite-HoverCard-card": { bottom: "100%" } },
     position === "top-start" && {
-      ".Granite-Tooltip-tooltip": {
+      ".Granite-Tooltip-tooltip, .Granite-HoverCard-card": {
         left: "auto",
         right: "100%",
         bottom: "100%",
@@ -17,16 +17,16 @@ const getPopupPosition = ({ position }: Props): SerializedStyles => {
       },
     },
     position === "top-end" && {
-      ".Granite-Tooltip-tooltip": {
+      ".Granite-Tooltip-tooltip, .Granite-HoverCard-card": {
         right: "auto",
         left: "100%",
         bottom: "100%",
         transform: "translateX(calc(-100% - 5px))",
       },
     },
-    position === "bottom" && { ".Granite-Tooltip-tooltip": { top: "100%" } },
+    position === "bottom" && { ".Granite-Tooltip-tooltip, .Granite-HoverCard-card": { top: "100%" } },
     position === "bottom-start" && {
-      ".Granite-Tooltip-tooltip": {
+      ".Granite-Tooltip-tooltip, .Granite-HoverCard-card": {
         left: "auto",
         right: "100%",
         top: "100%",
@@ -34,7 +34,7 @@ const getPopupPosition = ({ position }: Props): SerializedStyles => {
       },
     },
     position === "bottom-end" && {
-      ".Granite-Tooltip-tooltip": {
+      ".Granite-Tooltip-tooltip, .Granite-HoverCard-card": {
         right: "auto",
         left: "100%",
         top: "100%",
@@ -42,7 +42,7 @@ const getPopupPosition = ({ position }: Props): SerializedStyles => {
       },
     },
     position === "left" && {
-      ".Granite-Tooltip-tooltip": {
+      ".Granite-Tooltip-tooltip, .Granite-HoverCard-card": {
         left: "auto",
         right: "100%",
         top: "50%",
@@ -50,7 +50,7 @@ const getPopupPosition = ({ position }: Props): SerializedStyles => {
       },
     },
     position === "left-end" && {
-      ".Granite-Tooltip-tooltip": {
+      ".Granite-Tooltip-tooltip, .Granite-HoverCard-card": {
         left: "auto",
         right: "100%",
         top: "100%",
@@ -58,7 +58,7 @@ const getPopupPosition = ({ position }: Props): SerializedStyles => {
       },
     },
     position === "left-start" && {
-      ".Granite-Tooltip-tooltip": {
+      ".Granite-Tooltip-tooltip, .Granite-HoverCard-card": {
         left: "auto",
         right: "100%",
         bottom: "100%",
@@ -66,14 +66,14 @@ const getPopupPosition = ({ position }: Props): SerializedStyles => {
       },
     },
     position === "right" && {
-      ".Granite-Tooltip-tooltip": {
+      ".Granite-Tooltip-tooltip, .Granite-HoverCard-card": {
         left: "100%",
         top: "50%",
         transform: "translateX(0px) translateY(-50%)",
       },
     },
     position === "right-end" && {
-      ".Granite-Tooltip-tooltip": {
+      ".Granite-Tooltip-tooltip, .Granite-HoverCard-card": {
         right: "auto",
         left: "100%",
         top: "100%",
@@ -81,7 +81,7 @@ const getPopupPosition = ({ position }: Props): SerializedStyles => {
       },
     },
     position === "right-start" && {
-      ".Granite-Tooltip-tooltip": {
+      ".Granite-Tooltip-tooltip, .Granite-HoverCard-card": {
         right: "auto",
         left: "100%",
         bottom: "100%",
