@@ -13,7 +13,7 @@ import { ISkeletonPropsOptional } from "./Skeleton.types";
 import useAppContext from "../../utils/hooks/useAppContext";
 import { useSkeletonDefaultProps } from "./Skeleton.props";
 import useStyles from "../../styles/useStyles";
-import getBorderRadius from "../ThemeProvider/getValues/getBorderRadius";
+import getBorderRadius from "../../styles/helpers/getBorderRadius";
 
 const animation = keyframes`
   100% {
