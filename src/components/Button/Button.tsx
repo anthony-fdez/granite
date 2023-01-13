@@ -36,7 +36,7 @@ const Button = (props: IButtonProps): JSX.Element => {
   const { getColor } = useStyles({ styles, shade, color });
 
   const buttonStyles = css([
-    getButtonStyles({ styles, variant, disabled, getColor }),
+    getButtonStyles({ styles, variant, disabled: disabled || loading, getColor }),
     fontColor && { color: fontColor },
     padding && { padding },
     margin && { margin },
@@ -52,12 +52,12 @@ const Button = (props: IButtonProps): JSX.Element => {
 
   return (
     <button
-      aria-disabled="true"
+      aria-disabled={disabled || loading}
       aria-label={children}
       type="button"
       {...props}
       css={[buttonStyles, customCSS]}
-      disabled={disabled}
+      disabled={disabled || loading}
     >
       {iconLeft && (
         <div data-testid="button-icon-left" {...iconLeftProps} className="Granite-Button-icon-left">
