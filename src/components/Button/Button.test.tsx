@@ -56,4 +56,10 @@ describe("Button", () => {
 
     expect(button.getByLabelText(defaultProps.children)).toHaveAttribute("disabled");
   });
+
+  it("is disabled when loading", () => {
+    const button = render(<Button {...defaultProps} loading />);
+
+    expect(button.getByLabelText(defaultProps.children)).toHaveAttribute("disabled");
+  });
 });
