@@ -3,6 +3,7 @@ import { Variants } from "framer-motion";
 import { GetColorProps } from "./../../styles/useStyles";
 import IUseStyles from "../../styles/interfaces/IUseStyles";
 import { IPopupPositions } from "../../utils/types/IPopupPositions";
+import getPopupPosition from "../../styles/helpers/getPopupPosition";
 
 interface Props {
   getColor: (props: GetColorProps) => IUseStyles;
@@ -22,45 +23,31 @@ export const getTooltipVariants = (): Variants => {
 
 export const getTooltipStyles = ({ getColor, position }: Props): SerializedStyles => {
   return css(
-    {
-      position: "relative",
-      display: "inline-block",
-      ".Granite-Tooltip-tooltip": {
-        position: "absolute",
-        left: "50%",
-        transform: "translateX(-50%)",
-        padding: 10,
-        color: getColor({}).font,
-        background: getColor({}).backgroundAccent,
-        fontSize: 14,
-        fontFamily: "sans-serif",
-        lineHeight: 1,
-        borderColor: getColor({}).border,
-        borderWidth: 2,
-        borderStyle: "solid",
-        zIndex: 100,
-        lineBreak: "auto",
-        whiteSpace: "nowrap",
-        maxWidth: "90vw",
-        overflow: "auto",
+    [
+      {
+        position: "relative",
+        display: "inline-block",
+        ".Granite-Tooltip-tooltip": {
+          position: "absolute",
+          left: "50%",
+          transform: "translateX(-50%)",
+          padding: 7,
+          color: getColor({}).font,
+          background: getColor({}).backgroundAccent,
+          fontSize: 14,
+          fontFamily: "sans-serif",
+          lineHeight: 1,
+          borderColor: getColor({}).border,
+          borderWidth: 2,
+          borderStyle: "solid",
+          zIndex: 100,
+          lineBreak: "auto",
+          whiteSpace: "nowrap",
+          maxWidth: "90vw",
+          overflow: "auto",
+        },
       },
-    },
-    position === "top" && { ".Granite-Tooltip-tooltip": { bottom: "100%" } },
-    position === "bottom" && { ".Granite-Tooltip-tooltip": { top: "100%" } },
-    position === "left" && {
-      ".Granite-Tooltip-tooltip": {
-        left: "auto",
-        right: "100%",
-        top: "50%",
-        transform: "translateX(0px) translateY(-50%)",
-      },
-    },
-    position === "right" && {
-      ".Granite-Tooltip-tooltip": {
-        left: "100%",
-        top: "50%",
-        transform: "translateX(0px) translateY(-50%)",
-      },
-    },
+    ],
+    position && getPopupPosition({ position }),
   );
 };

@@ -1,5 +1,5 @@
 import { css, SerializedStyles } from "@emotion/react";
-import { getVariantStyles } from "../ThemeProvider/getValues/getVariantStyles";
+import { getVariantStyles } from "../../styles/helpers/getVariantStyles";
 import { GetColorProps } from "../../styles/useStyles";
 import { IVariants } from "../../utils/types/IVariants";
 import IUseStyles from "../../styles/interfaces/IUseStyles";
