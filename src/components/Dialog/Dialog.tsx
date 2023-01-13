@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import useStyles from "../../styles/useStyles";
 import useAppContext from "../../utils/hooks/useAppContext";
 import CloseButton from "../CloseButton";
-import getBorderRadius from "../ThemeProvider/getValues/getBorderRadius";
+import getBorderRadius from "../../styles/helpers/getBorderRadius";
 import ClickAwayListener from "../ClickAwayListener";
 import Unmount from "../Unmount/Unmount";
 import Backdrop from "../Backdrop/Backdrop";

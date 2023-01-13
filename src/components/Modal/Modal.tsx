@@ -5,7 +5,7 @@ import { css } from "@emotion/react";
 import React from "react";
 import { motion } from "framer-motion";
 import CloseButton from "../CloseButton";
-import getBorderRadius from "../ThemeProvider/getValues/getBorderRadius";
+import getBorderRadius from "../../styles/helpers/getBorderRadius";
 import { getModalStyles, modalVariants } from "./Modal.styles";
 import { IModalProps } from "./Modal.types";
 import useDisableScroll from "../../utils/hooks/useDisableScroll";
