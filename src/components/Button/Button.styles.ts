@@ -75,7 +75,7 @@ const getButtonStyles = ({ styles, variant, disabled, getColor }: Props): Serial
       ...getVariantStyles({ filled, subtle, outlined, variant }),
     },
     disabled && {
-      filter: "grayscale(1)",
+      filter: "grayscale(0.5)",
       pointerEvents: "none",
     },
   ]);
