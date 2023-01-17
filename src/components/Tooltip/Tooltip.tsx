@@ -53,36 +53,31 @@ const Tooltip = (props: ITooltipProps): JSX.Element => {
   }, [hover, active, closeDelay, openDelay]);
 
   return (
-    <HoverListener
-      customCSS={css([getTooltipStyles({ getColor, position }), customCSS])}
-      onHover={(isHover): void => setHover(isHover)}
-      {...args}
-    >
-      <>
-        <Unmount
-          animated={animated}
-          animationDuration={hover ? (openDelay || 0) + animationDuration : (closeDelay || 0) + animationDuration / 2}
-          isOpen={isOpen || hover}
-          shouldUnmount
+    <div css={css([getTooltipStyles({ getColor, position }), customCSS])}>
+      <Unmount
+        animated={animated}
+        animationDuration={hover ? (openDelay || 0) + animationDuration : (closeDelay || 0) + animationDuration / 2}
+        isOpen={isOpen || hover}
+        shouldUnmount
+      >
+        <motion.div
+          animate={isOpen || active ? "open" : "closed"}
+          className="Granite-Tooltip-tooltip"
+          data-testid="Tooltip/tooltip"
+          initial="closed"
+          transition={{
+            duration: animated ? animationDuration * 0.001 : 0,
+            type: "spring",
+          }}
+          variants={getTooltipVariants()}
         >
-          <motion.div
-            animate={isOpen || active ? "open" : "closed"}
-            className="Granite-Tooltip-tooltip"
-            data-testid="Tooltip/tooltip"
-            initial="closed"
-            transition={{
-              duration: animated ? animationDuration * 0.001 : 0,
-              type: "spring",
-            }}
-            variants={getTooltipVariants()}
-          >
-            {tooltip}
-          </motion.div>
-        </Unmount>
-
+          {tooltip}
+        </motion.div>
+      </Unmount>
+      <HoverListener onHover={(isHover): void => setHover(isHover)} {...args}>
         {children}
-      </>
-    </HoverListener>
+      </HoverListener>
+    </div>
   );
 };
 
