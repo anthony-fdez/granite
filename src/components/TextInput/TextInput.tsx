@@ -8,7 +8,7 @@ import { useTextInputDefaultProps } from "./TextInput.props";
 import Spinner from "../Spinner";
 import useStyles from "../../styles/useStyles";
 import useAppContext from "../../utils/hooks/useAppContext";
-import getInputStyles from "../../utils/sharedStyles/getInputStyles";
+import getTextInputStyles from "./TextInput.styles";
 
 const TextInput = (props: ITextInputProps): JSX.Element => {
   const { styles } = useAppContext();
@@ -47,7 +47,7 @@ const TextInput = (props: ITextInputProps): JSX.Element => {
   return (
     <div
       css={[
-        getInputStyles({
+        getTextInputStyles({
           variant,
           disabled,
           error,
@@ -67,20 +67,20 @@ const TextInput = (props: ITextInputProps): JSX.Element => {
       {...args}
     >
       {label && (
-        <p className="Granite-Input-label">
+        <p className="Granite-TextInput-label">
           {label}
           {required && <span style={{ color: styles.colors?.red?.[6], marginLeft: 2 }}>*</span>}
         </p>
       )}
-      {helperText && <p className="Granite-Input-helperText">{helperText}</p>}
-      <div className="Granite-Input-inputWrapper">
-        {iconLeft && <span className="Granite-Input-iconLeft">{iconLeft}</span>}
+      {helperText && <p className="Granite-TextInput-helperText">{helperText}</p>}
+      <div className="Granite-TextInput-TextInputWrapper">
+        {iconLeft && <span className="Granite-TextInput-iconLeft">{iconLeft}</span>}
 
         <input
           {...inputProps}
           // eslint-disable-next-line jsx-a11y/no-autofocus
           autoFocus={autofocus}
-          className="Granite-Input-input"
+          className="Granite-TextInput-TextInput"
           css={[padding && { padding }, borderRadius && { borderRadius }]}
           defaultValue={defaultValue}
           disabled={disabled}
@@ -92,13 +92,13 @@ const TextInput = (props: ITextInputProps): JSX.Element => {
           value={value}
         />
         {loading && (
-          <span className="Granite-Input-spinner">
+          <span className="Granite-TextInput-spinner">
             <Spinner color={color} variant="circular" />
           </span>
         )}
       </div>
 
-      {errorText && <p className="Granite-Input-errorText">{errorText}</p>}
+      {errorText && <p className="Granite-TextInput-errorText">{errorText}</p>}
     </div>
   );
 };

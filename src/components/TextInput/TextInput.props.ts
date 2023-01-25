@@ -22,7 +22,6 @@ export const TEXT_INPUT_DEFAULT_PROPS: ITextInputProps = {
   type: "text",
   value: undefined,
   variant: "outlined",
-  classes: undefined,
   loading: false,
   iconLeft: undefined,
   borderRadius: "xs",
