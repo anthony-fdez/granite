@@ -43,12 +43,13 @@ npm i @granite/core @emotion/react framer-motion
 ### Overlays
 
 - [x] Dialog
-- [ ] Drawer
+- [x] Drawer
 - [x] Modal
+- [ ] Create modal manager function, like https://mantine.dev/others/modals/
 - [ ] Tour - https://reactour.vercel.app/
 - [ ] ResponsiveMenu - This will be a `<Drawer />` for mobile, and a `<Popover />` for desktop. Both will have a `<Menu />` as children.
-- [ ] Tooltip
-- [ ] HoverCard - Same as the `Tooltip` but bigger, will have an optional `<HoverCard.Footer />`, `<HoverCard.Header />`, `<HoverCard.Body />
+- [x] Tooltip
+- [x] HoverCard - Same as the `Tooltip` but bigger, will have an optional `<HoverCard.Footer />`, `<HoverCard.Header />`, `<HoverCard.Body />
 - [x] Loading overlay (backdrop) - This is the full screen spinner
 - [ ] Popover
 - [ ] Menu & MenuItem - Allow nested menu items, kind of like folders. The menu will be a list under the hood.
@@ -72,14 +73,14 @@ npm i @granite/core @emotion/react framer-motion
 
 ### Inputs
 
-- [ ] Text input
+- [x] Text input
 - [ ] Password input
 - [ ] Number input
 - [ ] Phone input - include the flag icon as they type the phone number
 - [ ] Checkbox
 - [ ] Radio
 - [ ] Select (with autocomplete)
-- [ ] Switch
+- [ ] Switch - Style like githubs switch
 - [ ] Text area
 - [ ] Segmented control
 
@@ -109,12 +110,12 @@ npm i @granite/core @emotion/react framer-motion
 - [ ] Alert
 - [x] Spinner
 - Currently only having cicrular spinner, dots is still to be added.
-- [ ] Skeleton
+- [x] Skeleton
 
 ### Utils
 
 - [x] ClickAwayListener
-- [ ] HoverListener
+- [x] HoverListener
 - [ ] MouseDownListener
 
 ### Extra (I don't know how to categorize these)
