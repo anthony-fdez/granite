@@ -4,7 +4,6 @@ import IMethodProps from "../interfaces/IMethodProps";
 
 const GET_FONT = (props: IMethodProps): string => {
   return errorWrapper({
-    props,
     callback: (p) => {
       const { dark, styles } = p;
       const colors = styles.colors ?? DEFAULT_COLORS;
@@ -13,6 +12,7 @@ const GET_FONT = (props: IMethodProps): string => {
 
       return colors.dark?.[9];
     },
+    props,
   });
 };
 

@@ -3,10 +3,10 @@ import IMethodProps from "../interfaces/IMethodProps";
 
 const GET_COLOR = ({ styles, color, shade, variant, dark }: IMethodProps): string => {
   if (variant === "subtle") {
-    return getColor({ styles, color, shade: dark ? 9 : 1 });
+    return getColor({ color, shade: dark ? 9 : 1, styles });
   }
 
-  return getColor({ styles, color, shade });
+  return getColor({ color, shade, styles });
 };
 
 export default GET_COLOR;

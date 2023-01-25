@@ -1,6 +1,6 @@
 /* eslint-disable prefer-arrow-callback */
 /* eslint-disable no-param-reassign */
-import { INumberRange } from "../../components/Theming/ThemeProvider/Interfaces/IStyles";
+import { INumberRange } from "../../components/ThemeProvider/Interfaces/IStyles";
 import { DEFAULT_COLORS, IColors } from "../../constants/theme/colors";
 
 interface Props {

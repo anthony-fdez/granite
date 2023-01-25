@@ -3,7 +3,7 @@ import IMethodProps from "../interfaces/IMethodProps";
 
 const GET_COLOR_HOVER = ({ styles, color, shade, variant, dark }: IMethodProps): string => {
   if (variant === "subtle") {
-    return getColor({ styles, color, shade: dark ? 8 : 2 });
+    return getColor({ color, shade: dark ? 8 : 2, styles });
   }
 
   const getShade = (): number => {
@@ -13,9 +13,9 @@ const GET_COLOR_HOVER = ({ styles, color, shade, variant, dark }: IMethodProps):
   };
 
   return getColor({
-    styles,
     color,
     shade: getShade(),
+    styles,
   });
 };
 

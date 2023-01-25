@@ -1,12 +1,13 @@
 import { useContext } from "react";
-import { StateContext } from "../../components/Theming/ThemeProvider/ThemeProvider";
-import { IStyles } from "../../components/Theming/ThemeProvider/Interfaces/IStyles";
+import { StateContext } from "../../components/ThemeProvider/ThemeProvider";
+import { IStyles } from "../../components/ThemeProvider/Interfaces/IStyles";
+import errors from "../../constants/errors/errors";
 
 const useAppContext = (): { styles: IStyles } => {
   const { styles } = useContext(StateContext);
 
   if (!styles) {
-    throw new Error("component context not found, make sure you are wrapping you app in a <ThemeProvider />");
+    throw new Error(errors.no_context);
   }
 
   return { styles };

@@ -1,8 +1,16 @@
 {
+  "clearMocks": true,
   "collectCoverage": false,
   "collectCoverageFrom": ["src/**/*.{js,jsx,ts,tsx}"],
   "coverageDirectory": "coverage",
   "coveragePathIgnorePatterns": [".stories.tsx"],
   "testEnvironment": "jsdom",
-  "setupFilesAfterEnv": ["<rootDir>/jest.setup.js"]
+  "setupFilesAfterEnv": ["<rootDir>/jest.setup.js"],
+  "preset": "ts-jest",
+  "transform": {
+    "^.+\\.(ts|tsx)?$": "ts-jest",
+    "^.+\\.(js|jsx)$": "babel-jest"
+  },
+  "modulePaths": ["<rootDir>"],
+  "silent": true
 }
