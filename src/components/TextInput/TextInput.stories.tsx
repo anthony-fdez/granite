@@ -60,7 +60,7 @@ export const Form: ComponentStory<typeof TextInput> = () => {
             <TextInput disabled placeholder="Subtle Variant" variant="subtle" />
           </Flex>
           <Flex>
-            <TextInput errorText="With an error text" fullWidth placeholder="Long..." title="Full Width" />
+            <TextInput error errorText="With an error text" fullWidth placeholder="Long..." title="Full Width" />
           </Flex>
           <Button type="submit">Submit</Button>
         </form>
