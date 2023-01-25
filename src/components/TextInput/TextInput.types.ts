@@ -7,7 +7,6 @@ import { IColors } from "../../constants/theme/colors";
 export interface ITextInputProps extends React.HtmlHTMLAttributes<HTMLDivElement> {
   autofocus?: boolean;
   borderRadius?: ISizes | number;
-  classes?: string;
   color?: IColors;
   customCSS?: SerializedStyles;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
