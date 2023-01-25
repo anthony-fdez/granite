@@ -49,12 +49,13 @@ const getTextInputStyles = ({
 
   const filled: SerializedStyles = css({
     backgroundColor: getColor({}).backgroundAccent,
-
+    transition: "100ms",
+    borderWidth: 1,
+    borderColor: "transparent",
+    borderStyle: "solid",
+    "&:hover": {},
     "&:focus": {
-      borderBottomColor: getColor({}).color,
-      borderBottomStyle: "solid",
-      borderBottomWidth: 3,
-      marginBottom: -3,
+      borderColor: getColor({}).color,
     },
   });
 
